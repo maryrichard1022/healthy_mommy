@@ -32,19 +32,19 @@ const MainSlider = () => {
     ],
   };
   return (
-    <container>
+    <container className="banner">
       <Slider {...settings}>
         <div>
-          <img src={require("../assets/banner1.jpg")} />
+          <img alt="banner1" src={require("../assets/banner1.jpg")} />
         </div>
         <div>
-          <img src={require("../assets/banner2.jpg")} />
+          <img alt="banner2" src={require("../assets/banner2.jpg")} />
         </div>
         <div>
-          <img src={require("../assets/banner3.jpg")} />
+          <img alt="banner3" src={require("../assets/banner3.jpg")} />
         </div>
         <div>
-          <img src={require("../assets/banner4.jpg")} />
+          <img alt="banner4" src={require("../assets/banner4.jpg")} />
         </div>
       </Slider>
     </container>
