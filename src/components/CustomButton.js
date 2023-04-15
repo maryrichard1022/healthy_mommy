@@ -1,5 +1,8 @@
+// 버튼
+import "./CustomButton.css";
+
 const CustomButton = ({ text }) => {
-  return <button>{text}</button>;
+  return <button className="CustomButton">{text}</button>;
 };
 
 export default CustomButton;

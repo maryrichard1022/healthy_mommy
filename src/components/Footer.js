@@ -1,3 +1,4 @@
+//홈페이지 하단(푸터)
 import React from "react";
 import "./Footer.css";
 

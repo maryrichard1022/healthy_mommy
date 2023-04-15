@@ -1,0 +1,19 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;600&display=swap");
+
+.CustomButton {
+  font-family: "IBM Plex Sans KR", sans-serif;
+  background-color: #f9e9ed;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  font-size: 18px;
+  font-weight: bold;
+}

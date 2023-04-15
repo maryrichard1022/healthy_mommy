@@ -1,4 +1,5 @@
-const ProductList = ()=>{
-    return;
-}
+const ProductList = () => {
+  return;
+};
 
+export default ProductList;

@@ -1,3 +1,4 @@
+// 홈페이지 헤더
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -30,7 +31,9 @@ const Nav = () => {
         </span>
 
         <span>
-          <img alt="logo" src={require("../assets/location.png")} />
+          <Link to={"/Location"}>
+            <img alt="logo" src={require("../assets/location.png")} />
+          </Link>
         </span>
       </div>
     </header>
