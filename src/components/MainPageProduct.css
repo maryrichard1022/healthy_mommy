@@ -3,9 +3,11 @@
 /*font-family: 'IBM Plex Sans KR', sans-serif;*/
 
 .MainPageProduct {
-  margin-left: 10%;
-  margin-right: 10%;
-  width: 80%;
-  height: 1000px;
+  width: 100%;
   font-family: "IBM Plex Sans KR", sans-serif;
+}
+
+.subBanner img {
+  filter: brightness(50%);
+  width: 100%;
 }

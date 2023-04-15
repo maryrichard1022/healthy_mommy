@@ -6,8 +6,10 @@ const MainPageProduct = () => {
   return (
     <div className="MainPageProduct">
       <h2> BEST PRODUCT </h2>
+      <div className="subBanner">
+        <img alt="banner" src={require("../assets/banner5.jpg")} />
+      </div>
     </div>
   );
 };
-
 export default MainPageProduct;
