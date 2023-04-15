@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import "./Cart.css";
 import { Link } from "react-router-dom";
+import CustomButton from "../components/CustomButton";
 
 const Cart = () => {
   return (
@@ -11,7 +12,7 @@ const Cart = () => {
       <div>
         <h3> 장바구니 페이지 입니다.</h3>
         <Link to={"/Payment"}>
-          <button class="gotoPaybutton">주문하기 </button>
+          <CustomButton text={"주문하기"} />
         </Link>
       </div>
       <Footer />
