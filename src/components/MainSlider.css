@@ -6,6 +6,8 @@
 }
 .slick-list {
   padding: 0px 0px 0px 0px;
+  width: 100%;
+  height: auto;
 }
 .slick-prev {
   z-index: 1;
@@ -18,5 +20,5 @@
 .slick-dots {
   display: flex;
   justify-content: center;
-  bottom: 25px;
+  padding-bottom: 35px;
 }

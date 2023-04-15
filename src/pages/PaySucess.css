@@ -2,7 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;600&display=swap");
 
 .PayCheck {
-  height: 300px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  height: 400px;
   width: 100%;
   align-items: center;
   text-align: center;
@@ -12,9 +14,19 @@
 
 .PayCheckAlert {
   display: flex;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
-
 .PayCheckAlert img {
   width: 30px;
+  height: 30px;
+  padding-right: 15px;
+}
+
+.PayCheckAlert p {
+  font-size: 35px;
+}
+
+.PayCheckInfo {
+  font-size: 15px;
 }

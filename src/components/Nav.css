@@ -34,12 +34,10 @@
 .nav-container_left span {
   width: 142px;
   height: 60px;
-  line-height: 60px;
+  line-height: 10px;
   position: relative;
   padding-right: 50px;
   padding-left: 25px;
-  padding-top: 5px;
-  padding-bottom: 10px;
   box-sizing: border-box;
   cursor: pointer;
   margin: 5px 5px 5px 5px;

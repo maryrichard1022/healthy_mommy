@@ -1,3 +1,4 @@
+// 결제중 페이지
 import React from "react";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";

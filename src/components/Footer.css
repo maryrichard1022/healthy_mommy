@@ -15,7 +15,6 @@
   flex-wrap: wrap;
   width: 100%;
   text-align: left;
-  margin-bottom: 2rem;
 }
 
 .sb_footer_info_div {
@@ -28,11 +27,11 @@
 
 .sb_footer_info_div h3 {
   font-size: 14;
-  line-height: 17px;
+  line-height: 15px;
   margin-bottom: 0.9rem;
   margin-left: 30px;
-  margin-top: 30px;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   font-family: "IBM Plex Sans KR", sans-serif;
 }
 
@@ -41,7 +40,7 @@
   width: 200px;
   white-space: nowrap;
   font-size: 13px;
-  line-height: 10px;
+  line-height: 5px;
   margin-left: 30px;
   cursor: pointer;
   font-family: "IBM Plex Sans KR", sans-serif;
