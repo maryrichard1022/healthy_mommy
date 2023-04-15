@@ -1,11 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "./Nav.css";
 
 const Nav = () => {
   return (
     <header className="nav-container">
       <div className="nav-container_left">
-        <img alt="mainlogo" src={require("../assets/mainlogo.png")} />
+        <Link to={"/"}>
+          <img alt="mainlogo" src={require("../assets/mainlogo.png")} />
+        </Link>
         <div>
           <span> ALL </span>
           <span> 영양제 </span>
@@ -13,13 +17,18 @@ const Nav = () => {
           <span> 운동기구 </span>
         </div>
       </div>
+
       <div className="nav-container_right">
         <span>
           <img alt="logo" src={require("../assets/user.png")} />
         </span>
+
         <span>
-          <img alt="logo" src={require("../assets/cart.png")} />
+          <Link to={"/Cart"}>
+            <img alt="logo" src={require("../assets/cart.png")} />
+          </Link>
         </span>
+
         <span>
           <img alt="logo" src={require("../assets/location.png")} />
         </span>
