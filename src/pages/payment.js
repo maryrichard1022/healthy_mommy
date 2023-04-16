@@ -10,8 +10,8 @@ const Payment = () => {
   return (
     <div>
       <Nav />
-      <div>
-        <h3> 결제 페이지 입니다.</h3>
+      <div className="paypage">
+        <h3> 결제 페이지입니다.</h3>
         <Link to={"/PaySucess"}>
           <CustomButton text={"결제하기"} />
         </Link>

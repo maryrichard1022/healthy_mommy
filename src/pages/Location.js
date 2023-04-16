@@ -2,12 +2,13 @@
 import React from "react";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
+import "./Location.css";
 
-const Cart = () => {
+const Location = () => {
   return (
     <div>
       <Nav />
-      <div>
+      <div className="location">
         <h3> 매장 위치.</h3>
       </div>
       <Footer />
@@ -15,4 +16,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default Location;

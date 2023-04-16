@@ -10,8 +10,8 @@ const Cart = () => {
   return (
     <div>
       <Nav />
-      <div>
-        <h3> 장바구니 페이지 입니다.</h3>
+      <div className="cart">
+        <h3> 장바구니 페이지입니다.</h3>
         <Link to={"/Payment"}>
           <CustomButton text={"주문하기"} />
         </Link>

@@ -3,11 +3,34 @@
 /*font-family: 'IBM Plex Sans KR', sans-serif;*/
 
 .MainPageProduct {
+  height: 1000px;
   width: 100%;
   font-family: "IBM Plex Sans KR", sans-serif;
 }
 
-.subBanner img {
-  filter: brightness(50%);
-  width: 100%;
+.MainPageProduct h2 {
+  padding-top: 50px;
+  padding-left: 150px;
+}
+
+.MainFilterButton {
+  margin-left: 140px;
+}
+
+.subBanner {
+  /* filter: brightness(50%); */
+  width: 80%;
+  height: 200px;
+  background-color: #f1f2f6;
+  margin: 0 auto;
+}
+
+.subBanner h4 {
+  font-size: 20px;
+  line-height: 200px;
+  text-align: center;
+}
+
+.ProductList {
+  text-align: center;
 }
