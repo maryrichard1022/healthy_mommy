@@ -2,9 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;600&display=swap");
 
 /*font-family: 'IBM Plex Sans KR', sans-serif;*/
-
 .footer {
   background-color: #f1f2f6;
+  position: relative;
+
+  height: 217px;
 }
 
 .sb_footer_info {
