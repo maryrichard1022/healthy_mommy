@@ -11,7 +11,15 @@ const Cart = () => {
     <div>
       <Nav />
       <div className="cart">
-        <h3> 장바구니 페이지입니다.</h3>
+        <h3>장바구니</h3>
+        <div className="Allcheck">
+          <input type="checkbox" />
+          <h4> 전체 선택</h4>
+        </div>
+
+        <div>
+          <input type="checkbox" />
+        </div>
         <Link to={"/Payment"}>
           <CustomButton text={"주문하기"} />
         </Link>
