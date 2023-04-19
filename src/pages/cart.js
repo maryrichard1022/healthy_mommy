@@ -6,19 +6,21 @@ import "./Cart.css";
 import { Link } from "react-router-dom";
 import CustomButton from "../components/CustomButton";
 
-const Cart = () => {
+const Cart = ({}) => {
   return (
     <div>
       <Nav />
       <div className="cart">
-        <h3>장바구니</h3>
-        <div className="Allcheck">
-          <input type="checkbox" />
-          <h4> 전체 선택</h4>
-        </div>
-
+        <h1> 장바구니 </h1>
         <div>
-          <input type="checkbox" />
+          <div>
+            <input type="checkbox" />
+            <span>상품정보</span>
+            <span>수량</span>
+            <span>상품금액</span>
+
+            <p>전체선택</p>
+          </div>
         </div>
         <Link to={"/Payment"}>
           <CustomButton text={"주문하기"} />

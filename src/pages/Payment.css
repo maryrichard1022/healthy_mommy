@@ -24,7 +24,7 @@
 
 input [type="text"] {
   border: 1px solid #636e72;
-  width: 60px;
+  width: auto;
   border-radius: 5px;
   font-size: 15px;
   text-align: center;

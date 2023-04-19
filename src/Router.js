@@ -6,7 +6,7 @@ import Cart from "./pages/Cart";
 import PaySucess from "./pages/PaySucess";
 import Payment from "./pages/Payment";
 import MyPage from "./pages/MyPage";
-import Map from "./pages/Map";
+import Location from "./pages/Location";
 
 function Router() {
   return (
@@ -16,7 +16,7 @@ function Router() {
         <Route exact path="/Payment" element={<Payment />} />
         <Route exact path="/PaySucess" element={<PaySucess />} />
         <Route exact path="/MyPage" element={<MyPage />} />
-        <Route exact path="/Map" element={<Map />} />
+        <Route exact path="/Location" element={<Location />} />
         <Route exact path="/" element={<Main />} />
       </Routes>
     </BrowserRouter>

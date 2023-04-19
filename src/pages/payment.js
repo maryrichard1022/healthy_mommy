@@ -24,7 +24,7 @@ const Payment = () => {
             <div className=" DeliverInfoDetail">
               <div className="DeliverInfoDetailAlign">
                 <p>수령인</p>
-                <input type="text" />
+                <input type="text" placeholder="5자 이내로 입력하세요" />
               </div>
 
               <div className="DeliverInfoDetailAlign">
@@ -45,6 +45,8 @@ const Payment = () => {
           <div className="PayMethod">
             <h4>결제 수단</h4>
             <div className="DeliverInfoDetailAlign">
+              <input type="checkbox" />
+              <p>카카오페이</p>
               <input type="checkbox" />
               <p>무통장 입금</p>
             </div>
