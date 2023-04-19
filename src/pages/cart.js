@@ -6,7 +6,7 @@ import "./Cart.css";
 import { Link } from "react-router-dom";
 import CustomButton from "../components/CustomButton";
 
-const Cart = ({}) => {
+const Cart = () => {
   return (
     <div>
       <Nav />

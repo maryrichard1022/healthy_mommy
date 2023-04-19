@@ -5,6 +5,8 @@ import Nav from "../components/Nav";
 import "./Payment.css";
 import { Link } from "react-router-dom";
 import CustomButton from "../components/CustomButton";
+import KakaoPay from "../components/KakaoPay";
+import DaumPostcode from "react-daum-postcode";
 
 const Payment = () => {
   return (
@@ -38,6 +40,7 @@ const Payment = () => {
 
               <div className="DeliverInfoDetailAlign">
                 <p>주소</p>
+                <DaumPostcode />
               </div>
             </div>
           </div>
@@ -45,10 +48,18 @@ const Payment = () => {
           <div className="PayMethod">
             <h4>결제 수단</h4>
             <div className="DeliverInfoDetailAlign">
-              <input type="checkbox" />
-              <p>카카오페이</p>
-              <input type="checkbox" />
-              <p>무통장 입금</p>
+              <div>
+                <input type="checkbox" />
+                <img
+                  alt="kakaopay"
+                  src={require("../assets/kakao_payment.png")}
+                />
+                <KakaoPay />
+              </div>
+              <div>
+                <input type="checkbox" />
+                <p> 무통장 입금</p>
+              </div>
             </div>
             <div className="DeliverInfoDetailAlign">
               <p>입금자명</p>

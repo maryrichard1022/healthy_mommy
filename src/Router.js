@@ -7,6 +7,7 @@ import PaySucess from "./pages/PaySucess";
 import Payment from "./pages/Payment";
 import MyPage from "./pages/MyPage";
 import Location from "./pages/Location";
+import Login from "./pages/Login";
 
 function Router() {
   return (
@@ -18,6 +19,7 @@ function Router() {
         <Route exact path="/MyPage" element={<MyPage />} />
         <Route exact path="/Location" element={<Location />} />
         <Route exact path="/" element={<Main />} />
+        <Route exact path="/Login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );

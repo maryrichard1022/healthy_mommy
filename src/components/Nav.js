@@ -20,26 +20,26 @@ const Nav = () => {
           <div class="dropdown">
             <button class="dropbtn">영양제</button>
             <div class="dropdown-content">
-              <a href="#">비타민</a>
-              <a href="#">마그네슘</a>
-              <a href="#">엽산</a>
+              <a href="#!">비타민</a>
+              <a href="#!">마그네슘</a>
+              <a href="#!">엽산</a>
             </div>
           </div>
 
           <div className="dropdown">
             <button class="dropbtn">운동복</button>
             <div class="dropdown-content">
-              <a href="#">전체</a>
-              <a href="#">상의</a>
-              <a href="#">하의</a>
+              <a href="#!">전체</a>
+              <a href="#!">상의</a>
+              <a href="#!">하의</a>
             </div>
           </div>
           <div className="dropdown">
             <button class="dropbtn">운동기구</button>
             <div class="dropdown-content">
-              <a href="#">덤벨</a>
-              <a href="#">트레드밀</a>
-              <a href="#">뭐가있지</a>
+              <a href="#!">덤벨</a>
+              <a href="#!">트레드밀</a>
+              <a href="#!">뭐가있지</a>
             </div>
           </div>
         </div>
