@@ -5,16 +5,13 @@ import Nav from "../components/Nav";
 import "./Payment.css";
 import { Link } from "react-router-dom";
 import CustomButton from "../components/CustomButton";
-import KakaoPay from "../components/KakaoPay";
-import DaumPostcode from "react-daum-postcode";
-import SearchAddress from "../components/SearchAddress";
+import Postcode from "../components/Postcode";
 
 const Payment = () => {
   return (
     <div className="paypage">
       <div className="contentWapper">
         <Nav />
-
         <h2>주문 / 결제</h2>
         <br />
         <div className="PayInfo">
@@ -42,7 +39,7 @@ const Payment = () => {
 
               <div className="DeliverInfoDetailAlign">
                 <p>주소</p>
-                <SearchAddress />
+                <Postcode />
               </div>
             </div>
           </div>
@@ -52,11 +49,11 @@ const Payment = () => {
             <div className="DeliverInfoDetailAlign">
               <div>
                 <input type="checkbox" />
+                <p>카카오페이</p>
                 <img
                   alt="kakaopay"
                   src={require("../assets/kakao_payment.png")}
                 />
-                <KakaoPay />
               </div>
               <div>
                 <input type="checkbox" />
@@ -85,7 +82,7 @@ const Payment = () => {
             <h2> 총 결제 금액</h2>
           </div>
         </div>
-        <Link to={"/PaySucess"}>
+        <Link to={"/PaySuccess"}>
           <CustomButton text={"결제하기"} />
         </Link>
       </div>

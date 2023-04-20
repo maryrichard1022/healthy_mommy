@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import CustomButton from "../components/CustomButton";
 import { Link } from "react-router-dom";
-import "./PaySucess.css";
+import "./PaySuccess.css";
 
 const PaySucess = () => {
   return (
@@ -13,7 +13,7 @@ const PaySucess = () => {
       <div className="PayCheck">
         <div className="PayCheckAlert">
           <img alt="check" src={require("../assets/Paycheck.png")} />
-          <p> 주문이 완료되었습니다.</p>{" "}
+          <p> 주문이 완료되었습니다.</p>
         </div>
 
         <div className="PayCheckInfo">

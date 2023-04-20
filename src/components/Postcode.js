@@ -20,9 +20,10 @@
  */
 
 import React from "react";
-import DaumPostcode from "react-daum-postcode";
+import { useDaumPostcodePopup } from "react-daum-postcode";
+const Postcode = (props) => {
+  const open = useDaumPostcodePopup();
 
-function SearchAddress(props) {
   const handleComplete = (data) => {
     let fullAddress = data.address;
     let extraAddress = "";
@@ -37,26 +38,46 @@ function SearchAddress(props) {
       }
       fullAddress += extraAddress !== "" ? ` (${extraAddress})` : "";
     }
-
-    console.log(fullAddress); // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
+    document.getElementById("sample4_postcode").value = data.zonecode;
+    document.getElementById("sample4_roadAddress").value = fullAddress;
+    document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
+    if (fullAddress !== "") {
+      document.getElementById("sample4_extraAddress").value = extraAddress;
+    } else {
+      document.getElementById("sample4_extraAddress").value = "";
+    }
+    // console.log(fullAddress); // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
+    // console.log(data.zonecode); // 우편번호
   };
 
-  const handleSearch = (data) => {
+  const handleClick = (data) => {
+    open({ onComplete: handleComplete });
     // console.log(data);
   };
 
   return (
-    <DaumPostcode
-      onComplete={handleComplete}
-      onSearch={handleSearch}
-      {...props}
-    />
+    // <    <DaumPostcode
+    //       onComplete={handleComplete}
+    //       onSearch={handleSearch}
+    //       {...props}
+    //       autoClose={true}>
+    // />
+    <div>
+      <input type="text" id="sample4_postcode" placeholder="우편번호" />
+      <button type="button" onClick={handleClick}>
+        우편번호 찾기
+      </button>
+      <input type="text" id="sample4_roadAddress" placeholder="도로명주소" />
+      <input type="text" id="sample4_jibunAddress" placeholder="지번주소" />
+      <input type="text" id="sample4_detailAddress" placeholder="상세주소" />
+      <input type="text" id="sample4_extraAddress" placeholder="참고항목" />
+    </div>
   );
-}
+};
 
-export default SearchAddress;
+export default Postcode;
 
-SearchAddress.defaultProps = {
+Postcode.defaultProps = {
   style: {
     width: "700px",
     height: "450px",
@@ -71,7 +92,6 @@ onComplete {Function}
   "q": "학동로 31길 12",
   "count": 1
 }
-
 handleSearch {Function}
 @return
 {

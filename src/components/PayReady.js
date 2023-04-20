@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-class KakaoPay extends React.Component {
+class PayReady extends React.Component {
   state = {
     // 응답에서 가져올 값들
     next_redirect_pc_url: "",
@@ -16,9 +16,9 @@ class KakaoPay extends React.Component {
       total_amount: 2200,
       vat_amount: 200,
       tax_free_amount: 0,
-      approval_url: "http://localhost:3000/",
-      fail_url: "http://localhost:3000/",
-      cancel_url: "http://localhost:3000/",
+      approval_url: "http://localhost:3000/PayResult",
+      fail_url: "http://localhost:3000/PayResult",
+      cancel_url: "http://localhost:3000/Payesult/",
     },
   };
 
@@ -45,6 +45,7 @@ class KakaoPay extends React.Component {
       console.log(next_redirect_pc_url);
       console.log(tid);
       // 응답 data로 state 갱신
+      window.localStorage.setItem("tid", tid);
       this.setState({ next_redirect_pc_url, tid });
     });
   }
@@ -54,9 +55,10 @@ class KakaoPay extends React.Component {
 
     return (
       <div>
+        <h2> Pay page </h2>
         <a href={next_redirect_pc_url}>{next_redirect_pc_url}</a>
       </div>
     );
   }
 }
-export default KakaoPay;
+export default PayReady;
