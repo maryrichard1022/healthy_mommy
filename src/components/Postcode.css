@@ -1,0 +1,16 @@
+.postcodebutton {
+  font-family: "IBM Plex Sans KR", sans-serif;
+  background-color: #f9e9ed;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+
+  padding-left: 20px;
+  padding-right: 20px;
+
+  font-size: 15px;
+  font-weight: bold;
+  width: 180px;
+  height: 30px;
+}

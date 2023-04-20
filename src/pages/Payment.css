@@ -1,12 +1,13 @@
 @charset "utf-8";
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;600&display=swap");
 .paypage {
-  text-align: center;
   padding-bottom: 30px;
   font-family: "IBM Plex Sans KR", sans-serif;
+  font-size: 15px;
   display: flex;
   flex-direction: column;
   height: 100vh;
+  text-align: center;
 }
 
 .contentWrapper {
@@ -14,39 +15,114 @@
 }
 
 .PayInfo {
-  padding-left: 100px;
-  padding-right: 150px;
   text-align: left;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
-.DeliverInfoDetailAlign {
+.NameforDeliver {
+  height: 60px;
   display: flex;
-  justify-content: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
   align-items: center;
 }
 
-.Howmuch {
-  text-align: center;
+.NumberforDeliver {
+  height: 60px;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  align-items: center;
 }
 
-input [type="text"] {
+.AddressforDeliver {
+  height: 80px;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  align-items: center;
+}
+
+.PayMethod {
+  display: flex;
+  height: 200px;
+}
+
+.PayCash {
+  margin-right: 100px;
+}
+
+.AccountTransfer {
+  display: flex;
+}
+.NameforPay {
+  height: 30px;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  align-items: center;
+}
+
+.BankforPay {
+  height: 30px;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  align-items: center;
+}
+.PayByKakaoPay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Kakaomoney {
+  display: flex;
+}
+.Howmuch {
+  display: flex;
+  align-items: center;
+
+  height: 100px;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+input[type="text"] {
   border: 1px solid #636e72;
-  width: auto;
+  /* background-color: #f9e9ed;*/
   border-radius: 5px;
   font-size: 15px;
   text-align: center;
+  height: 25px;
+  width: 180px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-right: 10px;
 }
 
-input [type="checkbox"] {
-  width: 20px;
-  padding-right: 10px;
+option {
+  border: 1px solid #636e72;
+  /* background-color: #f9e9ed;*/
+  border-radius: 5px;
+  font-size: 15px;
+  text-align: center;
+  height: 25px;
+  width: 180px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-right: 10px;
 }
+
 h4 {
   font-size: 20px;
 }
 
 p {
   padding-right: 20px;
+  font-size: 15px;
 }
 
 hr {

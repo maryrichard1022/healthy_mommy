@@ -7,7 +7,7 @@ const MainPageProduct = () => {
   return (
     <div className="MainPageProduct">
       <div>
-        <h2> BEST PRODUCT </h2>
+        <h1>BEST PRODUCT</h1>
         <div className="MainFilterButton">
           <FilterButton text={"ALL"} />
           <FilterButton text={"영양제"} />

@@ -9,7 +9,7 @@ const Location = () => {
     <div className="location">
       <div className="contentWrapper">
         <Nav />
-        <h2>매장 위치</h2>
+        <h1>매장 위치</h1>
         <Kakaomap />
       </div>
       <Footer />

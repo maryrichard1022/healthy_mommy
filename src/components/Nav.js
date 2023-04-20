@@ -46,7 +46,9 @@ const Nav = () => {
       </div>
       <div className="nav-container_right">
         <span>
-          <img alt="logo" src={require("../assets/user.png")} />
+          <Link to={"/Login"}>
+            <img alt="logo" src={require("../assets/user.png")} />
+          </Link>
         </span>
 
         <span>

@@ -21,6 +21,7 @@
 
 import React from "react";
 import { useDaumPostcodePopup } from "react-daum-postcode";
+import "./Postcode.css";
 const Postcode = (props) => {
   const open = useDaumPostcodePopup();
 
@@ -40,12 +41,13 @@ const Postcode = (props) => {
     }
     document.getElementById("sample4_postcode").value = data.zonecode;
     document.getElementById("sample4_roadAddress").value = fullAddress;
-    document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
-    if (fullAddress !== "") {
-      document.getElementById("sample4_extraAddress").value = extraAddress;
-    } else {
-      document.getElementById("sample4_extraAddress").value = "";
-    }
+    // document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
+
+    // if (fullAddress !== "") {
+    //   document.getElementById("sample4_extraAddress").value = extraAddress;
+    // } else {
+    //   document.getElementById("sample4_extraAddress").value = "";
+    // }
     // console.log(fullAddress); // e.g. '서울 성동구 왕십리로2길 20 (성수동1가)'
     // console.log(data.zonecode); // 우편번호
   };
@@ -63,14 +65,18 @@ const Postcode = (props) => {
     //       autoClose={true}>
     // />
     <div>
-      <input type="text" id="sample4_postcode" placeholder="우편번호" />
-      <button type="button" onClick={handleClick}>
-        우편번호 찾기
-      </button>
-      <input type="text" id="sample4_roadAddress" placeholder="도로명주소" />
-      <input type="text" id="sample4_jibunAddress" placeholder="지번주소" />
-      <input type="text" id="sample4_detailAddress" placeholder="상세주소" />
-      <input type="text" id="sample4_extraAddress" placeholder="참고항목" />
+      <div>
+        <input type="text" id="sample4_postcode" placeholder="우편번호" />
+        <button className="postcodebutton" type="button" onClick={handleClick}>
+          우편번호 찾기
+        </button>
+      </div>
+      <div>
+        <input type="text" id="sample4_roadAddress" placeholder="도로명주소" />
+        {/* <input type="text" id="sample4_jibunAddress" placeholder="지번주소" /> */}
+        <input type="text" id="sample4_detailAddress" placeholder="상세주소" />
+        {/* <input type="text" id="sample4_extraAddress" placeholder="참고항목" /> */}
+      </div>
     </div>
   );
 };
