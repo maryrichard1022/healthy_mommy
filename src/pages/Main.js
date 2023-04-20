@@ -12,9 +12,11 @@ import "./Main.css";
 function Main() {
   return (
     <div className="main">
-      <Nav />
-      <MainSlider />
-      <MainPageProduct />
+      <div className="contentWrapper">
+        <Nav />
+        <MainSlider />
+        <MainPageProduct />
+      </div>
       <Footer />
     </div>
   );

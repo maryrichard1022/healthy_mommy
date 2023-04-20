@@ -4,8 +4,9 @@
 /*font-family: 'IBM Plex Sans KR', sans-serif;*/
 .footer {
   background-color: #f1f2f6;
-  position: relative;
+  width: 100%;
   height: 217px;
+  position: relative;
 }
 
 .sb_footer_info {

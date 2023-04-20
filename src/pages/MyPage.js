@@ -7,9 +7,11 @@ import "./MyPage.css";
 const MyPage = () => {
   return (
     <div className="mypage">
-      <Nav />
-      <div>
-        <h3> 마이 페이지입니다.</h3>
+      <div className="contentWrapper">
+        <Nav />
+        <div>
+          <h3> 마이 페이지입니다.</h3>
+        </div>
       </div>
       <Footer />
     </div>

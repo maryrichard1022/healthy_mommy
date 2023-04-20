@@ -1,3 +1,10 @@
 .mypage {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.contentWrapper {
+  flex: 1;
 }

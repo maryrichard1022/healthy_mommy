@@ -7,12 +7,14 @@ import { Link } from "react-router-dom";
 import CustomButton from "../components/CustomButton";
 import KakaoPay from "../components/KakaoPay";
 import DaumPostcode from "react-daum-postcode";
+import SearchAddress from "../components/SearchAddress";
 
 const Payment = () => {
   return (
-    <div>
-      <Nav />
-      <div className="paypage">
+    <div className="paypage">
+      <div className="contentWapper">
+        <Nav />
+
         <h2>주문 / 결제</h2>
         <br />
         <div className="PayInfo">
@@ -40,7 +42,7 @@ const Payment = () => {
 
               <div className="DeliverInfoDetailAlign">
                 <p>주소</p>
-                <DaumPostcode />
+                <SearchAddress />
               </div>
             </div>
           </div>

@@ -7,9 +7,11 @@ import "./Location.css";
 const Location = () => {
   return (
     <div className="location">
-      <Nav />
-      <h2>매장 위치</h2>
-      <Kakaomap />
+      <div className="contentWrapper">
+        <Nav />
+        <h2>매장 위치</h2>
+        <Kakaomap />
+      </div>
       <Footer />
     </div>
   );

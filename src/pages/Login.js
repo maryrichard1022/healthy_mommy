@@ -3,12 +3,18 @@ import React from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import KakaoLogin from "../components/KakaoLogin";
+import "./Login.css";
 
 const Login = () => {
   return (
     <div className="login">
-      <Nav />
-      <KakaoLogin />
+      <div className="contentWrapper">
+        <Nav />
+        <div className="kakaologin">
+          <h4>로그인하기</h4>
+          <KakaoLogin />
+        </div>
+      </div>
       <Footer />
     </div>
   );

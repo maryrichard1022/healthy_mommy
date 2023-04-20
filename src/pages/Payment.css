@@ -4,6 +4,13 @@
   text-align: center;
   padding-bottom: 30px;
   font-family: "IBM Plex Sans KR", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.contentWrapper {
+  flex: 1;
 }
 
 .PayInfo {
