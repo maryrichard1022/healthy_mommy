@@ -17,10 +17,10 @@ const Payment = () => {
         <div className="PayInfo">
           <div className="ProductForPay">
             <hr></hr>
-            <p>주문할 상품 리스트</p>
-            <h2>총 결제 금액 : !@#!@$원</h2>
+            <p>주문 상품 정보</p>
+            <h2>총 결제 금액 : 123,456원</h2>
+            <hr></hr>
           </div>
-          <hr></hr>
 
           <div className="DeliveryInfo">
             <h4>배송지 정보</h4>
@@ -44,6 +44,7 @@ const Payment = () => {
               </tr>
             </tbody>
           </div>
+
           <br></br>
           <h4>결제 수단</h4>
           <div className="PayMethod">
@@ -74,7 +75,7 @@ const Payment = () => {
             <div className="PayByKakaopay">
               <div className="Kakaomoney">
                 <input type="checkbox" />
-                <p>카카오 페이</p>
+                <p>카카오페이</p>
               </div>
               <img
                 alt="kakaopay"
@@ -82,13 +83,16 @@ const Payment = () => {
               />
             </div>
           </div>
+          <hr></hr>
+          <div className="PayConfirm">
+            <p>주문 내용을 확인하였으며, 정보 제공 등에 동의합니다.</p>
+            <div className="Howmuch">
+              <h2>총 결제 금액 : 123,456원</h2>
 
-          <div className="Howmuch">
-            <h2> 총 결제 금액 : !@#!@$원</h2>
-
-            <Link to={"/PaySuccess"}>
-              <CustomButton className="GotoPay" text={"결제하기"} />
-            </Link>
+              <Link to={"/PaySuccess"}>
+                <CustomButton className="GotoPay" text={"결제하기"} />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

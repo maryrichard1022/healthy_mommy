@@ -20,6 +20,21 @@
   padding-right: 100px;
 }
 
+.ProductForPay {
+  height: 200px;
+  padding-right: 50px;
+}
+
+.ProductForPay p {
+  height: 100px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.ProductForPay h2 {
+  text-align: right;
+}
+
 .NameforDeliver {
   height: 60px;
   display: flex;
@@ -80,14 +95,27 @@
 .Kakaomoney {
   display: flex;
 }
+
+.PayConfirm {
+  align-items: center;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 80px;
+  justify-content: center;
+  height: 100px;
+}
+
+.PayConfirm p {
+  padding-top: 15px;
+  font-size: 15px;
+}
 .Howmuch {
   display: flex;
   align-items: center;
-
-  height: 100px;
+  justify-content: center;
+  height: 50px;
   width: 100%;
   padding-top: 10px;
-  padding-bottom: 10px;
 }
 
 input[type="text"] {
@@ -121,11 +149,16 @@ h4 {
 }
 
 p {
-  padding-right: 20px;
+  padding-right: 15px;
   font-size: 15px;
+  font-weight: bold;
 }
 
 hr {
   margin-top: 5px;
   color: black !important;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
 }

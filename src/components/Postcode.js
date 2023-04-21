@@ -68,7 +68,7 @@ const Postcode = (props) => {
       <div>
         <input type="text" id="sample4_postcode" placeholder="우편번호" />
         <button className="postcodebutton" type="button" onClick={handleClick}>
-          우편번호 찾기
+          우편번호
         </button>
       </div>
       <div>
