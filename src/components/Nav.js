@@ -25,6 +25,7 @@ const Nav = () => {
               <a href="#!">비타민</a>
               <a href="#!">마그네슘</a>
               <a href="#!">엽산</a>
+              <a href="#!">그 외</a>
             </div>
           </div>
 
@@ -41,7 +42,8 @@ const Nav = () => {
             <div class="dropdown-content">
               <a href="#!">덤벨</a>
               <a href="#!">트레드밀</a>
-              <a href="#!">뭐가있지</a>
+              <a href="#!">짐볼</a>
+              <a href="#!">그 외</a>
             </div>
           </div>
         </div>

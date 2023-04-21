@@ -95,6 +95,8 @@
   border: none;
 }
 .dropdown-content {
+  margin-left: 20px;
+  margin-right: 20px;
   width: 90px;
   display: none;
   position: absolute;
