@@ -1,4 +1,4 @@
-//홈페이지 하단(푸터)
+//홈페이지 하단, 푸더(Nav파일과 마찬가지로 모든 파일에 import하면 됨 )
 import React from "react";
 import "./Footer.css";
 

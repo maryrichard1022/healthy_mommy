@@ -12,19 +12,26 @@ const Cart = () => {
       <Nav />
       <div className="contentWrapper">
         <h1> 장바구니 </h1>
-        <div>
-          <div>
-            <input type="checkbox" />
-            <span>상품정보</span>
-            <span>수량</span>
-            <span>상품금액</span>
+        <div className="CartInfo">
+          <div className="ProductInCart">
+            <hr></hr>
+            <div className="ProductInCartInfo">
+              <input type="checkbox" />
+              <span>전체선택</span>
+              <span>상품이름</span>
+              <span>수량</span>
+              <span>상품금액</span>
+            </div>
 
-            <p>전체선택</p>
+            <hr></hr>
+          </div>
+          <div className="Howmuch">
+            <h2>총 결제 금액 : 123,456원</h2>
+            <Link to={"/Payment"}>
+              <CustomButton text={"주문하기"} />
+            </Link>
           </div>
         </div>
-        <Link to={"/Payment"}>
-          <CustomButton text={"주문하기"} />
-        </Link>
       </div>
       <Footer />
     </div>

@@ -4,6 +4,7 @@
   padding-bottom: 30px;
   font-family: "IBM Plex Sans KR", sans-serif;
   font-size: 15px;
+
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -131,9 +132,9 @@ input[type="text"] {
   margin-right: 10px;
 }
 
-option {
+/* option {
   border: 1px solid #636e72;
-  /* background-color: #f9e9ed;*/
+  /* background-color: #f9e9ed;
   border-radius: 5px;
   font-size: 15px;
   text-align: center;
@@ -142,10 +143,12 @@ option {
   margin-bottom: 5px;
   margin-top: 5px;
   margin-right: 10px;
-}
+} 
+*/
 
 h4 {
   font-size: 20px;
+  margin-bottom: 5px;
 }
 
 p {

@@ -1,4 +1,4 @@
-// 홈페이지 헤더
+// 홈페이지 헤더 (모든 페이지 상단에 import 해서 넣으면 됨)
 import React from "react";
 import { Link } from "react-router-dom";
 
