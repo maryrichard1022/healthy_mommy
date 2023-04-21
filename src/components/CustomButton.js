@@ -1,4 +1,4 @@
-// 버튼
+// 핑크색 버튼
 import "./CustomButton.css";
 
 const CustomButton = ({ text }) => {

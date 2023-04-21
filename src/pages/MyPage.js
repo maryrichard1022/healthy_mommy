@@ -1,4 +1,4 @@
-//마이페이지(주문내역조회)
+//마이페이지(주문내역조회) 해나가 작업할 부분!!!
 import React from "react";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
