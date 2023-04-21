@@ -1,4 +1,5 @@
 import React from "react";
+import "./KakaoLogin.css";
 
 class KakaoLogin extends React.Component {
   state = {
@@ -44,7 +45,7 @@ class KakaoLogin extends React.Component {
       console.log(window.Kakao.isInitialized());
     }
     return (
-      <div>
+      <div className="GotoKakaoLogin">
         <img alt="login" src={require("../assets/kakao_login.png")} />
       </div>
     );

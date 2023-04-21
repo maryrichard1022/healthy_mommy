@@ -11,6 +11,12 @@ const Location = () => {
         <Nav />
         <h1>매장 위치</h1>
         <Kakaomap />
+        <div className="LocationInfo">
+          <p>경기도 용인시 명지로 116 제 5공학관</p>
+          <p>02-1234-5678</p>
+          <p>월-금 9:00 am - 6:00 pm</p>
+          <br />
+        </div>
       </div>
       <Footer />
     </div>

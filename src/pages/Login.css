@@ -13,3 +13,12 @@
 .contentWrapper {
   flex: 1;
 }
+
+.kakaologin {
+  height: 200px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.kakaologin h1 {
+  padding-bottom: 20px;
+}

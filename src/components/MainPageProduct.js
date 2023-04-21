@@ -20,7 +20,9 @@ const MainPageProduct = () => {
         <h4> 이미지 준비중</h4>
       </div>
       <div className="ProductList">
+        <br />
         <h4>상품 준비중</h4>
+        <h4> 2 x 4</h4>
       </div>
     </div>
   );

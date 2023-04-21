@@ -8,6 +8,11 @@
   flex-direction: column;
   height: 100vh;
 }
+
+.LocationInfo {
+  font-weight: bold;
+  text-align: center;
+}
 .contentWrapper {
   flex: 1;
 }

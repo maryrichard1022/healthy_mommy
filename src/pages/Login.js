@@ -11,7 +11,7 @@ const Login = () => {
       <div className="contentWrapper">
         <Nav />
         <div className="kakaologin">
-          <h1>로그인하기</h1>
+          <h1>카카오로 로그인</h1>
           <KakaoLogin />
         </div>
       </div>

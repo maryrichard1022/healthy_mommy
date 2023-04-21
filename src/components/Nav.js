@@ -8,14 +8,16 @@ const Nav = () => {
   return (
     <header className="nav-container">
       <div className="nav-container_left">
-        <div>
+        <div className="nav-container_logo">
           <Link to={"/"}>
             <img alt="mainlogo" src={require("../assets/mainlogo.png")} />
           </Link>
         </div>
 
         <div class="category">
-          <span> ALL </span>
+          <div class="dropdown">
+            <button class="dropbtn">ALL</button>
+          </div>
 
           <div class="dropdown">
             <button class="dropbtn">영양제</button>
