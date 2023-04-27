@@ -1,7 +1,8 @@
 //운동기구
+//푸터 하단 고정은 나중에 내가(가연) 다 할게
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
-function SportsGoods() {
+function FitnessEquipment() {
   return (
     <div className="">
       <div className="contentWrapper">
@@ -13,4 +14,4 @@ function SportsGoods() {
   );
 }
 
-export default SportsGoods;
+export default FitnessEquipment;

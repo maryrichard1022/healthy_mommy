@@ -22,6 +22,18 @@
   height: auto;
 }
 
+.ProductInfo {
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: left;
+  font-weight: bold;
+}
+.ProductInfo span {
+  padding-right: 120px;
+  padding-left: 120px;
+
+  text-align: center;
+}
 .ProductForPay {
   height: 200px;
   padding-right: 50px;

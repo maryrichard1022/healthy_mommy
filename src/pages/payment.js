@@ -1,14 +1,46 @@
 // 결제중 페이지
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import CustomButton from "../components/CustomButton";
 import Postcode from "../components/Postcode";
-import Counter from "../components/Counter";
 
 import "./Payment.css";
 const Payment = () => {
+  const [state, setState] = useState({
+    receiver: "",
+    midnumber: "",
+    lastnumber: "",
+    postcodeStreet: "",
+    postcodedetail: "",
+    accountname: "",
+    Bank: "하나은행 123-456-123456",
+  });
+
+  const handleChangeState = (e) => {
+    console.log(e.target.value);
+    setState({
+      ...state,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  //버튼 눌렀을 때 작동(console에 state 안 뜸) 안 함--> 추후에 수정할 것
+  // 주문하기 버튼 클릭하면 state저장하고 넘어감
+  // const handleClick = () => {
+  // if(state.receiver.length || state.accountname < 1){
+  //   alert("정확한 이름을 입력해주세요")
+  //   return;
+  // }
+
+  // if (state.midnumber.length || state.lastnumber.legnth < 4) {
+  //   alert("정확한 번호를 입력해주세요")
+  //   return
+  // }
+  //   console.log(state);
+  //   alert("주문");
+  // };
   return (
     <div className="paypage">
       <div className="contentWapper">
@@ -19,7 +51,7 @@ const Payment = () => {
           <div className="ProductForPay">
             <hr></hr>
             <p>주문 상품 정보</p>
-            <div className="ProductInCartInfo">
+            <div className="ProductInfo">
               <span></span>
               <span>상품명</span>
               <span>수량</span>
@@ -36,14 +68,30 @@ const Payment = () => {
             <tbody>
               <tr className="NameforDeliver">
                 <p>수령인</p>
-                <input type="text" placeholder="5자 이내로 입력하세요" />
+                <input
+                  name="receiver"
+                  value={state.receiver}
+                  onChange={handleChangeState}
+                  type="text"
+                  placeholder="5자 이내로 입력하세요"
+                />
               </tr>
 
               <tr className="NumberforDeliver">
                 <p>연락처</p>
                 <input type="text" value="010" />
-                <input type="text" />
-                <input type="text" />
+                <input
+                  name="midnumber"
+                  type="text"
+                  value={state.midnumber}
+                  onChange={handleChangeState}
+                />
+                <input
+                  name="lastnumber"
+                  type="text"
+                  value={state.lastnumber}
+                  onChange={handleChangeState}
+                />
               </tr>
 
               <tr className="AddressforDeliver">
@@ -63,14 +111,22 @@ const Payment = () => {
               </div>
               <div className="NameforPay">
                 <p>입금자명</p>
-                <input type="text" />
+                <input
+                  name="accountname"
+                  type="text"
+                  value={state.accountname}
+                  onChange={handleChangeState}
+                />
               </div>
 
               <div className="BankforPay">
                 <p>입금은행</p>
                 <form>
-                  <select name="Bank">
-                    <option value="none">--- 선택 ---</option>
+                  <select
+                    name="Bank"
+                    value={state.Bank}
+                    onChange={handleChangeState}
+                  >
                     <option value="Bank1">하나은행 123-456-123456</option>
                     <option value="Bank2">국민은행 123-456-123456</option>
                     <option value="Bank3">신한은행 123-456-123456</option>
@@ -98,7 +154,11 @@ const Payment = () => {
               <h2>총 결제 금액 : 123,456원</h2>
 
               <Link to={"/PaySuccess"}>
-                <CustomButton className="GotoPay" text={"결제하기"} />
+                <CustomButton
+                  //onClick={handleClick}
+                  className="GotoPay"
+                  text={"결제하기"}
+                />
               </Link>
             </div>
           </div>

@@ -15,17 +15,17 @@ import Location from "./pages/Location";
 
 import ALL from "./pages/ALL";
 import Supplements from "./pages/Supplements";
-import SportsGoods from "./pages/SportsGoods";
 import SportsWear from "./pages/SportsWear";
+import FitnessEquipment from "./pages/FitnessEquipment";
 
 function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/Cart" element={<Cart />} />
-        <Route exact path="/Payment" element={<Payment />} />
+        <Route path="/Cart" element={<Cart />} />
+        <Route path="/Payment" element={<Payment />} />
         <Route path="/PayResult" element={<PayResult />} />
-        <Route path="/PayReady" exact={true} component={PayReady} />
+        <Route exact path="/PayReady" component={PayReady} />
         <Route exact path="/MyPage" element={<MyPage />} />
         <Route exact path="/Location" element={<Location />} />
         <Route exact path="/" element={<Main />} />
@@ -35,7 +35,7 @@ function Router() {
         <Route path="/ALL" element={<ALL />} />
         <Route path="/Supplements" element={<Supplements />} />
         <Route path="/SportsWear" element={<SportsWear />} />
-        <Route path="/SportsGoods" element={<SportsGoods />} />
+        <Route path="/FitnessEquipment" element={<FitnessEquipment />} />
       </Routes>
     </BrowserRouter>
   );

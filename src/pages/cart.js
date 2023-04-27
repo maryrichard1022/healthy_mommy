@@ -10,8 +10,9 @@ import CustomButton from "../components/CustomButton";
 const Cart = () => {
   return (
     <div className="cart">
-      <Nav />
       <div className="contentWrapper">
+        <Nav />
+
         <h1> 장바구니 </h1>
 
         <div className="CartInfo">
