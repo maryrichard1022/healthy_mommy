@@ -20,43 +20,31 @@ const MainPageProduct = () => {
     fetch(`${API.product}${queryString}`)
       .then((res) => res.json())
       .then((result) => {
+        // setTotalItems(result);
         setProductlist(result.RESULT);
       });
   }, [location.search]);
 
-  // const handleURL = (name) => {
-  //   if (urlCategory) {
-  //     navigate(`?${categoryString}&${name}`);
-  //   }
-  // };
-
+  //필터 버튼 누르면 url 바뀌도록
   const sortAll = () => {
-    const bestAll = `?category=all&?sort_method=-sold`;
+    const bestAll = `?category=all&?sort_method=-sold&?offset = 0`;
     navigate(bestAll);
   };
 
   const sortSupplements = () => {
-    const bestSupplements = `?category=Supplements&?sort_method=-sold`;
+    const bestSupplements = `?category=Supplements&?sort_method=-sold&?offset = 0`;
     navigate(bestSupplements);
   };
 
   const sortSportsWear = () => {
-    const bestSportsWear = `?category=SportsWear&?sort_method=-sold`;
+    const bestSportsWear = `?category=SportsWear&?sort_method=-sold&?offset = 0`;
     navigate(bestSportsWear);
   };
 
   const sortEquipment = () => {
-    const bestEquipment = `?category=fitness_equipment&?sort_method=-sold`;
+    const bestEquipment = `?category=fitness_equipment&?sort_method=-sold&?offset = 0`;
     navigate(bestEquipment);
   };
-
-  // const switchPage = (page) => {
-  //   const offset = (page - 1) * limit;
-  //   const queryString = `offset=${offset}&limit=${limit}`;
-  //   const categories = "speakers";
-  //   const main_category = `main_category=${categories}`;
-  //   navigate(`?${main_category}&${queryString}`);
-  // };
 
   return (
     <div className="MainPageProduct">
@@ -78,11 +66,11 @@ const MainPageProduct = () => {
       <div className="ProductList">
         {productlist.map((product) => {
           return (
-            <div>
-              key={product.id}
-              image_url={product.image_url}
-              name={product.name}
-              price={product.price}
+            <div className="ProductListInfo">
+              {product.id}
+              {product.image_url}
+              {product.name}
+              {product.price}
             </div>
           );
         })}
