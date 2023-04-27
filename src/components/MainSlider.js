@@ -1,4 +1,4 @@
-// 캐러셀 이미지 슬라이드
+// 메인페이지 캐러셀 이미지 슬라이드
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";

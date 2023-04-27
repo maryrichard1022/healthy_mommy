@@ -7,6 +7,27 @@ import { Link } from "react-router-dom";
 import "./PaySuccess.css";
 
 const PaySucess = () => {
+  // 주문완료 시간 표시
+  var today = new Date();
+  var year = today.getFullYear();
+  var month = ("0" + (today.getMonth() + 1)).slice(-2);
+  var day = ("0" + today.getDate()).slice(-2);
+  var hours = ("0" + today.getHours()).slice(-2);
+  var minutes = ("0" + today.getMinutes()).slice(-2);
+  var seconds = ("0" + today.getSeconds()).slice(-2);
+  var dateString =
+    year +
+    "-" +
+    month +
+    "-" +
+    day +
+    " " +
+    hours +
+    ":" +
+    minutes +
+    ":" +
+    seconds;
+
   return (
     <div>
       <Nav />
@@ -18,7 +39,7 @@ const PaySucess = () => {
 
         <div className="PayCheckInfo">
           <p>주문번호: {new Date().getTime()}</p>
-          <p>주문일자: {new Date().getTime()}</p>
+          <p>주문일자: {dateString}</p>
         </div>
 
         <br />

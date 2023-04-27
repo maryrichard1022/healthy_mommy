@@ -1,4 +1,4 @@
-// 홈페이지 헤더 (모든 페이지 상단에 import 해서 넣으면 됨)
+// 홈페이지 헤더, Navigator (모든 페이지 상단에 import 해서 넣으면 됨)
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -16,7 +16,9 @@ const Nav = () => {
 
         <div class="category">
           <div class="dropdown">
-            <button class="dropbtn">ALL</button>
+            <Link to={"/ALL"}>
+              <button class="dropbtn">ALL</button>
+            </Link>
           </div>
 
           <div class="dropdown">

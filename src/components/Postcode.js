@@ -1,3 +1,5 @@
+//우편번호 API
+
 /**
  * [Title] Daum 우편번호 검색
  * [Description] 리액트 컴포넌트로 만든 Daum 우편번호 검색 서비스

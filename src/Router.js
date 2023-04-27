@@ -11,8 +11,9 @@ import Payment from "./pages/Payment";
 import PaySuccess from "./pages/PaySuccess";
 import PayResult from "./components/PayResult";
 import PayReady from "./components/PayReady";
-
 import Location from "./pages/Location";
+
+import ALL from "./pages/ALL";
 
 function Router() {
   return (
@@ -27,6 +28,8 @@ function Router() {
         <Route exact path="/" element={<Main />} />
         <Route exact path="/Login" element={<Login />} />
         <Route exact path="/PaySuccess" element={<PaySuccess />} />
+
+        <Route path="/ALL" element={<ALL />} />
       </Routes>
     </BrowserRouter>
   );

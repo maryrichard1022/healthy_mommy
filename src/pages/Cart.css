@@ -36,26 +36,52 @@
 .ProductInCartInfo span {
   padding-right: 100px;
   padding-left: 100px;
+
+  text-align: center;
 }
-.Howmuch {
+
+.Productimg {
+  width: 150px;
+  height: 100px;
+}
+.ProductPrice {
+  margin-left: 43px;
+  margin-right: 33px;
+}
+.ProductDetail {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  height: auto;
+  align-items: center;
+}
+
+.ProductDetail span {
+  padding-right: 50px;
+  padding-left: 50px;
+  text-align: center;
+}
+
+.TotalPrice {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 50px;
   width: 100%;
-  padding-top: 10px;
+  padding-top: 20px;
   padding-bottom: 20px;
 }
 
 input[type="checkbox"] {
   margin-right: 5px;
+  cursor: pointer;
 }
 
-p {
+/* p {
   padding-right: 15px;
   font-size: 15px;
   font-weight: bold;
-}
+} */
 
 h4 {
   font-size: 20px;
