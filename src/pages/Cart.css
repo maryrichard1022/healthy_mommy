@@ -34,20 +34,12 @@
   font-weight: bold;
 }
 .ProductInCartInfo span {
-  padding-right: 100px;
-  padding-left: 100px;
+  padding-right: 120px;
+  padding-left: 120px;
 
   text-align: center;
 }
 
-.Productimg {
-  width: 150px;
-  height: 100px;
-}
-.ProductPrice {
-  margin-left: 43px;
-  margin-right: 33px;
-}
 .ProductDetail {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -56,12 +48,26 @@
   align-items: center;
 }
 
+.Productimg {
+  width: 150px;
+  height: 100px;
+  padding-left: 18px;
+  padding-right: 18px;
+}
 .ProductDetail span {
-  padding-right: 50px;
-  padding-left: 50px;
+  margin-right: 70px;
+  margin-left: 50px;
   text-align: center;
+  display: block;
 }
 
+.Counter {
+  padding-left: 5px;
+}
+
+.ProductPrice {
+  padding-left: 62px;
+}
 .TotalPrice {
   display: flex;
   align-items: center;

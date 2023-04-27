@@ -20,7 +20,7 @@ const Cart = () => {
             <div className="ProductInCartInfo">
               <input type="checkbox" />
               <span>전체선택</span>
-              <span>상품이름</span>
+              <span>상품명</span>
               <span>수량</span>
               <span>상품금액</span>
             </div>

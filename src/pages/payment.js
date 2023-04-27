@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import CustomButton from "../components/CustomButton";
 import Postcode from "../components/Postcode";
+import Counter from "../components/Counter";
 
 import "./Payment.css";
 const Payment = () => {
@@ -18,6 +19,13 @@ const Payment = () => {
           <div className="ProductForPay">
             <hr></hr>
             <p>주문 상품 정보</p>
+            <div className="ProductInCartInfo">
+              <span></span>
+              <span>상품명</span>
+              <span>수량</span>
+              <span>상품금액</span>
+            </div>
+
             <h2>총 결제 금액 : 123,456원</h2>
             <hr></hr>
           </div>
