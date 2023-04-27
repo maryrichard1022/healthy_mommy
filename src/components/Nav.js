@@ -22,7 +22,9 @@ const Nav = () => {
           </div>
 
           <div class="dropdown">
-            <button class="dropbtn">영양제</button>
+            <Link to={"/Supplements"}>
+              <button class="dropbtn">영양제</button>
+            </Link>
             <div class="dropdown-content">
               <a href="#!">비타민</a>
               <a href="#!">마그네슘</a>
@@ -32,7 +34,9 @@ const Nav = () => {
           </div>
 
           <div className="dropdown">
-            <button class="dropbtn">운동복</button>
+            <Link to={"/SportsWear"}>
+              <button class="dropbtn">운동복</button>
+            </Link>
             <div class="dropdown-content">
               <a href="#!">전체</a>
               <a href="#!">상의</a>
@@ -40,7 +44,9 @@ const Nav = () => {
             </div>
           </div>
           <div className="dropdown">
-            <button class="dropbtn">운동기구</button>
+            <Link to={"/SportsGoods"}>
+              <button class="dropbtn">운동기구</button>
+            </Link>
             <div class="dropdown-content">
               <a href="#!">덤벨</a>
               <a href="#!">트레드밀</a>

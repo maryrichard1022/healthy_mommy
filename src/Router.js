@@ -14,6 +14,9 @@ import PayReady from "./components/PayReady";
 import Location from "./pages/Location";
 
 import ALL from "./pages/ALL";
+import Supplements from "./pages/Supplements";
+import SportsGoods from "./pages/SportsGoods";
+import SportsWear from "./pages/SportsWear";
 
 function Router() {
   return (
@@ -30,6 +33,9 @@ function Router() {
         <Route exact path="/PaySuccess" element={<PaySuccess />} />
 
         <Route path="/ALL" element={<ALL />} />
+        <Route path="/Supplements" element={<Supplements />} />
+        <Route path="/SportsWear" element={<SportsWear />} />
+        <Route path="/SportsGoods" element={<SportsGoods />} />
       </Routes>
     </BrowserRouter>
   );
