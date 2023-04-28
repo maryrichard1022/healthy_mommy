@@ -10,11 +10,18 @@ const MainPageProduct = () => {
   const [productlist, setProductlist] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
-  // const params = new URLSearchParams(location.search);
+  const params = new URLSearchParams(location.search);
   // const urlCategory = params.get("category");
   // const categoryString = `category=${urlCategory}`;
 
   //url 바뀔 떄 마다 화면 렌더링
+
+  //마운트 되자마자 all을 띄우도록 함
+  useEffect(() => {
+    sortAll();
+  }, []);
+
+  //버튼 누를 때마다 테이블 받아옴
   useEffect(() => {
     const queryString = location.search;
 
@@ -59,6 +66,7 @@ const MainPageProduct = () => {
         <h1>BEST PRODUCT</h1>
         <div className="MainFilterButton">
           <FilterButton
+            style={{ color: "green" }}
             onClick={() => {
               sortAll();
             }}
@@ -76,15 +84,14 @@ const MainPageProduct = () => {
       </div>
 
       <br />
-      <h4 className="datacheck">가데이터 확인</h4>
+      <h4 className="datacheck">가데이터 API 연동 및 정렬 확인</h4>
       <div className="ProductListInfo">
         {productlist?.map((product) => (
           <div>
-            <p>{}</p>
-            <p>이미지:{product.image_url}</p>
-            <p>{product.name}</p>
-            <p>가격{product.price}</p>
-            <p>누적판매:{product.sold}</p>
+            <p>이미지: {product.image_url}</p>
+            <p>상품명: {product.name}</p>
+            <p>가격: {product.price}</p>
+            <p>누적 판매 수: {product.sold}</p>
             <br />
           </div>
         ))}
