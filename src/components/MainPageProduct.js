@@ -6,12 +6,11 @@ import FilterButton from "./FilterButton";
 import API from "../config";
 
 const MainPageProduct = () => {
-  // const [totalItems, setTotalItems] = useState(0);
   const [productlist, setProductlist] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
   const params = new URLSearchParams(location.search);
-  // const urlCategory = params.get("category");
+  const urlCategory = params.get("category");
   // const categoryString = `category=${urlCategory}`;
 
   //url 바뀔 떄 마다 화면 렌더링
@@ -55,11 +54,6 @@ const MainPageProduct = () => {
     navigate(bestEquipment);
   };
 
-  //물품 눌렀을 때 해당 상세 페이지로 이동
-  // const goToDetail = () => {
-  //   navigate(`/productdetail/${id}`);
-  // };
-
   return (
     <div className="MainPageProduct">
       <div>
@@ -67,9 +61,7 @@ const MainPageProduct = () => {
         <div className="MainFilterButton">
           <FilterButton
             style={{ color: "green" }}
-            onClick={() => {
-              sortAll();
-            }}
+            onClick={sortAll}
             text={"ALL"}
           />
           <FilterButton onClick={sortSupplements} text={"영양제"} />
@@ -84,7 +76,7 @@ const MainPageProduct = () => {
       </div>
 
       <br />
-      <h4 className="datacheck">가데이터 API 연동 및 정렬 확인</h4>
+      <h4 className="datacheck">{urlCategory}가데이터 API 연동 및 정렬 확인</h4>
       <div className="ProductListInfo">
         {productlist?.map((product) => (
           <div>
