@@ -29,7 +29,7 @@ const Cart = () => {
             <div className="ProductDetail">
               <input type="checkbox" />
               <span>
-                <img className="Productimg" />
+                <img alt="product" className="Productimg" />
               </span>
               <span>마그네슘 500mg 180정</span>
               <span className="Counter">
