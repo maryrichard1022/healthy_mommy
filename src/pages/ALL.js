@@ -2,278 +2,284 @@
 import React from "react";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import AllBanner from "../components/AllBanner";
 import AllFilterButton from "../components/AllFilterButton";
 
 import "./ALL.css";
 
-function ALL () {
-    return (
-      <div className="all">
-        <div className="contentWrapper">
-          <Nav />
-          <AllBanner />
-	        <AllFilterButton />
-          <div class="container">
+function ALL() {
+  return (
+    <div className="all">
+      <div className="contentWrapper">
+        <Nav />
+        <AllBanner />
+        <AllFilterButton />
+        <div class="container">
           <div className="container">
-          <div className="row">
-            <div className="col-xxl-8 offset-xxl-0" style={{ paddingLeft: "60%" }}>
-              <p />
+            <div className="row">
+              <div
+                className="col-xxl-8 offset-xxl-0"
+                style={{ paddingLeft: "60%" }}
+              >
+                <p />
+              </div>
+              <div className="col">
+                <p>
+                  <span style={{ textDecoration: "underline" }}>
+                    가격 낮은 순
+                  </span>
+                </p>
+              </div>
+              <div className="col">
+                <p>
+                  <span style={{ textDecoration: "underline" }}>
+                    가격 높은 순
+                  </span>
+                </p>
+              </div>
+              <div className="col">
+                <p>
+                  <span style={{ textDecoration: "underline" }}>
+                    누적판매순
+                  </span>
+                </p>
+              </div>
+              <div className="col">
+                <p>
+                  <span style={{ textDecoration: "underline" }}>최신순</span>
+                </p>
+              </div>
             </div>
-            <div className="col">
-              <p>
-                <span style={{ textDecoration: "underline" }}>가격 낮은 순</span>
-              </p>
-            </div>
-            <div className="col">
-              <p>
-                <span style={{ textDecoration: "underline" }}>가격 높은 순</span>
-              </p>
-            </div>
-            <div className="col">
-              <p>
-                <span style={{ textDecoration: "underline" }}>누적판매순</span>
-              </p>
-            </div>
-            <div className="col">
-              <p>
-                <span style={{ textDecoration: "underline" }}>최신순</span>
-              </p>
+            <div className="container">
+              <div className="row">
+                <div className="col-md-3">
+                  <div className="card">
+                    <img
+                      className="card-img-top w-100 d-block fit-cover"
+                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
+                      style={{ minHeight: 304 }}
+                    />
+                    <div className="card-body p-4">
+                      <p className="text-primary card-text mb-0" />
+                      <div className="d-flex">
+                        <h4>마그네슘 500mg 180점</h4>
+                        <div>
+                          <p className="fw-bold mb-0" />
+                          <p className="text-muted mb-0" />
+                        </div>
+                        <img
+                          className="rounded-circle flex-shrink-0 me-3 fit-cover"
+                          width={50}
+                          height={50}
+                          src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
+                          style={{ marginLeft: 0 }}
+                        />
+                      </div>
+                      <p className="card-text">20,000원</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3 col-xxl-3">
+                  <div className="card">
+                    <img
+                      className="card-img-top w-100 d-block fit-cover"
+                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
+                      style={{ minHeight: 304 }}
+                    />
+                    <div className="card-body p-4">
+                      <p className="text-primary card-text mb-0" />
+                      <div className="d-flex">
+                        <h4>마그네슘 500mg 180점</h4>
+                        <div>
+                          <p className="fw-bold mb-0" />
+                          <p className="text-muted mb-0" />
+                        </div>
+                        <img
+                          className="rounded-circle flex-shrink-0 me-3 fit-cover"
+                          width={50}
+                          height={50}
+                          src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
+                          style={{ marginLeft: 0 }}
+                        />
+                      </div>
+                      <p className="card-text">20,000원</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="card">
+                    <img
+                      className="card-img-top w-100 d-block fit-cover"
+                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
+                      style={{ minHeight: 304 }}
+                    />
+                    <div className="card-body p-4">
+                      <p className="text-primary card-text mb-0" />
+                      <div className="d-flex">
+                        <h4>마그네슘 500mg 180점</h4>
+                        <div>
+                          <p className="fw-bold mb-0" />
+                          <p className="text-muted mb-0" />
+                        </div>
+                        <img
+                          className="rounded-circle flex-shrink-0 me-3 fit-cover"
+                          width={50}
+                          height={50}
+                          src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
+                          style={{ marginLeft: 0 }}
+                        />
+                      </div>
+                      <p className="card-text">20,000원</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="card">
+                    <img
+                      className="card-img-top w-100 d-block fit-cover"
+                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
+                      style={{ minHeight: 304 }}
+                    />
+                    <div className="card-body p-4">
+                      <p className="text-primary card-text mb-0" />
+                      <div className="d-flex">
+                        <h4>마그네슘 500mg 180점</h4>
+                        <div>
+                          <p className="fw-bold mb-0" />
+                          <p className="text-muted mb-0" />
+                        </div>
+                        <img
+                          className="rounded-circle flex-shrink-0 me-3 fit-cover"
+                          width={50}
+                          height={50}
+                          src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
+                          style={{ marginLeft: 0 }}
+                        />
+                      </div>
+                      <p className="card-text">20,000원</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-3">
+                  <div className="card">
+                    <img
+                      className="card-img-top w-100 d-block fit-cover"
+                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
+                      style={{ minHeight: 304 }}
+                    />
+                    <div className="card-body p-4">
+                      <p className="text-primary card-text mb-0" />
+                      <div className="d-flex">
+                        <h4>마그네슘 500mg 180점</h4>
+                        <div>
+                          <p className="fw-bold mb-0" />
+                          <p className="text-muted mb-0" />
+                        </div>
+                        <img
+                          className="rounded-circle flex-shrink-0 me-3 fit-cover"
+                          width={50}
+                          height={50}
+                          src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
+                          style={{ marginLeft: 0 }}
+                        />
+                      </div>
+                      <p className="card-text">20,000원</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3 col-xxl-3">
+                  <div className="card">
+                    <img
+                      className="card-img-top w-100 d-block fit-cover"
+                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
+                      style={{ minHeight: 304 }}
+                    />
+                    <div className="card-body p-4">
+                      <p className="text-primary card-text mb-0" />
+                      <div className="d-flex">
+                        <h4>마그네슘 500mg 180점</h4>
+                        <div>
+                          <p className="fw-bold mb-0" />
+                          <p className="text-muted mb-0" />
+                        </div>
+                        <img
+                          className="rounded-circle flex-shrink-0 me-3 fit-cover"
+                          width={50}
+                          height={50}
+                          src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
+                          style={{ marginLeft: 0 }}
+                        />
+                      </div>
+                      <p className="card-text">20,000원</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="card">
+                    <img
+                      className="card-img-top w-100 d-block fit-cover"
+                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
+                      style={{ minHeight: 304 }}
+                    />
+                    <div className="card-body p-4">
+                      <p className="text-primary card-text mb-0" />
+                      <div className="d-flex">
+                        <h4>마그네슘 500mg 180점</h4>
+                        <div>
+                          <p className="fw-bold mb-0" />
+                          <p className="text-muted mb-0" />
+                        </div>
+                        <img
+                          className="rounded-circle flex-shrink-0 me-3 fit-cover"
+                          width={50}
+                          height={50}
+                          src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
+                          style={{ marginLeft: 0 }}
+                        />
+                      </div>
+                      <p className="card-text">20,000원</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="card">
+                    <img
+                      className="card-img-top w-100 d-block fit-cover"
+                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
+                      style={{ minHeight: 304 }}
+                    />
+                    <div className="card-body p-4">
+                      <p className="text-primary card-text mb-0" />
+                      <div className="d-flex">
+                        <h4>마그네슘 500mg 180점</h4>
+                        <div>
+                          <p className="fw-bold mb-0" />
+                          <p className="text-muted mb-0" />
+                        </div>
+                        <img
+                          className="rounded-circle flex-shrink-0 me-3 fit-cover"
+                          width={50}
+                          height={50}
+                          src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
+                          style={{ marginLeft: 0 }}
+                        />
+                      </div>
+                      <p className="card-text">20,000원</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div className="container">
-          <div className="row">
-            <div className="col-md-3">
-              <div className="card">
-                <img
-                  className="card-img-top w-100 d-block fit-cover"
-                  src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                  style={{ minHeight: 304 }}
-                />
-                <div className="card-body p-4">
-                  <p className="text-primary card-text mb-0" />
-                  <div className="d-flex">
-                    <h4>마그네슘 500mg 180점</h4>
-                    <div>
-                      <p className="fw-bold mb-0" />
-                      <p className="text-muted mb-0" />
-                    </div>
-                    <img
-                      className="rounded-circle flex-shrink-0 me-3 fit-cover"
-                      width={50}
-                      height={50}
-                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                      style={{ marginLeft: 0 }}
-                    />
-                  </div>
-                  <p className="card-text">20,000원</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3 col-xxl-3">
-              <div className="card">
-                <img
-                  className="card-img-top w-100 d-block fit-cover"
-                  src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                  style={{ minHeight: 304 }}
-                />
-                <div className="card-body p-4">
-                  <p className="text-primary card-text mb-0" />
-                  <div className="d-flex">
-                    <h4>마그네슘 500mg 180점</h4>
-                    <div>
-                      <p className="fw-bold mb-0" />
-                      <p className="text-muted mb-0" />
-                    </div>
-                    <img
-                      className="rounded-circle flex-shrink-0 me-3 fit-cover"
-                      width={50}
-                      height={50}
-                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                      style={{ marginLeft: 0 }}
-                    />
-                  </div>
-                  <p className="card-text">20,000원</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="card">
-                <img
-                  className="card-img-top w-100 d-block fit-cover"
-                  src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                  style={{ minHeight: 304 }}
-                />
-                <div className="card-body p-4">
-                  <p className="text-primary card-text mb-0" />
-                  <div className="d-flex">
-                    <h4>마그네슘 500mg 180점</h4>
-                    <div>
-                      <p className="fw-bold mb-0" />
-                      <p className="text-muted mb-0" />
-                    </div>
-                    <img
-                      className="rounded-circle flex-shrink-0 me-3 fit-cover"
-                      width={50}
-                      height={50}
-                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                      style={{ marginLeft: 0 }}
-                    />
-                  </div>
-                  <p className="card-text">20,000원</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="card">
-                <img
-                  className="card-img-top w-100 d-block fit-cover"
-                  src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                  style={{ minHeight: 304 }}
-                />
-                <div className="card-body p-4">
-                  <p className="text-primary card-text mb-0" />
-                  <div className="d-flex">
-                    <h4>마그네슘 500mg 180점</h4>
-                    <div>
-                      <p className="fw-bold mb-0" />
-                      <p className="text-muted mb-0" />
-                    </div>
-                    <img
-                      className="rounded-circle flex-shrink-0 me-3 fit-cover"
-                      width={50}
-                      height={50}
-                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                      style={{ marginLeft: 0 }}
-                    />
-                  </div>
-                  <p className="card-text">20,000원</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-md-3">
-              <div className="card">
-                <img
-                  className="card-img-top w-100 d-block fit-cover"
-                  src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                  style={{ minHeight: 304 }}
-                />
-                <div className="card-body p-4">
-                  <p className="text-primary card-text mb-0" />
-                  <div className="d-flex">
-                    <h4>마그네슘 500mg 180점</h4>
-                    <div>
-                      <p className="fw-bold mb-0" />
-                      <p className="text-muted mb-0" />
-                    </div>
-                    <img
-                      className="rounded-circle flex-shrink-0 me-3 fit-cover"
-                      width={50}
-                      height={50}
-                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                      style={{ marginLeft: 0 }}
-                    />
-                  </div>
-                  <p className="card-text">20,000원</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3 col-xxl-3">
-              <div className="card">
-                <img
-                  className="card-img-top w-100 d-block fit-cover"
-                  src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                  style={{ minHeight: 304 }}
-                />
-                <div className="card-body p-4">
-                  <p className="text-primary card-text mb-0" />
-                  <div className="d-flex">
-                    <h4>마그네슘 500mg 180점</h4>
-                    <div>
-                      <p className="fw-bold mb-0" />
-                      <p className="text-muted mb-0" />
-                    </div>
-                    <img
-                      className="rounded-circle flex-shrink-0 me-3 fit-cover"
-                      width={50}
-                      height={50}
-                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                      style={{ marginLeft: 0 }}
-                    />
-                  </div>
-                  <p className="card-text">20,000원</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="card">
-                <img
-                  className="card-img-top w-100 d-block fit-cover"
-                  src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                  style={{ minHeight: 304 }}
-                />
-                <div className="card-body p-4">
-                  <p className="text-primary card-text mb-0" />
-                  <div className="d-flex">
-                    <h4>마그네슘 500mg 180점</h4>
-                    <div>
-                      <p className="fw-bold mb-0" />
-                      <p className="text-muted mb-0" />
-                    </div>
-                    <img
-                      className="rounded-circle flex-shrink-0 me-3 fit-cover"
-                      width={50}
-                      height={50}
-                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                      style={{ marginLeft: 0 }}
-                    />
-                  </div>
-                  <p className="card-text">20,000원</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="card">
-                <img
-                  className="card-img-top w-100 d-block fit-cover"
-                  src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                  style={{ minHeight: 304 }}
-                />
-                <div className="card-body p-4">
-                  <p className="text-primary card-text mb-0" />
-                  <div className="d-flex">
-                    <h4>마그네슘 500mg 180점</h4>
-                    <div>
-                      <p className="fw-bold mb-0" />
-                      <p className="text-muted mb-0" />
-                    </div>
-                    <img
-                      className="rounded-circle flex-shrink-0 me-3 fit-cover"
-                      width={50}
-                      height={50}
-                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                      style={{ marginLeft: 0 }}
-                    />
-                  </div>
-                  <p className="card-text">20,000원</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
         </div>
-        </div>
-    </div>
-        </div>
-        <Footer />
       </div>
-    );
-  };
-  
-  export default ALL;
-  
+      <Footer />
+    </div>
+  );
+}
+
+export default ALL;

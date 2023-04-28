@@ -16,3 +16,7 @@
 .contentWrapper {
   flex: 1;
 }
+
+.titletext {
+  font-size: 30px;
+}
