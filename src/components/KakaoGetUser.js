@@ -1,7 +1,7 @@
 import React from "react";
 
 class GetUser extends React.Component {
-  // 사용자 정보를 가져온다면 갱신한다.
+  // 사용자 정보를 가져온다면 갱신
   state = {
     profile_nickname,
     profile_image_url: "",
@@ -10,13 +10,13 @@ class GetUser extends React.Component {
   componentDidMount() {
     const GetUser = this;
 
-    // login함수와 비슷하다. 사용자 정보를 가져오면 success콜백
+    // login함수와 비슷. 사용자 정보 가져오면 success콜백
     window.Kakao.API.request({
       url: "/v2/user/me",
       success: function ({ kakao_account }) {
         const { profile_nickname } = kakao_account;
         console.log(`responsed img: ${profile.profile_image_url}`);
-        // 수집한 사용자 정보로 페이지를 수정하기 위해 setState
+        // 수집한 사용자 정보로 페이지 수정하기 위해 setState
         GetUser.setState({
           profile_image_url: profile.profile_image_url,
         });

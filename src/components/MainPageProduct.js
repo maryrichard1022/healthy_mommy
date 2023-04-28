@@ -19,7 +19,7 @@ const MainPageProduct = () => {
     const queryString = location.search;
 
     //메인페이지에 띄우는 물품 리스트?
-    fetch(`${API.product}${queryString}`)
+    fetch(`${API.main}${queryString}`)
       .then((res) => res.json())
       .then((result) => {
         // setTotalItems(result);
@@ -38,14 +38,13 @@ const MainPageProduct = () => {
     const bestSupplements = `?category=supplements&?sort_method=-sold`;
     navigate(bestSupplements);
   };
-
   const sortSportsWear = () => {
-    const bestSportsWear = `?category=sportswear&?sort_method=-sold`;
+    const bestSportsWear = `?category=supplements&?sort_method=-sold`;
     navigate(bestSportsWear);
   };
 
   const sortEquipment = () => {
-    const bestEquipment = `?category=fitness_equipment&?sort_method=-sold`;
+    const bestEquipment = `?category=supplements&?sort_method=-sold`;
     navigate(bestEquipment);
   };
 
@@ -72,11 +71,10 @@ const MainPageProduct = () => {
       </div>
       {/* 
       url에 해당하는 물품리스트 8개 보여주도록 함. */}
-      <div className="ProductList">
+      {/* <div className="ProductList">
         {productlist.map((product) => {
           return (
             <div className="ProductListInfo">
-              {/* {product.id} */}
               <img alt="product_img">{product.image_url}</img>
 
               <h2>{product.name}</h2>
@@ -84,7 +82,7 @@ const MainPageProduct = () => {
             </div>
           );
         })}
-      </div>
+      </div> */}
     </div>
   );
 };
