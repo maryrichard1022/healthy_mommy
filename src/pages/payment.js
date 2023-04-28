@@ -96,7 +96,7 @@ const Payment = () => {
 
               <tr className="AddressforDeliver">
                 <p>배송지</p>
-                <Postcode />
+                <Postcode onChange={handleChangeState} />
               </tr>
             </tbody>
           </div>

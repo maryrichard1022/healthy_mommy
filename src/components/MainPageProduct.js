@@ -10,7 +10,7 @@ const MainPageProduct = () => {
   const [productlist, setProductlist] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
-  const params = new URLSearchParams(location.search);
+  // const params = new URLSearchParams(location.search);
   // const urlCategory = params.get("category");
   // const categoryString = `category=${urlCategory}`;
 
@@ -70,7 +70,7 @@ const MainPageProduct = () => {
           return (
             <div className="ProductListInfo">
               {/* {product.id} */}
-              <img>{product.image_url}</img>
+              <img alt="">{product.image_url}</img>
               <div>
                 <h2>{product.name}</h2>
                 <p>{product.price}</p>

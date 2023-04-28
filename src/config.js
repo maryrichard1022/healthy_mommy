@@ -9,6 +9,7 @@ const API = {
   productDetail: `${BASE_URL}/products`,
   cart: `${BASE_URL}/carts`,
   order: `${BASE_URL}/myorder`,
+  neworder: `${BASE_URL}/orders/neworder`,
 };
 
 export default API;

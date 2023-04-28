@@ -44,7 +44,7 @@ const Nav = () => {
             </div>
           </div>
           <div className="dropdown">
-            <Link to={"/SportsGoods"}>
+            <Link to={"/FitnessEquipment"}>
               <button class="dropbtn">운동기구</button>
             </Link>
             <div class="dropdown-content">
