@@ -3,7 +3,7 @@
 /*font-family: 'IBM Plex Sans KR', sans-serif;*/
 
 .MainPageProduct {
-  height: 1000px;
+  height: auto;
   width: 100%;
   font-family: "IBM Plex Sans KR", sans-serif;
 }
@@ -33,4 +33,10 @@
 
 .ProductList {
   text-align: center;
+}
+
+.ProductListInfo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minman(220px, 1fr));
+  grid-gap: 15px;
 }

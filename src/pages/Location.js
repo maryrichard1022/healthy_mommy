@@ -9,7 +9,7 @@ const Location = () => {
     <div className="location">
       <div className="contentWrapper">
         <Nav />
-        <p className="titletext">매장 위치</p>
+        <h1>매장 위치</h1>
         <Kakaomap />
         <div className="LocationInfo">
           <p>경기도 용인시 처인구 명지로 116 제 5공학관</p>

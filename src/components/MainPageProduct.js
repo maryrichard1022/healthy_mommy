@@ -36,16 +36,16 @@ const MainPageProduct = () => {
   };
 
   const sortSupplements = () => {
-    const bestSupplements = `?category=supplements&?sort_method=-sold`;
+    const bestSupplements = `?category=supplements&sort_method=-sold`;
     navigate(bestSupplements);
   };
   const sortSportsWear = () => {
-    const bestSportsWear = `?category=sportswear&?sort_method=-sold`;
+    const bestSportsWear = `?category=sportswear&sort_method=-sold`;
     navigate(bestSportsWear);
   };
 
   const sortEquipment = () => {
-    const bestEquipment = `?category=fitness_equipment&?sort_method=-sold`;
+    const bestEquipment = `?category=fitness_equipment&sort_method=-sold`;
     navigate(bestEquipment);
   };
 
@@ -72,13 +72,15 @@ const MainPageProduct = () => {
       </div>
       {/* 
       url에 해당하는 물품리스트 8개 보여주도록 함. */}
-
+      <h4>가데이터 API 확인</h4>
+      <br />
       {productlist?.map((product) => (
         <div className="ProductListInfo">
-          <p>이미지{product.image_url}</p>
-          <h4>상품명{product.name}</h4>
+          <p>이미지:{product.image_url}</p>
+          <p>{product.name}</p>
           <p>가격{product.price}</p>
-          <p>판매{product.sold}</p>
+          <p>누적판매:{product.sold}</p>
+          <br />
         </div>
       ))}
     </div>
