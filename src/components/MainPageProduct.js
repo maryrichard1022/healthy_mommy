@@ -18,34 +18,41 @@ const MainPageProduct = () => {
   useEffect(() => {
     const queryString = location.search;
 
+    //메인페이지에 띄우는 물품 리스트?
     fetch(`${API.product}${queryString}`)
       .then((res) => res.json())
       .then((result) => {
         // setTotalItems(result);
         setProductlist(result.RESULT);
       });
+    console.log(1);
   }, [location.search]);
 
   //필터 버튼 누르면 url 바뀌도록
   const sortAll = () => {
-    const bestAll = `?category=all&?sort_method=-sold&?offset=0`;
+    const bestAll = `?category=all&?sort_method=-sold`;
     navigate(bestAll);
   };
 
   const sortSupplements = () => {
-    const bestSupplements = `?category=Supplements&?sort_method=-sold&?offset=0`;
+    const bestSupplements = `?category=supplements&?sort_method=-sold`;
     navigate(bestSupplements);
   };
 
   const sortSportsWear = () => {
-    const bestSportsWear = `?category=SportsWear&?sort_method=-sold&?offset=0`;
+    const bestSportsWear = `?category=sportswear&?sort_method=-sold`;
     navigate(bestSportsWear);
   };
 
   const sortEquipment = () => {
-    const bestEquipment = `?category=fitness_equipment&?sort_method=-sold&?offset=0`;
+    const bestEquipment = `?category=fitness_equipment&?sort_method=-sold`;
     navigate(bestEquipment);
   };
+
+  //물품 눌렀을 때 해당 상세 페이지로 이동
+  // const goToDetail = () => {
+  //   navigate(`/productdetail/${id}`);
+  // };
 
   return (
     <div className="MainPageProduct">
@@ -70,11 +77,10 @@ const MainPageProduct = () => {
           return (
             <div className="ProductListInfo">
               {/* {product.id} */}
-              <img alt="">{product.image_url}</img>
-              <div>
-                <h2>{product.name}</h2>
-                <p>{product.price}</p>
-              </div>
+              <img alt="product_img">{product.image_url}</img>
+
+              <h2>{product.name}</h2>
+              <p>{product.price}</p>
             </div>
           );
         })}
