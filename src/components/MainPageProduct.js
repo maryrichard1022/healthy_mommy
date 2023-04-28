@@ -18,7 +18,7 @@ const MainPageProduct = () => {
   useEffect(() => {
     const queryString = location.search;
 
-    //메인페이지에 띄우는 물품 리스트?
+    //메인페이지에 띄우는 물품 리스트 정보 가져옴
     fetch(`${API.main}${queryString}`)
       .then((res) => res.json())
       .then((result) => {
@@ -26,7 +26,6 @@ const MainPageProduct = () => {
         setProductlist(result.result);
         console.log(result);
       });
-    console.log(1);
   }, [location.search]);
 
   //필터 버튼 누르면 url 바뀌도록
@@ -59,7 +58,12 @@ const MainPageProduct = () => {
       <div>
         <h1>BEST PRODUCT</h1>
         <div className="MainFilterButton">
-          <FilterButton onClick={sortAll} text={"ALL"} />
+          <FilterButton
+            onClick={() => {
+              sortAll();
+            }}
+            text={"ALL"}
+          />
           <FilterButton onClick={sortSupplements} text={"영양제"} />
           <FilterButton onClick={sortSportsWear} text={"운동복"} />
           <FilterButton onClick={sortEquipment} text={"운동기구"} />
@@ -70,19 +74,21 @@ const MainPageProduct = () => {
         {/* <img alt="banner" src={require("../assets/banner5.jpg")} /> */}
         <h4>이미지 준비중</h4>
       </div>
-      {/* 
-      url에 해당하는 물품리스트 8개 보여주도록 함. */}
-      <h4>가데이터 API 확인</h4>
+
       <br />
-      {productlist?.map((product) => (
-        <div className="ProductListInfo">
-          <p>이미지:{product.image_url}</p>
-          <p>{product.name}</p>
-          <p>가격{product.price}</p>
-          <p>누적판매:{product.sold}</p>
-          <br />
-        </div>
-      ))}
+      <h4 className="datacheck">가데이터 확인</h4>
+      <div className="ProductListInfo">
+        {productlist?.map((product) => (
+          <div>
+            <p>{}</p>
+            <p>이미지:{product.image_url}</p>
+            <p>{product.name}</p>
+            <p>가격{product.price}</p>
+            <p>누적판매:{product.sold}</p>
+            <br />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

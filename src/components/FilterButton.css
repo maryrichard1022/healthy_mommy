@@ -12,8 +12,17 @@
   margin-right: 5px;
   font-size: 15px;
   font-weight: bold;
+  border: 0;
 }
 /* 
 .FilterButton :active {
   background-color: red;
 } */
+
+.FilterButton:hover,
+.FilterButton.active {
+  color: #3867d6;
+}
+.FilterButton:visited {
+  color: #3867d6;
+}

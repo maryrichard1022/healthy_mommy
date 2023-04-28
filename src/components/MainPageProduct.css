@@ -36,7 +36,15 @@
 }
 
 .ProductListInfo {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minman(220px, 1fr));
-  grid-gap: 15px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(50px, auto);
+  grid-gap: 30px;
+}
+
+.datacheck {
+  text-align: center;
 }
