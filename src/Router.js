@@ -28,7 +28,7 @@ function Router() {
         <Route exact path="/PayReady" component={PayReady} />
         <Route exact path="/MyPage" element={<MyPage />} />
         <Route exact path="/Location" element={<Location />} />
-        <Route exact path="/" element={<Main />} />
+        <Route path="/" element={<Main />} />
         <Route exact path="/Login" element={<Login />} />
         <Route exact path="/PaySuccess" element={<PaySuccess />} />
 
