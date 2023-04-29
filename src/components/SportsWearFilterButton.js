@@ -8,7 +8,6 @@ import FilterButton from "./FilterButton";
 const AllFilterButton = () => {
   return (
     <div className="AllFilterButton">
-      <FilterButton text={"전체"} />
       <FilterButton text={"상의"} />
       <FilterButton text={"하의"} />
     </div>
