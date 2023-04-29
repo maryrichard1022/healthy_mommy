@@ -25,28 +25,28 @@ function SportsWear() {
               </div>
               <div className="col">
                 <p>
-                  <span style={{ textDecoration: "underline" }}>
+                  <span style={{ fontSize: '16px', fontWeight: 'bold', textDecoration: "underline" }}>
                     가격 낮은 순
                   </span>
                 </p>
               </div>
               <div className="col">
                 <p>
-                  <span style={{ textDecoration: "underline" }}>
+                  <span style={{ fontSize: '16px', fontWeight: 'bold', textDecoration: "underline" }}>
                     가격 높은 순
                   </span>
                 </p>
               </div>
               <div className="col">
                 <p>
-                  <span style={{ textDecoration: "underline" }}>
+                  <span style={{ fontSize: '16px', fontWeight: 'bold', textDecoration: "underline" }}>
                     누적 판매 순
                   </span>
                 </p>
               </div>
               <div className="col">
                 <p>
-                  <span style={{ textDecoration: "underline" }}>
+                  <span style={{ fontSize: '16px', fontWeight: 'bold', textDecoration: "underline" }}>
                     최신 순
                     </span>
                 </p>
@@ -58,14 +58,14 @@ function SportsWear() {
 
         <div className="container">
           <div className="row">
-          <Card product_name={"마그네슘 500mg 180정"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20,000"}/>
-            <Card product_name={"마그네슘 500mg 180정"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20,000"}/>
-            <Card product_name={"마그네슘 500mg 180정"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20,000"}/>
-            <Card product_name={"마그네슘 500mg 180정"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20,000"}/>
-            <Card product_name={"마그네슘 500mg 180정"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20,000"}/>
-            <Card product_name={"마그네슘 500mg 180정"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20,000"}/>
-            <Card product_name={"마그네슘 500mg 180정"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20,000"}/>
-            <Card product_name={"마그네슘 500mg 180정"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20,000"}/>
+            <Card product_name={"MJ 조거 팬츠"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
+            <Card product_name={"MJ 조거 팬츠"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
+            <Card product_name={"MJ 조거 팬츠"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
+            <Card product_name={"MJ 조거 팬츠"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
+            <Card product_name={"MJ 조거 팬츠"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
+            <Card product_name={"MJ 조거 팬츠"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
+            <Card product_name={"MJ 조거 팬츠"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
+            <Card product_name={"MJ 조거 팬츠"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
           </div>
         </div>
       </div>

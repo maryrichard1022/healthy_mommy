@@ -30,28 +30,28 @@ function Supplements() {
               </div>
               <div className="col">
                 <p>
-                  <span style={{ textDecoration: "underline" }}>
+                  <span style={{ fontSize: '16px', fontWeight: 'bold', textDecoration: "underline" }}>
                     가격 낮은 순
                   </span>
                 </p>
               </div>
               <div className="col">
                 <p>
-                  <span style={{ textDecoration: "underline" }}>
+                  <span style={{ fontSize: '16px', fontWeight: 'bold', textDecoration: "underline" }}>
                     가격 높은 순
                   </span>
                 </p>
               </div>
               <div className="col">
                 <p>
-                  <span style={{ textDecoration: "underline" }}>
+                  <span style={{ fontSize: '16px', fontWeight: 'bold', textDecoration: "underline" }}>
                     누적 판매 순
                   </span>
                 </p>
               </div>
               <div className="col">
                 <p>
-                  <span style={{ textDecoration: "underline" }}>
+                  <span style={{ fontSize: '16px', fontWeight: 'bold', textDecoration: "underline" }}>
                     최신 순</span>
                 </p>
               </div>
