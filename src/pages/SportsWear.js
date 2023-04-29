@@ -1,5 +1,5 @@
 //운동복 페이지
-
+import React from "react";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import SportsWearFilterButton from "../components/SportsWearFilterButton";
@@ -40,13 +40,15 @@ function SportsWear() {
               <div className="col">
                 <p>
                   <span style={{ textDecoration: "underline" }}>
-                    누적판매순
+                    누적 판매 순
                   </span>
                 </p>
               </div>
               <div className="col">
                 <p>
-                  <span style={{ textDecoration: "underline" }}>최신순</span>
+                  <span style={{ textDecoration: "underline" }}>
+                    최신 순
+                    </span>
                 </p>
               </div>
             </div>
@@ -56,13 +58,14 @@ function SportsWear() {
 
         <div className="container">
           <div className="row">
-            <Card product_name={"마그네슘 500mg 180점"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20000"}/>
-            <Card product_name={"마그네슘 500mg 180점"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20000"}/>
-            <Card product_name={"마그네슘 500mg 180점"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20000"}/>
-            <Card product_name={"마그네슘 500mg 180점"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20000"}/>
-            <Card product_name={"마그네슘 500mg 180점"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20000"}/>
-            <Card product_name={"마그네슘 500mg 180점"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20000"}/>
-            <Card product_name={"마그네슘 500mg 180점"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20000"}/>
+          <Card product_name={"마그네슘 500mg 180정"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20,000"}/>
+            <Card product_name={"마그네슘 500mg 180정"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20,000"}/>
+            <Card product_name={"마그네슘 500mg 180정"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20,000"}/>
+            <Card product_name={"마그네슘 500mg 180정"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20,000"}/>
+            <Card product_name={"마그네슘 500mg 180정"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20,000"}/>
+            <Card product_name={"마그네슘 500mg 180정"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20,000"}/>
+            <Card product_name={"마그네슘 500mg 180정"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20,000"}/>
+            <Card product_name={"마그네슘 500mg 180정"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20,000"}/>
           </div>
         </div>
       </div>

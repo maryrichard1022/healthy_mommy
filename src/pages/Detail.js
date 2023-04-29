@@ -18,21 +18,22 @@ function Detail() {
               </div>
             </div>
             <div className="col">
-              <h1>MJ 조거 펜츠</h1>
-              <br />
+              <h1>MJ 조거 팬츠</h1>
+              <br /><br /><br />
               <p>
                 {" "}
-                신축성이 좋은 조거 팬트 <br />
-                (상품에 관련한 한 줄 설명 들어갈 예정){" "}
+                신축성이 좋은 조거 팬츠 <br />
+                (상품에 관련한 설명 들어갈 예정)<br /><br /><br />{" "}
               </p>
               <br />
-              <h3> 가격 29,000원 </h3>
+              <h3> 가격 29,000원 <br /></h3>
               <div className="row">
                 <div className="col-9"></div>
                 <div className="col">
                   <p> 총 상품금액: 0원</p>
                 </div>
               </div>
+              <br />
               <div className="row">
                 <div className="col-4">
                   <div className="row">
@@ -58,8 +59,12 @@ function Detail() {
               </div>
             </div>
           </div>
+
+          <hr style={{borderTop: '1px solid black'}} />
+          <br />
+
           <div className="Row">
-            <img src="" alt="싱세이미지" />
+            <img src="" alt="상세이미지" />
           </div>
         </div>
         <Footer />
