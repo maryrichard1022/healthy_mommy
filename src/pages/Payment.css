@@ -39,7 +39,7 @@
   padding-right: 50px;
 }
 
-.ProductForPay p {
+.ProductForPay p .PayConfirm p {
   font-weight: bold;
   font-size: 20px;
 }
@@ -166,7 +166,6 @@ h4 {
 p {
   padding-right: 15px;
   font-size: 15px;
-  font-weight: bold;
 }
 
 hr {

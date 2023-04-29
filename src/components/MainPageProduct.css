@@ -8,7 +8,8 @@
   font-family: "IBM Plex Sans KR", sans-serif;
 }
 
-.MainPageProduct h1 {
+.MainPageProduct h2 {
+  text-align: left;
   padding-top: 50px;
   padding-left: 150px;
 }
@@ -18,11 +19,16 @@
 }
 
 .subBanner {
-  /* filter: brightness(50%); */
+  filter: brightness(50%);
+  padding-top: 15px;
   width: 80%;
-  height: 200px;
-  background-color: #f1f2f6;
-  margin: 0 auto;
+  height: 250px;
+  display: block;
+  margin: 0px auto;
+}
+
+.subBanner img {
+  width: 80%;
 }
 
 .subBanner h4 {
@@ -36,15 +42,112 @@
 }
 
 .ProductListInfo {
+  width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
   text-align: center;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: minmax(50px, auto);
-  grid-gap: 30px;
+  grid-auto-rows: minmax(30px, auto);
+  grid-column-gap: 0px;
+  /**/
 }
 
 .datacheck {
   text-align: center;
+}
+
+.BestProduct {
+  text-align: center;
+}
+.BestProduct p {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.product-img {
+  background-color: #f1f2f6;
+  width: 200px;
+  height: 250px;
+}
+
+.productinfo-cart {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.productinfo {
+  height: 130px;
+  width: 100px;
+  padding-left: 50px;
+}
+
+.cart-img-box {
+  height: 130px;
+  width: 50px;
+}
+.cart-img {
+  padding-top: 10px;
+  vertical-align: top;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.product-name {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.product-price {
+  margin-top: 0px;
+}
+
+/*화면 줄였을 때 2x4 리스트 조정*/
+
+@media (max-width: 1200px) {
+  .ProductListInfo {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+    grid-gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ProductListInfo {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+    grid-gap: 30px;
+  }
+  .subBanner {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .ProductListInfo {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+    grid-gap: 30px;
+  }
+
+  .subBanner {
+    display: none;
+  }
 }

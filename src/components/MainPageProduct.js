@@ -18,6 +18,7 @@ const MainPageProduct = () => {
   //마운트 되자마자 all을 띄우도록 함
   useEffect(() => {
     sortAll();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   //버튼 누를 때마다 테이블 받아옴
@@ -57,7 +58,7 @@ const MainPageProduct = () => {
   return (
     <div className="MainPageProduct">
       <div>
-        <h1>BEST PRODUCT</h1>
+        <h2>BEST PRODUCT</h2>
         <div className="MainFilterButton">
           <FilterButton
             style={{ color: "green" }}
@@ -70,20 +71,53 @@ const MainPageProduct = () => {
         </div>
       </div>
 
-      <div className="subBanner">
-        {/* <img alt="banner" src={require("../assets/banner5.jpg")} /> */}
-        <h4>이미지 준비중</h4>
-      </div>
+      {/*<div className="subBanner"> */}
+      <img
+        className="subBanner"
+        alt="banner"
+        src={require("../assets/banner5.jpg")}
+      />
+      {/*  </div> */}
 
       <br />
-      <h4 className="datacheck">{urlCategory}가데이터 API 연동 및 정렬 확인</h4>
+      <div className="datacheck">
+        {/* <h4>가데이터 API 연동 및 정렬 확인</h4> */}
+        {/* 카테고리 2x4 위에 나타냄 */}
+        <h4 className="scategory-name">
+          {urlCategory === "supplements"
+            ? "영양제"
+            : urlCategory === "sportswear"
+            ? "운동복"
+            : urlCategory === "fitness_equipment"
+            ? "운동기구"
+            : "ALL"}
+        </h4>
+      </div>
       <div className="ProductListInfo">
         {productlist?.map((product) => (
-          <div>
-            <p>이미지: {product.image_url}</p>
-            <p>상품명: {product.name}</p>
-            <p>가격: {product.price}</p>
-            <p>누적 판매 수: {product.sold}</p>
+          <div className="BestProduct">
+            {/* 크롤링 테이블 받아오면 src={product.image_url}로 수정 */}
+            <img
+              alt="product-img"
+              src={require("../assets/url_img.png")}
+              className="product-img"
+            ></img>
+            <div className="productinfo-cart">
+              <div className="productinfo">
+                <p className="product-name">{product.name}</p>
+
+                <p className="product-price">{product.price * 1000 + "원"}</p>
+
+                <p>sold: {product.sold}</p>
+              </div>
+              <div className="cart-img-box">
+                <img
+                  alt="cart"
+                  src={require("../assets/cart.png")}
+                  className="cart-img"
+                ></img>
+              </div>
+            </div>
             <br />
           </div>
         ))}

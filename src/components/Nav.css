@@ -47,7 +47,7 @@
 
 /*맨 오른쪽 픽토그램들*/
 .nav-container_right {
-  margin-right: 150px;
+  margin-right: 145px;
   align-items: center;
 }
 .nav-container_right img {
@@ -126,6 +126,11 @@
   background-color: white;
 }
 
+/*메인 헤더 반응형 적용해야함.*/
+/* @media (max-width: 1200px) {
+  .nav-container {
+  }
+} */
 @media (max-width: 768px) {
   .nav-container {
     display: none;

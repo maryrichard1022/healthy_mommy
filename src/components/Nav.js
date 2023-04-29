@@ -48,9 +48,9 @@ const Nav = () => {
               <button class="dropbtn">운동기구</button>
             </Link>
             <div class="dropdown-content">
-              <a href="#!">덤벨</a>
-              <a href="#!">트레드밀</a>
               <a href="#!">짐볼</a>
+              <a href="#!">폼롤러</a>
+              <a href="#!">실내사이클</a>
               <a href="#!">그 외</a>
             </div>
           </div>
