@@ -11,6 +11,7 @@ const Card = ({product_name, img_src, price}) => {
             <img
                 className="card-top shop-img"
                 src={img_src}
+                alt = ""
             />
             <div className="card-body">
             <div className="d-flex">
@@ -21,6 +22,7 @@ const Card = ({product_name, img_src, price}) => {
                     height={50}
                     src={require("../assets/cart2.jpeg")}
                     // style={{ padding: 10 }}
+                    alt = ""
                 />
             </div>
             <p className="card-text">{price}원</p>
