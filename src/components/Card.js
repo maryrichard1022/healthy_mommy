@@ -21,7 +21,7 @@ const Card = ({product_name, img_src, price}) => {
                     width={50}
                     height={50}
                     src={require("../assets/cart2.jpeg")}
-                    // style={{ padding: 10 }}
+                    style={{ padding: 10 }}
                     alt = ""
                 />
             </div>

@@ -5,6 +5,7 @@ import Nav from "../components/Nav";
 import FitnessQuipmentFilterButton from "../components/FitnessQuipmentFilterButton";
 import Card from "../components/Card";
 import Banner from "../components/Banner";
+import "./FitnessEquipment.css";
 
 function FitnessEquipment() {
   return (
@@ -13,7 +14,13 @@ function FitnessEquipment() {
         <Nav />
         <div class="container">
         <h1>운동기구</h1>
-        <Banner img_src={""}/>
+        
+        <div className="container">
+        <container className="FitnessEquipmentBanner">
+        <Banner img_src={require("../assets/banner2.jpg")}/>
+        </container>
+        </div>
+        
         <FitnessQuipmentFilterButton/>
           <div className="container">
             <div className="row">

@@ -19,7 +19,7 @@ function ALL() {
 
         <div class="container">
         <h1>All</h1>
-        <Banner img_src={""}/>
+        <Banner img_src={require("../assets/All.png")}/>
         <AllFilterButton />
           <div className="container">
             <div className="row">

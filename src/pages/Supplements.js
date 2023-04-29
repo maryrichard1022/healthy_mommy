@@ -5,6 +5,7 @@ import Nav from "../components/Nav";
 import SupplimentsFilterButton from "../components/SupplimentsFilterButton";
 import Card from "../components/Card";
 import Banner from "../components/Banner";
+import "./Supplements.css";
 
 function Supplements() {
   return (
@@ -15,7 +16,10 @@ function Supplements() {
         
         <div class="container">
         <h1>영양제</h1>
-        <Banner img_src={""}/>
+
+        <Banner img_src={require("../assets/supplement.png")}/>
+        
+
         <SupplimentsFilterButton />
           <div className="container">
             <div className="row">

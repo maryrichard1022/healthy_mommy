@@ -14,7 +14,7 @@ function SportsWear() {
 
         <div class="container">
         <h1>운동복</h1>
-        <Banner img_src={""}/>
+        <Banner img_src={require("../assets/sportswear.png")}/>
         <SportsWearFilterButton />
           <div className="container">
             <div className="row">
