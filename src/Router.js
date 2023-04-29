@@ -13,6 +13,7 @@ import PaySuccess from "./pages/PaySuccess";
 import PayResult from "./components/PayResult";
 import PayReady from "./components/PayReady";
 import Location from "./pages/Location";
+import Detail from "./pages/Detail";
 
 import ALL from "./pages/ALL";
 import Supplements from "./pages/Supplements";
@@ -21,7 +22,7 @@ import FitnessEquipment from "./pages/FitnessEquipment";
 
 function Router() {
   return (
-    <BrowserRouter>
+    <BrowserRouter> 
       <Routes>
         <Route path="/Cart" element={<Cart />} />
         <Route path="/Payment" element={<Payment />} />
@@ -32,6 +33,7 @@ function Router() {
         <Route path="/" element={<Main />} />
         <Route exact path="/Login" element={<Login />} />
         <Route exact path="/PaySuccess" element={<PaySuccess />} />
+        <Route exact path="/Detail" element={<Detail />} />
 
         <Route path="/ALL" element={<ALL />} />
         <Route path="/Supplements" element={<Supplements />} />
