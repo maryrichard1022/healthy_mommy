@@ -4,8 +4,9 @@ import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import AllBanner from "../components/AllBanner";
+import Banner from "../components/Banner";
 import AllFilterButton from "../components/AllFilterButton";
+import Card from "../components/Card";
 
 import "./ALL.css";
 
@@ -14,14 +15,16 @@ function ALL() {
     <div className="all">
       <div className="contentWrapper">
         <Nav />
-        <AllBanner />
-        <AllFilterButton />
+
+
         <div class="container">
+        <h1>All</h1>
+        <Banner img_src={""}/>
+        <AllFilterButton />
           <div className="container">
             <div className="row">
               <div
-                className="col-xxl-8 offset-xxl-0"
-                style={{ paddingLeft: "60%" }}
+                className="col col-sm-3 col-md-7"
               >
                 <p />
               </div>
@@ -52,230 +55,25 @@ function ALL() {
                 </p>
               </div>
             </div>
-            <div className="container">
-              <div className="row">
-                <div className="col-md-3">
-                  <div className="card">
-                    <img
-                      className="card-img-top w-100 d-block fit-cover"
-                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                      style={{ minHeight: 304 }}
-                    />
-                    <div className="card-body p-4">
-                      <p className="text-primary card-text mb-0" />
-                      <div className="d-flex">
-                        <h4>마그네슘 500mg 180점</h4>
-                        <div>
-                          <p className="fw-bold mb-0" />
-                          <p className="text-muted mb-0" />
-                        </div>
-                        <img
-                          className="rounded-circle flex-shrink-0 me-3 fit-cover"
-                          width={50}
-                          height={50}
-                          src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                          style={{ marginLeft: 0 }}
-                        />
-                      </div>
-                      <p className="card-text">20,000원</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-3 col-xxl-3">
-                  <div className="card">
-                    <img
-                      className="card-img-top w-100 d-block fit-cover"
-                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                      style={{ minHeight: 304 }}
-                    />
-                    <div className="card-body p-4">
-                      <p className="text-primary card-text mb-0" />
-                      <div className="d-flex">
-                        <h4>마그네슘 500mg 180점</h4>
-                        <div>
-                          <p className="fw-bold mb-0" />
-                          <p className="text-muted mb-0" />
-                        </div>
-                        <img
-                          className="rounded-circle flex-shrink-0 me-3 fit-cover"
-                          width={50}
-                          height={50}
-                          src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                          style={{ marginLeft: 0 }}
-                        />
-                      </div>
-                      <p className="card-text">20,000원</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-3">
-                  <div className="card">
-                    <img
-                      className="card-img-top w-100 d-block fit-cover"
-                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                      style={{ minHeight: 304 }}
-                    />
-                    <div className="card-body p-4">
-                      <p className="text-primary card-text mb-0" />
-                      <div className="d-flex">
-                        <h4>마그네슘 500mg 180점</h4>
-                        <div>
-                          <p className="fw-bold mb-0" />
-                          <p className="text-muted mb-0" />
-                        </div>
-                        <img
-                          className="rounded-circle flex-shrink-0 me-3 fit-cover"
-                          width={50}
-                          height={50}
-                          src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                          style={{ marginLeft: 0 }}
-                        />
-                      </div>
-                      <p className="card-text">20,000원</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-3">
-                  <div className="card">
-                    <img
-                      className="card-img-top w-100 d-block fit-cover"
-                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                      style={{ minHeight: 304 }}
-                    />
-                    <div className="card-body p-4">
-                      <p className="text-primary card-text mb-0" />
-                      <div className="d-flex">
-                        <h4>마그네슘 500mg 180점</h4>
-                        <div>
-                          <p className="fw-bold mb-0" />
-                          <p className="text-muted mb-0" />
-                        </div>
-                        <img
-                          className="rounded-circle flex-shrink-0 me-3 fit-cover"
-                          width={50}
-                          height={50}
-                          src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                          style={{ marginLeft: 0 }}
-                        />
-                      </div>
-                      <p className="card-text">20,000원</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-md-3">
-                  <div className="card">
-                    <img
-                      className="card-img-top w-100 d-block fit-cover"
-                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                      style={{ minHeight: 304 }}
-                    />
-                    <div className="card-body p-4">
-                      <p className="text-primary card-text mb-0" />
-                      <div className="d-flex">
-                        <h4>마그네슘 500mg 180점</h4>
-                        <div>
-                          <p className="fw-bold mb-0" />
-                          <p className="text-muted mb-0" />
-                        </div>
-                        <img
-                          className="rounded-circle flex-shrink-0 me-3 fit-cover"
-                          width={50}
-                          height={50}
-                          src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                          style={{ marginLeft: 0 }}
-                        />
-                      </div>
-                      <p className="card-text">20,000원</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-3 col-xxl-3">
-                  <div className="card">
-                    <img
-                      className="card-img-top w-100 d-block fit-cover"
-                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                      style={{ minHeight: 304 }}
-                    />
-                    <div className="card-body p-4">
-                      <p className="text-primary card-text mb-0" />
-                      <div className="d-flex">
-                        <h4>마그네슘 500mg 180점</h4>
-                        <div>
-                          <p className="fw-bold mb-0" />
-                          <p className="text-muted mb-0" />
-                        </div>
-                        <img
-                          className="rounded-circle flex-shrink-0 me-3 fit-cover"
-                          width={50}
-                          height={50}
-                          src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                          style={{ marginLeft: 0 }}
-                        />
-                      </div>
-                      <p className="card-text">20,000원</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-3">
-                  <div className="card">
-                    <img
-                      className="card-img-top w-100 d-block fit-cover"
-                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                      style={{ minHeight: 304 }}
-                    />
-                    <div className="card-body p-4">
-                      <p className="text-primary card-text mb-0" />
-                      <div className="d-flex">
-                        <h4>마그네슘 500mg 180점</h4>
-                        <div>
-                          <p className="fw-bold mb-0" />
-                          <p className="text-muted mb-0" />
-                        </div>
-                        <img
-                          className="rounded-circle flex-shrink-0 me-3 fit-cover"
-                          width={50}
-                          height={50}
-                          src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                          style={{ marginLeft: 0 }}
-                        />
-                      </div>
-                      <p className="card-text">20,000원</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-3">
-                  <div className="card">
-                    <img
-                      className="card-img-top w-100 d-block fit-cover"
-                      src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                      style={{ minHeight: 304 }}
-                    />
-                    <div className="card-body p-4">
-                      <p className="text-primary card-text mb-0" />
-                      <div className="d-flex">
-                        <h4>마그네슘 500mg 180점</h4>
-                        <div>
-                          <p className="fw-bold mb-0" />
-                          <p className="text-muted mb-0" />
-                        </div>
-                        <img
-                          className="rounded-circle flex-shrink-0 me-3 fit-cover"
-                          width={50}
-                          height={50}
-                          src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                          style={{ marginLeft: 0 }}
-                        />
-                      </div>
-                      <p className="card-text">20,000원</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
+
+
+        <div className="container">
+          <div className="row">
+            <Card product_name={"마그네슘 500mg 180점"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20000"}/>
+            <Card product_name={"마그네슘 500mg 180점"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20000"}/>
+            <Card product_name={"마그네슘 500mg 180점"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20000"}/>
+            <Card product_name={"마그네슘 500mg 180점"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20000"}/>
+            <Card product_name={"마그네슘 500mg 180점"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20000"}/>
+            <Card product_name={"마그네슘 500mg 180점"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20000"}/>
+            <Card product_name={"마그네슘 500mg 180점"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20000"}/>
+          </div>
+        </div>
+ 
+
+
+
       </div>
       <Footer />
     </div>
