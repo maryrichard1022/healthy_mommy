@@ -14,7 +14,7 @@ function Detail() {
           <div className="row">
             <div className="col-12 col-sm-6 col-md-6">
               <div className="image-holder">
-                <img src={require("../assets/pants.webp")} />
+                <img src={require("../assets/pants.webp")} alt = ""/>
               </div>
             </div>
             <div className="col">
