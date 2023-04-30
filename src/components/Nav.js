@@ -62,7 +62,9 @@ const Nav = () => {
       </div>
       <div className="nav-container_right">
         <span>
+          <Link to={"/MyPage"}>
           <img alt="logo" src={require("../assets/user.png")} />
+          </Link>
         </span>
 
         <span>

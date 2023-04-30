@@ -1,10 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;600&display=swap");
+
 .mypage {
   text-align: center;
   display: flex;
   flex-direction: column;
   height: 100vh;
+  font-family: "IBM Plex Sans KR", sans-serif;
 }
 
 .contentWrapper {
   flex: 1;
+}
+
+.MyPageInfo {
+  text-align: left;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.OrderInCartInfo {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: left;
+  font-weight: bold;
+}
+
+.OrderInCartInfo span {
+  padding-right: 93px;
+  padding-left: 93px;
+
+  text-align: center;
+}
+
+.OrderDetail {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.Orderimg {
+  width: 150px;
+  height: 100px;
+  padding-left: 40px;
+  padding-right: 30px;
+}
+.OrderDetail span {
+  margin-right: 45px;
+  margin-left: 50px;
+  text-align: center;
+  display: block;
+}
+
+.OrderName{
+  padding-left: 10px;
+}
+
+.OrderCounter {
+  padding-left: 1px;
+}
+
+.OrderPrice {
+  padding-left: 20px;
 }
