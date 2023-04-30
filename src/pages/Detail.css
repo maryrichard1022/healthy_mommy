@@ -1,5 +1,7 @@
+ @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;600&display=swap"); 
+
 .image-holder {
-  width: 300px;
+  width: 600px;
   /* height: 100px; */
 }
 
@@ -8,4 +10,8 @@
 } */
 .div-class {
   margin-top: 10px;
+}
+
+.Detail{
+  font-family: "Gothic A1", "Lexend Deca", sans-serif;
 }

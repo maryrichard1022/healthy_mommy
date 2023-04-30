@@ -5,7 +5,6 @@ import Nav from "../components/Nav";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import Banner from "../components/Banner";
-import AllFilterButton from "../components/AllFilterButton";
 import Card from "../components/Card";
 
 import "./ALL.css";
@@ -19,7 +18,7 @@ function ALL() {
         <div class="container">
           <h1>All</h1>
           <Banner img_src={require("../assets/All.png")} />
-          <AllFilterButton />
+          
           <div className="container">
             <div className="row">
               <div className="col col-sm-3 col-md-7">
@@ -91,11 +90,11 @@ function ALL() {
               price={"20,000"}
             />
             <Card
-              product_name={"마그네슘 500mg 180정"}
+              product_name={"MJ 조거 팬츠"}
               img_src={
-                "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"
+                require("../assets/pants.webp")
               }
-              price={"20,000"}
+              price={"29,000"}
             />
             <Card
               product_name={"마그네슘 500mg 180정"}
@@ -105,11 +104,11 @@ function ALL() {
               price={"20,000"}
             />
             <Card
-              product_name={"마그네슘 500mg 180정"}
+              product_name={"MJ 조거 팬츠"}
               img_src={
-                "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"
+                require("../assets/pants.webp")
               }
-              price={"20,000"}
+              price={"29,000"}
             />
             <Card
               product_name={"마그네슘 500mg 180정"}
@@ -119,11 +118,11 @@ function ALL() {
               price={"20,000"}
             />
             <Card
-              product_name={"마그네슘 500mg 180정"}
+              product_name={"MJ 조거 팬츠"}
               img_src={
-                "https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"
+                require("../assets/pants.webp")
               }
-              price={"20,000"}
+              price={"29,000"}
             />
             <Card
               product_name={"마그네슘 500mg 180정"}
@@ -133,9 +132,9 @@ function ALL() {
               price={"20,000"}
             />
             <Card
-              product_name={"마그네슘 500mg 180정"}
-              img_src={"상품 준비 중"}
-              price={"20,000"}
+              product_name={"MJ 조거 팬츠"}
+              img_src={require("../assets/pants.webp")}
+              price={"29,000"}
             />
           </div>
         </div>

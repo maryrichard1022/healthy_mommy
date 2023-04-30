@@ -5,6 +5,7 @@ const AllFilterButton = () => {
   return (
     <div className="AllFilterButton">
       <p><span style={{fontSize: '22px', fontWeight: 'bold'}}>
+      <FilterButton text={"전체"} />
       <FilterButton text={"엽산"} />
       <FilterButton text={"칼슘"} />
       <FilterButton text={"철분"} />

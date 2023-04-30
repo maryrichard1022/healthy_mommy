@@ -15,7 +15,7 @@ const Card = ({ product_name, img_src, price }) => {
                 className="rounded-circle fit-cover"
                 width={50}
                 height={50}
-                src={require("../assets/cart2.jpeg")}
+                src={require("../assets/cart.png")}
                 style={{ padding: 10 }}
                 alt=""
               />
