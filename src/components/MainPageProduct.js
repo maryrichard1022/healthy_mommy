@@ -108,7 +108,7 @@ const MainPageProduct = () => {
 
                 <p className="product-price">{product.price * 1000 + "원"}</p>
 
-                <p>sold: {product.sold}</p>
+                <p className="product-sold">sold: {product.sold}</p>
               </div>
               <div className="cart-img-box">
                 <img

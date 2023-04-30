@@ -1,8 +1,6 @@
 import React from "react";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./Detail.css";
 
 function Detail() {
@@ -14,19 +12,27 @@ function Detail() {
           <div className="row">
             <div className="col-12 col-sm-6 col-md-6">
               <div className="image-holder">
-                <img src={require("../assets/pants.webp")} alt = ""/>
+                <img src={require("../assets/pants.webp")} alt="" />
               </div>
             </div>
             <div className="col">
               <h1>MJ 조거 팬츠</h1>
-              <br /><br /><br />
+              <br />
+              <br />
+              <br />
               <p>
                 {" "}
                 신축성이 좋은 조거 팬츠 <br />
-                (상품에 관련한 설명 들어갈 예정)<br /><br /><br />{" "}
+                (상품에 관련한 설명 들어갈 예정)
+                <br />
+                <br />
+                <br />{" "}
               </p>
               <br />
-              <h3> 가격 29,000원 <br /></h3>
+              <h3>
+                {" "}
+                가격 29,000원 <br />
+              </h3>
               <div className="row">
                 <div className="col-9"></div>
                 <div className="col">
@@ -60,7 +66,7 @@ function Detail() {
             </div>
           </div>
 
-          <hr style={{borderTop: '1px solid black'}} />
+          <hr style={{ borderTop: "1px solid black" }} />
           <br />
 
           <div className="Row">

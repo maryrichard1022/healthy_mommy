@@ -26,11 +26,12 @@ const Nav = () => {
               <button class="dropbtn">영양제</button>
             </Link>
             <div class="dropdown-content">
+              <a href="#!">전체</a>
               <a href="#!">엽산</a>
               <a href="#!">칼슘</a>
-              <a href="#!">비타민</a>
               <a href="#!">철분</a>
               <a href="#!">유산균</a>
+              <a href="#!">비타민D</a>
             </div>
           </div>
 
@@ -49,8 +50,9 @@ const Nav = () => {
               <button class="dropbtn">운동기구</button>
             </Link>
             <div class="dropdown-content">
-              <a href="#!">짐볼</a>
+              <a href="#!">전체</a>
               <a href="#!">실내사이클</a>
+              <a href="#!">짐볼</a>
               <a href="#!">탄력밴드</a>
               <a href="#!">폼롤러</a>
               <a href="#!">요가매트</a>
