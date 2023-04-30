@@ -33,7 +33,7 @@ const MainSlider = () => {
     ],
   };
   return (
-    <container className="banner">
+    <container className="mainbanner">
       <Slider {...settings}>
         <div>
           <img alt="banner1" src={require("../assets/banner1.jpg")} />
