@@ -17,7 +17,7 @@ function Detail() {
               </div>
             </div>
             <div className="col">
-              <h1>MJ 조거 팬츠</h1>
+              <h1>MJ 조거 팬츠 초특가 할인</h1>
               <br />
               <br />
               <br />

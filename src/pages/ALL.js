@@ -5,7 +5,7 @@ import Nav from "../components/Nav";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import Banner from "../components/Banner";
-import Card from "../components/Card";
+import Card from "../components/Card.js";
 
 import "./ALL.css";
 
@@ -90,7 +90,7 @@ function ALL() {
               price={"20,000"}
             />
             <Card
-              product_name={"MJ 조거 팬츠"}
+              product_name={"MJ 조거 팬츠 초특가 할인"}
               img_src={
                 require("../assets/pants.webp")
               }
@@ -104,7 +104,7 @@ function ALL() {
               price={"20,000"}
             />
             <Card
-              product_name={"MJ 조거 팬츠"}
+              product_name={"MJ 조거 팬츠 초특가 할인"}
               img_src={
                 require("../assets/pants.webp")
               }
@@ -118,7 +118,7 @@ function ALL() {
               price={"20,000"}
             />
             <Card
-              product_name={"MJ 조거 팬츠"}
+              product_name={"MJ 조거 팬츠 초특가 할인"}
               img_src={
                 require("../assets/pants.webp")
               }
@@ -132,7 +132,7 @@ function ALL() {
               price={"20,000"}
             />
             <Card
-              product_name={"MJ 조거 팬츠"}
+              product_name={"MJ 조거 팬츠 초특가 할인"}
               img_src={require("../assets/pants.webp")}
               price={"29,000"}
             />

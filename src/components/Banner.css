@@ -1,8 +1,13 @@
 .banner {
-    display:flex;
-    flex: 1;    
     margin-bottom: 5%;
-    width: 100%;
-    /* max-width: 1215px;
-    max-height: 250px; */
+    text-align: center;
+    overflow: hidden;
+    max-height: 250px;
+}
+
+.banner img {
+    max-height: initial;
+    margin-top: -15%;
+    width: 1215px;
+    
 }
