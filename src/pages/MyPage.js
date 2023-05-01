@@ -34,7 +34,7 @@ const MyPage = () => {
               </span>
               <span className="OrderName">마그네슘 500mg 180정</span>
               <span className="OrderCounter">
-                <Counter />
+                1
               </span>
               <span className="OrderPrice"> 20,000원</span>
           </div>

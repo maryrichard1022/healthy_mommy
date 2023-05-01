@@ -48,9 +48,13 @@
 }
 .OrderDetail span {
   margin-right: 45px;
-  margin-left: 50px;
+  margin-left: 60px;
   text-align: center;
   display: block;
+}
+
+.Orderimg{
+  margin-left: 20px;
 }
 
 .OrderName{
@@ -58,7 +62,7 @@
 }
 
 .OrderCounter {
-  padding-left: 1px;
+  padding-left: 10px;
 }
 
 .OrderPrice {
