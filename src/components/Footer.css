@@ -28,7 +28,7 @@
 }
 
 .sb_footer_info_div h3 {
-  font-size: 18px !important;
+  font-size: 18px;
   line-height: 15px;
   margin-bottom: 0.9rem;
   margin-left: 30px;
@@ -50,12 +50,13 @@
   font-family: "IBM Plex Sans KR", sans-serif;
 }
 
-.sb_footer_below {
+/*.sb_footer_below {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 0.2rem;
 }
+*/
 
 hr {
   margin-top: 7px;
@@ -73,7 +74,7 @@ hr {
   font-family: "IBM Plex Sans KR", sans-serif;
 }
 
-@media screen and (max-width: 850px) {
+/* @media screen and (max-width: 850px) {
   .sb_footer_heading h3 {
     font-size: 44px;
     line-height: 50px;
@@ -96,4 +97,4 @@ hr {
     font-size: 27px;
     line-height: 38px;
   }
-}
+} */

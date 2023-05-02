@@ -1,25 +1,139 @@
 // 장바구니
-import React from "react";
+import React, { useState } from "react";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
-import Counter from "../components/Counter";
 import "./Cart.css";
 import { Link } from "react-router-dom";
+import API from "../config";
 import CustomButton from "../components/CustomButton";
+import CartProduct from "../components/CartProduct";
 
 const Cart = () => {
+  //로그인한 유저의 토큰을 확인
+  const ACCESS_TOKEN = sessionStorage.getItem("ACCESS_TOKEN");
+  //const navigate = useNavigate();
+  const [pending, setPending] = useState(false);
+  //물품 수량 업데이트 상태
+  const [items, setItems] = useState([]);
+  //총 상품 가격 (reuce, 베열 순회, 값 누적하여 하나의 값으로 반환)
+  const totalPrice = items.reduce((previousValue, currentValue) => {
+    return (
+      parseInt(previousValue) +
+      parseInt(currentValue.price * currentValue.quantity)
+    );
+  }, 0);
+
+  //const openModal = () => {
+  //setModal(true);
+  //setTimeout(() => {
+  //   navigate("/myorder");
+  // }, 2000);
+  //};
+  //장바구니 몰록 가져오기
+  // const getItems = async () => {
+  //const response = await fetch(API.cart, {
+  //   headers: {
+  //    Authorization: ACCESS_TOKEN,
+  //   },
+  // });
+  // const result = await response.json();
+  /// setItems(result.cart);
+  //};
+
+  //아이템 수량 삭제
+  const handleDecreaseItem = async (id) => {
+    const selectedId = items.findIndex((item) => item.id === id);
+    if (items[selectedId].quantity > 1 && !pending) {
+      setPending(true);
+      const response = await fetch(API.cart, {
+        method: "PATCH",
+        headers: {
+          Authorization: ACCESS_TOKEN,
+        },
+        body: JSON.stringify({
+          cart_id: items[selectedId].id,
+          quantity: -1,
+        }),
+      });
+      const result = await response.json();
+      setPending(false);
+      if (result.message === "UPDATE_SUCCESS") {
+        const newQuantity = [...items];
+        newQuantity[selectedId].quantity--;
+        setItems(newQuantity);
+      }
+    }
+  };
+  //아이템 수량 증가
+  const handleIncreaseItem = async (id) => {
+    const selectedId = items.findIndex((item) => item.id === id);
+    if (!pending) {
+      setPending(true);
+      const response = await fetch(API.cart, {
+        method: "PATCH",
+        headers: {
+          Authorization: ACCESS_TOKEN,
+        },
+        body: JSON.stringify({
+          cart_id: items[selectedId].id,
+          quantity: 1,
+        }),
+      });
+      const result = await response.json();
+      setPending(false);
+      if (result.message === "OUT_OF_STOCK") {
+        alert(`최대 구매 가능 수량 입니다.`);
+        return;
+      }
+      //해당 물품 id 찾아서 수량 증가
+      const newQuantity = [...items];
+      newQuantity[selectedId].quantity++;
+      setItems(newQuantity);
+    }
+  };
+
+  //아이템 삭제
+  const handleRemoveItem = async (id) => {
+    const selectedId = items.findIndex((item) => item.id === id);
+    if (!pending) {
+      setPending(true);
+      const response = await fetch(API.cart, {
+        method: "DELETE",
+        headers: {
+          Authorization: ACCESS_TOKEN,
+        },
+        body: JSON.stringify({
+          cart_ids: [items[selectedId].id],
+        }),
+      });
+      const result = await response.json();
+      setPending(false);
+      if (result.message === "DELETE_SUCCESS") {
+        const filtered = items.filter((itme) => itme.id !== id);
+        setItems(filtered);
+      }
+    }
+  };
+  //로그인 안 되어 있으면 로그인 창으로
+  //useEffect(() => {
+  //if (!ACCESS_TOKEN) {
+  //  alert("로그인 해주세요.");
+  //  navigate("/login");
+  //  return;
+  //  }
+  //  getItems();
+  //}, []);
+
   return (
     <div className="cart">
       <div className="contentWrapper">
         <Nav />
-
         <h1> 장바구니 </h1>
-
         <div className="CartInfo">
           <div className="ProductInCart">
             <hr></hr>
             <div className="ProductInCartInfo">
-              <input type="checkbox" />
+              {/* <input type="checkbox" /> */}
               <span>전체선택</span>
               <span>상품명</span>
               <span>수량</span>
@@ -27,33 +141,27 @@ const Cart = () => {
             </div>
 
             <div className="ProductDetail">
-              <input type="checkbox" />
-              <span>
-                <img alt="product" className="Productimg" />
-              </span>
-              <span>마그네슘 500mg 180정</span>
-              <span className="Counter">
-                <Counter />
-              </span>
-
-              <span className="ProductPrice"> 00,000원</span>
-              <span>
-                <button
-                  className="RemoveButton"
-                  onClick={() =>
-                    window.confirm("장바구니에서 삭제하시겠습니까?")
-                  }
-                >
-                  X
-                </button>
-              </span>
+              {/* <input type="checkbox" /> */}
+            </div>
+            <div className="cart-items">
+              {/* 물품정보 props 전달 */}
+              {items.map((item, index) => (
+                <CartProduct
+                  // key={Math.random()}
+                  item={item}
+                  index={index}
+                  handleDecreaseItem={handleDecreaseItem}
+                  handleIncreaseItem={handleIncreaseItem}
+                  handleRemoveItem={handleRemoveItem}
+                />
+              ))}
             </div>
             <hr></hr>
           </div>
         </div>
-
+        {/* 총 가격 가격 */}
         <div className="TotalPrice">
-          <h2>총 결제 금액 : 123,456원</h2>
+          <h2>총 결제 금액 : {totalPrice.toLocaleString()} 원</h2>
           <Link to={"/Payment"}>
             <CustomButton text={"주문하기"} />
           </Link>

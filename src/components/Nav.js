@@ -1,7 +1,6 @@
 // 홈페이지 헤더, Navigator (모든 페이지 상단에 import 해서 넣으면 됨)
 import React from "react";
 import { Link } from "react-router-dom";
-
 import "./Nav.css";
 
 const Nav = () => {
@@ -63,7 +62,7 @@ const Nav = () => {
       <div className="nav-container_right">
         <span>
           <Link to={"/MyPage"}>
-          <img alt="logo" src={require("../assets/user.png")} />
+            <img alt="logo" src={require("../assets/user.png")} />
           </Link>
         </span>
 

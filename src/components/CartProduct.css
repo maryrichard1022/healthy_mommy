@@ -1,0 +1,26 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;600&display=swap");
+
+.Counter {
+  display: flex;
+}
+
+.IncreaseButton,
+.DecreaseButton,
+.RemoveButton {
+  font-family: "IBM Plex Sans KR", sans-serif;
+  background-color: #f9e9ed;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  margin-left: 17px;
+  margin-right: 17px;
+  font-size: 18px;
+  font-weight: bold;
+
+  height: 30px;
+}
