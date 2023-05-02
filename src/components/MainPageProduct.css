@@ -63,6 +63,8 @@
 .BestProduct p {
   padding-right: 0px;
   padding-left: 0px;
+
+  white-space: nowrap;
 }
 
 .product-img {
@@ -78,9 +80,9 @@
 }
 
 .productinfo {
-  height: 130px;
+  height: 120px;
   width: 100px;
-  padding-left: 50px;
+  padding-left: 30px;
 }
 
 .cart-img-box {
@@ -95,7 +97,7 @@
   cursor: pointer;
 }
 .product-name {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   text-align: center;
 }

@@ -39,10 +39,12 @@
   padding-right: 50px;
 }
 
-.ProductForPay p .PayConfirm p {
+/*.ProductForPay p .PayConfirm p {
   font-weight: bold;
   font-size: 20px;
+  padding-right: 10px;
 }
+*/
 
 .ProductForPay h2 {
   text-align: right;
@@ -118,10 +120,11 @@
   height: 100px;
 }
 
-.PayConfirm p {
+/*.PayConfirm p {
   padding-top: 15px;
   font-size: 15px;
 }
+*/
 .Howmuch {
   display: flex;
   align-items: center;
@@ -158,16 +161,6 @@ input[type="text"] {
 } 
 */
 
-h4 {
-  font-size: 20px;
-  margin-bottom: 5px;
-}
-
-p {
-  padding-right: 15px;
-  font-size: 15px;
-}
-
 hr {
   margin-top: 5px;
   color: black !important;
@@ -175,4 +168,19 @@ hr {
 
 input[type="checkbox"] {
   margin-right: 5px;
+}
+
+.DeliveryInfo h4,
+.PatMethodText h4 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.p-css {
+  padding-right: 20px;
+}
+
+.BankSelect {
+  padding-bottom: 10px;
+  padding-top: 10px;
 }

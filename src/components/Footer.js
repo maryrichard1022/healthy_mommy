@@ -14,7 +14,7 @@ const Footer = () => {
           <p>tel. 031-1234-5678</p>
           <p>address. 경기도 용인시 처인구 명지로 116</p>
         </div>
-        <hr></hr>
+        <hr className="footerbar"></hr>
         <div className="sb_footer_copyright">
           <p>@{new Date().getFullYear()} HealthyMommy. All right reserved.</p>
         </div>

@@ -50,7 +50,7 @@ const Payment = () => {
         <div className="PayInfo">
           <div className="ProductForPay">
             <hr></hr>
-            <p>주문 상품 정보</p>
+            <p className="p-css">주문 상품 정보</p>
             <div className="ProductInfo">
               <span></span>
               <span>상품명</span>
@@ -67,7 +67,7 @@ const Payment = () => {
 
             <tbody>
               <tr className="NameforDeliver">
-                <p>수령인</p>
+                <p className="p-css">수령인</p>
                 <input
                   name="receiver"
                   value={state.receiver}
@@ -78,7 +78,7 @@ const Payment = () => {
               </tr>
 
               <tr className="NumberforDeliver">
-                <p>연락처</p>
+                <p className="p-css">연락처</p>
                 <input type="text" value="010" />
                 <input
                   name="midnumber"
@@ -95,22 +95,22 @@ const Payment = () => {
               </tr>
 
               <tr className="AddressforDeliver">
-                <p>배송지</p>
+                <p className="p-css">배송지</p>
                 <Postcode onChange={handleChangeState} />
               </tr>
             </tbody>
           </div>
 
           <br></br>
-          <h4>결제 수단</h4>
+          <h4 className="PatMethodText">결제 수단</h4>
           <div className="PayMethod">
             <div className="PayCash">
               <div className="AccountTransfer">
                 <input type="checkbox" />
-                <p>무통장 입금</p>
+                <p className="p-css">무통장 입금</p>
               </div>
               <div className="NameforPay">
-                <p>입금자명</p>
+                <p className="p-css">입금자명</p>
                 <input
                   name="accountname"
                   type="text"
@@ -120,7 +120,7 @@ const Payment = () => {
               </div>
 
               <div className="BankforPay">
-                <p>입금은행</p>
+                <p className="p-css">입금은행</p>
                 <form>
                   <select
                     name="Bank"
