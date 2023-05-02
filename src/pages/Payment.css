@@ -56,6 +56,7 @@
   padding-top: 10px;
   padding-bottom: 10px;
   align-items: center;
+  box-sizing: initial;
 }
 
 .NumberforDeliver {
@@ -64,6 +65,7 @@
   padding-top: 10px;
   padding-bottom: 10px;
   align-items: center;
+  box-sizing: initial;
 }
 
 .AddressforDeliver {
@@ -72,6 +74,7 @@
   padding-top: 10px;
   padding-bottom: 10px;
   align-items: center;
+  box-sizing: initial;
 }
 
 .PayMethod {
@@ -92,6 +95,7 @@
   padding-top: 10px;
   padding-bottom: 10px;
   align-items: center;
+  box-sizing: initial;
 }
 
 .BankforPay {
@@ -100,6 +104,7 @@
   padding-top: 10px;
   padding-bottom: 10px;
   align-items: center;
+  box-sizing: initial;
 }
 .PayByKakaoPay {
   display: flex;
@@ -170,6 +175,10 @@ input[type="checkbox"] {
   margin-right: 5px;
 }
 
+input[type="text"] {
+  box-sizing: initial;
+}
+
 .DeliveryInfo h4,
 .PatMethodText h4 {
   font-size: 20px;
@@ -178,9 +187,4 @@ input[type="checkbox"] {
 
 .p-css {
   padding-right: 20px;
-}
-
-.BankSelect {
-  padding-bottom: 10px;
-  padding-top: 10px;
 }

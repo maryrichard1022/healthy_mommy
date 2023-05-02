@@ -123,6 +123,7 @@ const Payment = () => {
                 <p className="p-css">입금은행</p>
                 <form>
                   <select
+                    className="BankSelect"
                     name="Bank"
                     value={state.Bank}
                     onChange={handleChangeState}
