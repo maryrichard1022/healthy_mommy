@@ -7,18 +7,22 @@ const Card = ({ product_name, img_src, price }) => {
     <div className="col-12 col-sm-6 col-md-3">
       <a href="./Detail">
         <div className="card">
-          <img className="card-top shop-img" src={img_src} alt="" />
+          <div className="card-top">
+            <img className="shop-img" src={img_src} alt="" />
+          </div>
           <div className="card-body">
-            <div className="d-flex">
+            <div className="row">
+              <div className="col-9">
               <h4>{product_name}</h4>
+              </div>
+              <div className="col-3">
               <img
-                className="rounded-circle fit-cover"
-                width={50}
-                height={50}
-                src={require("../assets/cart2.jpeg")}
-                style={{ padding: 10 }}
+                className="cart-logo"
+                src={require("../assets/cart.png")}
                 alt=""
               />
+              </div>
+            
             </div>
             <p className="card-text">{price}원</p>
           </div>

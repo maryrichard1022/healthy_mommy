@@ -2,6 +2,7 @@ import React from "react";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import "./Detail.css";
+import CustomButton from "../components/CustomButton";
 
 function Detail() {
   return (
@@ -16,7 +17,7 @@ function Detail() {
               </div>
             </div>
             <div className="col">
-              <h1>MJ 조거 팬츠</h1>
+              <h1>MJ 조거 팬츠 초특가 할인</h1>
               <br />
               <br />
               <br />
@@ -45,9 +46,9 @@ function Detail() {
                   <div className="row">
                     <button
                       type="button"
-                      class="btn btn-outline-dark btn-lg btn-block"
+                      class="btn"
                     >
-                      바로 구매
+                      <CustomButton text={"바로 구매"}/>
                     </button>
                   </div>
                 </div>
@@ -56,9 +57,10 @@ function Detail() {
                   <div className="row">
                     <button
                       type="button"
-                      class="btn btn-outline-dark btn-lg btn-block"
+                      class="btn"
+                      // btn-outline-dark btn-lg btn-block
                     >
-                      장바구니 담기
+                      <CustomButton text={"장바구니 담기"}/>
                     </button>
                   </div>
                 </div>

@@ -58,14 +58,14 @@ function SportsWear() {
 
         <div className="container">
           <div className="row">
-            <Card product_name={"MJ 조거 팬츠"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
-            <Card product_name={"MJ 조거 팬츠"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
-            <Card product_name={"MJ 조거 팬츠"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
-            <Card product_name={"MJ 조거 팬츠"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
-            <Card product_name={"MJ 조거 팬츠"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
-            <Card product_name={"MJ 조거 팬츠"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
-            <Card product_name={"MJ 조거 팬츠"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
-            <Card product_name={"MJ 조거 팬츠"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
+            <Card product_name={"MJ 조거 팬츠 초특가 할인"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
+            <Card product_name={"MJ 조거 팬츠 초특가 할인"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
+            <Card product_name={"MJ 조거 팬츠 초특가 할인"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
+            <Card product_name={"MJ 조거 팬츠 초특가 할인"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
+            <Card product_name={"MJ 조거 팬츠 초특가 할인"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
+            <Card product_name={"MJ 조거 팬츠 초특가 할인"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
+            <Card product_name={"MJ 조거 팬츠 초특가 할인"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
+            <Card product_name={"MJ 조거 팬츠 초특가 할인"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
           </div>
         </div>
       </div>
