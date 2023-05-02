@@ -60,11 +60,7 @@ const MainPageProduct = () => {
       <div>
         <h2>BEST PRODUCT</h2>
         <div className="MainFilterButton">
-          <FilterButton
-            style={{ color: "green" }}
-            onClick={sortAll}
-            text={"ALL"}
-          />
+          <FilterButton onClick={sortAll} text={"ALL"} />
           <FilterButton onClick={sortSupplements} text={"영양제"} />
           <FilterButton onClick={sortSportsWear} text={"운동복"} />
           <FilterButton onClick={sortEquipment} text={"운동기구"} />
@@ -105,9 +101,7 @@ const MainPageProduct = () => {
             <div className="productinfo-cart">
               <div className="productinfo">
                 <p className="product-name">{product.name}</p>
-
                 <p className="product-price">{product.price * 1000 + "원"}</p>
-
                 <p className="product-sold">sold: {product.sold}</p>
               </div>
               <div className="cart-img-box">
