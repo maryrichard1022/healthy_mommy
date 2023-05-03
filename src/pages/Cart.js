@@ -10,7 +10,7 @@ import CartProduct from "../components/CartProduct";
 
 const Cart = () => {
   //로그인한 유저의 토큰을 확인
-  const ACCESS_TOKEN = sessionStorage.getItem("ACCESS_TOKEN");
+  const access_token = sessionStorage.getItem("access_token");
   //const navigate = useNavigate();
   const [pending, setPending] = useState(false);
   //물품 수량 업데이트 상태
@@ -33,14 +33,14 @@ const Cart = () => {
   // const getItems = async () => {
   //const response = await fetch(API.cart, {
   //   headers: {
-  //    Authorization: ACCESS_TOKEN,
+  //    Authorization: access_token,
   //   },
   // });
   // const result = await response.json();
   /// setItems(result.cart);
   //};
 
-  //아이템 수량 삭제
+  //아이템 수량 -1
   const handleDecreaseItem = async (id) => {
     const selectedId = items.findIndex((item) => item.id === id);
     if (items[selectedId].quantity > 1 && !pending) {
@@ -48,7 +48,7 @@ const Cart = () => {
       const response = await fetch(API.cart, {
         method: "PATCH",
         headers: {
-          Authorization: ACCESS_TOKEN,
+          Authorization: access_token,
         },
         body: JSON.stringify({
           cart_id: items[selectedId].id,
@@ -64,7 +64,7 @@ const Cart = () => {
       }
     }
   };
-  //아이템 수량 증가
+  //아이템 수량 +1
   const handleIncreaseItem = async (id) => {
     const selectedId = items.findIndex((item) => item.id === id);
     if (!pending) {
@@ -72,7 +72,7 @@ const Cart = () => {
       const response = await fetch(API.cart, {
         method: "PATCH",
         headers: {
-          Authorization: ACCESS_TOKEN,
+          Authorization: access_token,
         },
         body: JSON.stringify({
           cart_id: items[selectedId].id,
@@ -100,7 +100,7 @@ const Cart = () => {
       const response = await fetch(API.cart, {
         method: "DELETE",
         headers: {
-          Authorization: ACCESS_TOKEN,
+          Authorization: access_token,
         },
         body: JSON.stringify({
           cart_ids: [items[selectedId].id],
@@ -116,7 +116,7 @@ const Cart = () => {
   };
   //로그인 안 되어 있으면 로그인 창으로
   //useEffect(() => {
-  //if (!ACCESS_TOKEN) {
+  //if (!access_token) {
   //  alert("로그인 해주세요.");
   //  navigate("/login");
   //  return;

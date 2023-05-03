@@ -83,6 +83,7 @@
   height: 120px;
   width: 100px;
   padding-left: 30px;
+  box-sizing: initial;
 }
 
 .cart-img-box {
