@@ -29,7 +29,7 @@ const MainPageProduct = () => {
     fetch(`${API.main}${queryString}`)
       .then((res) => res.json())
       .then((result) => {
-        // setTotalItems(result);
+        //     setTotalItems(result);
         setProductlist(result.result);
         console.log(result);
       });
@@ -79,7 +79,7 @@ const MainPageProduct = () => {
       <div className="datacheck">
         {/* <h4>가데이터 API 연동 및 정렬 확인</h4> */}
         {/* 카테고리 2x4 위에 나타냄 */}
-        <h4 className="scategory-name">
+        <h4 className="category-name">
           {urlCategory === "supplements"
             ? "영양제"
             : urlCategory === "sportswear"
@@ -88,6 +88,8 @@ const MainPageProduct = () => {
             ? "운동기구"
             : "ALL"}
         </h4>
+
+        {/* 장바구니 아이콘 누르면 해당 상품의 id값 장바구니에 추가 */}
       </div>
       <div className="ProductListInfo">
         {productlist?.map((product) => (
@@ -100,6 +102,7 @@ const MainPageProduct = () => {
             ></img>
             <div className="productinfo-cart">
               <div className="productinfo">
+                {/* <p> {product.id}</p> */}
                 <p className="product-name">{product.name}</p>
                 <p className="product-price">{product.price * 1000 + "원"}</p>
                 <p className="product-sold">sold: {product.sold}</p>

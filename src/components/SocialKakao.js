@@ -54,16 +54,26 @@
 // export default KakaoLogin;
 
 import KakaoLogin from "react-kakao-login";
-
+import API from "../config";
 const SocialKakao = () => {
   const kakaoClientId = "c810cdd4c87858ed473a517cefa5e349";
   const kakaoOnSuccess = async (data) => {
     console.log(data);
     const id_token = data.response.id_token; // 인가코드 백엔드로 전달
 
-    //fetch
-    //
+    //`${API.signin}?code=${code}`
+    //백에 전달. 콘솔창에서 결과 확인할 것.
+    fetch(`${API.signin}`, {
+      method: "POST",
+      body: JSON.stringify({
+        access_token: id_token,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => console.log(result));
   };
+
+  //로그인 완료되면 그 전에 페이지로 돌아가는 법.
   const kakaoOnFailure = (error) => {
     console.log(error);
   };

@@ -108,6 +108,12 @@
   margin-top: 0px;
 }
 
+.category-name {
+  font-weight: 600;
+  font-size: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 /* .product-sold {
   font-size: 20px;
 } */

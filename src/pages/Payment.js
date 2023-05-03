@@ -26,6 +26,8 @@ const Payment = () => {
     });
   };
 
+  //장바구니에 있는 정보 가져옴..
+
   //버튼 눌렀을 때 작동(console에 state 안 뜸) 안 함--> 추후에 수정할 것
   // 주문하기 버튼 클릭하면 state저장하고 넘어감
   // const handleClick = () => {

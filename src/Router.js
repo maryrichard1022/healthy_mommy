@@ -22,7 +22,7 @@ import FitnessEquipment from "./pages/FitnessEquipment";
 
 function Router() {
   return (
-    <BrowserRouter> 
+    <BrowserRouter>
       <Routes>
         <Route path="/Cart" element={<Cart />} />
         <Route path="/Payment" element={<Payment />} />
@@ -31,7 +31,7 @@ function Router() {
         <Route exact path="/MyPage" element={<MyPage />} />
         <Route exact path="/Location" element={<Location />} />
         <Route path="/" element={<Main />} />
-        <Route exact path="/Login" element={<Login />} />
+        <Route path="/Login" element={<Login />} />
         <Route exact path="/PaySuccess" element={<PaySuccess />} />
         <Route exact path="/Detail" element={<Detail />} />
 
