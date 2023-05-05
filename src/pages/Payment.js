@@ -106,7 +106,7 @@ const Payment = () => {
           <br></br>
           <h4 className="PatMethodText">결제 수단</h4>
           <div className="PayMethod">
-            <div className="PayCash">
+            {/* <div className="PayCash">
               <div className="AccountTransfer">
                 <input type="checkbox" />
                 <p className="p-css">무통장 입금</p>
@@ -137,11 +137,11 @@ const Payment = () => {
                   </select>
                 </form>
               </div>
-            </div>
+            </div> */}
 
             <div className="PayByKakaopay">
               <div className="Kakaomoney">
-                <input type="checkbox" />
+                {/* <input type="checkbox" /> */}
                 <p>카카오페이</p>
               </div>
               <img

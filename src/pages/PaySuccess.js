@@ -38,7 +38,7 @@ const PaySucess = () => {
         </div>
 
         <div className="PayCheckInfo">
-          <p>주문번호: {new Date().getTime()}</p>
+          {/* <p>주문번호: {new Date().getTime()}</p> */}
           <p>주문일자: {dateString}</p>
         </div>
 

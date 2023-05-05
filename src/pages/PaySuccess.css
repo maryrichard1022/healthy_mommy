@@ -21,6 +21,7 @@
   width: 30px;
   height: 30px;
   padding-right: 15px;
+  box-sizing: initial;
 }
 
 .PayCheckAlert p {

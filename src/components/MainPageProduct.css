@@ -42,9 +42,11 @@
 }
 
 .ProductListInfo {
-  width: 100%;
+  width: 80%;
   padding-top: 50px;
   padding-bottom: 50px;
+  margin-left: 130px;
+  margin-right: 130px;
   text-align: center;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -82,7 +84,7 @@
 .productinfo {
   height: 120px;
   width: 100px;
-  padding-left: 30px;
+  padding-left: 50px;
   box-sizing: initial;
 }
 
@@ -121,9 +123,11 @@
 
 @media (max-width: 1200px) {
   .ProductListInfo {
-    width: 100%;
+    width: 70%;
     padding-top: 50px;
     padding-bottom: 50px;
+    margin-left: 130px;
+    margin-right: 130px;
     text-align: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -134,9 +138,11 @@
 
 @media (max-width: 768px) {
   .ProductListInfo {
-    width: 100%;
+    width: 60%;
     padding-top: 50px;
     padding-bottom: 50px;
+    margin-left: 130px;
+    margin-right: 130px;
     text-align: center;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -150,9 +156,11 @@
 
 @media (max-width: 500px) {
   .ProductListInfo {
-    width: 100%;
+    width: 30%;
     padding-top: 50px;
     padding-bottom: 50px;
+    margin-left: 130px;
+    margin-right: 130px;
     text-align: center;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
