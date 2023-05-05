@@ -36,21 +36,21 @@ const MainPageProduct = () => {
   }, [location.search]);
 
   //필터 버튼 누르면 url 바뀌도록
-  const sortAll = () => {
+  const sortBestAll = () => {
     const bestAll = `?sort_method=-sold`;
     navigate(bestAll);
   };
 
-  const sortSupplements = () => {
+  const sortBestSupplements = () => {
     const bestSupplements = `?category=supplements&sort_method=-sold`;
     navigate(bestSupplements);
   };
-  const sortSportsWear = () => {
+  const sortBestSportsWear = () => {
     const bestSportsWear = `?category=sportswear&sort_method=-sold`;
     navigate(bestSportsWear);
   };
 
-  const sortEquipment = () => {
+  const sortBestEquipment = () => {
     const bestEquipment = `?category=fitness_equipment&sort_method=-sold`;
     navigate(bestEquipment);
   };
@@ -60,10 +60,10 @@ const MainPageProduct = () => {
       <div>
         <h2>BEST PRODUCT</h2>
         <div className="MainFilterButton">
-          <FilterButton onClick={sortAll} text={"ALL"} />
-          <FilterButton onClick={sortSupplements} text={"영양제"} />
-          <FilterButton onClick={sortSportsWear} text={"운동복"} />
-          <FilterButton onClick={sortEquipment} text={"운동기구"} />
+          <FilterButton onClick={sortBestAll} text={"ALL"} />
+          <FilterButton onClick={sortBestSupplements} text={"영양제"} />
+          <FilterButton onClick={sortBestSportsWear} text={"운동복"} />
+          <FilterButton onClick={sortBestEquipment} text={"운동기구"} />
         </div>
       </div>
 
