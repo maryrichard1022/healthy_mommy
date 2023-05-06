@@ -2,11 +2,11 @@
 import React from "react";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
+//import "bootstrap/dist/css/bootstrap.css";
+//import "bootstrap/dist/js/bootstrap.bundle.min";
 import Banner from "../components/Banner";
 import Card from "../components/Card.js";
-
+import AllPageProduct from "../components/AllPageProduct"; //0505
 import "./ALL.css";
 
 function ALL() {
@@ -14,12 +14,12 @@ function ALL() {
     <div className="all">
       <div className="contentWrapper">
         <Nav />
-
+        <AllPageProduct />
         <div class="container">
-          <h1>All</h1>
-          <Banner img_src={require("../assets/All.png")} />
+          {/* <h1>All</h1>
+          <Banner img_src={require("../assets/All.png")} /> */}
           
-          <div className="container">
+          {/* <div className="container">
             <div className="row">
               <div className="col col-sm-3 col-md-7">
                 <p />
@@ -77,10 +77,10 @@ function ALL() {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
-        <div className="container">
+        {/* <div className="container">
           <div className="row">
             <Card
               product_name={"마그네슘 500mg 180정"}
@@ -137,7 +137,8 @@ function ALL() {
               price={"29,000"}
             />
           </div>
-        </div>
+        </div> */}
+        {/* <AllPageProduct/> //0505*/} 
       </div>
       <Footer />
     </div>
