@@ -8,6 +8,7 @@ class PayReady extends React.Component {
     next_redirect_pc_url: "",
     tid: "",
     // 요청에 넘겨줄 매개변수들
+    //결제할 가격, 아이템 이름  부가세 등 조정
     params: {
       cid: "TC0ONETIME",
       partner_order_id: "partner_order_id",

@@ -17,7 +17,7 @@ const MainPageProduct = () => {
 
   //마운트 되자마자 all을 띄우도록 함
   useEffect(() => {
-    sortAll();
+    sortBestAll();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

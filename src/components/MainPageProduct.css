@@ -45,8 +45,7 @@
   width: 80%;
   padding-top: 50px;
   padding-bottom: 50px;
-  margin-left: 130px;
-  margin-right: 130px;
+  margin-left: 150px;
   text-align: center;
   display: grid;
   grid-template-columns: repeat(4, 1fr);

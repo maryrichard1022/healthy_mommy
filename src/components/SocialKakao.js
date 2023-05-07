@@ -54,8 +54,12 @@
 // export default KakaoLogin;
 
 import KakaoLogin from "react-kakao-login";
+//import { useNavigate } from "react-router-dom";
 import API from "../config";
 const SocialKakao = () => {
+  //params = new URL(document.URL).searchParams;
+  //const code = params.get("code");
+  // const navigate = useNavigate();
   const kakaoClientId = "c810cdd4c87858ed473a517cefa5e349";
   const kakaoOnSuccess = async (data) => {
     console.log(data);
@@ -70,10 +74,17 @@ const SocialKakao = () => {
       }),
     })
       .then((response) => response.json())
-      .then((result) => console.log(result));
+      .then((result) => {
+        console.log(result);
+        // if (result.message === "") {
+        //   alert("로그인 되었습니다.");
+        //   navigate("/");
+        // } else {
+        //   alert("오류");
+        // }
+      });
   };
 
-  //로그인 완료되면 그 전에 페이지로 돌아가는 법.
   const kakaoOnFailure = (error) => {
     console.log(error);
   };
@@ -87,5 +98,4 @@ const SocialKakao = () => {
     </>
   );
 };
-
 export default SocialKakao;

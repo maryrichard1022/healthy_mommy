@@ -1,6 +1,6 @@
 // 장바구니
-import React, { useState } from "react";
-////==import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import "./Cart.css";
@@ -12,9 +12,9 @@ import CartProduct from "../components/CartProduct";
 const Cart = () => {
   //로그인한 유저의 토큰을 확인
   const access_token = sessionStorage.getItem("access_token");
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
   const [pending, setPending] = useState(false);
-  const [Modal, setModal] = useState(false);
+  //const [Modal, setModal] = useState(false);
   //물품 수량 업데이트 상태
   const [items, setItems] = useState([]);
   //총 상품 가격 (reuce, 베열 순회, 값 누적하여 하나의 값으로 반환)
@@ -31,7 +31,7 @@ const Cart = () => {
   //    navigate("/myorder");
   // }, 2000);
   // };
-  // 장바구니 목록 가져오기
+  // 로그인 되어 있으면 -> 장바구니 목록 가져옴
   const getItems = async () => {
     const response = await fetch(API.cart, {
       headers: {
@@ -117,14 +117,16 @@ const Cart = () => {
     }
   };
   //로그인 안 되어 있으면 로그인 창으로
-  //useEffect(() => {
-  //if (!access_token) {
-  //alert("로그인 해주세요.");
-  //navigate("/Login");
-  //return;
-  // }
-  // getItems();
-  //}, []);
+  //로그인 하면 다시 장바구니로 이동하는 코드 작성
+  useEffect(() => {
+    if (!access_token) {
+      alert("로그인 해주세요.");
+      navigate("/Login");
+      return;
+    }
+    getItems();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="cart">
