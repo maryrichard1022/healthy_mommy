@@ -3,7 +3,7 @@ import React from "react";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import "./MyPage.css";
-import Counter from "../components/Counter";
+/* import Counter from "../components/Counter"; */
 
 const MyPage = () => {
   return (
