@@ -3,71 +3,55 @@ import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import "./Detail.css";
 import CustomButton from "../components/CustomButton";
+import DetailSlider from "../components/DetailSlider";
 
 function Detail() {
   return (
     <div className="all">
       <div className="contentWrapper">
         <Nav />
-        <div class="container">
-          <div className="row">
-            <div className="col-12 col-sm-6 col-md-6">
-              <div className="image-holder">
-                <img src={require("../assets/pants.webp")} alt="" />
-              </div>
-            </div>
-            <div className="col">
-              <h1>MJ 조거 팬츠 초특가 할인</h1>
-              <br />
-              <br />
-              <br />
-              <p>
-                {" "}
-                신축성이 좋은 조거 팬츠 <br />
-                (상품에 관련한 설명 들어갈 예정)
-                <br />
-                <br />
-                <br />{" "}
-              </p>
-              <br />
-              <h3>
-                {" "}
-                가격 29,000원 <br />
-              </h3>
-              <div className="row">
-                <div className="col-9"></div>
-                <div className="col">
-                  <p> 총 상품금액: 0원</p>
-                </div>
-              </div>
-              <br />
-              <div className="row">
-                <div className="col-4">
-                  <div className="row">
-                    <button
-                      type="button"
-                      class="btn"
-                    >
-                      <CustomButton text={"바로 구매"}/>
-                    </button>
-                  </div>
-                </div>
-                <div className="col-1"></div>
-                <div className="col-7">
-                  <div className="row">
-                    <button
-                      type="button"
-                      class="btn"
-                      // btn-outline-dark btn-lg btn-block
-                    >
-                      <CustomButton text={"장바구니 담기"}/>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
+
+      <div class="product-detail">
+  <div class="product-images">
+    <div class="product-main-image">
+    <DetailSlider />
+      {/* <img src={require("../assets/pants.webp")} alt="Product Main Image" /> */}
+    </div>
+
+  </div>
+  <div class="product-info">
+    <div class="product-title">
+      <h1>MJ 조거 팬츠 초특가 할인</h1>
+    </div>
+    <div class="product-description">
+      <p>신축성이 좋은 조거 팬츠
+(상품에 관련한 설명 들어갈 예정)</p>
+    </div>
+    <div class="product-price">
+      <h2>29,000원</h2>
+    </div>
+    <button
+      type="button"
+      class="btn"
+    >
+      <CustomButton text={"바로 구매"}/>
+    </button>
+
+    <button
+      type="button"
+      class="btn"
+      // btn-outline-dark btn-lg btn-block
+    >
+      <CustomButton text={"장바구니 담기"}/>
+    </button>
+  </div>
+</div>
+
+
+
+        <div class="container">
+        
           <hr style={{ borderTop: "1px solid black" }} />
           <br />
 

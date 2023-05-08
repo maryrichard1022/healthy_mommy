@@ -53,18 +53,30 @@
   display: block;
 }
 
-.Orderimg {
+/* .Orderimg {
   margin-left: 20px;
 }
 
 .OrderName {
   padding-left: 10px;
-}
+} */
 
 .OrderCounter {
-  padding-left: 10px;
+  padding-left: 35px;
+  padding-right: 40px;
 }
 
 .OrderPrice {
-  padding-left: 20px;
+  padding-left: 60px;
+}
+
+.product-details {
+  opacity: 0; /* 초기에는 상세 내용이 표시되지 않음 */
+  transition: opacity 0.5s ease-in-out; /* 애니메이션 효과 지정 */
+  display: none;
+}
+
+.product-details.show {
+  opacity: 1; /* 상세 내용이 표시되면 opacity를 1로 변경하여 fade-in 애니메이션 효과 적용 */
+  display:inline
 }
