@@ -2,9 +2,9 @@
 import React from "react";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
-import SupplimentsFilterButton from "../components/SupplimentsFilterButton";
-import Card from "../components/Card";
-import Banner from "../components/Banner";
+//import Card from "../components/Card";
+//import Banner from "../components/Banner";
+import SupplementsPageProduct from "../components/SupplementsPageProduct"; //0508
 import "./Supplements.css";
 
 function Supplements() {
@@ -12,17 +12,17 @@ function Supplements() {
     <div className="Supplements">
       <div className="contentWrapper">
         <Nav />
-        
+
+        <SupplementsPageProduct />
         
         <div class="container">
-        <h1>영양제</h1>
-
-        <Banner img_src={require("../assets/supplement.png")}/>
+        
+        {/* <Banner img_src={require("../assets/supplement.png")}/> */}
         
 
-        <SupplimentsFilterButton />
+        {/* <SupplimentsFilterButton /> */}
           <div className="container">
-            <div className="row">
+            {/* <div className="row">
               <div
                 className="col col-sm-3 col-md-7"
               >
@@ -55,12 +55,12 @@ function Supplements() {
                     최신 순</span>
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
 
-        <div className="container">
+       {/*  <div className="container">
           <div className="row">
           <Card product_name={"마그네슘 500mg 180정"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20,000"}/>
             <Card product_name={"마그네슘 500mg 180정"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20,000"}/>
@@ -71,7 +71,7 @@ function Supplements() {
             <Card product_name={"마그네슘 500mg 180정"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20,000"}/>
             <Card product_name={"마그네슘 500mg 180정"} img_src={"https://cloudinary.images-iherb.com/image/upload/f_auto,q_auto:eco/images/blb/blb00672/v/31.jpg"} price={"20,000"}/>
           </div>
-        </div>
+        </div> */}
  
       </div>
 

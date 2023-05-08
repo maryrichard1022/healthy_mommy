@@ -1,10 +1,10 @@
-  .AllPageProduct h1 {
+.SupplementsPageProduct h1 {
     text-align: left;
     padding-top: 50px;
     padding-left: 150px;
   }
 
-  .AllBanner {
+  .SupplementsBanner {
     /* filter: brightness(50%); */
     padding-top: 15px;
     width: 80%;
@@ -15,7 +15,7 @@
     margin-bottom: 3%; /* 0507 */
   }
   
-  .AllBanner img {
+  .SupplementsBanner img {
     /* width: 80%; */
     max-height: initial;
     margin-top: -15%;
@@ -35,7 +35,7 @@
     
  } */
 
-  .AllPageProduct {
+  .SupplementsPageProduct {
     position: relative;
     /* AllPageProduct가 position: relative일 경우, 
        하위 요소들이 position: absolute로 지정될 때,
@@ -50,4 +50,6 @@
     /* 우측 상단에 배치할 내용의 스타일 */
   }
 
-  
+  .AllFilterButton2 {
+    padding-left: 40px;
+  }
