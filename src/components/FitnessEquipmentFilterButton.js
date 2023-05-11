@@ -3,7 +3,7 @@ import FilterButton from "./FilterButton";
 
 const AllFilterButton = () => {
   return (
-    <div className="AllFilterButton">
+    <div className="AllFilterButton4">
       <p><span style={{fontSize: '22px', fontWeight: 'bold'}}>
       <FilterButton text={"전체"} />
       <FilterButton text={"실내사이클"} />

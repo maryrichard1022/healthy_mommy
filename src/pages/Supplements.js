@@ -5,7 +5,6 @@ import Nav from "../components/Nav";
 //import Card from "../components/Card";
 //import Banner from "../components/Banner";
 import SupplementsPageProduct from "../components/SupplementsPageProduct"; //0508
-import "./Supplements.css";
 
 function Supplements() {
   return (

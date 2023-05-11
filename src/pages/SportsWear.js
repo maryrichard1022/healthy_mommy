@@ -2,9 +2,10 @@
 import React from "react";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
-import SportsWearFilterButton from "../components/SportsWearFilterButton";
-import Card from "../components/Card";
-import Banner from "../components/Banner";
+/* import SportsWearFilterButton from "../components/SportsWearFilterButton"; */
+/* import Card from "../components/Card";
+import Banner from "../components/Banner"; */
+import SportsWearPageProduct from "../components/SportsWearPageProduct";
 
 function SportsWear() {
   return (
@@ -12,12 +13,14 @@ function SportsWear() {
       <div className="contentWrapper">
         <Nav />
 
+        <SportsWearPageProduct />
+
         <div class="container">
-        <h1>운동복</h1>
-        <Banner img_src={require("../assets/sportswear.png")}/>
-        <SportsWearFilterButton />
+        {/* <h1>운동복</h1> */}
+        {/* <Banner img_src={require("../assets/sportswear.png")}/> */}
+        {/* <SportsWearFilterButton /> */}
           <div className="container">
-            <div className="row">
+            {/* <div className="row">
               <div
                 className="col col-sm-3 col-md-7"
               >
@@ -51,12 +54,12 @@ function SportsWear() {
                     </span>
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
 
-        <div className="container">
+        {/* <div className="container">
           <div className="row">
             <Card product_name={"MJ 조거 팬츠 초특가 할인"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
             <Card product_name={"MJ 조거 팬츠 초특가 할인"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
@@ -67,7 +70,7 @@ function SportsWear() {
             <Card product_name={"MJ 조거 팬츠 초특가 할인"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
             <Card product_name={"MJ 조거 팬츠 초특가 할인"} img_src={require("../assets/pants.webp")} price={"29,000"}/>
           </div>
-        </div>
+        </div> */}
       </div>
       <Footer />
     </div>

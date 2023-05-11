@@ -67,7 +67,7 @@ const AllPageProduct = () => {
         <div className="AllFilterButton">
           <FilterButton onClick={""} text={"가격 낮은 순"} />
           <FilterButton onClick={""} text={"가격 높은 순"} />
-          <FilterButton onClick={""} text={"누적 판매 순"} />
+          <FilterButton onClick={""} text={"인기 많은 순"} />
           <FilterButton onClick={""} text={"최신 순"} />
         </div>
       </div>
@@ -110,7 +110,7 @@ const AllPageProduct = () => {
                 {/* <p> {product.id}</p> */}
                 <p className="product-name">{product.name}</p>
                 <p className="product-price">{product.price * 1000 + "원"}</p>
-                <p className="product-sold">sold: {product.sold}</p>
+                {/* <p className="product-sold">sold: {product.sold}</p> */}
               </div>
               <div className="cart-img-box">
                 <img

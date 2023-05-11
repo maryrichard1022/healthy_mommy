@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import "./SupplementsPageProduct.css";
+import "./SportsWearPageProduct.css";
 import FilterButton from "./FilterButton";
 import API from "../config";
-import SupplementsFilterButton from "../components/SupplementsFilterButton";
+import SportsWearFilterButton from "../components/SportsWearFilterButton";
 
 
-const SupplementsPageProduct = () => {
+const SportsWearPageProduct = () => {
   const [productlist, setProductlist] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
@@ -28,15 +28,15 @@ const SupplementsPageProduct = () => {
   }, [location.search]);
 
   return (
-    <div className="SupplementsPageProduct">
+    <div className="SportsWearPageProduct">
       <div>
-        <h1>영양제</h1>
+        <h1>운동복</h1>
           <img
-          className="SupplementsBanner"
-          alt="SupplememntsBanner"
-          src={require("../assets/supplement.png")} />
+          className="SportsWearBanner"
+          alt="SportsWearBanner"
+          src={require("../assets/sportswear.png")} />
 
-<SupplementsFilterButton />
+<SportsWearFilterButton />
         
 
         <div className="AllFilterButton">
@@ -80,4 +80,4 @@ const SupplementsPageProduct = () => {
     </div>
   );
 };
-export default SupplementsPageProduct;
+export default SportsWearPageProduct;

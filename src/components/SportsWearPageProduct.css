@@ -1,10 +1,10 @@
-.SupplementsPageProduct h1 {
+.SportsWearPageProduct h1 {
     text-align: left;
     padding-top: 50px;
     padding-left: 150px;
   }
 
-  .SupplementsBanner {
+  .SportsWearBanner {
     /* filter: brightness(50%); */
     padding-top: 15px;
     width: 80%;
@@ -15,7 +15,7 @@
     margin-bottom: 3%; /* 0507 */
   }
   
-  .SupplementsBanner img {
+  .SportsWearBanner img {
     /* width: 80%; */
     max-height: initial;
     margin-top: -15%;
@@ -35,7 +35,7 @@
     
  } */
 
-  .SupplementsPageProduct {
+  .SportsWearPageProduct {
     position: relative;
     /* AllPageProduct가 position: relative일 경우, 
        하위 요소들이 position: absolute로 지정될 때,
@@ -50,6 +50,6 @@
     /* 우측 상단에 배치할 내용의 스타일 */
   }
 
-  .AllFilterButton2 {
+  .AllFilterButton3 {
     padding-left: 140px;
   }
