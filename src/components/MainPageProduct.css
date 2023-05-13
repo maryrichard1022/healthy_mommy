@@ -81,8 +81,8 @@
 }
 
 .productinfo {
-  height: 120px;
-  width: 100px;
+  height: 140px;
+  width: 120px;
   padding-left: 50px;
   box-sizing: initial;
 }
@@ -100,12 +100,17 @@
   box-sizing: initial;
 }
 .product-name {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
   text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
 }
 
 .product-price {
+  font-size: 17px !important;
   margin-top: 0px;
 }
 

@@ -1,7 +1,7 @@
 //카카오 로그인
 import React from "react";
 import "./KakaoLogin.css";
-
+import API from "../config";
 class KakaoLogin extends React.Component {
   state = {
     loginResult: false, // 로그인 여부에 따라 페이지 편집
@@ -21,6 +21,18 @@ class KakaoLogin extends React.Component {
           //카카오 SDK에 사용자 토큰 설정
           window.Kakao.Auth.setAccessToken(response.access_token);
           console.log(`is set?: ${window.Kakao.Auth.getAccessToken()}`);
+          const id_token = `${window.Kakao.Auth.getAccessToken()}`;
+          //받아온 인가코드 백에 전달
+          fetch(`${API.signin}`, {
+            method: "POST",
+            body: JSON.stringify({
+              access_token: id_token,
+            }),
+          })
+            .then((response) => response.json())
+            .then((result) => {
+              console.log(result);
+            });
           loginResult = true;
           // 성공 사항에 따라 페이지를 수정하기 위한 setState
           home.setState({ loginResult });

@@ -2,7 +2,7 @@
 import React from "react";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import SocialKakao from "../components/SocialKakao";
+import KakaoLogin from "../components/KakaoLogin";
 import "./Login.css";
 
 const Login = () => {
@@ -12,7 +12,7 @@ const Login = () => {
         <Nav />
         <div className="kakaologin">
           <h1>카카오로 로그인</h1>
-          <SocialKakao />
+          <KakaoLogin />
         </div>
       </div>
       <Footer />

@@ -37,21 +37,21 @@ const MainPageProduct = () => {
 
   //필터 버튼 누르면 url 바뀌도록
   const sortBestAll = () => {
-    const bestAll = `?sort_method=-sold`;
+    const bestAll = `?sort_method=id`;
     navigate(bestAll);
   };
 
   const sortBestSupplements = () => {
-    const bestSupplements = `?category=supplements&sort_method=-sold`;
+    const bestSupplements = `?category=supplements&sort_method=id`;
     navigate(bestSupplements);
   };
   const sortBestSportsWear = () => {
-    const bestSportsWear = `?category=sportswear&sort_method=-sold`;
+    const bestSportsWear = `?category=sportswear&sort_method=id`;
     navigate(bestSportsWear);
   };
 
   const sortBestEquipment = () => {
-    const bestEquipment = `?category=fitness_equipment&sort_method=-sold`;
+    const bestEquipment = `?category=fitness_equipment&sort_method=id`;
     navigate(bestEquipment);
   };
 
@@ -94,18 +94,16 @@ const MainPageProduct = () => {
       <div className="ProductListInfo">
         {productlist?.map((product) => (
           <div className="BestProduct">
-            {/* 크롤링 테이블 받아오면 src={product.image_url}로 수정 */}
             <img
               alt="product-img"
-              src={require("../assets/url_img.png")}
+              src={product.image_url[0]}
               className="product-img"
             ></img>
             <div className="productinfo-cart">
               <div className="productinfo">
-                {/* <p> {product.id}</p> */}
                 <p className="product-name">{product.name}</p>
-                <p className="product-price">{product.price * 1000 + "원"}</p>
-                <p className="product-sold">sold: {product.sold}</p>
+                <p className="product-price">{Math.floor(product.price)}원</p>
+                <p className="product-sold">id 확인: {product.id}</p>
               </div>
               <div className="cart-img-box">
                 <img

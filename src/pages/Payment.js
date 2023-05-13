@@ -1,6 +1,6 @@
 // 결제중 페이지
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import CustomButton from "../components/CustomButton";
@@ -14,8 +14,6 @@ const Payment = () => {
     lastnumber: "",
     postcodeStreet: "",
     postcodedetail: "",
-    accountname: "",
-    Bank: "하나은행 123-456-123456",
   });
 
   const handleChangeState = (e) => {
@@ -30,19 +28,19 @@ const Payment = () => {
 
   //버튼 눌렀을 때 작동(console에 state 안 뜸) 안 함--> 추후에 수정할 것
   // 주문하기 버튼 클릭하면 state저장하고 넘어감
-  // const handleClick = () => {
-  // if(state.receiver.length || state.accountname < 1){
-  //   alert("정확한 이름을 입력해주세요")
-  //   return;
-  // }
+  const handleClick = () => {
+    if (state.receiver.length < 1 || state.receiver.length > 5) {
+      alert("정확한 이름을 입력해주세요");
+      return;
+    }
 
-  // if (state.midnumber.length || state.lastnumber.legnth < 4) {
-  //   alert("정확한 번호를 입력해주세요")
-  //   return
-  // }
-  //   console.log(state);
-  //   alert("주문");
-  // };
+    if (state.midnumber.length < 1 || state.lastnumber.length < 4) {
+      alert("정확한 번호를 입력해주세요");
+      return;
+    }
+    console.log(state);
+    alert("주문");
+  };
   return (
     <div className="paypage">
       <div className="contentWapper">
@@ -156,13 +154,11 @@ const Payment = () => {
             <div className="Howmuch">
               <h2>총 결제 금액 : 123,456원</h2>
 
-              <Link to={"/PaySuccess"}>
-                <CustomButton
-                  //onClick={handleClick}
-                  className="GotoPay"
-                  text={"결제하기"}
-                />
-              </Link>
+              <CustomButton
+                onClick={handleClick}
+                className="GotoPay"
+                text={"결제하기"}
+              />
             </div>
           </div>
         </div>

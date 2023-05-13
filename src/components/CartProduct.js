@@ -8,7 +8,7 @@ const CartProduct = ({
   handleIncreaseItem,
   handleRemoveItem,
 }) => {
-  const { id, product_name, price, images, quantity } = item;
+  const { id, product_name, quantity, price, image_url } = item;
 
   return (
     <div className="cart-card-container">
@@ -16,7 +16,7 @@ const CartProduct = ({
         <div className="cart-row-box">
           <div className="cart-row-img-box">
             {/* 상품 사진, 이름, 수량증감, 상품 가격 */}
-            <img className="cart-row-img" alt="item" src={images[0]} />
+            <img className="cart-row-img" alt="item" src={image_url} />
           </div>
           <div className="cart-row-expln">
             <div>
