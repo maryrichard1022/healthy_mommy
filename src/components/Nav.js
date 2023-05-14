@@ -8,7 +8,7 @@ const Nav = () => {
     <header className="nav-container">
       <div className="nav-container_left">
         <div className="nav-container_logo">
-          <Link to={"/?sort_method=id"}>
+          <Link to={"/?sort_method=-release_date"}>
             <img alt="mainlogo" src={require("../assets/mainlogo.png")} />
           </Link>
         </div>

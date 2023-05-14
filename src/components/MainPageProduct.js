@@ -17,7 +17,7 @@ const MainPageProduct = () => {
 
   //마운트 되자마자 all을 띄우도록 함
   useEffect(() => {
-    sortBestAll();
+    sortNewAll();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -36,34 +36,34 @@ const MainPageProduct = () => {
   }, [location.search]);
 
   //필터 버튼 누르면 url 바뀌도록
-  const sortBestAll = () => {
-    const bestAll = `?sort_method=id`;
-    navigate(bestAll);
+  const sortNewAll = () => {
+    const NewAll = `?sort_method=-release_date`;
+    navigate(NewAll);
   };
 
-  const sortBestSupplements = () => {
-    const bestSupplements = `?category=supplements&sort_method=id`;
-    navigate(bestSupplements);
+  const sortNewSupplements = () => {
+    const NewSupplements = `?category=supplements&sort_method=-release_date`;
+    navigate(NewSupplements);
   };
-  const sortBestSportsWear = () => {
-    const bestSportsWear = `?category=sportswear&sort_method=id`;
-    navigate(bestSportsWear);
+  const sortNewSportsWear = () => {
+    const NewSportsWear = `?category=sportswear&sort_method=-release_date`;
+    navigate(NewSportsWear);
   };
 
-  const sortBestEquipment = () => {
-    const bestEquipment = `?category=fitness_equipment&sort_method=id`;
-    navigate(bestEquipment);
+  const sortNewEquipment = () => {
+    const NewEquipment = `?category=fitness_equipment&sort_method=-release_date`;
+    navigate(NewEquipment);
   };
 
   return (
     <div className="MainPageProduct">
       <div>
-        <h2>BEST PRODUCT</h2>
+        <h2>NEW PRODUCT</h2>
         <div className="MainFilterButton">
-          <FilterButton onClick={sortBestAll} text={"ALL"} />
-          <FilterButton onClick={sortBestSupplements} text={"영양제"} />
-          <FilterButton onClick={sortBestSportsWear} text={"운동복"} />
-          <FilterButton onClick={sortBestEquipment} text={"운동기구"} />
+          <FilterButton onClick={sortNewAll} text={"ALL"} />
+          <FilterButton onClick={sortNewSupplements} text={"영양제"} />
+          <FilterButton onClick={sortNewSportsWear} text={"운동복"} />
+          <FilterButton onClick={sortNewEquipment} text={"운동기구"} />
         </div>
       </div>
 
@@ -96,14 +96,14 @@ const MainPageProduct = () => {
           <div className="BestProduct">
             <img
               alt="product-img"
-              src={product.image_url[0]}
+              src={product.image_url}
               className="product-img"
             ></img>
             <div className="productinfo-cart">
               <div className="productinfo">
                 <p className="product-name">{product.name}</p>
                 <p className="product-price">{Math.floor(product.price)}원</p>
-                <p className="product-sold">id 확인: {product.id}</p>
+                {/* {<p className="product-sold">{product.release_date}</p>} */}
               </div>
               <div className="cart-img-box">
                 <img

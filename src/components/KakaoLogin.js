@@ -54,7 +54,6 @@ class KakaoLogin extends React.Component {
       // SDK 초기화 여부를 확인
       console.log(window.Kakao.isInitialized());
     }
-
     return (
       <div className="GotoKakaoLogin">
         <img alt="login" src={require("../assets/kakao_login.png")} />
