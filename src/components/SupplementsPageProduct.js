@@ -12,10 +12,16 @@ const SupplementsPageProduct = () => {
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const urlCategory = params.get("category"); 
+  let subCategory = "";
+
 
   //버튼 누를 때마다 테이블 받아옴
   useEffect(() => {
-    const queryString = location.search;
+    let queryString = location.search;
+
+    if(queryString == ""){
+      queryString="?category=supplements";
+    }
 
     //메인페이지에 띄우는 물품 리스트 정보 가져옴
     fetch(`${API.main}${queryString}`)
@@ -29,7 +35,7 @@ const SupplementsPageProduct = () => {
 
   //필터 버튼 누르면 url 바뀌도록
   const sortSuppleAll = () => {
-    const suppleAll = `?category=supplements&sort_method=id`;
+    const suppleAll = `?category=supplements`;
     navigate(suppleAll);
   };
 
@@ -59,21 +65,37 @@ const SupplementsPageProduct = () => {
 
   //필터 버튼 누르면 url 바뀌도록
   const sortPriceLow = () => {
-    const priceLow = `?category=supplements&sort_method=price`;
+    subCategory =  location.search;
+    if(subCategory == "") {
+      subCategory="?category=supplements";
+    }
+    const priceLow = `${subCategory}&sort_method=price`;
     navigate(priceLow);
   };
 
   const sortPriceHigh = () => {
-    const priceHigh = `?category=supplements&sort_method=-price`;
+    subCategory =  location.search;
+    if(subCategory == "") {
+      subCategory="?category=supplements";
+    }
+    const priceHigh = `${subCategory}&sort_method=-price`;
     navigate(priceHigh);
   };
   const sortBestProduct = () => {
-    const bestProduct = `?category=supplements&sort_method=id`;
+    subCategory =  location.search;
+    if(subCategory == "") {
+      subCategory="?category=supplements";
+    }
+    const bestProduct = `${subCategory}&sort_method=id`;
     navigate(bestProduct);
   };
 
   const sortNewProduct = () => {
-    const newProduct = `?category=supplements&sort_method=release_date`;
+    subCategory =  location.search;
+    if(subCategory == "") {
+      subCategory="?category=supplements";
+    }
+    const newProduct = `${subCategory}&sort_method=release_date`;
     navigate(newProduct);
   };
 
@@ -111,10 +133,11 @@ const SupplementsPageProduct = () => {
         <div className="ProductListInfo">
         {productlist?.map((product) => (
           <div className="BestProduct">
-            {/* 크롤링 테이블 받아오면 src={product.image_url}로 수정 */}
+            
             <img
               alt="product-img"
-              src={require("../assets/url_img.png")}
+              /* src={require("../assets/url_img.png")} */
+              src={product.image_url} //크롤링 테이블 받아왔을 때!!
               className="product-img"
             ></img>
             <div className="productinfo-cart">
@@ -135,6 +158,15 @@ const SupplementsPageProduct = () => {
             <br />
           </div>
         ))}
+      </div>
+      <div className="paginataion-group">
+        <div className="pagination">
+          <a href="#">&laquo;</a>
+          <a href="#">1</a>
+          <a className="active" href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">&raquo;</a>
+        </div>
       </div>
     </div>
   );

@@ -93,11 +93,10 @@ const AllPageProduct = () => {
       <div className="ProductListInfo">
         {productlist?.map((product) => (
           <div className="BestProduct">
-            {/* 크롤링 테이블 받아오면 src={product.image_url}로 수정 */}
             <img
               alt="product-img"
-              src={require("../assets/url_img.png")}
-              /* src={product.image_url[0]} */
+              /* src={require("../assets/url_img.png")} */
+              src={product.image_url} //크롤링 테이블 받아왔을 때!!
               className="product-img"
             ></img>
             <div className="productinfo-cart">
