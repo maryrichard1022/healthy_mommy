@@ -4,8 +4,8 @@ import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 //import "bootstrap/dist/css/bootstrap.css";
 //import "bootstrap/dist/js/bootstrap.bundle.min";
-import Banner from "../components/Banner";
-import Card from "../components/Card.js";
+//import Banner from "../components/Banner";
+//import Card from "../components/Card.js";
 import AllPageProduct from "../components/AllPageProduct"; //0505
 import "./ALL.css";
 

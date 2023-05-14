@@ -16,9 +16,9 @@ const AllPageProduct = () => {
 
   //마운트 되자마자 all을 띄우도록 함
   /* useEffect(() => {
-    sortBestAll(); */
+    sortBestAll();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  /* }, []); */
+   }, []); */ //0514
 
   //버튼 누를 때마다 테이블 받아옴
   useEffect(() => {
@@ -35,24 +35,24 @@ const AllPageProduct = () => {
   }, [location.search]);
 
   //필터 버튼 누르면 url 바뀌도록
-/*   const sortBestAll = () => {
-    const bestAll = `?sort_method=-sold`;
-    navigate(bestAll);
+  const sortPriceLow = () => {
+    const priceLow = `?sort_method=price`;
+    navigate(priceLow);
   };
 
-  const sortBestSupplements = () => {
-    const bestSupplements = `?category=supplements&sort_method=-sold`;
-    navigate(bestSupplements);
+  const sortPriceHigh = () => {
+    const priceHigh = `?sort_method=-price`;
+    navigate(priceHigh);
   };
-  const sortBestSportsWear = () => {
-    const bestSportsWear = `?category=sportswear&sort_method=-sold`;
-    navigate(bestSportsWear);
+  const sortBestProduct = () => {
+    const bestProduct = `?sort_method=id`;
+    navigate(bestProduct);
   };
 
-  const sortBestEquipment = () => {
-    const bestEquipment = `?category=fitness_equipment&sort_method=-sold`;
-    navigate(bestEquipment);
-  }; */
+  const sortNewProduct = () => {
+    const newProduct = `?sort_method=release_date`;
+    navigate(newProduct);
+  };
 
   return (
     <div className="AllPageProduct">
@@ -64,21 +64,15 @@ const AllPageProduct = () => {
           src={require("../assets/All.png")} />
         
 
-        <div className="AllFilterButton">
-          <FilterButton onClick={""} text={"가격 낮은 순"} />
-          <FilterButton onClick={""} text={"가격 높은 순"} />
-          <FilterButton onClick={""} text={"인기 많은 순"} />
-          <FilterButton onClick={""} text={"최신 순"} />
+        <div className="AllFilterButton11">
+          <FilterButton onClick={sortPriceLow} text={"가격 낮은 순"} />
+          <FilterButton onClick={sortPriceHigh} text={"가격 높은 순"} />
+          <FilterButton onClick={sortBestProduct} text={"베스트 순"} />
+          <FilterButton onClick={sortNewProduct} text={"최신 순"} />
         </div>
       </div>
         <br />
-      {/*<div className="subBanner"> */}
-      {/* <img
-        className="subBanner"
-        alt="banner"
-        src={require("../assets/banner5.jpg")}
-      /> */}
-      {/*  </div> */}
+      
 
       <br />
       {/* <div className="datacheck"> */}
@@ -103,13 +97,14 @@ const AllPageProduct = () => {
             <img
               alt="product-img"
               src={require("../assets/url_img.png")}
+              /* src={product.image_url[0]} */
               className="product-img"
             ></img>
             <div className="productinfo-cart">
               <div className="productinfo">
                 {/* <p> {product.id}</p> */}
                 <p className="product-name">{product.name}</p>
-                <p className="product-price">{product.price * 1000 + "원"}</p>
+                <p className="product-price">{Math.floor(product.price)}원</p>
                 {/* <p className="product-sold">sold: {product.sold}</p> */}
               </div>
               <div className="cart-img-box">

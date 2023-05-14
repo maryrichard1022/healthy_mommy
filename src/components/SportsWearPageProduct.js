@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "./SportsWearPageProduct.css";
 import FilterButton from "./FilterButton";
 import API from "../config";
-import SportsWearFilterButton from "../components/SportsWearFilterButton";
+//import SportsWearFilterButton from "../components/SportsWearFilterButton";
 
 
 const SportsWearPageProduct = () => {
@@ -27,6 +27,41 @@ const SportsWearPageProduct = () => {
       });
   }, [location.search]);
 
+//필터 버튼 누르면 url 바뀌도록
+const sortWearAll = () => {
+  const wearAll = `?category=sportswear&sort_method=id`;
+  navigate(wearAll);
+};
+
+const sortWearTop = () => {
+  const wearTop = `?sub_category=top`;
+  navigate(wearTop);
+};
+const sortWearBottom = () => {
+  const wearBottom = `?sub_category=bottom`;
+  navigate(wearBottom);
+};
+
+//필터 버튼 누르면 url 바뀌도록
+const sortPriceLow = () => {
+  const priceLow = `?category=sportswear&sort_method=price`;
+  navigate(priceLow);
+};
+
+const sortPriceHigh = () => {
+  const priceHigh = `?category=sportswear&sort_method=-price`;
+  navigate(priceHigh);
+};
+const sortBestProduct = () => {
+  const bestProduct = `?category=sportswear&sort_method=id`;
+  navigate(bestProduct);
+};
+
+const sortNewProduct = () => {
+  const newProduct = `?category=sportswear&sort_method=release_date`;
+  navigate(newProduct);
+};
+
   return (
     <div className="SportsWearPageProduct">
       <div>
@@ -36,14 +71,20 @@ const SportsWearPageProduct = () => {
           alt="SportsWearBanner"
           src={require("../assets/sportswear.png")} />
 
-<SportsWearFilterButton />
+    <div className="SportsWearFilterButton">
+      <p>
+          <FilterButton onClick={sortWearAll} text={"전체"} />
+          <FilterButton onClick={sortWearTop} text={"상의"} />
+          <FilterButton onClick={sortWearBottom} text={"하의"} />
+      </p>
+    </div>
         
 
-        <div className="AllFilterButton">
-          <FilterButton onClick={""} text={"가격 낮은 순"} />
-          <FilterButton onClick={""} text={"가격 높은 순"} />
-          <FilterButton onClick={""} text={"인기 많은 순"} />
-          <FilterButton onClick={""} text={"최신 순"} />
+        <div className="AllFilterButton13">
+          <FilterButton onClick={sortPriceLow} text={"가격 낮은 순"} />
+          <FilterButton onClick={sortPriceHigh} text={"가격 높은 순"} />
+          <FilterButton onClick={sortBestProduct} text={"베스트 순"} />
+          <FilterButton onClick={sortNewProduct} text={"최신 순"} />
         </div>
     </div>
       
@@ -62,7 +103,7 @@ const SportsWearPageProduct = () => {
               <div className="productinfo">
                 {/* <p> {product.id}</p> */}
                 <p className="product-name">{product.name}</p>
-                <p className="product-price">{product.price * 1000 + "원"}</p>
+                <p className="product-price">{Math.floor(product.price)}원</p>
                 {/* <p className="product-sold">sold: {product.sold}</p> */}
               </div>
               <div className="cart-img-box">

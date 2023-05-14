@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "./FitnessEquipmentPageProduct.css";
 import FilterButton from "./FilterButton";
 import API from "../config";
-import FitnessEquipmentFilterButton from "../components/FitnessEquipmentFilterButton";
+//import FitnessEquipmentFilterButton from "../components/FitnessEquipmentFilterButton";
 
 
 const FitnessEquipmentPageProduct = () => {
@@ -27,6 +27,56 @@ const FitnessEquipmentPageProduct = () => {
       });
   }, [location.search]);
 
+  //필터 버튼 누르면 url 바뀌도록
+  const sortEquipAll = () => {
+    const equipAll = `?category=fitness_equipment&sort_method=id`;
+    navigate(equipAll);
+  };
+
+  const sortEquipBike = () => {
+    const equipBike = `?sub_category=excercise_bike`;
+    navigate(equipBike);
+  };
+  const sortEquipBall = () => {
+    const equipBall = `?sub_category=gymball`;
+    navigate(equipBall);
+  };
+
+  const sortEquipBand = () => {
+    const equipBand = `?sub_category=band`;
+    navigate(equipBand);
+  };
+
+  const sortEquipRoller = () => {
+    const equipRoller = `?sub_category=foam_roller`;
+    navigate(equipRoller);
+  };
+
+  const sortEquipMat = () => {
+    const equipMat = `?sub_category=yoga_mat`;
+    navigate(equipMat);
+  };
+
+  //필터 버튼 누르면 url 바뀌도록
+  const sortPriceLow = () => {
+    const priceLow = `?category=fitness_equipment&sort_method=price`;
+    navigate(priceLow);
+  };
+
+  const sortPriceHigh = () => {
+    const priceHigh = `?category=fitness_equipment&sort_method=-price`;
+    navigate(priceHigh);
+  };
+  const sortBestProduct = () => {
+    const bestProduct = `?category=fitness_equipment&sort_method=id`;
+    navigate(bestProduct);
+  };
+
+  const sortNewProduct = () => {
+    const newProduct = `?category=fitness_equipment&sort_method=release_date`;
+    navigate(newProduct);
+  };
+
   return (
     <div className="FitnessEquipmentPageProduct">
       <div>
@@ -36,14 +86,24 @@ const FitnessEquipmentPageProduct = () => {
           alt="FitnessEquipmentBanner"
           src={require("../assets/banner2.jpg")} />
 
-<FitnessEquipmentFilterButton />
+
+    <div className="FitnessEquipmentFilterButton">
+      <p>
+          <FilterButton onClick={sortEquipAll} text={"전체"} />
+          <FilterButton onClick={sortEquipBike} text={"실내사이클"} />
+          <FilterButton onClick={sortEquipBall} text={"짐볼"} />
+          <FilterButton onClick={sortEquipBand} text={"탄력밴드"} />
+          <FilterButton onClick={sortEquipRoller} text={"폼롤러"} />
+          <FilterButton onClick={sortEquipMat} text={"요가매트"} />
+      </p>
+    </div>
         
 
-        <div className="AllFilterButton">
-          <FilterButton onClick={""} text={"가격 낮은 순"} />
-          <FilterButton onClick={""} text={"가격 높은 순"} />
-          <FilterButton onClick={""} text={"인기 많은 순"} />
-          <FilterButton onClick={""} text={"최신 순"} />
+        <div className="AllFilterButton14">
+          <FilterButton onClick={sortPriceLow} text={"가격 낮은 순"} />
+          <FilterButton onClick={sortPriceHigh} text={"가격 높은 순"} />
+          <FilterButton onClick={sortBestProduct} text={"베스트 순"} />
+          <FilterButton onClick={sortNewProduct} text={"최신 순"} />
         </div>
     </div>
       
@@ -62,7 +122,7 @@ const FitnessEquipmentPageProduct = () => {
               <div className="productinfo">
                 {/* <p> {product.id}</p> */}
                 <p className="product-name">{product.name}</p>
-                <p className="product-price">{product.price * 1000 + "원"}</p>
+                <p className="product-price">{Math.floor(product.price)}원</p>
                 {/* <p className="product-sold">sold: {product.sold}</p> */}
               </div>
               <div className="cart-img-box">

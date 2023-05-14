@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "./SupplementsPageProduct.css";
 import FilterButton from "./FilterButton";
 import API from "../config";
-import SupplementsFilterButton from "../components/SupplementsFilterButton";
+//import SupplementsFilterButton from "../components/SupplementsFilterButton";
 
 
 const SupplementsPageProduct = () => {
@@ -27,6 +27,56 @@ const SupplementsPageProduct = () => {
       });
   }, [location.search]);
 
+  //필터 버튼 누르면 url 바뀌도록
+  const sortSuppleAll = () => {
+    const suppleAll = `?category=supplements&sort_method=id`;
+    navigate(suppleAll);
+  };
+
+  const sortSuppleFolate = () => {
+    const suppleFolate = `?sub_category=folate`;
+    navigate(suppleFolate);
+  };
+  const sortSuppleCa = () => {
+    const suppleCa = `?sub_category=ca`;
+    navigate(suppleCa);
+  };
+
+  const sortSuppleIron = () => {
+    const suppleIron = `?sub_category=iron`;
+    navigate(suppleIron);
+  };
+
+  const sortSuppleLacto = () => {
+    const suppleLacto = `?sub_category=lacto`;
+    navigate(suppleLacto);
+  };
+
+  const sortSuppleVitaminD = () => {
+    const suppleVitaminD = `?sub_category=vitaminD`;
+    navigate(suppleVitaminD);
+  };
+
+  //필터 버튼 누르면 url 바뀌도록
+  const sortPriceLow = () => {
+    const priceLow = `?category=supplements&sort_method=price`;
+    navigate(priceLow);
+  };
+
+  const sortPriceHigh = () => {
+    const priceHigh = `?category=supplements&sort_method=-price`;
+    navigate(priceHigh);
+  };
+  const sortBestProduct = () => {
+    const bestProduct = `?category=supplements&sort_method=id`;
+    navigate(bestProduct);
+  };
+
+  const sortNewProduct = () => {
+    const newProduct = `?category=supplements&sort_method=release_date`;
+    navigate(newProduct);
+  };
+
   return (
     <div className="SupplementsPageProduct">
       <div>
@@ -36,14 +86,23 @@ const SupplementsPageProduct = () => {
           alt="SupplememntsBanner"
           src={require("../assets/supplement.png")} />
 
-<SupplementsFilterButton />
+    <div className="SuppleFilterButton">
+      <p>
+          <FilterButton onClick={sortSuppleAll} text={"전체"} />
+          <FilterButton onClick={sortSuppleFolate} text={"엽산"} />
+          <FilterButton onClick={sortSuppleCa} text={"칼슘"} />
+          <FilterButton onClick={sortSuppleIron} text={"철분"} />
+          <FilterButton onClick={sortSuppleLacto} text={"유산균"} />
+          <FilterButton onClick={sortSuppleVitaminD} text={"비타민D"} />
+      </p>
+    </div>
         
 
-        <div className="AllFilterButton">
-          <FilterButton onClick={""} text={"가격 낮은 순"} />
-          <FilterButton onClick={""} text={"가격 높은 순"} />
-          <FilterButton onClick={""} text={"인기 많은 순"} />
-          <FilterButton onClick={""} text={"최신 순"} />
+        <div className="AllFilterButton12">
+          <FilterButton onClick={sortPriceLow} text={"가격 낮은 순"} />
+          <FilterButton onClick={sortPriceHigh} text={"가격 높은 순"} />
+          <FilterButton onClick={sortBestProduct} text={"베스트 순"} />
+          <FilterButton onClick={sortNewProduct} text={"최신 순"} />
         </div>
     </div>
       
@@ -62,7 +121,7 @@ const SupplementsPageProduct = () => {
               <div className="productinfo">
                 {/* <p> {product.id}</p> */}
                 <p className="product-name">{product.name}</p>
-                <p className="product-price">{product.price * 1000 + "원"}</p>
+                <p className="product-price">{Math.floor(product.price)}원</p>
                 {/* <p className="product-sold">sold: {product.sold}</p> */}
               </div>
               <div className="cart-img-box">
