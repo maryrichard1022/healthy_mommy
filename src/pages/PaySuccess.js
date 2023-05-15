@@ -5,8 +5,9 @@ import Nav from "../components/Nav";
 import CustomButton from "../components/CustomButton";
 import { Link } from "react-router-dom";
 import "./PaySuccess.css";
+import PayResult from "../components/PayResult";
 
-const PaySucess = () => {
+const PaySuccess = () => {
   // 주문완료 시간 표시
   var today = new Date();
   var year = today.getFullYear();
@@ -40,6 +41,7 @@ const PaySucess = () => {
         <div className="PayCheckInfo">
           {/* <p>주문번호: {new Date().getTime()}</p> */}
           <p>주문일자: {dateString}</p>
+          <PayResult />
         </div>
 
         <br />
@@ -58,4 +60,4 @@ const PaySucess = () => {
   );
 };
 
-export default PaySucess;
+export default PaySuccess;

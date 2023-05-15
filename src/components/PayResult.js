@@ -28,7 +28,9 @@ class PayResult extends React.Component {
     const { params } = this.state;
 
     axios({
-      url: "/v1/payment/approve",
+      //단건 결제 승인
+      url: "https://kapi.kakao.com/v1/payment/approve",
+      Host: "kapi.kakao.com",
       method: "POST",
       headers: {
         Authorization: "KakaoAK b510676c6e0cafb78941741fc4df73e4",

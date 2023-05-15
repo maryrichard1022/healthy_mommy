@@ -27,12 +27,12 @@ function Router() {
         <Route path="/Cart" element={<Cart />} />
         <Route path="/Payment" element={<Payment />} />
         <Route path="/PayResult" element={<PayResult />} />
-        <Route exact path="/PayReady" component={PayReady} />
+        <Route path="/PayReady" element={PayReady} />
         <Route exact path="/MyPage" element={<MyPage />} />
         <Route exact path="/Location" element={<Location />} />
         <Route path="/" element={<Main />} />
         <Route path="/Login" element={<Login />} />
-        <Route exact path="/PaySuccess" element={<PaySuccess />} />
+        <Route path="/PaySuccess" element={<PaySuccess />} />
         <Route exact path="/Detail" element={<Detail />} />
 
         <Route path="/ALL" element={<ALL />} />

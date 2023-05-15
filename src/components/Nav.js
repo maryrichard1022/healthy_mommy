@@ -1,16 +1,23 @@
 // 홈페이지 헤더, Navigator (모든 페이지 상단에 import 해서 넣으면 됨)
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Nav.css";
 
 const Nav = () => {
+  const navigate = useNavigate();
+
+  const MainNavigate = () => {
+    navigate("/");
+  };
   return (
     <header className="nav-container">
       <div className="nav-container_left">
         <div className="nav-container_logo">
-          <Link to={"/?sort_method=-release_date"}>
-            <img alt="mainlogo" src={require("../assets/mainlogo.png")} />
-          </Link>
+          <img
+            alt="mainlogo"
+            onClick={MainNavigate}
+            src={require("../assets/mainlogo.png")}
+          />
         </div>
 
         <div class="category">

@@ -47,9 +47,7 @@ const Cart = () => {
   //아이템 수량 -1
   const handleDecreaseItem = async (id) => {
     const selectedId = items.findIndex((item) => item.id === id);
-    //수량 1보다 크고 pending true이면 수량 조절
     if (items[selectedId].quantity > 1 && !pending) {
-      //pending -> true로 바꿈 (토글)
       setPending(true);
       const response = await fetch(API.cart, {
         method: "PATCH",
@@ -147,7 +145,7 @@ const Cart = () => {
             <hr></hr>
             <div className="ProductInCartInfo">
               {/* <input type="checkbox" /> */}
-              <span>전체선택</span>
+              <span> </span>
               <span>상품명</span>
               <span>수량</span>
               <span>상품금액</span>

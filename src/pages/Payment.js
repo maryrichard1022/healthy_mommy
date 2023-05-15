@@ -1,13 +1,15 @@
 // 결제중 페이지
 import React, { useState } from "react";
-//import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import CustomButton from "../components/CustomButton";
 import Postcode from "../components/Postcode";
 
 import "./Payment.css";
+import PayReady from "../components/PayReady";
 const Payment = () => {
+  const navigate = useNavigate();
   const [state, setState] = useState({
     receiver: "",
     midnumber: "",
@@ -24,6 +26,11 @@ const Payment = () => {
     });
   };
 
+  //const GotoPay = () => {
+
+  // 카카오 페이로 연결해야함..
+  // navigate("d")
+  //};
   //장바구니에 있는 정보 가져옴..
 
   //버튼 눌렀을 때 작동(console에 state 안 뜸) 안 함--> 추후에 수정할 것
@@ -39,6 +46,7 @@ const Payment = () => {
       return;
     }
     console.log(state);
+    navigate("/PaySuccess");
     alert("주문");
   };
   return (
@@ -154,11 +162,14 @@ const Payment = () => {
             <div className="Howmuch">
               <h2>총 결제 금액 : 123,456원</h2>
 
+              {/*               
+            결제하기 버튼 누르면+ 주문자 정보 넘김.+ 카카오페이로 값 전달 */}
               <CustomButton
                 onClick={handleClick}
                 className="GotoPay"
                 text={"결제하기"}
               />
+              <PayReady />
             </div>
           </div>
         </div>
