@@ -24,7 +24,7 @@
 import React from "react";
 import { useDaumPostcodePopup } from "react-daum-postcode";
 import "./Postcode.css";
-const Postcode = (props) => {
+const Postcode = ({ handleChangeState, state }) => {
   const open = useDaumPostcodePopup();
 
   const handleComplete = (data) => {
@@ -66,8 +66,23 @@ const Postcode = (props) => {
         </button>
       </div>
       <div>
-        <input type="text" id="sample4_roadAddress" placeholder="도로명주소" />
-        <input type="text" id="sample4_detailAddress" placeholder="상세주소" />
+        <input
+          name="postcodeStreet"
+          value={state.postcodeStreet}
+          onChange={(e) => handleChangeState(e)}
+          type="text"
+          id="sample4_roadAddress"
+          placeholder="도로명주소"
+        />
+
+        <input
+          name="postcodedetail"
+          type="text"
+          value={state.postcodedetail}
+          onChange={(e) => handleChangeState(e)}
+          id="sample4_detailAddress"
+          placeholder="상세주소"
+        />
       </div>
     </div>
   );

@@ -40,7 +40,7 @@ const Payment = () => {
     console.log(state);
     setStateButton(true);
     //백에 POST로 배송지 정보 넘겨주고
-    alert("주문");
+    //alert("주문");
   };
   return (
     <div className="paypage">
@@ -97,7 +97,8 @@ const Payment = () => {
 
               <tr className="AddressforDeliver">
                 <p className="p-css">배송지</p>
-                <Postcode onChange={handleChangeState} />
+
+                <Postcode handleChangeState={handleChangeState} state={state} />
               </tr>
             </tbody>
           </div>

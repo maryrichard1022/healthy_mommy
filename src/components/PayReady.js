@@ -72,6 +72,7 @@ const PayReady = (props) => {
     if (props.stateButton && true) {
       kakaoPayment();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.stateButton]);
 
   const state = {
