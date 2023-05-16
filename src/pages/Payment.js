@@ -1,15 +1,14 @@
 // 결제중 페이지
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
-import CustomButton from "../components/CustomButton";
 import Postcode from "../components/Postcode";
 
 import "./Payment.css";
 import PayReady from "../components/PayReady";
 const Payment = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [state, setState] = useState({
     receiver: "",
     midnumber: "",
@@ -17,6 +16,7 @@ const Payment = () => {
     postcodeStreet: "",
     postcodedetail: "",
   });
+  const [stateButton, setStateButton] = useState(false);
 
   const handleChangeState = (e) => {
     console.log(e.target.value);
@@ -26,14 +26,6 @@ const Payment = () => {
     });
   };
 
-  //const GotoPay = () => {
-
-  // 카카오 페이로 연결해야함..
-  // navigate("d")
-  //};
-  //장바구니에 있는 정보 가져옴..
-
-  //버튼 눌렀을 때 작동(console에 state 안 뜸) 안 함--> 추후에 수정할 것
   // 주문하기 버튼 클릭하면 state저장하고 넘어감
   const handleClick = () => {
     if (state.receiver.length < 1 || state.receiver.length > 5) {
@@ -46,7 +38,8 @@ const Payment = () => {
       return;
     }
     console.log(state);
-    navigate("/PaySuccess");
+    setStateButton(true);
+    //백에 POST로 배송지 정보 넘겨주고
     alert("주문");
   };
   return (
@@ -161,15 +154,12 @@ const Payment = () => {
             <p>주문 내용을 확인하였으며, 정보 제공 등에 동의합니다.</p>
             <div className="Howmuch">
               <h2>총 결제 금액 : 123,456원</h2>
-
               {/*               
-            결제하기 버튼 누르면+ 주문자 정보 넘김.+ 카카오페이로 값 전달 */}
-              <CustomButton
-                onClick={handleClick}
-                className="GotoPay"
-                text={"결제하기"}
-              />
-              <PayReady />
+            결제하기 버튼 누르면+ 주문자 정보 넘김(handleClick).+ 카카오페이로 값 전달 */}
+              <button onClick={handleClick} className="CustomButton">
+                주문하기
+              </button>
+              <PayReady stateButton={stateButton} />
             </div>
           </div>
         </div>

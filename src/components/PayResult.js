@@ -16,7 +16,7 @@ class PayResult extends React.Component {
   state = {
     params: {
       cid: "TC0ONETIME",
-      // localstorage에서 tid값을 읽어온다.
+      //localstorage에서 tid값을 읽어온다.
       tid: window.localStorage.getItem("tid"),
       partner_order_id: "partner_order_id",
       partner_user_id: "partner_user_id",
@@ -52,3 +52,48 @@ class PayResult extends React.Component {
   }
 }
 export default PayResult;
+//const PayResult = (props) => {
+// const { params } = this.state;
+//const {
+// location: { search },
+//} = props;
+//params.pg_token = search.split("=")[1];
+
+//const state = {
+//params: {
+// cid: "TC0ONETIME",
+// localstorage에서 tid값을 읽어온다.
+// tid: window.localStorage.getItem("tid"),
+// partner_order_id: "partner_order_id",
+//partner_user_id: "partner_user_id",
+//pg_token: "",
+//},
+//};
+//useEffect(() => {
+//if (true) {
+//kakaoPaySuccess();
+// }
+//}, []);
+//const kakaoPaySuccess = () => {
+//const { params } = state;
+//axios({
+// url: "https://kapi.kakao.com/v1/payment/approve",
+// Host: "kapi.kakao.com",
+// method: "POST",
+// headers: {
+// Authorization: "KakaoAK b510676c6e0cafb78941741fc4df73e4",
+// "Content-type": "application/x-www-form-urlencoded;charset=utf-8",
+//},
+//params,
+// }).then((res) => {
+// console.log(res);
+//});
+//};
+
+//return (
+// <div>
+// <p>result</p>
+// </div>
+//);
+//};
+//export default PayResult;
