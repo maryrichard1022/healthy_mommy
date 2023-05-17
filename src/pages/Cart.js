@@ -10,7 +10,7 @@ import CustomButton from "../components/CustomButton";
 import CartProduct from "../components/CartProduct";
 
 const Cart = () => {
-  //로그인한 유저의 아이디를 확인
+  //로그인한 유저의 아이디 확인
   const kakao_id = sessionStorage.getItem("kakao_id");
   const navigate = useNavigate();
 
@@ -44,7 +44,7 @@ const Cart = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // 로그인 되어 있으면 -> 장바구니 목록 가져옴
+  // 로그인 된 유저의 kakao_id 확인 -> 해당 장바구니 가져옴
   const getItems = async () => {
     const response = await fetch(API.cart, {
       headers: {
@@ -64,6 +64,7 @@ const Cart = () => {
       const response = await fetch(API.cart, {
         method: "PATCH",
         headers: {
+          "Content-Type": "application/json",
           Authorization: kakao_id,
         },
         body: JSON.stringify({
