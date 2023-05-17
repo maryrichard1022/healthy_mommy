@@ -48,6 +48,7 @@ const Postcode = ({ handleChangeState, state }) => {
     //우편번호와 도로명 주소를 해당 필드에 넣음.
     document.getElementById("sample4_postcode").value = data.zonecode;
     document.getElementById("sample4_roadAddress").value = fullAddress;
+
     //상세 주소는 주문자가 작성하도록 상세주소로 커서 이동
     document.getElementById("sample4_detailAddress").focus();
   };

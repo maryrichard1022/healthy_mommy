@@ -1,14 +1,46 @@
 // 결제중 페이지
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 //import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import Postcode from "../components/Postcode";
-
+import API from "../config";
 import "./Payment.css";
 import PayReady from "../components/PayReady";
 const Payment = () => {
+  const access_token = sessionStorage.getItem("access_token");
   // const navigate = useNavigate();
+  const [items, setItems] = useState([]);
+
+  //주문 상품 정보 띄우기 위해 getItems
+  const getItems = async () => {
+    const response = await fetch(API.cart, {
+      headers: {
+        Authorization: access_token,
+      },
+    });
+    const result = await response.json();
+    setItems(result.cart);
+  };
+  useEffect(() => {
+    // if (!access_token) {
+    //   alert("로그인 해주세요.");
+    //   navigate("/Login");
+    //   return;
+    // }
+    getItems();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  //총 상품 가격 (reduce 배열 순회, 값 누적하여 하나의 값으로 반환)
+  const totalPrice = items.reduce((previousValue, currentValue) => {
+    return (
+      parseInt(previousValue) +
+      parseInt(currentValue.price * currentValue.quantity)
+    );
+  }, 0);
+
+  //배송지 정보 저장
   const [state, setState] = useState({
     receiver: "",
     midnumber: "",
@@ -16,8 +48,8 @@ const Payment = () => {
     postcodeStreet: "",
     postcodedetail: "",
   });
-  const [stateButton, setStateButton] = useState(false);
 
+  //배송지 정보 저장
   const handleChangeState = (e) => {
     console.log(e.target.value);
     setState({
@@ -25,6 +57,9 @@ const Payment = () => {
       [e.target.name]: e.target.value,
     });
   };
+
+  //결제 하기 누르면 카카오 페이 실행 되게
+  const [stateButton, setStateButton] = useState(false);
 
   // 주문하기 버튼 클릭하면 state저장하고 넘어감
   const handleClick = () => {
@@ -58,8 +93,19 @@ const Payment = () => {
               <span>수량</span>
               <span>상품금액</span>
             </div>
-
-            <h2>총 결제 금액 : 123,456원</h2>
+            <div className="CartProductList">
+              {items.map((items) => (
+                <div className="BestProduct">
+                  <img alt="product-img" src={items.image_url}></img>
+                  <p>{items.name}</p>
+                  <span>{items.quantity}</span>
+                  <div>{`₩${(
+                    items.price * items.quantity
+                  ).toLocaleString()}`}</div>
+                </div>
+              ))}
+            </div>
+            <h2>총 결제 금액 : {totalPrice.toLocaleString()} 원</h2>
             <hr></hr>
           </div>
 
@@ -154,13 +200,13 @@ const Payment = () => {
           <div className="PayConfirm">
             <p>주문 내용을 확인하였으며, 정보 제공 등에 동의합니다.</p>
             <div className="Howmuch">
-              <h2>총 결제 금액 : 123,456원</h2>
+              <h2>총 결제 금액 : {totalPrice.toLocaleString()} 원</h2>
               {/*               
             결제하기 버튼 누르면+ 주문자 정보 넘김(handleClick).+ 카카오페이로 값 전달 */}
               <button onClick={handleClick} className="CustomButton">
                 주문하기
               </button>
-              <PayReady stateButton={stateButton} />
+              <PayReady stateButton={stateButton} totalPrice={totalPrice} />
             </div>
           </div>
         </div>
