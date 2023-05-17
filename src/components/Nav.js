@@ -32,12 +32,12 @@ const Nav = () => {
               <button class="dropbtn">영양제</button>
             </Link>
             <div class="dropdown-content">
-              <a href="#!">전체</a>
-              <a href="#!">엽산</a>
-              <a href="#!">칼슘</a>
-              <a href="#!">철분</a>
-              <a href="#!">유산균</a>
-              <a href="#!">비타민D</a>
+              <a href="/Supplements?category=supplements">전체</a>
+              <a href="/Supplements?sub_category=folate">엽산</a>
+              <a href="/Supplements?sub_category=ca">칼슘</a>
+              <a href="/Supplements?sub_category=iron">철분</a>
+              <a href="/Supplements?sub_category=lacto">유산균</a>
+              <a href="/Supplements?sub_category=vitaminD">비타민D</a>
             </div>
           </div>
 
@@ -46,22 +46,23 @@ const Nav = () => {
               <button class="dropbtn">운동복</button>
             </Link>
             <div class="dropdown-content">
-              <a href="#!">전체</a>
-              <a href="#!">상의</a>
-              <a href="#!">하의</a>
+              <a href="/SportsWear?category=sportswear">전체</a>
+              <a href="/SportsWear?sub_category=top">상의</a>
+              <a href="/SportsWear?sub_category=bottom">하의</a>
             </div>
           </div>
+
           <div className="dropdown">
             <Link to={"/FitnessEquipment"}>
               <button class="dropbtn">운동기구</button>
             </Link>
             <div class="dropdown-content">
-              <a href="#!">전체</a>
-              <a href="#!">실내사이클</a>
-              <a href="#!">짐볼</a>
-              <a href="#!">탄력밴드</a>
-              <a href="#!">폼롤러</a>
-              <a href="#!">요가매트</a>
+              <a href="/FitnessEquipment?category=fitness_equipment">전체</a>
+              <a href="/FitnessEquipment?sub_category=excercise_bike">실내사이클</a>
+              <a href="/FitnessEquipment?sub_category=gymball">짐볼</a>
+              <a href="/FitnessEquipment?sub_category=band">탄력밴드</a>
+              <a href="/FitnessEquipment?sub_category=foam_roller">폼롤러</a>
+              <a href="/FitnessEquipment?sub_category=yoga_mat">요가매트</a>
             </div>
           </div>
         </div>

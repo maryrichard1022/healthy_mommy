@@ -50,8 +50,17 @@ const AllPageProduct = () => {
   };
 
   const sortNewProduct = () => {
-    const newProduct = `?sort_method=release_date`;
+    const newProduct = `?sort_method=-release_date`;
     navigate(newProduct);
+  };
+
+  const movePage = (num) => {
+    let subCategory =  location.search;
+    if(subCategory == "") {
+      subCategory="?sort_method=-release_date";
+    }
+    const newPage = `${subCategory}&offset=${num}`;
+    navigate(newPage);
   };
 
   return (
@@ -107,17 +116,30 @@ const AllPageProduct = () => {
                 {/* <p className="product-sold">sold: {product.sold}</p> */}
               </div>
               <div className="cart-img-box">
+              <a href="/Cart">{/* 장바구니 아이콘 누르면 페이지 이동 */}
                 <img
                   alt="cart"
                   src={require("../assets/cart.png")}
                   className="cart-img"
                 ></img>
+                </a>
               </div>
             </div>
             <br />
           </div>
         ))}
       </div>
+
+      <div className="paginataion-group">
+        <div className="pagination">
+          <a href="#">&laquo;</a>
+          <a onClick={() => movePage(0)}>1</a>
+          <a className="active" onClick={() => movePage(8)}>2</a>
+          <a onClick={() => movePage(16)}>3</a>
+          <a href="#">&raquo;</a>
+        </div>
+      </div>
+
     </div>
   );
 };

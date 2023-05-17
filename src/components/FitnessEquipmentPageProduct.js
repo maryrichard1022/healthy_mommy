@@ -12,10 +12,15 @@ const FitnessEquipmentPageProduct = () => {
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const urlCategory = params.get("category"); 
+  let subCategory = "";
 
   //버튼 누를 때마다 테이블 받아옴
   useEffect(() => {
-    const queryString = location.search;
+    let queryString = location.search; //const를 let으로
+
+    if(queryString == ""){
+      queryString="?category=fitness_equipment";
+    }
 
     //메인페이지에 띄우는 물품 리스트 정보 가져옴
     fetch(`${API.main}${queryString}`)
@@ -29,7 +34,7 @@ const FitnessEquipmentPageProduct = () => {
 
   //필터 버튼 누르면 url 바뀌도록
   const sortEquipAll = () => {
-    const equipAll = `?category=fitness_equipment&sort_method=id`;
+    const equipAll = `?category=fitness_equipment`;
     navigate(equipAll);
   };
 
@@ -59,22 +64,56 @@ const FitnessEquipmentPageProduct = () => {
 
   //필터 버튼 누르면 url 바뀌도록
   const sortPriceLow = () => {
-    const priceLow = `?category=fitness_equipment&sort_method=price`;
+
+    subCategory =  location.search;
+    if(subCategory == "") {
+      subCategory="?category=fitness_equipment";
+    }
+
+    const priceLow = `${subCategory}&sort_method=price`;
     navigate(priceLow);
   };
 
   const sortPriceHigh = () => {
-    const priceHigh = `?category=fitness_equipment&sort_method=-price`;
+
+    subCategory =  location.search;
+    if(subCategory == "") {
+      subCategory="?category=fitness_equipment";
+    }
+
+    const priceHigh = `${subCategory}&sort_method=-price`;
     navigate(priceHigh);
   };
+
   const sortBestProduct = () => {
-    const bestProduct = `?category=fitness_equipment&sort_method=id`;
+
+    subCategory =  location.search;
+    if(subCategory == "") {
+      subCategory="?category=fitness_equipment";
+    }
+
+    const bestProduct = `${subCategory}&sort_method=id`;
     navigate(bestProduct);
   };
 
   const sortNewProduct = () => {
-    const newProduct = `?category=fitness_equipment&sort_method=release_date`;
+
+    subCategory =  location.search;
+    if(subCategory == "") {
+      subCategory="?category=fitness_equipment";
+    }
+
+    const newProduct = `${subCategory}&sort_method=release_date`;
     navigate(newProduct);
+  };
+
+  const movePage = (num) => {
+    let subCategory =  location.search;
+    if(subCategory == "") {
+      subCategory="?category=fitness_equipment";
+    }
+    const newPage = `${subCategory}&offset=${num}`;
+    navigate(newPage);
   };
 
   return (
@@ -84,7 +123,7 @@ const FitnessEquipmentPageProduct = () => {
           <img
           className="FitnessEquipmentBanner"
           alt="FitnessEquipmentBanner"
-          src={require("../assets/banner2.jpg")} />
+          src={require("../assets/fitness_equipment.png")} />
 
 
     <div className="FitnessEquipmentFilterButton">
@@ -115,7 +154,7 @@ const FitnessEquipmentPageProduct = () => {
             {/* 크롤링 테이블 받아오면 src={product.image_url}로 수정 */}
             <img
               alt="product-img"
-              src={require("../assets/url_img.png")}
+              src={product.image_url}
               className="product-img"
             ></img>
             <div className="productinfo-cart">
@@ -126,17 +165,30 @@ const FitnessEquipmentPageProduct = () => {
                 {/* <p className="product-sold">sold: {product.sold}</p> */}
               </div>
               <div className="cart-img-box">
+              <a href="/Cart"> {/* 장바구니 아이콘 누르면 페이지 이동 */}
                 <img
                   alt="cart"
                   src={require("../assets/cart.png")}
                   className="cart-img"
                 ></img>
+                </a>
               </div>
             </div>
             <br />
           </div>
         ))}
       </div>
+
+      <div className="paginataion-group">
+        <div className="pagination">
+          <a href="#">&laquo;</a>
+          <a onClick={() => movePage(0)}>1</a>
+          <a className="active" onClick={() => movePage(8)}>2</a>
+          <a onClick={() => movePage(16)}>3</a>
+          <a href="#">&raquo;</a>
+        </div>
+      </div>
+
     </div>
   );
 };

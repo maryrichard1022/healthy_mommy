@@ -8,6 +8,8 @@ import API from "../config";
 
 const SupplementsPageProduct = () => {
   const [productlist, setProductlist] = useState([]);
+  const [activeFilter1, setActiveFilter1] = useState([]);
+  const [activeFilter2, setActiveFilter2] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
   const params = new URLSearchParams(location.search);
@@ -19,13 +21,34 @@ const SupplementsPageProduct = () => {
   useEffect(() => {
     let queryString = location.search;
 
-    if(queryString == ""){
+    if(queryString == "" || queryString.includes('category=supplements')){
       queryString="?category=supplements";
+      setActiveFilter1('all')
+    } else if (queryString.includes('sub_category=folate')) {
+      setActiveFilter1('folate')
+    } else if (queryString.includes('sub_category=ca')) {
+      setActiveFilter1('ca')
+    } else if (queryString.includes('sub_category=iron')) {
+      setActiveFilter1('iron')
+    } else if (queryString.includes('sub_category=lacto')) {
+      setActiveFilter1('lacto')
+    } else if (queryString.includes('sub_category=vitaminD')) {
+      setActiveFilter1('vitaminD')
+    } 
+    
+    if (queryString.includes('sort_method=price')) {
+      setActiveFilter2('price')
+    } else if (queryString.includes('sort_method=-price')) {
+      setActiveFilter2('-price')
+    } else if (queryString.includes('sort_method=id')) {
+      setActiveFilter2('id')
+    } else if (queryString.includes('sort_method=release_date')) {
+      setActiveFilter2('release_date')
     }
 
     //메인페이지에 띄우는 물품 리스트 정보 가져옴
     fetch(`${API.main}${queryString}`)
-      .then((res) => res.json())
+      .then((res) => res  .json())
       .then((result) => {
         //     setTotalItems(result);
         setProductlist(result.result);
@@ -90,6 +113,15 @@ const SupplementsPageProduct = () => {
     navigate(bestProduct);
   };
 
+  const movePage = (num) => {
+    let subCategory =  location.search;
+    if(subCategory == "") {
+      subCategory="?category=supplements";
+    }
+    const newPage = `${subCategory}&offset=${num}`;
+    navigate(newPage);
+  };
+
   const sortNewProduct = () => {
     subCategory =  location.search;
     if(subCategory == "") {
@@ -110,21 +142,21 @@ const SupplementsPageProduct = () => {
 
     <div className="SuppleFilterButton">
       <p>
-          <FilterButton onClick={sortSuppleAll} text={"전체"} />
-          <FilterButton onClick={sortSuppleFolate} text={"엽산"} />
-          <FilterButton onClick={sortSuppleCa} text={"칼슘"} />
-          <FilterButton onClick={sortSuppleIron} text={"철분"} />
-          <FilterButton onClick={sortSuppleLacto} text={"유산균"} />
-          <FilterButton onClick={sortSuppleVitaminD} text={"비타민D"} />
+          <FilterButton onClick={sortSuppleAll} text={"전체"} isActive={activeFilter1 === 'all'}/>
+          <FilterButton onClick={sortSuppleFolate} text={"엽산"} isActive={activeFilter1 === 'folate'}/>
+          <FilterButton onClick={sortSuppleCa} text={"칼슘"} isActive={activeFilter1 === 'ca'}/>
+          <FilterButton onClick={sortSuppleIron} text={"철분"} isActive={activeFilter1 === 'iron'}/>
+          <FilterButton onClick={sortSuppleLacto} text={"유산균"} isActive={activeFilter1 === 'lacto'}/>
+          <FilterButton onClick={sortSuppleVitaminD} text={"비타민D"} isActive={activeFilter1 === 'vitaminD'}/>
       </p>
     </div>
         
 
         <div className="AllFilterButton12">
-          <FilterButton onClick={sortPriceLow} text={"가격 낮은 순"} />
-          <FilterButton onClick={sortPriceHigh} text={"가격 높은 순"} />
-          <FilterButton onClick={sortBestProduct} text={"베스트 순"} />
-          <FilterButton onClick={sortNewProduct} text={"최신 순"} />
+          <FilterButton onClick={sortPriceLow} text={"가격 낮은 순" } isActive={activeFilter2 === 'price'}/>
+          <FilterButton onClick={sortPriceHigh} text={"가격 높은 순"} isActive={activeFilter2 === '-price'}/>
+          <FilterButton onClick={sortBestProduct} text={"베스트 순"} isActive={activeFilter2 === 'id'}/>
+          <FilterButton onClick={sortNewProduct} text={"최신 순"} isActive={activeFilter2 === 'release_date'}/>
         </div>
     </div>
       
@@ -148,11 +180,14 @@ const SupplementsPageProduct = () => {
                 {/* <p className="product-sold">sold: {product.sold}</p> */}
               </div>
               <div className="cart-img-box">
-                <img
-                  alt="cart"
-                  src={require("../assets/cart.png")}
-                  className="cart-img"
-                ></img>
+                <a href="/Cart">{/* 장바구니 아이콘 누르면 페이지 이동 */}
+                  <img
+                    alt="cart"
+                    src={require("../assets/cart.png")}
+                    className="cart-img"
+                  ></img>
+                </a>
+
               </div>
             </div>
             <br />
@@ -162,9 +197,9 @@ const SupplementsPageProduct = () => {
       <div className="paginataion-group">
         <div className="pagination">
           <a href="#">&laquo;</a>
-          <a href="#">1</a>
-          <a className="active" href="#">2</a>
-          <a href="#">3</a>
+          <a onClick={() => movePage(0)}>1</a>
+          <a onClick={() => movePage(8)} className="active">2</a>
+          <a onClick={() => movePage(16)}>3</a>
           <a href="#">&raquo;</a>
         </div>
       </div>

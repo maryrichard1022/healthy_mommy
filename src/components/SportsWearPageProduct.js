@@ -88,6 +88,15 @@ const sortNewProduct = () => {
   navigate(newProduct);
 };
 
+const movePage = (num) => {
+  let subCategory =  location.search;
+  if(subCategory == "") {
+    subCategory="?category=sportswear";
+  }
+  const newPage = `${subCategory}&offset=${num}`;
+  navigate(newPage);
+};
+
   return (
     <div className="SportsWearPageProduct">
       <div>
@@ -133,11 +142,13 @@ const sortNewProduct = () => {
                 {/* <p className="product-sold">sold: {product.sold}</p> */}
               </div>
               <div className="cart-img-box">
+              <a href="/Cart">{/* 장바구니 아이콘 누르면 페이지 이동 */}
                 <img
                   alt="cart"
                   src={require("../assets/cart.png")}
                   className="cart-img"
                 ></img>
+                </a>
               </div>
             </div>
             <br />
@@ -147,9 +158,9 @@ const sortNewProduct = () => {
       <div className="paginataion-group">
         <div className="pagination">
           <a href="#">&laquo;</a>
-          <a href="#">1</a>
-          <a className="active" href="#">2</a>
-          <a href="#">3</a>
+          <a onClick={() => movePage(0)}>1</a>
+          <a className="active" onClick={() => movePage(8)}>2</a>
+          <a onClick={() => movePage(16)}>3</a>
           <a href="#">&raquo;</a>
         </div>
       </div>
