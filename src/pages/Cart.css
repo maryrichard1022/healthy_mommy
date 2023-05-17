@@ -1,11 +1,12 @@
-
 .cart {
   text-align: center;
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
-
+body {
+  margin: 0;
+}
 .contentWrapper {
   flex: 1;
 }

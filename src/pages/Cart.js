@@ -33,6 +33,17 @@ const Cart = () => {
   // }, 2000);
   // };
 
+  //로그인 안 되어 있으면 로그인 창으로
+  useEffect(() => {
+    if (!access_token) {
+      alert("로그인 해주세요.");
+      navigate("/Login");
+      return;
+    }
+    getItems();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // 로그인 되어 있으면 -> 장바구니 목록 가져옴
   const getItems = async () => {
     const response = await fetch(API.cart, {
@@ -124,16 +135,6 @@ const Cart = () => {
       }
     }
   };
-  //로그인 안 되어 있으면 로그인 창으로
-  useEffect(() => {
-    if (!access_token) {
-      alert("로그인 해주세요.");
-      navigate("/Login");
-      return;
-    }
-    getItems();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <div className="cart">

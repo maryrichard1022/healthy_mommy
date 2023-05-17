@@ -64,12 +64,17 @@ const Payment = () => {
   // 주문하기 버튼 클릭하면 state저장하고 넘어감
   const handleClick = () => {
     if (state.receiver.length < 1 || state.receiver.length > 5) {
-      alert("정확한 이름을 입력해주세요");
+      alert("정확한 이름을 입력해주세요.");
       return;
     }
 
     if (state.midnumber.length < 1 || state.lastnumber.length < 4) {
-      alert("정확한 번호를 입력해주세요");
+      alert("정확한 번호를 입력해주세요.");
+      return;
+    }
+
+    if (state.postcodedetail.length < 1) {
+      alert("정확한 주소를 입력해주세요.");
       return;
     }
     console.log(state);
