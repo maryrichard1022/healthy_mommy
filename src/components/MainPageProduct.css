@@ -10,12 +10,13 @@
 
 .MainPageProduct h2 {
   text-align: left;
-  padding-top: 50px;
-  padding-left: 150px;
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .MainFilterButton {
-  margin-left: 140px;
+  padding-left: 9.8%;
 }
 
 .subBanner {
@@ -115,6 +116,7 @@
 }
 
 .category-name {
+  width: 100%;
   font-weight: 600;
   font-size: 30px;
   margin-top: 30px;

@@ -80,7 +80,18 @@ const Payment = () => {
     console.log(state);
     setStateButton(true);
     //백에 POST로 배송지 정보 넘겨주고
-    //alert("주문");
+    //     fetch(`${API.signin}`, {
+    //       method: "POST",
+    //       body: JSON.stringify({
+    //배송지
+    //         access_token: id_token,
+    //       }),
+    //     })
+    //       .then((response) => response.json())
+    //       .then((result) => {
+    //         console.log(result);
+    //
+    alert("주문");
   };
   return (
     <div className="paypage">
@@ -92,8 +103,8 @@ const Payment = () => {
           <div className="ProductForPay">
             <hr></hr>
             <p className="p-css">주문 상품 정보</p>
-            <div className="ProductInfo">
-              <span></span>
+            <div className="ProductInCartInfo">
+              <span> </span>
               <span>상품명</span>
               <span>수량</span>
               <span>상품금액</span>

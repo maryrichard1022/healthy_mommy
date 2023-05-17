@@ -145,16 +145,13 @@ const Cart = () => {
           <div className="ProductInCart">
             <hr></hr>
             <div className="ProductInCartInfo">
-              {/* <input type="checkbox" /> */}
               <span> </span>
               <span>상품명</span>
               <span>수량</span>
               <span>상품금액</span>
             </div>
 
-            <div className="ProductDetail">
-              {/* <input type="checkbox" /> */}
-            </div>
+            <div className="ProductDetail"></div>
             <div className="cart-items">
               {/* 물품정보 props 전달 */}
               {items.map((item, index) => (

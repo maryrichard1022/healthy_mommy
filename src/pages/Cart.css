@@ -13,28 +13,29 @@ body {
 
 .CartInfo {
   text-align: left;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
+/*
 .Allcheck {
   display: flex;
   justify-content: left;
   align-items: left;
   padding-left: 40px;
 }
+*/
 
 .ProductInCartInfo {
   padding-top: 20px;
   padding-bottom: 20px;
   display: flex;
-  justify-content: left;
   font-weight: bold;
 }
 .ProductInCartInfo span {
-  padding-right: 120px;
-  padding-left: 120px;
-
+  padding-right: 10%;
+  padding-left: 10%;
+  white-space: nowrap;
   text-align: center;
 }
 

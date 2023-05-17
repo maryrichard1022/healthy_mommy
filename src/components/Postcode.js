@@ -26,12 +26,12 @@ import { useDaumPostcodePopup } from "react-daum-postcode";
 import "./Postcode.css";
 const Postcode = ({ handleChangeState, state }) => {
   const open = useDaumPostcodePopup();
+  console.log(state);
 
   const handleComplete = (data) => {
     // 입력 끝나면 주소를 받아와서 fullAddress로 반환
     let fullAddress = data.address; //주소 변수
     let extraAddress = "";
-    // console.log(data);
 
     // 사용자가 선택한 주소가 도로명 타입일 경우
     if (data.addressType === "R") {
@@ -48,6 +48,7 @@ const Postcode = ({ handleChangeState, state }) => {
     //우편번호와 도로명 주소를 해당 필드에 넣음.
     document.getElementById("sample4_postcode").value = data.zonecode;
     document.getElementById("sample4_roadAddress").value = fullAddress;
+    state.postcodeStreet = fullAddress;
 
     //상세 주소는 주문자가 작성하도록 상세주소로 커서 이동
     document.getElementById("sample4_detailAddress").focus();
@@ -70,7 +71,6 @@ const Postcode = ({ handleChangeState, state }) => {
         <input
           name="postcodeStreet"
           value={state.postcodeStreet}
-          onChange={(e) => handleChangeState(e)}
           type="text"
           id="sample4_roadAddress"
           placeholder="도로명주소"
