@@ -1,6 +1,6 @@
 // 결제중 페이지
 import React, { useState, useEffect } from "react";
-//import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import Postcode from "../components/Postcode";
@@ -8,26 +8,26 @@ import API from "../config";
 import "./Payment.css";
 import PayReady from "../components/PayReady";
 const Payment = () => {
-  const access_token = sessionStorage.getItem("access_token");
-  // const navigate = useNavigate();
+  const kakao_id = sessionStorage.getItem("kakao_id");
+  const navigate = useNavigate();
   const [items, setItems] = useState([]);
 
   //주문 상품 정보 띄우기 위해 getItems
   const getItems = async () => {
     const response = await fetch(API.cart, {
       headers: {
-        Authorization: access_token,
+        Authorization: kakao_id,
       },
     });
     const result = await response.json();
     setItems(result.cart);
   };
   useEffect(() => {
-    // if (!access_token) {
-    //   alert("로그인 해주세요.");
-    //   navigate("/Login");
-    //   return;
-    // }
+    if (!kakao_id) {
+      alert("로그인 해주세요.");
+      navigate("/Login");
+      return;
+    }
     getItems();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -79,7 +79,7 @@ const Payment = () => {
     }
     console.log(state);
 
-    //백에 POST로 배송지 정보 넘겨주고 --> 우선 임의로 적은 것!!!
+    //백에 POST로 배송지 정보 넘겨주고 --> 우선 임의로 적은 것!!! + 헤더 추가
     //fetch(`${API.cart}`, {
     // method: "POST",
     // body: JSON.stringify({
@@ -94,17 +94,6 @@ const Payment = () => {
     //setStateButton(true);
     // });
     setStateButton(true);
-    //     fetch(`${API.signin}`, {
-    //       method: "POST",
-    //       body: JSON.stringify({
-    //배송지
-    //         access_token: id_token,
-    //       }),
-    //     })
-    //       .then((response) => response.json())
-    //       .then((result) => {
-    //         console.log(result);
-    //
   };
   return (
     <div className="paypage">

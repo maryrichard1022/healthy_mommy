@@ -10,36 +10,29 @@ const SocialKakao = () => {
     console.log(data);
 
     //사용자 아이디
-    const id = data.profile.id;
+    const kakao_id = data.profile.id;
     //사용자 닉네임
+    const nickname = data.profile.properties.nickname;
     //토큰
-    const id_token = data.response.id_token; // 인가코드 백엔드로 전달
+    //const id_token = data.response.id_token;
 
-    if (id_token) {
-      sessionStorage.setItem("access_token", id_token);
+    if (kakao_id) {
+      sessionStorage.setItem("kakao_id", kakao_id);
     }
     navigate(-1);
 
-    //`${API.signin}?code=${code}`
-    //백에 전달. 콘솔창에서 결과 확인할 것.
-    //백에 id,
+    //백에 kakao_id, nickname 전달
     fetch(`${API.signin}`, {
       method: "POST",
       body: JSON.stringify({
-        id: id,
-        access_token: id_token,
+        kakao_id: kakao_id,
+        nickname: nickname,
       }),
     })
       .then((response) => response.json())
       .then((result) => {
         console.log(result);
-
-        // if (result.message === "") {
-        //   alert("로그인 되었습니다.");
-        //   navigate("/");
-        // } else {
-        //   alert("오류");
-        // }
+        // 상태메세지 확인
       });
   };
 

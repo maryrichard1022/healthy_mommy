@@ -10,8 +10,8 @@ import CustomButton from "../components/CustomButton";
 import CartProduct from "../components/CartProduct";
 
 const Cart = () => {
-  //로그인한 유저의 토큰을 확인
-  const access_token = sessionStorage.getItem("access_token");
+  //로그인한 유저의 아이디를 확인
+  const kakao_id = sessionStorage.getItem("kakao_id");
   const navigate = useNavigate();
 
   const [pending, setPending] = useState(false);
@@ -35,7 +35,7 @@ const Cart = () => {
 
   //로그인 안 되어 있으면 로그인 창으로
   useEffect(() => {
-    if (!access_token) {
+    if (!kakao_id) {
       alert("로그인 해주세요.");
       navigate("/Login");
       return;
@@ -48,7 +48,8 @@ const Cart = () => {
   const getItems = async () => {
     const response = await fetch(API.cart, {
       headers: {
-        Authorization: access_token,
+        "Content-Type": "application/json",
+        Authorization: kakao_id,
       },
     });
     const result = await response.json();
@@ -63,7 +64,7 @@ const Cart = () => {
       const response = await fetch(API.cart, {
         method: "PATCH",
         headers: {
-          Authorization: access_token,
+          Authorization: kakao_id,
         },
         body: JSON.stringify({
           cart_id: items[selectedId].id,
@@ -92,7 +93,7 @@ const Cart = () => {
       const response = await fetch(API.cart, {
         method: "PATCH",
         headers: {
-          Authorization: access_token,
+          Authorization: kakao_id,
         },
         body: JSON.stringify({
           cart_id: items[selectedId].id,
@@ -120,7 +121,7 @@ const Cart = () => {
       const response = await fetch(API.cart, {
         method: "DELETE",
         headers: {
-          Authorization: access_token,
+          Authorization: kakao_id,
         },
         body: JSON.stringify({
           cart_id: [items[selectedId].id],
