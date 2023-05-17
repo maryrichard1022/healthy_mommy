@@ -32,6 +32,7 @@ const CartProduct = ({
                 price * quantity
               ).toLocaleString()}`}</div>
             </div>
+
             <div className="cart-remove-btn">
               <button onClick={() => handleRemoveItem(id)}>✕</button>
             </div>

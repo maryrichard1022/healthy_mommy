@@ -1,10 +1,10 @@
 import KakaoLogin from "react-kakao-login";
-// //import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import API from "../config";
 const SocialKakao = () => {
   //params = new URL(document.URL).searchParams;
   //const code = params.get("code");
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const kakaoClientId = "c810cdd4c87858ed473a517cefa5e349";
   const kakaoOnSuccess = async (data) => {
     console.log(data);
@@ -18,6 +18,7 @@ const SocialKakao = () => {
     if (id_token) {
       sessionStorage.setItem("access_token", id_token);
     }
+    navigate(-1);
 
     //`${API.signin}?code=${code}`
     //백에 전달. 콘솔창에서 결과 확인할 것.

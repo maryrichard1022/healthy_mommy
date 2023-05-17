@@ -68,18 +68,32 @@ const Payment = () => {
       return;
     }
 
-    if (state.midnumber.length < 1 || state.lastnumber.length < 4) {
+    if (state.midnumber.length < 1 || state.lastnumber.length > 4) {
       alert("정확한 번호를 입력해주세요.");
       return;
     }
 
-    if (state.postcodedetail.length < 1) {
+    if (state.postcodedetail.length < 1 || state.postcodedetail.length > 10) {
       alert("정확한 주소를 입력해주세요.");
       return;
     }
     console.log(state);
+
+    //백에 POST로 배송지 정보 넘겨주고 --> 우선 임의로 적은 것!!!
+    //fetch(`${API.cart}`, {
+    // method: "POST",
+    // body: JSON.stringify({
+    //   name: state.receiver,
+    //   number: "010" + state.midnumber + state.lastnumber,
+    //   address: state.postcodeStreet + state.postcodedetail,
+    // }),
+    //})
+    //  .then((response) => response.json())
+    // .then((result) => {
+    //   console.log(result);
+    //setStateButton(true);
+    // });
     setStateButton(true);
-    //백에 POST로 배송지 정보 넘겨주고
     //     fetch(`${API.signin}`, {
     //       method: "POST",
     //       body: JSON.stringify({
@@ -91,7 +105,6 @@ const Payment = () => {
     //       .then((result) => {
     //         console.log(result);
     //
-    alert("주문");
   };
   return (
     <div className="paypage">
