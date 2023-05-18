@@ -58,7 +58,9 @@ const Nav = () => {
             </Link>
             <div class="dropdown-content">
               <a href="/FitnessEquipment?category=fitness_equipment">전체</a>
-              <a href="/FitnessEquipment?sub_category=excercise_bike">실내사이클</a>
+              <a href="/FitnessEquipment?sub_category=excercise_bike">
+                실내사이클
+              </a>
               <a href="/FitnessEquipment?sub_category=gymball">짐볼</a>
               <a href="/FitnessEquipment?sub_category=band">탄력밴드</a>
               <a href="/FitnessEquipment?sub_category=foam_roller">폼롤러</a>

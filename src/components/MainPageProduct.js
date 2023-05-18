@@ -67,13 +67,11 @@ const MainPageProduct = () => {
         </div>
       </div>
 
-      {/*<div className="subBanner"> */}
       <img
         className="subBanner"
         alt="banner"
         src={require("../assets/banner5.jpg")}
       />
-      {/*  </div> */}
 
       <br />
       <div className="datacheck">
@@ -103,7 +101,6 @@ const MainPageProduct = () => {
               <div className="productinfo">
                 <p className="product-name">{product.name}</p>
                 <p className="product-price">{Math.floor(product.price)}원</p>
-                {/* {<p className="product-sold">{product.release_date}</p>} */}
               </div>
               <div className="cart-img-box">
                 <img

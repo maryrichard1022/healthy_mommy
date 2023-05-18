@@ -20,7 +20,7 @@
 }
 
 .subBanner {
-  filter: brightness(50%);
+  /* filter: brightness(50%); */
   padding-top: 15px;
   width: 80%;
   height: 250px;

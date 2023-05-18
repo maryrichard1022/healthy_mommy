@@ -5,8 +5,7 @@ import Nav from "../components/Nav";
 import CustomButton from "../components/CustomButton";
 import { Link } from "react-router-dom";
 import "./PaySuccess.css";
-//import PayResult from "../components/PayResult";
-
+import PayResult from "../components/PayResult";
 const PaySuccess = () => {
   // 주문완료 시간 표시
   var today = new Date();
@@ -52,6 +51,7 @@ const PaySuccess = () => {
           <Link to={"/"}>
             <CustomButton text={"홈으로"} />
           </Link>
+          <PayResult />
         </div>
       </div>
       <Footer />

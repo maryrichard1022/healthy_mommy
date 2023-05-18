@@ -9,7 +9,7 @@ const AllPageProduct = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const params = new URLSearchParams(location.search);
-  const urlCategory = params.get("category"); 
+  const urlCategory = params.get("category");
   // const categoryString = `category=${urlCategory}`;
 
   //url 바뀔 떄 마다 화면 렌더링
@@ -55,9 +55,9 @@ const AllPageProduct = () => {
   };
 
   const movePage = (num) => {
-    let subCategory =  location.search;
-    if(subCategory == "") {
-      subCategory="?sort_method=-release_date";
+    let subCategory = location.search;
+    if (subCategory == "") {
+      subCategory = "?sort_method=-release_date";
     }
     const newPage = `${subCategory}&offset=${num}`;
     navigate(newPage);
@@ -67,11 +67,11 @@ const AllPageProduct = () => {
     <div className="AllPageProduct">
       <div>
         <h1>All</h1>
-          <img
+        <img
           className="AllBanner"
           alt="AllBanner"
-          src={require("../assets/All.png")} />
-        
+          src={require("../assets/All.png")}
+        />
 
         <div className="AllFilterButton11">
           <FilterButton onClick={sortPriceLow} text={"가격 낮은 순"} />
@@ -80,14 +80,13 @@ const AllPageProduct = () => {
           <FilterButton onClick={sortNewProduct} text={"최신 순"} />
         </div>
       </div>
-        <br />
-      
+      <br />
 
       <br />
       {/* <div className="datacheck"> */}
-        {/* <h4>가데이터 API 연동 및 정렬 확인</h4> */}
-        {/* 카테고리 2x4 위에 나타냄 */}
-        {/* <h4 className="category-name">
+      {/* <h4>가데이터 API 연동 및 정렬 확인</h4> */}
+      {/* 카테고리 2x4 위에 나타냄 */}
+      {/* <h4 className="category-name">
           {urlCategory === "supplements"
             ? "영양제"
             : urlCategory === "sportswear"
@@ -97,7 +96,7 @@ const AllPageProduct = () => {
             : "ALL"}
         </h4> */}
 
-        {/* 장바구니 아이콘 누르면 해당 상품의 id값 장바구니에 추가 */}
+      {/* 장바구니 아이콘 누르면 해당 상품의 id값 장바구니에 추가 */}
       {/* </div> */}
       <div className="ProductListInfo">
         {productlist?.map((product) => (
@@ -116,12 +115,13 @@ const AllPageProduct = () => {
                 {/* <p className="product-sold">sold: {product.sold}</p> */}
               </div>
               <div className="cart-img-box">
-              <a href="/Cart">{/* 장바구니 아이콘 누르면 페이지 이동 */}
-                <img
-                  alt="cart"
-                  src={require("../assets/cart.png")}
-                  className="cart-img"
-                ></img>
+                <a href="/Cart">
+                  {/* 장바구니 아이콘 누르면 페이지 이동 */}
+                  <img
+                    alt="cart"
+                    src={require("../assets/cart.png")}
+                    className="cart-img"
+                  ></img>
                 </a>
               </div>
             </div>
@@ -134,12 +134,13 @@ const AllPageProduct = () => {
         <div className="pagination">
           <a href="#">&laquo;</a>
           <a onClick={() => movePage(0)}>1</a>
-          <a className="active" onClick={() => movePage(8)}>2</a>
+          <a className="active" onClick={() => movePage(8)}>
+            2
+          </a>
           <a onClick={() => movePage(16)}>3</a>
           <a href="#">&raquo;</a>
         </div>
       </div>
-
     </div>
   );
 };

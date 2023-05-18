@@ -80,18 +80,17 @@ const Payment = () => {
     console.log(state);
 
     //백에 POST로 배송지 정보 넘겨주고 --> 우선 임의로 적은 것!!! + 헤더 추가
-    //fetch(`${API.cart}`, {
+    //fetch(`${API.neworder}`, {
     // method: "POST",
     // body: JSON.stringify({
     //   name: state.receiver,
-    //   number: "010" + state.midnumber + state.lastnumber,
-    //   address: state.postcodeStreet + state.postcodedetail,
-    // }),
-    //})
-    //  .then((response) => response.json())
+    // number: "010" + state.midnumber + state.lastnumber,
+    // address: state.postcodeStreet + state.postcodedetail,
+    //}),
+    // })
+    // .then((response) => response.json())
     // .then((result) => {
     //   console.log(result);
-    //setStateButton(true);
     // });
     setStateButton(true);
   };
