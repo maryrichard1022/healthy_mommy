@@ -52,10 +52,7 @@ const PayReady = (props) => {
         console.log("next:" + next_redirect_pc_url);
         console.log("tid:" + tid);
 
-        //setState({ next_redirect_pc_url, tid });
-        // const next_redirect_pc_url = res.data.next_redirect_pc_url;
-
-        window.location.replace(next_redirect_pc_url);
+        //window.location.replace(next_redirect_pc_url);
       })
       .catch((err) => {
         console.log(err);
