@@ -4,6 +4,7 @@ import Nav from "../components/Nav";
 import "./Detail.css";
 import CustomButton from "../components/CustomButton";
 import DetailSlider from "../components/DetailSlider";
+/* import DetailPage from "../components/DetailPage"; */
 
 function Detail() {
   return (
@@ -11,6 +12,7 @@ function Detail() {
       <div className="contentWrapper">
         <Nav />
 
+        {/* <DetailPage/> */} {/* 0519 */}
 
       <div class="product-detail">
   <div class="product-images">
