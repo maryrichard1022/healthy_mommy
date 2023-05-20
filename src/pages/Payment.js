@@ -13,7 +13,7 @@ const Payment = () => {
   const [items, setItems] = useState([]);
   //결제 하기 누르면 카카오 페이 실행 되게
   const [stateButton, setStateButton] = useState(false);
-
+  const [stateTid, setStateTid] = useState(false);
   //주문 상품 정보 띄우기 위해 getItems
   const getItems = async () => {
     const response = await fetch(API.cart, {
@@ -54,6 +54,7 @@ const Payment = () => {
     lastnumber: "",
     postcodeStreet: "",
     postcodedetail: "",
+    tid: "",
   });
 
   //배송지 정보 저장
@@ -96,17 +97,22 @@ const Payment = () => {
         receiver: state.receiver,
         address: state.postcodeStreet + state.postcodedetail,
         cart_ids: items.map((item) => item.id),
-        tid: " ",
+        tid: state.tid,
       }),
     })
       .then((response) => response.json())
       .then((result) => {
         console.log(result.message);
         console.log("cart_ids :" + items.map((item) => item.id));
+        console.log(state.tid);
+        if (result.message === "NEW_ORDER_CREATED") {
+          setStateTid(true);
+          setStateButton(true);
+        }
         // 상태메세지 확인
       });
 
-    setStateButton(true);
+    // setStateButton(true);
   };
   return (
     <div className="paypage">
@@ -132,7 +138,7 @@ const Payment = () => {
                     alt="product-img"
                     src={item.image_url}
                   ></img>
-                  <p className="cart-info-name">{item.name}</p>
+                  <p className="cart-info-name">{item.product_name}</p>
                   <span>{item.quantity}</span>
                   <div className="cart-info-price">{`₩${(
                     item.price * item.quantity
@@ -210,6 +216,7 @@ const Payment = () => {
               </button>
               <PayReady
                 stateButton={stateButton}
+                stateTid={stateTid}
                 totalPrice={totalPrice}
                 state={state}
               />

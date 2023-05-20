@@ -51,9 +51,14 @@ const PayReady = (props) => {
         window.localStorage.setItem("tid", tid);
         console.log("next:" + next_redirect_pc_url);
         console.log("tid:" + tid);
-        //tid 값 넘겨야 함. fetct PATCH
+        //tid 값을 부모 컴포넌트로 넘기고
+        state.tid = tid;
 
-        //window.location.replace(next_redirect_pc_url);
+        //상태값 false-> true로 변경
+        // true일때 window.location.replace 실행
+        if (props.stateTid) {
+          window.location.replace(next_redirect_pc_url);
+        }
       })
       .catch((err) => {
         console.log(err);

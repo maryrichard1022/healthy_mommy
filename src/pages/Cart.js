@@ -158,7 +158,6 @@ const Cart = () => {
               {/* 물품정보 props 전달 */}
               {items?.map((item, index) => (
                 <CartProduct
-                  //   // key={Math.random()}
                   item={item}
                   index={index}
                   handleDecreaseItem={handleDecreaseItem}
