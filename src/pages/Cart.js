@@ -48,12 +48,12 @@ const Cart = () => {
   const getItems = async () => {
     const response = await fetch(API.cart, {
       headers: {
-        "Content-Type": "application/json",
         Authorization: kakao_id,
       },
     });
     const result = await response.json();
     setItems(result.cart);
+    console.log(result);
   };
 
   //아이템 수량 -1
@@ -125,14 +125,14 @@ const Cart = () => {
           Authorization: kakao_id,
         },
         body: JSON.stringify({
-          cart_id: [items[selectedId].id],
+          cart_ids: [items[selectedId].id],
         }),
       });
       const result = await response.json();
       setPending(false);
       if (result.message === "DELETE_SUCCESS") {
         // 해당 아이템의 id 찾아서 삭제
-        const filtered = items.filter((itme) => itme.id !== id);
+        const filtered = items.filter((item) => item.id !== id);
         setItems(filtered);
       }
     }
@@ -156,15 +156,39 @@ const Cart = () => {
             <div className="ProductDetail"></div>
             <div className="cart-items">
               {/* 물품정보 props 전달 */}
-              {items.map((item, index) => (
+              {items?.map((item, index) => (
                 <CartProduct
-                  // key={Math.random()}
+                  //   // key={Math.random()}
                   item={item}
                   index={index}
                   handleDecreaseItem={handleDecreaseItem}
                   handleIncreaseItem={handleIncreaseItem}
                   handleRemoveItem={handleRemoveItem}
                 />
+
+                //  <div className="cart-row-expln">
+                //  <div>
+                //  <h3 className="expln-title">{item.product_name}</h3>
+                // </div>
+                // <div className="cart-row-price">
+                // <div className="cart-row-count">
+                // <button onClick={() => handleIncreaseItem(item.id)}>
+                //  +
+                // </button>
+                //<span>{item.quantity}</span>
+                //<button onClick={() => handleDecreaseItem(item.id)}>
+                // -
+                //</button>
+                //</div>
+                // <div className="item-price">{`₩${(
+                //item.price * item.quantity
+                //).toLocaleString()}`}</div>
+                //</div>
+
+                // <div className="cart-remove-btn">
+                // <button onClick={() => handleRemoveItem(item.id)}>✕</button>
+                // </div>
+                // </div>
               ))}
             </div>
             <hr></hr>

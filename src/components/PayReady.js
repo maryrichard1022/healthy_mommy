@@ -23,7 +23,7 @@ const PayReady = (props) => {
       partner_user_id: "partner_user_id",
       item_name: "헬씨마미",
       quantity: 1,
-      total_amount: 2200,
+      total_amount: props.totalPrice,
       vat_amount: 200,
       tax_free_amount: 0,
       approval_url: "http://localhost:3000/PaySuccess",
@@ -51,6 +51,7 @@ const PayReady = (props) => {
         window.localStorage.setItem("tid", tid);
         console.log("next:" + next_redirect_pc_url);
         console.log("tid:" + tid);
+        //tid 값 넘겨야 함. fetct PATCH
 
         window.location.replace(next_redirect_pc_url);
       })

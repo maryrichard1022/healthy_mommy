@@ -11,8 +11,10 @@ const Payment = () => {
   const kakao_id = sessionStorage.getItem("kakao_id");
   const navigate = useNavigate();
   const [items, setItems] = useState([]);
-
+  //결제 하기 누르면 카카오 페이 실행 되게
+  const [stateButton, setStateButton] = useState(false);
   //주문 상품 정보 띄우기 위해 getItems
+
   const getItems = async () => {
     const response = await fetch(API.cart, {
       headers: {
@@ -21,7 +23,10 @@ const Payment = () => {
     });
     const result = await response.json();
     setItems(result.cart);
+    console.log("getItems :" + result.message);
+    console.log("cart, id 뭐지 :" + items.filter((item) => item.id));
   };
+
   useEffect(() => {
     if (!kakao_id) {
       alert("로그인 해주세요.");
@@ -29,6 +34,7 @@ const Payment = () => {
       return;
     }
     getItems();
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -58,11 +64,10 @@ const Payment = () => {
     });
   };
 
-  //결제 하기 누르면 카카오 페이 실행 되게
-  const [stateButton, setStateButton] = useState(false);
+  // 주문하기 버튼 클릭하면 tid받고, 주문POST하고,  카카오톡으로 넘어감
+  const handleClick = async (id) => {
+    //`const selectedId = items.findIndex((item) => item?.id === id);
 
-  // 주문하기 버튼 클릭하면 state저장하고 넘어감
-  const handleClick = () => {
     if (state.receiver.length < 1 || state.receiver.length > 5) {
       alert("정확한 이름을 입력해주세요.");
       return;
@@ -77,21 +82,27 @@ const Payment = () => {
       alert("정확한 주소를 입력해주세요.");
       return;
     }
-    console.log(state);
+    console.log("배송지 정보" + state);
 
-    //백에 POST로 배송지 정보 넘겨주고 --> 우선 임의로 적은 것!!! + 헤더 추가
-    //fetch(`${API.neworder}`, {
-    // method: "POST",
-    // body: JSON.stringify({
-    //   name: state.receiver,
-    // number: "010" + state.midnumber + state.lastnumber,
-    // address: state.postcodeStreet + state.postcodedetail,
-    //}),
-    // })
-    // .then((response) => response.json())
-    // .then((result) => {
-    //   console.log(result);
-    // });
+    //PayReady
+    //백에 POST로 배송지 정보 넘겨주고 카카오 페이 실행
+    fetch(API.neworder, {
+      method: "POST",
+      headers: {
+        Authorization: kakao_id,
+      },
+      body: JSON.stringify({
+        receiver: state.receiver,
+        address: state.postcodeStreet + state.postcodedetail,
+        cart_ids: items.map((item) => item.id),
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result.message);
+        // 상태메세지 확인
+      });
+
     setStateButton(true);
   };
   return (
@@ -104,20 +115,24 @@ const Payment = () => {
           <div className="ProductForPay">
             <hr></hr>
             <p className="p-css">주문 상품 정보</p>
-            <div className="ProductInCartInfo">
+            <div className="ProductInfo">
               <span> </span>
               <span>상품명</span>
               <span>수량</span>
-              <span>상품금액</span>
+              <span>총 상품금액</span>
             </div>
             <div className="CartProductList">
-              {items.map((items) => (
-                <div className="BestProduct">
-                  <img alt="product-img" src={items.image_url}></img>
-                  <p>{items.name}</p>
-                  <span>{items.quantity}</span>
-                  <div>{`₩${(
-                    items.price * items.quantity
+              {items?.map((item, index) => (
+                <div className="cart-item">
+                  <img
+                    className="cart-row-img"
+                    alt="product-img"
+                    src={item.image_url}
+                  ></img>
+                  <p className="cart-info-name">{item.name}</p>
+                  <span>{item.quantity}</span>
+                  <div className="cart-info-price">{`₩${(
+                    item.price * item.quantity
                   ).toLocaleString()}`}</div>
                 </div>
               ))}
@@ -169,39 +184,6 @@ const Payment = () => {
           <br></br>
           <h4 className="PatMethodText">결제 수단</h4>
           <div className="PayMethod">
-            {/* <div className="PayCash">
-              <div className="AccountTransfer">
-                <input type="checkbox" />
-                <p className="p-css">무통장 입금</p>
-              </div>
-              <div className="NameforPay">
-                <p className="p-css">입금자명</p>
-                <input
-                  name="accountname"
-                  type="text"
-                  value={state.accountname}
-                  onChange={handleChangeState}
-                />
-              </div>
-
-              <div className="BankforPay">
-                <p className="p-css">입금은행</p>
-                <form>
-                  <select
-                    className="BankSelect"
-                    name="Bank"
-                    value={state.Bank}
-                    onChange={handleChangeState}
-                  >
-                    <option value="Bank1">하나은행 123-456-123456</option>
-                    <option value="Bank2">국민은행 123-456-123456</option>
-                    <option value="Bank3">신한은행 123-456-123456</option>
-                    <option value="Bank4">카카오뱅크 123-456-123456</option>
-                  </select>
-                </form>
-              </div>
-            </div> */}
-
             <div className="PayByKakaopay">
               <div className="Kakaomoney">
                 {/* <input type="checkbox" /> */}
@@ -223,7 +205,11 @@ const Payment = () => {
               <button onClick={handleClick} className="CustomButton">
                 주문하기
               </button>
-              <PayReady stateButton={stateButton} totalPrice={totalPrice} />
+              <PayReady
+                stateButton={stateButton}
+                totalPrice={totalPrice}
+                state={state}
+              />
             </div>
           </div>
         </div>

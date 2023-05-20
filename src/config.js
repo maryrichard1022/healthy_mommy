@@ -8,6 +8,7 @@ const API = {
   main: `${BASE_URL}/`,
   product: `${BASE_URL}/products`,
   productDetail: `${BASE_URL}/products`,
+  //장바구니
   cart: `${BASE_URL}/carts`,
   //주문 내역 확인
   order: `${BASE_URL}/myorder`,

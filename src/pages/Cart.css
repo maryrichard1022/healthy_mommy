@@ -1,5 +1,6 @@
 .cart {
   text-align: center;
+  font-family: "IBM Plex Sans KR", sans-serif;
   display: flex;
   flex-direction: column;
   height: 100vh;
