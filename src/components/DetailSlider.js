@@ -1,10 +1,15 @@
-// 메인페이지 캐러셀 이미지 슬라이드
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./DetailSlider.css";
-const DetailSlider = () => {
+
+const DetailSlider = ({imgs}) => {
+  const [imgList, setimgList] = useState([]);
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const settings = {
     dots: true, // 개수 표시 점
     infinite: true, // 무한 캐러셀
@@ -32,21 +37,27 @@ const DetailSlider = () => {
       },
     ],
   };
+
+  //0520
+  useEffect(() => {
+    if (imgs) {
+      console.log(imgs)
+      setimgList(imgs)
+    }
+
+  }, [imgs]);
+  //0520
+
   return (
     <container className="detailbanner">
       <Slider {...settings}>
-        <div>
-          <img alt="banner1" src={require("../assets/pants.webp")} />
-        </div>
-        <div>
-          <img alt="banner2" src={require("../assets/pants.webp")} />
-        </div>
-        <div>
-          <img alt="banner3" src={require("../assets/pants.webp")} />
-        </div>
-        <div>
-          <img alt="banner4" src={require("../assets/pants.webp")} />
-        </div>
+        {/* //0520 */}
+      {imgList.map((value, key) => {
+          <div> 
+          <img alt="banner" src={{value}} />
+          </div>
+        })}
+        {/* //0520 */}
       </Slider>
     </container>
   );

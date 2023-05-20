@@ -6,6 +6,11 @@ import API from "../config";
 
 const AllPageProduct = () => {
   const [productlist, setProductlist] = useState([]);
+
+  /* const [activeFilter1, setActiveFilter1] = useState([]); */
+  const [activeFilter2, setActiveFilter2] = useState([]);
+  const [currentPage, setcurrentPage] = useState([]); //0520
+
   const navigate = useNavigate();
   const location = useLocation();
   const params = new URLSearchParams(location.search);
@@ -22,10 +27,35 @@ const AllPageProduct = () => {
 
   //버튼 누를 때마다 테이블 받아옴
   useEffect(() => {
-    const queryString = location.search;
+    let queryString = location.search;
+    let params = new URLSearchParams(queryString)
+
+    if(!params.has('category')){
+      /* params.set('category','all'); */
+      setActiveFilter2(params.get('sort_method'));
+      navigate("?"+params.toString())
+    } 
+    
+
+    if (!params.has("offset")) {
+      params.set("offset", 0);
+      setcurrentPage(0);
+    } else {
+      setcurrentPage(Number(params.get("offset")));
+    }
+
+    if (currentPage > 16) {
+      setcurrentPage(16);
+      params.set("offset",16)
+    }
+
+    if (currentPage < 0) {
+      setcurrentPage(0);
+      params.set("offset",0)
+    }
 
     //메인페이지에 띄우는 물품 리스트 정보 가져옴
-    fetch(`${API.main}${queryString}`)
+    fetch(`${API.product}${queryString}`)
       .then((res) => res.json())
       .then((result) => {
         //     setTotalItems(result);
@@ -35,7 +65,7 @@ const AllPageProduct = () => {
   }, [location.search]);
 
   //필터 버튼 누르면 url 바뀌도록
-  const sortPriceLow = () => {
+ /*  const sortPriceLow = () => {
     const priceLow = `?sort_method=price`;
     navigate(priceLow);
   };
@@ -52,15 +82,36 @@ const AllPageProduct = () => {
   const sortNewProduct = () => {
     const newProduct = `?sort_method=-release_date`;
     navigate(newProduct);
-  };
+  }; */
+
+  
+
+  const sortSubCategry2 = (category) => {
+    let params = new URLSearchParams(location.search);
+    /* if(!params.has('category')) {
+      params.set('category','all');
+    } */
+    params.set('sort_method', category)
+    navigate("?"+params.toString())
+  }
+
 
   const movePage = (num) => {
-    let subCategory = location.search;
-    if (subCategory == "") {
-      subCategory = "?sort_method=-release_date";
+    let params = new URLSearchParams(location.search);
+    /* if(!params.has('category')) {
+      params.set('category','all');
+    }  */
+    
+    if(num < 0) {
+      num = 0;
     }
-    const newPage = `${subCategory}&offset=${num}`;
-    navigate(newPage);
+    if(num > 16) {
+      num = 16;
+    }
+    
+    params.set('offset',num)
+
+    navigate("?"+params.toString())
   };
 
   return (
@@ -74,10 +125,14 @@ const AllPageProduct = () => {
         />
 
         <div className="AllFilterButton11">
-          <FilterButton onClick={sortPriceLow} text={"가격 낮은 순"} />
+          {/* <FilterButton onClick={sortPriceLow} text={"가격 낮은 순"} />
           <FilterButton onClick={sortPriceHigh} text={"가격 높은 순"} />
           <FilterButton onClick={sortBestProduct} text={"베스트 순"} />
-          <FilterButton onClick={sortNewProduct} text={"최신 순"} />
+          <FilterButton onClick={sortNewProduct} text={"최신 순"} /> */}
+          <FilterButton onClick={() => sortSubCategry2("price")} text={"가격 낮은 순" } isActive={activeFilter2 === 'price'}/>
+          <FilterButton onClick={() => sortSubCategry2("-price")} text={"가격 높은 순"} isActive={activeFilter2 === '-price'}/>
+          <FilterButton onClick={() => sortSubCategry2("id")} text={"베스트 순"} isActive={activeFilter2 === 'id'}/>
+          <FilterButton onClick={() => sortSubCategry2("release_date")} text={"최신 순"} isActive={activeFilter2 === 'release_date'}/>
         </div>
       </div>
       <br />
@@ -132,13 +187,11 @@ const AllPageProduct = () => {
 
       <div className="paginataion-group">
         <div className="pagination">
-          <a href="#">&laquo;</a>
-          <a onClick={() => movePage(0)}>1</a>
-          <a className="active" onClick={() => movePage(8)}>
-            2
-          </a>
-          <a onClick={() => movePage(16)}>3</a>
-          <a href="#">&raquo;</a>
+        <a onClick={() => movePage(currentPage-8)}>&laquo;</a>
+          <a onClick={() => movePage(0)} className={currentPage === 0 ? "active" : "-"}>1</a>
+          <a onClick={() => movePage(8)} className={currentPage === 8 ? "active" : "-"}>2</a>
+          <a onClick={() => movePage(16)} className={currentPage === 16 ? "active" : "-"}>3</a>
+          <a onClick={() => movePage(currentPage+8)}>&raquo;</a>
         </div>
       </div>
     </div>

@@ -10,52 +10,48 @@ const SupplementsPageProduct = () => {
   const [productlist, setProductlist] = useState([]);
   const [activeFilter1, setActiveFilter1] = useState([]);
   const [activeFilter2, setActiveFilter2] = useState([]);
+  const [currentPage, setcurrentPage] = useState([]); //0520
   const navigate = useNavigate();
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const urlCategory = params.get("category"); 
   let subCategory = "";
+  let nextPage,prevPage = 0; //0520 
 
 
   //버튼 누를 때마다 테이블 받아옴
   useEffect(() => {
     let queryString = location.search;
-
-    /* if(queryString == "" || queryString.includes('category=supplements')){
-      queryString="?category=supplements";
-      setActiveFilter1('all')
-    } else if (queryString.includes('sub_category=folate')) {
-      setActiveFilter1('folate')
-    } else if (queryString.includes('sub_category=ca')) {
-      setActiveFilter1('ca')
-    } else if (queryString.includes('sub_category=iron')) {
-      setActiveFilter1('iron')
-    } else if (queryString.includes('sub_category=lacto')) {
-      setActiveFilter1('lacto')
-    } else if (queryString.includes('sub_category=vitaminD')) {
-      setActiveFilter1('vitaminD')
-    } 
-    
-    if (queryString.includes('sort_method=price')) {
-      setActiveFilter2('price')
-    } else if (queryString.includes('sort_method=-price')) {
-      setActiveFilter2('-price')
-    } else if (queryString.includes('sort_method=id')) {
-      setActiveFilter2('id')
-    } else if (queryString.includes('sort_method=release_date')) {
-      setActiveFilter2('release_date')
-    } */
-    let params = new URLSearchParams(location.search);
+    let params = new URLSearchParams(queryString); //location.search->queryString
 
     if(!params.has('category') || !params.has('sub_category')){
       params.set('category','supplements');
       setActiveFilter1('all')
+      navigate("?"+params.toString())
     } else {
       setActiveFilter1(params.get('sub_category'));
     }
     
     setActiveFilter2(params.get('sort_method'));
 
+    //0520
+    if (!params.has("offset")) {
+      params.set("offset", 0);
+      setcurrentPage(0);
+    } else {
+      setcurrentPage(Number(params.get("offset")));
+    }
+
+    if (currentPage > 16) {
+      setcurrentPage(16);
+      params.set("offset",16)
+    }
+
+    if (currentPage < 0) {
+      setcurrentPage(0);
+      params.set("offset",0)
+    }
+    //0520
 
 
     //메인페이지에 띄우는 물품 리스트 정보 가져옴
@@ -159,16 +155,18 @@ const SupplementsPageProduct = () => {
 
   const movePage = (num) => {
     
-    /* let subCategory =  location.search;
-    if(subCategory == "") {
-      subCategory="?category=supplements";
-    }
-    const newPage = `${subCategory}&offset=${num}`;
-    navigate(newPage); */
     let params = new URLSearchParams(location.search);
     if(!params.has('category')) {
       params.set('category','supplements');
     } 
+    //0520
+    if(num < 0) {
+      num = 0;
+    }
+    if(num > 16) {
+      num = 16;
+    }
+    //0520
     params.set('offset',num)
 
     navigate("?"+params.toString())
@@ -186,16 +184,7 @@ const SupplementsPageProduct = () => {
           alt="SupplememntsBanner"
           src={require("../assets/supplement.png")} />
 
-    {/* <div className="SuppleFilterButton">
-      <p>
-          <FilterButton onClick={sortSuppleAll} text={"전체"} isActive={activeFilter1 === 'all'}/>
-          <FilterButton onClick={sortSuppleFolate} text={"엽산"} isActive={activeFilter1 === 'folate'}/>
-          <FilterButton onClick={sortSuppleCa} text={"칼슘"} isActive={activeFilter1 === 'ca'}/>
-          <FilterButton onClick={sortSuppleIron} text={"철분"} isActive={activeFilter1 === 'iron'}/>
-          <FilterButton onClick={sortSuppleLacto} text={"유산균"} isActive={activeFilter1 === 'lacto'}/>
-          <FilterButton onClick={sortSuppleVitaminD} text={"비타민D"} isActive={activeFilter1 === 'vitaminD'}/>
-      </p>
-    </div> */}
+    
     <div className="SuppleFilterButton">
       <p>
           <FilterButton onClick={() => sortSubCategry1("all")} text={"전체"} isActive={activeFilter1 === 'all'}/>
@@ -208,13 +197,6 @@ const SupplementsPageProduct = () => {
     </div>
 
         
-
-        {/* <div className="AllFilterButton12">
-          <FilterButton onClick={sortPriceLow} text={"가격 낮은 순" } isActive={activeFilter2 === 'price'}/>
-          <FilterButton onClick={sortPriceHigh} text={"가격 높은 순"} isActive={activeFilter2 === '-price'}/>
-          <FilterButton onClick={sortBestProduct} text={"베스트 순"} isActive={activeFilter2 === 'id'}/>
-          <FilterButton onClick={sortNewProduct} text={"최신 순"} isActive={activeFilter2 === 'release_date'}/>
-        </div> */}
          <div className="AllFilterButton12">
           <FilterButton onClick={() => sortSubCategry2("price")} text={"가격 낮은 순" } isActive={activeFilter2 === 'price'}/>
           <FilterButton onClick={() => sortSubCategry2("-price")} text={"가격 높은 순"} isActive={activeFilter2 === '-price'}/>
@@ -260,11 +242,11 @@ const SupplementsPageProduct = () => {
       </div>
       <div className="paginataion-group">
         <div className="pagination">
-          <a href="#">&laquo;</a>
-          <a onClick={() => movePage(0)}>1</a>
-          <a onClick={() => movePage(8)} className="active">2</a>
-          <a onClick={() => movePage(16)}>3</a>
-          <a href="#">&raquo;</a>
+          <a onClick={() => movePage(currentPage-8)}>&laquo;</a>
+          <a onClick={() => movePage(0)} className={currentPage === 0 ? "active" : "-"}>1</a>
+          <a onClick={() => movePage(8)} className={currentPage === 8 ? "active" : "-"}>2</a>
+          <a onClick={() => movePage(16)} className={currentPage === 16 ? "active" : "-"}>3</a>
+          <a onClick={() => movePage(currentPage+8)}>&raquo;</a>
         </div>
       </div>
     </div>

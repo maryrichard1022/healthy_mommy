@@ -8,22 +8,57 @@ import API from "../config";
 
 const SportsWearPageProduct = () => {
   const [productlist, setProductlist] = useState([]);
+
+  const [activeFilter1, setActiveFilter1] = useState([]);
+  const [activeFilter2, setActiveFilter2] = useState([]);
+  const [currentPage, setcurrentPage] = useState([]); 
+
   const navigate = useNavigate();
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const urlCategory = params.get("category"); 
   let subCategory = "";
+  /* let nextPage,prevPage = 0; //0520  */
 
   //버튼 누를 때마다 테이블 받아옴
   useEffect(() => {
     let queryString = location.search;
+    let params = new URLSearchParams(queryString);
+    
 
-    if(queryString == ""){
+    /* if(queryString == ""){
       queryString="?category=sportswear";
+    } */
+    if(!params.has('category') || !params.has('sub_category')){
+      params.set('category','sportswear');
+      setActiveFilter1('all')
+    } else {
+      setActiveFilter1(params.get('sub_category'));
+    }
+    
+    setActiveFilter2(params.get('sort_method'));
+
+    //0520
+    if (!params.has("offset")) {
+      params.set("offset", 0);
+      setcurrentPage(0);
+    } else {
+      setcurrentPage(Number(params.get("offset")));
     }
 
+    if (currentPage > 16) {
+      setcurrentPage(16);
+      params.set("offset",16)
+    }
+
+    if (currentPage < 0) {
+      setcurrentPage(0);
+      params.set("offset",0)
+    }
+    //0520
+
     //메인페이지에 띄우는 물품 리스트 정보 가져옴
-    fetch(`${API.main}${queryString}`)
+    fetch(`${API.product}${queryString}`)
       .then((res) => res.json())
       .then((result) => {
         //     setTotalItems(result);
@@ -32,69 +67,45 @@ const SportsWearPageProduct = () => {
       });
   }, [location.search]);
 
-//필터 버튼 누르면 url 바뀌도록
-const sortWearAll = () => {
-  const wearAll = `?category=sportswear`;
-  navigate(wearAll);
-};
-
-const sortWearTop = () => {
-  const wearTop = `?sub_category=top`;
-  navigate(wearTop);
-};
-const sortWearBottom = () => {
-  const wearBottom = `?sub_category=bottom`;
-  navigate(wearBottom);
-};
-
-//필터 버튼 누르면 url 바뀌도록
-const sortPriceLow = () => {
-  subCategory =  location.search;
-    if(subCategory == "") {
-      subCategory="?category=sportswear";
+    const sortSubCategry1 = (category) => {
+    let params = new URLSearchParams(location.search);
+    if(!params.has('category')) {
+      params.set('category','sportswear');
+    } 
+    if(category == "all") {
+      params.delete('sub_category');
+    } else {
+      params.set('sub_category',category);
     }
-
-  const priceLow = `${subCategory}&sort_method=price`;
-  navigate(priceLow);
-};
-
-const sortPriceHigh = () => {
-  subCategory =  location.search;
-  if(subCategory == "") {
-    subCategory="?category=sportswear";
+    navigate("?"+params.toString())
   }
 
-  const priceHigh = `${subCategory}&sort_method=-price`;
-  navigate(priceHigh);
-};
+  const sortSubCategry2 = (category) => {
+    let params = new URLSearchParams(location.search);
+    if(!params.has('category')) {
+      params.set('category','sportswear');
+    } 
+      params.set('sort_method', category)
 
-const sortBestProduct = () => {
-  subCategory =  location.search;
-  if(subCategory == "") {
-    subCategory="?category=sportswear";
+    navigate("?"+params.toString())
   }
-
-  const bestProduct = `${subCategory}&sort_method=id`;
-  navigate(bestProduct);
-};
-
-const sortNewProduct = () => {
-  subCategory =  location.search;
-  if(subCategory == "") {
-    subCategory="?category=sportswear";
-  }
-
-  const newProduct = `${subCategory}&sort_method=release_date`;
-  navigate(newProduct);
-};
 
 const movePage = (num) => {
-  let subCategory =  location.search;
-  if(subCategory == "") {
-    subCategory="?category=sportswear";
-  }
-  const newPage = `${subCategory}&offset=${num}`;
-  navigate(newPage);
+  let params = new URLSearchParams(location.search);
+    if(!params.has('category')) {
+      params.set('category','sportswear');
+    } 
+    
+    if(num < 0) {
+      num = 0;
+    }
+    if(num > 16) {
+      num = 16;
+    }
+    
+    params.set('offset',num)
+
+    navigate("?"+params.toString())
 };
 
   return (
@@ -108,18 +119,18 @@ const movePage = (num) => {
 
     <div className="SportsWearFilterButton">
       <p>
-          <FilterButton onClick={sortWearAll} text={"전체"} />
-          <FilterButton onClick={sortWearTop} text={"상의"} />
-          <FilterButton onClick={sortWearBottom} text={"하의"} />
+          <FilterButton onClick={() => sortSubCategry1("all")} text={"전체"} isActive={activeFilter1 === 'all'}/>
+          <FilterButton onClick={() => sortSubCategry1("top")} text={"상의"} isActive={activeFilter1 === 'top'}/>
+          <FilterButton onClick={() => sortSubCategry1("bottom")} text={"하의"} isActive={activeFilter1 === 'bottom'}/>
       </p>
     </div>
         
 
         <div className="AllFilterButton13">
-          <FilterButton onClick={sortPriceLow} text={"가격 낮은 순"} />
-          <FilterButton onClick={sortPriceHigh} text={"가격 높은 순"} />
-          <FilterButton onClick={sortBestProduct} text={"베스트 순"} />
-          <FilterButton onClick={sortNewProduct} text={"최신 순"} />
+          <FilterButton onClick={() => sortSubCategry2("price")} text={"가격 낮은 순" } isActive={activeFilter2 === 'price'}/>
+          <FilterButton onClick={() => sortSubCategry2("-price")} text={"가격 높은 순"} isActive={activeFilter2 === '-price'}/>
+          <FilterButton onClick={() => sortSubCategry2("id")} text={"베스트 순"} isActive={activeFilter2 === 'id'}/>
+          <FilterButton onClick={() => sortSubCategry2("release_date")} text={"최신 순"} isActive={activeFilter2 === 'release_date'}/>
         </div>
     </div>
       
@@ -128,7 +139,7 @@ const movePage = (num) => {
         <div className="ProductListInfo">
         {productlist?.map((product) => (
           <div className="BestProduct">
-            {/* 크롤링 테이블 받아오면 src={product.image_url}로 수정 */}
+            
             <img
               alt="product-img"
               src={product.image_url}
@@ -157,11 +168,11 @@ const movePage = (num) => {
       </div>
       <div className="paginataion-group">
         <div className="pagination">
-          <a href="#">&laquo;</a>
-          <a onClick={() => movePage(0)}>1</a>
-          <a className="active" onClick={() => movePage(8)}>2</a>
-          <a onClick={() => movePage(16)}>3</a>
-          <a href="#">&raquo;</a>
+          <a onClick={() => movePage(currentPage-8)}>&laquo;</a>
+          <a onClick={() => movePage(0)} className={currentPage === 0 ? "active" : "-"}>1</a>
+          <a onClick={() => movePage(8)} className={currentPage === 8 ? "active" : "-"}>2</a>
+          <a onClick={() => movePage(16)} className={currentPage === 16 ? "active" : "-"}>3</a>
+          <a onClick={() => movePage(currentPage+8)}>&raquo;</a>
         </div>
       </div>
     </div>

@@ -1,12 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";//0520
+import { useNavigate, useLocation } from "react-router-dom";//0520
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import "./Detail.css";
 import CustomButton from "../components/CustomButton";
 import DetailSlider from "../components/DetailSlider";
+import API from "../config"; //0520
 /* import DetailPage from "../components/DetailPage"; */
 
 function Detail() {
+
+  //0520
+  const [productlist, setProductlist] = useState([]);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  //버튼 누를 때마다 테이블 받아옴
+  useEffect(() => {
+    let queryString = location.search;
+    let params = new URLSearchParams(queryString);
+
+    fetch(`${API.productDetail}/${params.get("id")}`) 
+      .then((res) => res  .json())
+      .then((result) => {
+        //     setTotalItems(result);
+        setProductlist(result.result);
+        console.log(result);
+      });
+  }, [location.search]);
+  //0520
+
   return (
     <div className="all">
       <div className="contentWrapper">
@@ -17,21 +40,20 @@ function Detail() {
       <div class="product-detail">
   <div class="product-images">
     <div class="product-main-image">
-    <DetailSlider />
+    <DetailSlider imgs={productlist.image_url}/> {/* //0520 */}
       {/* <img src={require("../assets/pants.webp")} alt="Product Main Image" /> */}
     </div>
 
   </div>
   <div class="product-info">
     <div class="product-title">
-      <h1>MJ 조거 팬츠 초특가 할인</h1>
+      <h1>{productlist.name}</h1>
     </div>
     <div class="product-description">
-      <p>신축성이 좋은 조거 팬츠
-(상품에 관련한 설명 들어갈 예정)</p>
+      <p>{productlist.description}</p>
     </div>
     <div class="product-price">
-      <h2>29,000원</h2>
+      <h2>{Number(productlist.price).toLocaleString('ko-KR')}원</h2>
     </div>
     <button
       type="button"
@@ -58,7 +80,7 @@ function Detail() {
           <br />
 
           <div className="Row">
-            <img src="" alt="상세이미지" />
+            <img src={productlist.content_url} alt="상세이미지" />
           </div>
         </div>
         <Footer />
