@@ -212,7 +212,7 @@ const Payment = () => {
               {/*               
             결제하기 버튼 누르면+ 주문자 정보 넘김(handleClick).+ 카카오페이로 값 전달 */}
               <button onClick={handleClick} className="CustomButton">
-                주문하기
+                결제하기
               </button>
               <PayReady
                 stateButton={stateButton}

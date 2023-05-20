@@ -4,9 +4,8 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import "./Cart.css";
-import { Link } from "react-router-dom";
+
 import API from "../config";
-import CustomButton from "../components/CustomButton";
 import CartProduct from "../components/CartProduct";
 
 const Cart = () => {
@@ -15,7 +14,7 @@ const Cart = () => {
   const navigate = useNavigate();
 
   const [pending, setPending] = useState(false);
-  //const [Modal, setModal] = useState(false);
+
   //물품 수량 업데이트 상태
   const [items, setItems] = useState([]);
   //총 상품 가격 (reduce 배열 순회, 값 누적하여 하나의 값으로 반환)
@@ -25,13 +24,6 @@ const Cart = () => {
       parseInt(currentValue.price * currentValue.quantity)
     );
   }, 0);
-
-  // const openModal = () => {
-  //  setModal(true);
-  //  setTimeout(() => {
-  //    navigate("/myorder");
-  // }, 2000);
-  // };
 
   //로그인 안 되어 있으면 로그인 창으로
   useEffect(() => {
@@ -56,6 +48,15 @@ const Cart = () => {
     console.log(result);
   };
 
+  // 총 결제 금액이 0원이면 (장바구니가 비어있으면 주문하기 버튼 안 눌림)
+  const handleOrderItem = () => {
+    if (totalPrice === 0) {
+      alert("주문할 상품이 없습니다.");
+      return;
+    } else {
+      navigate("/Payment");
+    }
+  };
   //아이템 수량 -1
   const handleDecreaseItem = async (id) => {
     const selectedId = items.findIndex((item) => item.id === id);
@@ -164,41 +165,18 @@ const Cart = () => {
                   handleIncreaseItem={handleIncreaseItem}
                   handleRemoveItem={handleRemoveItem}
                 />
-
-                //  <div className="cart-row-expln">
-                //  <div>
-                //  <h3 className="expln-title">{item.product_name}</h3>
-                // </div>
-                // <div className="cart-row-price">
-                // <div className="cart-row-count">
-                // <button onClick={() => handleIncreaseItem(item.id)}>
-                //  +
-                // </button>
-                //<span>{item.quantity}</span>
-                //<button onClick={() => handleDecreaseItem(item.id)}>
-                // -
-                //</button>
-                //</div>
-                // <div className="item-price">{`₩${(
-                //item.price * item.quantity
-                //).toLocaleString()}`}</div>
-                //</div>
-
-                // <div className="cart-remove-btn">
-                // <button onClick={() => handleRemoveItem(item.id)}>✕</button>
-                // </div>
-                // </div>
               ))}
             </div>
             <hr></hr>
           </div>
         </div>
-        {/* 총 가격 가격 */}
+
         <div className="TotalPrice">
-          <h2>총 결제 금액 : {totalPrice.toLocaleString()} 원</h2>
-          <Link to={"/Payment"}>
-            <CustomButton text={"주문하기"} />
-          </Link>
+          <h2>총 주문 금액 : {totalPrice.toLocaleString()} 원</h2>
+
+          <button onClick={handleOrderItem} className="CustomButton">
+            주문하기
+          </button>
         </div>
       </div>
       <Footer />
