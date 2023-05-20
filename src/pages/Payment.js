@@ -13,8 +13,8 @@ const Payment = () => {
   const [items, setItems] = useState([]);
   //결제 하기 누르면 카카오 페이 실행 되게
   const [stateButton, setStateButton] = useState(false);
-  //주문 상품 정보 띄우기 위해 getItems
 
+  //주문 상품 정보 띄우기 위해 getItems
   const getItems = async () => {
     const response = await fetch(API.cart, {
       headers: {
@@ -23,8 +23,9 @@ const Payment = () => {
     });
     const result = await response.json();
     setItems(result.cart);
+    console.log("items : " + items);
     console.log("getItems :" + result.message);
-    console.log("cart, id 뭐지 :" + items.filter((item) => item.id));
+    console.log("cart:" + result.cart.map((item) => item.id));
   };
 
   useEffect(() => {
@@ -65,7 +66,7 @@ const Payment = () => {
   };
 
   // 주문하기 버튼 클릭하면 tid받고, 주문POST하고,  카카오톡으로 넘어감
-  const handleClick = async (id) => {
+  const handleClick = (id) => {
     //`const selectedId = items.findIndex((item) => item?.id === id);
 
     if (state.receiver.length < 1 || state.receiver.length > 5) {
@@ -95,11 +96,13 @@ const Payment = () => {
         receiver: state.receiver,
         address: state.postcodeStreet + state.postcodedetail,
         cart_ids: items.map((item) => item.id),
+        tid: " ",
       }),
     })
       .then((response) => response.json())
       .then((result) => {
         console.log(result.message);
+        console.log("cart_ids :" + items.map((item) => item.id));
         // 상태메세지 확인
       });
 

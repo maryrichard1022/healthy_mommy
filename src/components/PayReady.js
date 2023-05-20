@@ -53,7 +53,7 @@ const PayReady = (props) => {
         console.log("tid:" + tid);
         //tid 값 넘겨야 함. fetct PATCH
 
-        window.location.replace(next_redirect_pc_url);
+        //window.location.replace(next_redirect_pc_url);
       })
       .catch((err) => {
         console.log(err);
