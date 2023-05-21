@@ -28,14 +28,13 @@ const AllPageProduct = () => {
   //버튼 누를 때마다 테이블 받아옴
   useEffect(() => {
     let queryString = location.search;
-    let params = new URLSearchParams(queryString)
+    let params = new URLSearchParams(queryString);
 
-    if(!params.has('category')){
+    if (!params.has("category")) {
       /* params.set('category','all'); */
-      setActiveFilter2(params.get('sort_method'));
-      navigate("?"+params.toString())
-    } 
-    
+      setActiveFilter2(params.get("sort_method"));
+      navigate("?" + params.toString());
+    }
 
     if (!params.has("offset")) {
       params.set("offset", 0);
@@ -46,12 +45,12 @@ const AllPageProduct = () => {
 
     if (currentPage > 16) {
       setcurrentPage(16);
-      params.set("offset",16)
+      params.set("offset", 16);
     }
 
     if (currentPage < 0) {
       setcurrentPage(0);
-      params.set("offset",0)
+      params.set("offset", 0);
     }
 
     //메인페이지에 띄우는 물품 리스트 정보 가져옴
@@ -65,7 +64,7 @@ const AllPageProduct = () => {
   }, [location.search]);
 
   //필터 버튼 누르면 url 바뀌도록
- /*  const sortPriceLow = () => {
+  /*  const sortPriceLow = () => {
     const priceLow = `?sort_method=price`;
     navigate(priceLow);
   };
@@ -84,34 +83,31 @@ const AllPageProduct = () => {
     navigate(newProduct);
   }; */
 
-  
-
   const sortSubCategry2 = (category) => {
     let params = new URLSearchParams(location.search);
     /* if(!params.has('category')) {
       params.set('category','all');
     } */
-    params.set('sort_method', category)
-    navigate("?"+params.toString())
-  }
-
+    params.set("sort_method", category);
+    navigate("?" + params.toString());
+  };
 
   const movePage = (num) => {
     let params = new URLSearchParams(location.search);
     /* if(!params.has('category')) {
       params.set('category','all');
     }  */
-    
-    if(num < 0) {
+
+    if (num < 0) {
       num = 0;
     }
-    if(num > 16) {
+    if (num > 16) {
       num = 16;
     }
-    
-    params.set('offset',num)
 
-    navigate("?"+params.toString())
+    params.set("offset", num);
+
+    navigate("?" + params.toString());
   };
 
   return (
@@ -129,10 +125,26 @@ const AllPageProduct = () => {
           <FilterButton onClick={sortPriceHigh} text={"가격 높은 순"} />
           <FilterButton onClick={sortBestProduct} text={"베스트 순"} />
           <FilterButton onClick={sortNewProduct} text={"최신 순"} /> */}
-          <FilterButton onClick={() => sortSubCategry2("price")} text={"가격 낮은 순" } isActive={activeFilter2 === 'price'}/>
-          <FilterButton onClick={() => sortSubCategry2("-price")} text={"가격 높은 순"} isActive={activeFilter2 === '-price'}/>
-          <FilterButton onClick={() => sortSubCategry2("id")} text={"베스트 순"} isActive={activeFilter2 === 'id'}/>
-          <FilterButton onClick={() => sortSubCategry2("release_date")} text={"최신 순"} isActive={activeFilter2 === 'release_date'}/>
+          <FilterButton
+            onClick={() => sortSubCategry2("price")}
+            text={"가격 낮은 순"}
+            isActive={activeFilter2 === "price"}
+          />
+          <FilterButton
+            onClick={() => sortSubCategry2("-price")}
+            text={"가격 높은 순"}
+            isActive={activeFilter2 === "-price"}
+          />
+          <FilterButton
+            onClick={() => sortSubCategry2("id")}
+            text={"베스트 순"}
+            isActive={activeFilter2 === "id"}
+          />
+          <FilterButton
+            onClick={() => sortSubCategry2("release_date")}
+            text={"최신 순"}
+            isActive={activeFilter2 === "release_date"}
+          />
         </div>
       </div>
       <br />
@@ -187,11 +199,26 @@ const AllPageProduct = () => {
 
       <div className="paginataion-group">
         <div className="pagination">
-        <a onClick={() => movePage(currentPage-8)}>&laquo;</a>
-          <a onClick={() => movePage(0)} className={currentPage === 0 ? "active" : "-"}>1</a>
-          <a onClick={() => movePage(8)} className={currentPage === 8 ? "active" : "-"}>2</a>
-          <a onClick={() => movePage(16)} className={currentPage === 16 ? "active" : "-"}>3</a>
-          <a onClick={() => movePage(currentPage+8)}>&raquo;</a>
+          <a onClick={() => movePage(currentPage - 8)}>&laquo;</a>
+          <a
+            onClick={() => movePage(0)}
+            className={currentPage === 0 ? "active" : "-"}
+          >
+            1
+          </a>
+          <a
+            onClick={() => movePage(8)}
+            className={currentPage === 8 ? "active" : "-"}
+          >
+            2
+          </a>
+          <a
+            onClick={() => movePage(16)}
+            className={currentPage === 16 ? "active" : "-"}
+          >
+            3
+          </a>
+          <a onClick={() => movePage(currentPage + 8)}>&raquo;</a>
         </div>
       </div>
     </div>

@@ -40,7 +40,46 @@
 }
 
 .cart-info-name {
-  width: 300px;
+  width: 280px;
+  font-weight: bold;
   font-size: 15px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 20px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.cart-info-count,
+.cart-remove-btn,
+.cart-price {
+  height: 150px;
   line-height: 150px;
+  font-weight: bold;
+}
+
+.cart-price {
+  width: 300px;
+  text-align: center;
+
+  font-size: 20px;
+}
+.cart-info-count {
+  width: 270px;
+
+  text-align: center;
+}
+.counter {
+  font-family: "IBM Plex Sans KR", sans-serif;
+  background-color: #f9e9ed;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 15px;
+  margin-left: 15px;
 }

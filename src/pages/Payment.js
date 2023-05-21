@@ -26,7 +26,7 @@ const Payment = () => {
     const result = await response.json();
     setItems(result.cart);
     console.log("getItems :" + result.message);
-    console.log("items : " + items);
+    console.log("items : " + result.cart);
     console.log("cart_ids:" + result.cart.map((item) => item.id));
   };
 
@@ -136,11 +136,11 @@ const Payment = () => {
           <div className="ProductForPay">
             <hr></hr>
             <p className="p-css">주문 상품 정보</p>
-            <div className="ProductInfo">
+            <div className="ProductInCartInfo">
               <span> </span>
               <span>상품명</span>
               <span>수량</span>
-              <span>총 상품금액</span>
+              <span className="ProductInCartInfoPrice">상품금액</span>
             </div>
             <div className="CartProductList">
               {items?.map((item, index) => (
@@ -151,8 +151,8 @@ const Payment = () => {
                     src={item.image_url}
                   ></img>
                   <p className="cart-info-name">{item.product_name}</p>
-                  <span>{item.quantity}</span>
-                  <div className="cart-info-price">{`₩${(
+                  <span className="cart-info-count">{item.quantity}개</span>
+                  <div className="cart-price">{`₩${(
                     item.price * item.quantity
                   ).toLocaleString()}`}</div>
                 </div>

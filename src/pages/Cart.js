@@ -116,26 +116,30 @@ const Cart = () => {
 
   //아이템 삭제
   const handleRemoveItem = async (id) => {
-    const selectedId = items.findIndex((item) => item.id === id);
-    // 현재 pending : false
-    if (!pending) {
-      setPending(true);
-      const response = await fetch(API.cart, {
-        method: "DELETE",
-        headers: {
-          Authorization: kakao_id,
-        },
-        body: JSON.stringify({
-          cart_ids: [items[selectedId].id],
-        }),
-      });
-      const result = await response.json();
-      setPending(false);
-      if (result.message === "DELETE_SUCCESS") {
-        // 해당 아이템의 id 찾아서 삭제
-        const filtered = items.filter((item) => item.id !== id);
-        setItems(filtered);
+    if (window.confirm("해당 물품을 장바구니에서 삭제하시겠습니까?")) {
+      const selectedId = items.findIndex((item) => item.id === id);
+      // 현재 pending : false
+      if (!pending) {
+        setPending(true);
+        const response = await fetch(API.cart, {
+          method: "DELETE",
+          headers: {
+            Authorization: kakao_id,
+          },
+          body: JSON.stringify({
+            cart_ids: [items[selectedId].id],
+          }),
+        });
+        const result = await response.json();
+        setPending(false);
+        if (result.message === "DELETE_SUCCESS") {
+          // 해당 아이템의 id 찾아서 삭제
+          const filtered = items.filter((item) => item.id !== id);
+          setItems(filtered);
+        }
       }
+    } else {
+      return;
     }
   };
 
@@ -151,10 +155,10 @@ const Cart = () => {
               <span> </span>
               <span>상품명</span>
               <span>수량</span>
-              <span>상품금액</span>
+              <span className="ProductInCartInfoPrice">상품금액</span>
+              <span></span>
             </div>
 
-            <div className="ProductDetail"></div>
             <div className="cart-items">
               {/* 물품정보 props 전달 */}
               {items?.map((item, index) => (
