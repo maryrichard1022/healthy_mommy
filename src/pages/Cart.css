@@ -97,3 +97,7 @@ hr {
   margin-top: 5px;
   color: black !important;
 }
+
+.ifnoproduct {
+  text-align: center;
+}

@@ -13,7 +13,9 @@ const Payment = () => {
   const [items, setItems] = useState([]);
   //결제 하기 누르면 카카오 페이 실행 되게
   const [stateButton, setStateButton] = useState(false);
-  const [stateTid, setStateTid] = useState(false);
+  const [tid, setTid] = useState("");
+  //const [stateTid, setStateTid] = useState(false);
+
   //주문 상품 정보 띄우기 위해 getItems
   const getItems = async () => {
     const response = await fetch(API.cart, {
@@ -23,9 +25,9 @@ const Payment = () => {
     });
     const result = await response.json();
     setItems(result.cart);
-    console.log("items : " + items);
     console.log("getItems :" + result.message);
-    console.log("cart:" + result.cart.map((item) => item.id));
+    console.log("items : " + items);
+    console.log("cart_ids:" + result.cart.map((item) => item.id));
   };
 
   useEffect(() => {
@@ -35,7 +37,6 @@ const Payment = () => {
       return;
     }
     getItems();
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -67,7 +68,7 @@ const Payment = () => {
   };
 
   // 주문하기 버튼 클릭하면 tid받고, 주문POST하고,  카카오톡으로 넘어감
-  const handleClick = (id) => {
+  const handleClick = async () => {
     //`const selectedId = items.findIndex((item) => item?.id === id);
 
     if (state.receiver.length < 1 || state.receiver.length > 5) {
@@ -79,41 +80,52 @@ const Payment = () => {
       alert("정확한 번호를 입력해주세요.");
       return;
     }
-
     if (state.postcodedetail.length < 1 || state.postcodedetail.length > 10) {
       alert("정확한 주소를 입력해주세요.");
       return;
     }
-    console.log("배송지 정보" + state);
 
-    //PayReady
-    //백에 POST로 배송지 정보 넘겨주고 카카오 페이 실행
-    fetch(API.neworder, {
-      method: "POST",
-      headers: {
-        Authorization: kakao_id,
-      },
-      body: JSON.stringify({
-        receiver: state.receiver,
-        address: state.postcodeStreet + state.postcodedetail,
-        cart_ids: items.map((item) => item.id),
-        tid: state.tid,
-      }),
-    })
-      .then((response) => response.json())
-      .then((result) => {
-        console.log(result.message);
-        console.log("cart_ids :" + items.map((item) => item.id));
-        console.log(state.tid);
-        if (result.message === "NEW_ORDER_CREATED") {
-          setStateTid(true);
-          setStateButton(true);
-        }
-        // 상태메세지 확인
-      });
-
-    // setStateButton(true);
+    //kakaopayment 실행 -> tid 받아옴.
+    setTid("");
+    setStateButton(true);
   };
+
+  //tid 받아와질때까지 기다리는 코드 작성해야함
+  //const PostTid = localStorage.getItem("tid");
+  useEffect(() => {
+    if (tid === true && true) {
+      console.log("전달할 tid : " + state.tid);
+      fetch(API.neworder, {
+        method: "POST",
+        headers: {
+          Authorization: kakao_id,
+        },
+        body: JSON.stringify({
+          tid: state.tid,
+          receiver: state.receiver,
+          address: state.postcodeStreet + state.postcodedetail,
+          cart_ids: items.map((item) => item.id),
+        }),
+      }).then((response) => {
+        response
+          .json()
+          .then((result) => {
+            console.log("결과 메세지: " + result.message);
+            console.log("cart_ids :" + items.map((item) => item.id));
+            if (result.message === "NEW_ORDER_CREATED") {
+              console.log("주문 성공");
+            } else {
+              console.log("tid is empty");
+            }
+          })
+          .catch((error) => {
+            console.error("Error: " + error);
+          });
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tid]);
+
   return (
     <div className="paypage">
       <div className="contentWapper">
@@ -211,12 +223,16 @@ const Payment = () => {
               <h2>총 결제 금액 : {totalPrice.toLocaleString()} 원</h2>
               {/*               
             결제하기 버튼 누르면+ 주문자 정보 넘김(handleClick).+ 카카오페이로 값 전달 */}
-              <button onClick={handleClick} className="CustomButton">
+              <button
+                onClick={handleClick}
+                className="CustomButton"
+                id="gotokakaopay"
+              >
                 결제하기
               </button>
               <PayReady
                 stateButton={stateButton}
-                stateTid={stateTid}
+                setTid={setTid}
                 totalPrice={totalPrice}
                 state={state}
               />

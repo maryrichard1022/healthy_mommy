@@ -29,6 +29,8 @@ const PaySuccess = () => {
     ":" +
     seconds;
 
+  console.log(localStorage.getItem("tid"));
+
   return (
     <div>
       <Nav />

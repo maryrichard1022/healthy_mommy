@@ -12,6 +12,7 @@ const PayReady = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.stateButton]);
 
+  //props.totalPrice
   const state = {
     next_redirect_pc_url: "",
     tid: "",
@@ -23,7 +24,7 @@ const PayReady = (props) => {
       partner_user_id: "partner_user_id",
       item_name: "헬씨마미",
       quantity: 1,
-      total_amount: props.totalPrice,
+      total_amount: 20000,
       vat_amount: 200,
       tax_free_amount: 0,
       approval_url: "http://localhost:3000/PaySuccess",
@@ -32,7 +33,7 @@ const PayReady = (props) => {
     },
   };
 
-  const kakaoPayment = () => {
+  const kakaoPayment = async () => {
     const { params } = state;
     axios({
       url: "https://kapi.kakao.com/v1/payment/ready",
@@ -51,14 +52,11 @@ const PayReady = (props) => {
         window.localStorage.setItem("tid", tid);
         console.log("next:" + next_redirect_pc_url);
         console.log("tid:" + tid);
-        //tid 값을 부모 컴포넌트로 넘기고
-        state.tid = tid;
+        props.state.tid = tid;
+        props.setTid(true);
 
-        //상태값 false-> true로 변경
-        // true일때 window.location.replace 실행
-        if (props.stateTid) {
-          window.location.replace(next_redirect_pc_url);
-        }
+        setTimeout(3000);
+        window.location.replace(next_redirect_pc_url);
       })
       .catch((err) => {
         console.log(err);
