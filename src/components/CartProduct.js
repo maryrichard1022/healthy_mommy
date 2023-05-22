@@ -20,21 +20,33 @@ const CartProduct = ({
         </div>
         <div className="cart-info">
           <div>
-            <h3 className="cart-info-name">{product_name}</h3>
+            <div className="cart-info-name">{product_name}</div>
           </div>
           <div className="cart-info-price">
             <div className="cart-info-count">
-              <button onClick={() => handleDecreaseItem(id)}>-</button>
+              <button
+                className="counter"
+                onClick={() => handleDecreaseItem(id)}
+              >
+                -
+              </button>
               <span>{quantity}</span>
-              <button onClick={() => handleIncreaseItem(id)}>+</button>
+              <button
+                className="counter"
+                onClick={() => handleIncreaseItem(id)}
+              >
+                +
+              </button>
             </div>
-            <div className="cart-info-price">{`₩${(
+            <span className="cart-price">{`₩${(
               price * quantity
-            ).toLocaleString()}`}</div>
+            ).toLocaleString()}`}</span>
           </div>
 
           <div className="cart-remove-btn">
-            <button onClick={() => handleRemoveItem(id)}>✕</button>
+            <button className="counter" onClick={() => handleRemoveItem(id)}>
+              ✕
+            </button>
           </div>
         </div>
       </div>

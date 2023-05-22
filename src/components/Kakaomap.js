@@ -27,8 +27,8 @@ const Kakaomap = () => {
       <div
         id="map"
         style={{
-          width: "600px",
-          height: "400px",
+          width: "500px",
+          height: "300px",
           borderRadius: "10px",
           margin: "0 auto",
           marginBottom: "30px",

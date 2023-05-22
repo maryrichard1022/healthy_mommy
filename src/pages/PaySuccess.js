@@ -29,7 +29,7 @@ const PaySuccess = () => {
     ":" +
     seconds;
 
-  console.log(localStorage.getItem("tid"));
+  console.log("tid" + localStorage.getItem("tid"));
 
   return (
     <div>
