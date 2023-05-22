@@ -165,38 +165,45 @@ const AllPageProduct = () => {
 
       {/* 장바구니 아이콘 누르면 해당 상품의 id값 장바구니에 추가 */}
       {/* </div> */}
-      <div className="ProductListInfo">
-        {productlist?.map((product) => (
-          <a href = {"/Detail/?id="+product.id}style={{ color: "black", textDecoration: "none"  }}>
-          <div className="BestProduct">
-            <img
-              alt="product-img"
-              /* src={require("../assets/url_img.png")} */
-              src={product.image_url} //크롤링 테이블 받아왔을 때!!
-              className="product-img"
-            ></img>
-            <div className="productinfo-cart">
-              <div className="productinfo">
-                {/* <p> {product.id}</p> */}
-                <p className="product-name">{product.name}</p>
-                <p className="product-price">{Math.floor(product.price)}원</p>
-                {/* <p className="product-sold">sold: {product.sold}</p> */}
+      <div className="PageProductList">
+        <div className="ProductListInfo">
+          {productlist?.map((product) => (
+            <a
+              href={"/Detail/?id=" + product.id}
+              style={{ color: "black", textDecoration: "none" }}
+            >
+              <div className="BestProduct">
+                <img
+                  alt="product-img"
+                  /* src={require("../assets/url_img.png")} */
+                  src={product.image_url} //크롤링 테이블 받아왔을 때!!
+                  className="product-img"
+                ></img>
+                <div className="productinfo-cart">
+                  <div className="productinfo">
+                    {/* <p> {product.id}</p> */}
+                    <p className="product-name">{product.name}</p>
+                    <p className="product-price">
+                      {Math.floor(product.price)}원
+                    </p>
+                    {/* <p className="product-sold">sold: {product.sold}</p> */}
+                  </div>
+                  <div className="cart-img-box">
+                    <a href="/Cart">
+                      {/* 장바구니 아이콘 누르면 페이지 이동 */}
+                      <img
+                        alt="cart"
+                        src={require("../assets/cart.png")}
+                        className="cart-img"
+                      ></img>
+                    </a>
+                  </div>
+                </div>
+                <br />
               </div>
-              <div className="cart-img-box">
-                <a href="/Cart">
-                  {/* 장바구니 아이콘 누르면 페이지 이동 */}
-                  <img
-                    alt="cart"
-                    src={require("../assets/cart.png")}
-                    className="cart-img"
-                  ></img>
-                </a>
-              </div>
-            </div>
-            <br />
-          </div>
-          </a>
-        ))}
+            </a>
+          ))}
+        </div>
       </div>
 
       <div className="paginataion-group">

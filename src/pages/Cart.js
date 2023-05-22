@@ -174,9 +174,11 @@ const Cart = () => {
 
             <div className="ifnoproduct">
               {totalPrice === 0 ? (
-                <h2>
+                <h2 className="ifnoproduct">
                   장바구니에 담긴 상품이 없습니다.
-                  <h5>원하는 상품을 장바구니에 담아보세요!</h5>
+                  <h5 className="ifnoproduct">
+                    원하는 상품을 장바구니에 담아보세요!
+                  </h5>
                 </h2>
               ) : (
                 ""
