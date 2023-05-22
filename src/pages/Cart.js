@@ -43,9 +43,9 @@ const Cart = () => {
         Authorization: kakao_id,
       },
     });
+    console.log(response);
     const result = await response.json();
     setItems(result.cart);
-    console.log(result);
   };
 
   // 총 결제 금액이 0원이면 (장바구니가 비어있으면 주문하기 버튼 안 눌림)

@@ -22,6 +22,7 @@ const SocialKakao = () => {
     navigate(-1);
 
     //백에 kakao_id, nickname 전달
+
     fetch(`${API.signin}`, {
       method: "POST",
       body: JSON.stringify({
@@ -29,10 +30,19 @@ const SocialKakao = () => {
         nickname: nickname,
       }),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
       .then((result) => {
         console.log(result);
-        // 상태메세지 확인
+        // Handle the result
+      })
+      .catch((error) => {
+        console.error(error);
+        // Handle the error
       });
   };
 
