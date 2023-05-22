@@ -46,15 +46,13 @@
   width: 80%;
   padding-top: 50px;
   padding-bottom: 50px;
-  margin-left: 150px;
   text-align: center;
+  padding-left: 10%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(30px, auto);
-  grid-column-gap: 0px;
-  /**/
+  grid-gap: 30px;
 }
-
 .datacheck {
   text-align: center;
 }
@@ -129,11 +127,9 @@
 
 @media (max-width: 1200px) {
   .ProductListInfo {
-    width: 70%;
     padding-top: 50px;
     padding-bottom: 50px;
-    margin-left: 130px;
-    margin-right: 130px;
+
     text-align: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -142,13 +138,11 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .ProductListInfo {
-    width: 60%;
     padding-top: 50px;
     padding-bottom: 50px;
-    margin-left: 130px;
-    margin-right: 130px;
+
     text-align: center;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -162,11 +156,9 @@
 
 @media (max-width: 500px) {
   .ProductListInfo {
-    width: 30%;
     padding-top: 50px;
     padding-bottom: 50px;
-    margin-left: 130px;
-    margin-right: 130px;
+
     text-align: center;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
