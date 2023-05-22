@@ -6,7 +6,6 @@ import "./Detail.css";
 import CustomButton from "../components/CustomButton";
 import DetailSlider from "../components/DetailSlider";
 import API from "../config"; //0520
-/* import DetailPage from "../components/DetailPage"; */
 
 function Detail() {
 
@@ -30,18 +29,52 @@ function Detail() {
   }, [location.search]);
   //0520
 
+  /* const handleAddToCart = () => {
+    const kakao_id = sessionStorage.getItem("kakao_id");
+    if (!kakao_id) {
+      alert("로그인이 필요합니다.");
+      navigate("/Login");
+      return;
+    }
+
+    const cartItem = {
+      id: productlist.id,
+      quantity: 1,
+    };
+
+    fetch(API.cart, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: kakao_id,
+      },
+      body: JSON.stringify(cartItem),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        if (result.message === "ADD_SUCCESS") {
+          alert("장바구니에 상품이 추가되었습니다.");
+          navigate("/Cart");
+        } else {
+          alert("장바구니에 상품을 추가할 수 없습니다.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error adding item to cart:", error);
+        alert("장바구니에 상품을 추가할 수 없습니다.");
+      });
+  }; */
+
   return (
     <div className="all">
       <div className="contentWrapper">
         <Nav />
 
-        {/* <DetailPage/> */} {/* 0519 */}
 
       <div class="product-detail">
   <div class="product-images">
     <div class="product-main-image">
     <DetailSlider imgs={productlist.image_url}/> {/* //0520 */}
-      {/* <img src={require("../assets/pants.webp")} alt="Product Main Image" /> */}
     </div>
 
   </div>
@@ -65,6 +98,7 @@ function Detail() {
     <button
       type="button"
       class="btn"
+      /* onClick={handleAddToCart} */
       // btn-outline-dark btn-lg btn-block
     >
       <CustomButton text={"장바구니 담기"}/>

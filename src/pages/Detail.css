@@ -12,6 +12,15 @@
 }
 
 
+.Row {
+  display: flex;
+  justify-content: center;
+}
+  
+.Row img {
+  max-width: 100%;
+  margin-bottom: 40px;
+  }
 
 
 .product-detail {

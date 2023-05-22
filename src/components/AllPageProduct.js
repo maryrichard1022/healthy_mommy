@@ -155,6 +155,7 @@ const AllPageProduct = () => {
       {/* </div> */}
       <div className="ProductListInfo">
         {productlist?.map((product) => (
+          <a href = {"/Detail/?id="+product.id}style={{ color: "black", textDecoration: "none"  }}>
           <div className="BestProduct">
             <img
               alt="product-img"
@@ -182,6 +183,7 @@ const AllPageProduct = () => {
             </div>
             <br />
           </div>
+          </a>
         ))}
       </div>
 

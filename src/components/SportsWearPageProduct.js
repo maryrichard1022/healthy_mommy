@@ -138,6 +138,7 @@ const movePage = (num) => {
 
         <div className="ProductListInfo">
         {productlist?.map((product) => (
+          <a href = {"/Detail/?id="+product.id}style={{ color: "black", textDecoration: "none"  }}>
           <div className="BestProduct">
             
             <img
@@ -164,7 +165,9 @@ const movePage = (num) => {
             </div>
             <br />
           </div>
+          </a>
         ))}
+        
       </div>
       <div className="paginataion-group">
         <div className="pagination">

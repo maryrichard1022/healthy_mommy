@@ -53,7 +53,7 @@ const DetailSlider = ({imgs}) => {
       <Slider {...settings}>
         {/* //0520 */}
       {imgList.map((value, key) => {
-          <div> 
+          <div /* key={key} */> 
           <img alt="banner" src={{value}} />
           </div>
         })}

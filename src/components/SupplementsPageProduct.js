@@ -210,6 +210,7 @@ const SupplementsPageProduct = () => {
 
         <div className="ProductListInfo">
         {productlist?.map((product) => (
+          <a href = {"/Detail/?id="+product.id}style={{ color: "black", textDecoration: "none"  }}> {/* //0521 */}
           <div className="BestProduct">
             
             <img
@@ -238,6 +239,7 @@ const SupplementsPageProduct = () => {
             </div>
             <br />
           </div>
+          </a>
         ))}
       </div>
       <div className="paginataion-group">

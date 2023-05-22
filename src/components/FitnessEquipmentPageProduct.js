@@ -142,6 +142,7 @@ const FitnessEquipmentPageProduct = () => {
 
         <div className="ProductListInfo">
         {productlist?.map((product) => (
+          <a href = {"/Detail/?id="+product.id}style={{ color: "black", textDecoration: "none"  }}>
           <div className="BestProduct">
             {/* 크롤링 테이블 받아오면 src={product.image_url}로 수정 */}
             <img
@@ -168,6 +169,7 @@ const FitnessEquipmentPageProduct = () => {
             </div>
             <br />
           </div>
+        </a>
         ))}
       </div>
 
