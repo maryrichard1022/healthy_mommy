@@ -12,13 +12,11 @@ const Nav = () => {
   return (
     <header className="nav-container">
       <div className="nav-container_left">
-        <div className="nav-container_logo">
-          <img
-            alt="mainlogo"
-            onClick={MainNavigate}
-            src={require("../assets/mainlogo.png")}
-          />
-        </div>
+        <img
+          alt="mainlogo"
+          onClick={MainNavigate}
+          src={require("../assets/mainlogo.png")}
+        />
 
         <div class="category">
           <div class="dropdown">
