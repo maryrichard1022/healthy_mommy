@@ -43,9 +43,9 @@ const Cart = () => {
         Authorization: kakao_id,
       },
     });
+    console.log(response);
     const result = await response.json();
     setItems(result.cart);
-    console.log(result);
   };
 
   // 총 결제 금액이 0원이면 (장바구니가 비어있으면 주문하기 버튼 안 눌림)
@@ -174,9 +174,11 @@ const Cart = () => {
 
             <div className="ifnoproduct">
               {totalPrice === 0 ? (
-                <h2>
+                <h2 className="ifnoproduct">
                   장바구니에 담긴 상품이 없습니다.
-                  <h5>원하는 상품을 장바구니에 담아보세요!</h5>
+                  <h5 className="ifnoproduct">
+                    원하는 상품을 장바구니에 담아보세요!
+                  </h5>
                 </h2>
               ) : (
                 ""

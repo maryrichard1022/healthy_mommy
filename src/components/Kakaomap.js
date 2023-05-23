@@ -32,6 +32,7 @@ const Kakaomap = () => {
           borderRadius: "10px",
           margin: "0 auto",
           marginBottom: "30px",
+          zIndex: "-1",
         }}
       ></div>
     </div>

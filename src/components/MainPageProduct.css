@@ -5,9 +5,16 @@
 .MainPageProduct {
   height: auto;
   width: 100%;
+  margin: 0 auto;
   font-family: "IBM Plex Sans KR", sans-serif;
 }
 
+.PageProductList {
+  height: auto;
+  width: 85%;
+  margin: 0 auto;
+  font-family: "IBM Plex Sans KR", sans-ser;
+}
 .MainPageProduct h2 {
   text-align: left;
   padding-top: 5%;
@@ -43,18 +50,16 @@
 }
 
 .ProductListInfo {
-  width: 80%;
   padding-top: 50px;
   padding-bottom: 50px;
-  margin-left: 150px;
   text-align: center;
+
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(30px, auto);
-  grid-column-gap: 0px;
-  /**/
+  grid-gap: 0px;
+  justify-items: center;
 }
-
 .datacheck {
   text-align: center;
 }
@@ -129,49 +134,39 @@
 
 @media (max-width: 1200px) {
   .ProductListInfo {
-    width: 70%;
     padding-top: 50px;
     padding-bottom: 50px;
-    margin-left: 130px;
-    margin-right: 130px;
+
     text-align: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(50px, auto);
-    grid-gap: 30px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .ProductListInfo {
-    width: 60%;
     padding-top: 50px;
     padding-bottom: 50px;
-    margin-left: 130px;
-    margin-right: 130px;
+
     text-align: center;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: minmax(50px, auto);
-    grid-gap: 30px;
   }
   .subBanner {
     display: none;
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 620px) {
   .ProductListInfo {
-    width: 30%;
     padding-top: 50px;
     padding-bottom: 50px;
-    margin-left: 130px;
-    margin-right: 130px;
+
     text-align: center;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-auto-rows: minmax(50px, auto);
-    grid-gap: 30px;
   }
 
   .subBanner {

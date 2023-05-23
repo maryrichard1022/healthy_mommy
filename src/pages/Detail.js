@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";//0520
-import { useNavigate, useLocation } from "react-router-dom";//0520
+import React, { useState, useEffect } from "react"; //0520
+import { useNavigate, useLocation } from "react-router-dom"; //0520
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import "./Detail.css";
@@ -8,7 +8,6 @@ import DetailSlider from "../components/DetailSlider";
 import API from "../config"; //0520
 
 function Detail() {
-
   //0520
   const [productlist, setProductlist] = useState([]);
   const navigate = useNavigate();
@@ -19,8 +18,8 @@ function Detail() {
     let queryString = location.search;
     let params = new URLSearchParams(queryString);
 
-    fetch(`${API.productDetail}/${params.get("id")}`) 
-      .then((res) => res  .json())
+    fetch(`${API.productDetail}/${params.get("id")}`)
+      .then((res) => res.json())
       .then((result) => {
         //     setTotalItems(result);
         setProductlist(result.result);
@@ -29,7 +28,7 @@ function Detail() {
   }, [location.search]);
   //0520
 
-  /* const handleAddToCart = () => {
+  const handleAddToCart = () => {
     const kakao_id = sessionStorage.getItem("kakao_id");
     if (!kakao_id) {
       alert("로그인이 필요합니다.");
@@ -37,33 +36,29 @@ function Detail() {
       return;
     }
 
-    const cartItem = {
-      id: productlist.id,
-      quantity: 1,
-    };
-
     fetch(API.cart, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
         Authorization: kakao_id,
       },
-      body: JSON.stringify(cartItem),
+      body: JSON.stringify({
+        product_id: productlist.id,
+      }),
     })
       .then((response) => response.json())
       .then((result) => {
-        if (result.message === "ADD_SUCCESS") {
-          alert("장바구니에 상품이 추가되었습니다.");
-          navigate("/Cart");
-        } else {
-          alert("장바구니에 상품을 추가할 수 없습니다.");
+        console.log(result.message);
+        if (result.message === "CART_QUANTITY_CHANGED") {
+          alert("장바구니에 수량 추가되었습니다.");
+        } else if (result.message === "PUT_IN_CART_SUCCESS") {
+          alert("장바구니에 상품 추가되었습니다.");
         }
       })
       .catch((error) => {
         console.error("Error adding item to cart:", error);
         alert("장바구니에 상품을 추가할 수 없습니다.");
       });
-  }; */
+  };
 
   return (
     <div className="all">
@@ -74,7 +69,7 @@ function Detail() {
       <div class="product-detail">
   <div class="product-images">
     <div class="product-main-image">
-    {/* <DetailSlider imgs={productlist.image_url}/>  */}
+    <DetailSlider imgs={productlist.image_url}/> {/* //0520 */}
     </div>
 
   </div>
@@ -95,21 +90,18 @@ function Detail() {
       <CustomButton text={"바로 구매"}/>
     </button>
 
-    <button
-      type="button"
-      class="btn"
-      /* onClick={handleAddToCart} */
-      // btn-outline-dark btn-lg btn-block
-    >
-      <CustomButton text={"장바구니 담기"}/>
-    </button>
-  </div>
-</div>
-
-
+            <button
+              type="button"
+              class="btn"
+              onClick={handleAddToCart}
+              // btn-outline-dark btn-lg btn-block
+            >
+              <CustomButton text={"장바구니 담기"} />
+            </button>
+          </div>
+        </div>
 
         <div class="container">
-        
           <hr style={{ borderTop: "1px solid black" }} />
           <br />
 

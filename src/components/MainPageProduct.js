@@ -89,30 +89,32 @@ const MainPageProduct = () => {
 
         {/* 장바구니 아이콘 누르면 해당 상품의 id값 장바구니에 추가 */}
       </div>
-      <div className="ProductListInfo">
-        {productlist?.map((product) => (
-          <div className="BestProduct">
-            <img
-              alt="product-img"
-              src={product.image_url}
-              className="product-img"
-            ></img>
-            <div className="productinfo-cart">
-              <div className="productinfo">
-                <p className="product-name">{product.name}</p>
-                <p className="product-price">{Math.floor(product.price)}원</p>
+      <div className="PageProductList">
+        <div className="ProductListInfo">
+          {productlist?.map((product) => (
+            <div className="BestProduct">
+              <img
+                alt="product-img"
+                src={product.image_url}
+                className="product-img"
+              ></img>
+              <div className="productinfo-cart">
+                <div className="productinfo">
+                  <p className="product-name">{product.name}</p>
+                  <p className="product-price">{Math.floor(product.price)}원</p>
+                </div>
+                <div className="cart-img-box">
+                  <img
+                    alt="cart"
+                    src={require("../assets/cart.png")}
+                    className="cart-img"
+                  ></img>
+                </div>
               </div>
-              <div className="cart-img-box">
-                <img
-                  alt="cart"
-                  src={require("../assets/cart.png")}
-                  className="cart-img"
-                ></img>
-              </div>
+              <br />
             </div>
-            <br />
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
