@@ -18,7 +18,7 @@ const Cart = () => {
   //물품 수량 업데이트 상태
   const [items, setItems] = useState([]);
   //총 상품 가격 (reduce 배열 순회, 값 누적하여 하나의 값으로 반환)
-  const totalPrice = items.reduce((previousValue, currentValue) => {
+  const totalPrice = items?.reduce((previousValue, currentValue) => {
     return (
       parseInt(previousValue) +
       parseInt(currentValue.price * currentValue.quantity)
