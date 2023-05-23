@@ -3,7 +3,7 @@
 const BASE_URL = "http://13.125.232.99:8000";
 
 const API = {
-  signin: `${BASE_URL}/users/login`,
+  login: `${BASE_URL}/users/login`,
   //signup: `${BASE_URL}/users/signup`,
   main: `${BASE_URL}/`,
   product: `${BASE_URL}/products`,

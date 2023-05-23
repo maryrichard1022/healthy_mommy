@@ -163,6 +163,7 @@ const Cart = () => {
               {/* 물품정보 props 전달 */}
               {items?.map((item, index) => (
                 <CartProduct
+                  key={item.id}
                   item={item}
                   index={index}
                   handleDecreaseItem={handleDecreaseItem}
