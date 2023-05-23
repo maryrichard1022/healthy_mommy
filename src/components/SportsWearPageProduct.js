@@ -32,6 +32,7 @@ const SportsWearPageProduct = () => {
     if(!params.has('category') || !params.has('sub_category')){
       params.set('category','sportswear');
       setActiveFilter1('all')
+      navigate("?"+params.toString())
     } else {
       setActiveFilter1(params.get('sub_category'));
     }

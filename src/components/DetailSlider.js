@@ -9,7 +9,6 @@ const DetailSlider = ({imgs}) => {
   const [imgList, setimgList] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
-
   const settings = {
     dots: true, // 개수 표시 점
     infinite: true, // 무한 캐러셀
@@ -38,7 +37,6 @@ const DetailSlider = ({imgs}) => {
     ],
   };
 
-  //0520
   useEffect(() => {
     if (imgs) {
       console.log(imgs)
@@ -46,18 +44,22 @@ const DetailSlider = ({imgs}) => {
     }
 
   }, [imgs]);
-  //0520
 
   return (
     <container className="detailbanner">
       <Slider {...settings}>
-        {/* //0520 */}
-      {imgList.map((value, key) => {
-          <div /* key={key} */> 
-          <img alt="banner" src={{value}} />
-          </div>
-        })}
-        {/* //0520 */}
+      <div>
+          <img alt="banner1" src={imgs[0]} />
+        </div>
+        <div>
+          <img alt="banner2" src={imgs[0]} />
+        </div>
+        <div>
+          <img alt="banner3" src={imgs[0]} />
+        </div>
+        <div>
+          <img alt="banner4" src={imgs[0]} />
+        </div>
       </Slider>
     </container>
   );
