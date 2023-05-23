@@ -1,11 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;600&display=swap");
 
 /*font-family: 'IBM Plex Sans KR', sans-serif;*/
-
 .MainPageProduct {
   height: auto;
   width: 100%;
-  margin: 0 auto;
+  margin: 0;
   font-family: "IBM Plex Sans KR", sans-serif;
 }
 
