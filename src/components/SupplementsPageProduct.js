@@ -62,70 +62,7 @@ const SupplementsPageProduct = () => {
       });
   }, [location.search]);
 
-  //필터 버튼 누르면 url 바뀌도록
-  /* const sortSuppleAll = () => {
-    const suppleAll = `?category=supplements`;
-    navigate(suppleAll);
-  };
-
-  const sortSuppleFolate = () => {
-    const suppleFolate = `?sub_category=folate`;
-    navigate(suppleFolate);
-  };
-  const sortSuppleCa = () => {
-    const suppleCa = `?sub_category=ca`;
-    navigate(suppleCa);
-  };
-
-  const sortSuppleIron = () => {
-    const suppleIron = `?sub_category=iron`;
-    navigate(suppleIron);
-  };
-
-  const sortSuppleLacto = () => {
-    const suppleLacto = `?sub_category=lacto`;
-    navigate(suppleLacto);
-  };
-
-  const sortSuppleVitaminD = () => {
-    const suppleVitaminD = `?sub_category=vitaminD`;
-    navigate(suppleVitaminD);
-  };
-
-  //필터 버튼 누르면 url 바뀌도록
-  const sortPriceLow = () => {
-    subCategory =  location.search;
-    if(subCategory == "") {
-      subCategory="?category=supplements";
-    }
-    const priceLow = `${subCategory}&sort_method=price`;
-    navigate(priceLow);
-  };
-
-  const sortPriceHigh = () => {
-    subCategory =  location.search;
-    if(subCategory == "") {
-      subCategory="?category=supplements";
-    }
-    const priceHigh = `${subCategory}&sort_method=-price`;
-    navigate(priceHigh);
-  };
-  const sortBestProduct = () => {
-    subCategory =  location.search;
-    if(subCategory == "") {
-      subCategory="?category=supplements";
-    }
-    const bestProduct = `${subCategory}&sort_method=id`;
-    navigate(bestProduct);
-  }; 
-  const sortNewProduct = () => {
-    subCategory =  location.search;
-    if(subCategory == "") {
-      subCategory="?category=supplements";
-    }
-    const newProduct = `${subCategory}&sort_method=release_date`;
-    navigate(newProduct);
-  };*/
+  
   const sortSubCategry1 = (category) => {
     let params = new URLSearchParams(location.search);
     if (!params.has("category")) {
@@ -165,6 +102,39 @@ const SupplementsPageProduct = () => {
     params.set("offset", num);
 
     navigate("?" + params.toString());
+  };
+
+  const handleAddToCart = (product) => {
+    const kakao_id = sessionStorage.getItem("kakao_id");
+    console.log(kakao_id)
+    if (!kakao_id) {
+      alert("로그인이 필요합니다.");
+      navigate("/Login");
+      return;
+    }
+
+    fetch(API.cart, {
+      method: "POST",
+      headers: {
+        Authorization: kakao_id,
+      },
+      body: JSON.stringify({
+        product_id: product.id,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result.message);
+        if (result.message === "CART_QUANTITY_CHANGED") {
+          alert("장바구니에 수량 추가되었습니다.");
+        } else if (result.message === "PUT_IN_CART_SUCCESS") {
+          alert("장바구니에 상품 추가되었습니다.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error adding item to cart:", error);
+        alert("장바구니에 상품을 추가할 수 없습니다.");
+      });
   };
 
   return (
@@ -263,7 +233,7 @@ const SupplementsPageProduct = () => {
                     {/* <p className="product-sold">sold: {product.sold}</p> */}
                   </div>
                   <div className="cart-img-box">
-                    <a href="/Cart">
+                    <a href="javascript:void(0)" onClick={() => {handleAddToCart(product)}}>
                       {/* 장바구니 아이콘 누르면 페이지 이동 */}
                       <img
                         alt="cart"

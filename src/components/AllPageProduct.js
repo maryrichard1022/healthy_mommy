@@ -63,25 +63,6 @@ const AllPageProduct = () => {
       });
   }, [location.search]);
 
-  //필터 버튼 누르면 url 바뀌도록
-  /*  const sortPriceLow = () => {
-    const priceLow = `?sort_method=price`;
-    navigate(priceLow);
-  };
-
-  const sortPriceHigh = () => {
-    const priceHigh = `?sort_method=-price`;
-    navigate(priceHigh);
-  };
-  const sortBestProduct = () => {
-    const bestProduct = `?sort_method=id`;
-    navigate(bestProduct);
-  };
-
-  const sortNewProduct = () => {
-    const newProduct = `?sort_method=-release_date`;
-    navigate(newProduct);
-  }; */
 
   const sortSubCategry2 = (category) => {
     let params = new URLSearchParams(location.search);
@@ -110,6 +91,39 @@ const AllPageProduct = () => {
     navigate("?" + params.toString());
   };
 
+  const handleAddToCart = (product) => {
+    const kakao_id = sessionStorage.getItem("kakao_id");
+    console.log(kakao_id)
+    if (!kakao_id) {
+      alert("로그인이 필요합니다.");
+      navigate("/Login");
+      return;
+    }
+
+    fetch(API.cart, {
+      method: "POST",
+      headers: {
+        Authorization: kakao_id,
+      },
+      body: JSON.stringify({
+        product_id: product.id,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result.message);
+        if (result.message === "CART_QUANTITY_CHANGED") {
+          alert("장바구니에 수량 추가되었습니다.");
+        } else if (result.message === "PUT_IN_CART_SUCCESS") {
+          alert("장바구니에 상품 추가되었습니다.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error adding item to cart:", error);
+        alert("장바구니에 상품을 추가할 수 없습니다.");
+      });
+  };
+
   return (
     <div className="AllPageProduct">
       <div>
@@ -121,10 +135,7 @@ const AllPageProduct = () => {
         />
 
         <div className="AllFilterButton11">
-          {/* <FilterButton onClick={sortPriceLow} text={"가격 낮은 순"} />
-          <FilterButton onClick={sortPriceHigh} text={"가격 높은 순"} />
-          <FilterButton onClick={sortBestProduct} text={"베스트 순"} />
-          <FilterButton onClick={sortNewProduct} text={"최신 순"} /> */}
+       
           <FilterButton
             onClick={() => sortSubCategry2("price")}
             text={"가격 낮은 순"}
@@ -150,21 +161,7 @@ const AllPageProduct = () => {
       <br />
 
       <br />
-      {/* <div className="datacheck"> */}
-      {/* <h4>가데이터 API 연동 및 정렬 확인</h4> */}
-      {/* 카테고리 2x4 위에 나타냄 */}
-      {/* <h4 className="category-name">
-          {urlCategory === "supplements"
-            ? "영양제"
-            : urlCategory === "sportswear"
-            ? "운동복"
-            : urlCategory === "fitness_equipment"
-            ? "운동기구"
-            : "ALL"}
-        </h4> */}
-
-      {/* 장바구니 아이콘 누르면 해당 상품의 id값 장바구니에 추가 */}
-      {/* </div> */}
+     
       <div className="PageProductList">
         <div className="ProductListInfo">
           {productlist?.map((product) => (
@@ -189,7 +186,7 @@ const AllPageProduct = () => {
                     {/* <p className="product-sold">sold: {product.sold}</p> */}
                   </div>
                   <div className="cart-img-box">
-                    <a href="/Cart">
+                    <a href="javascript:void(0)" onClick={() => {handleAddToCart(product)}}>
                       {/* 장바구니 아이콘 누르면 페이지 이동 */}
                       <img
                         alt="cart"

@@ -107,6 +107,39 @@ const SportsWearPageProduct = () => {
     navigate("?" + params.toString());
   };
 
+  const handleAddToCart = (product) => {
+    const kakao_id = sessionStorage.getItem("kakao_id");
+    console.log(kakao_id)
+    if (!kakao_id) {
+      alert("로그인이 필요합니다.");
+      navigate("/Login");
+      return;
+    }
+
+    fetch(API.cart, {
+      method: "POST",
+      headers: {
+        Authorization: kakao_id,
+      },
+      body: JSON.stringify({
+        product_id: product.id,
+      }),
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result.message);
+        if (result.message === "CART_QUANTITY_CHANGED") {
+          alert("장바구니에 수량 추가되었습니다.");
+        } else if (result.message === "PUT_IN_CART_SUCCESS") {
+          alert("장바구니에 상품 추가되었습니다.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error adding item to cart:", error);
+        alert("장바구니에 상품을 추가할 수 없습니다.");
+      });
+  };
+
   return (
     <div className="SportsWearPageProduct">
       <div>
@@ -185,7 +218,7 @@ const SportsWearPageProduct = () => {
                     {/* <p className="product-sold">sold: {product.sold}</p> */}
                   </div>
                   <div className="cart-img-box">
-                    <a href="/Cart">
+                    <a href="javascript:void(0)" onClick={() => {handleAddToCart(product)}}>
                       {/* 장바구니 아이콘 누르면 페이지 이동 */}
                       <img
                         alt="cart"
