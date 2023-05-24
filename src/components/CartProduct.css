@@ -17,6 +17,7 @@
   padding-right: 5%;
   padding-left: 5%;
   text-align: center;
+  height: 150px;
 }
 /*상품 이미지 크기*/
 .cart-row-img {
@@ -25,19 +26,22 @@
 }
 
 .cart-info-name-box {
+  display: flex;
+  align-items: center;
   width: 300px;
   text-align: left;
+  height: 150px;
 }
 .cart-info-name {
   font-weight: bold;
   font-size: 15px;
   margin-top: 0px;
   margin-bottom: 0px;
-
-  padding-top: 60px;
-  padding-bottom: 60px;
+  height: 150px;
   padding-left: 60px;
   padding-right: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .cart-info-count,
