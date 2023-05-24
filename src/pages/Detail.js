@@ -69,7 +69,7 @@ function Detail() {
       <div class="product-detail">
   <div class="product-images">
     <div class="product-main-image">
-    <DetailSlider imgs={productlist.image_url}/> {/* //0520 */}
+    {/* <DetailSlider imgs={productlist.image_url}/> */} {/* //0520 */}
     </div>
 
   </div>

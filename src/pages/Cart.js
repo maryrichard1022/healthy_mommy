@@ -23,7 +23,7 @@ const Cart = () => {
       parseInt(previousValue) +
       parseInt(currentValue.price * currentValue.quantity)
     );
-  }, 0);
+  }, 0) ;
 
   //로그인 안 되어 있으면 로그인 창으로
   useEffect(() => {
@@ -190,7 +190,7 @@ const Cart = () => {
         </div>
 
         <div className="TotalPrice">
-          <h2>총 주문 금액 : {totalPrice.toLocaleString()} 원</h2>
+          <h2>총 주문 금액 : {totalPrice?.toLocaleString()} 원</h2>
 
           <button onClick={handleOrderItem} className="CustomButton">
             주문하기

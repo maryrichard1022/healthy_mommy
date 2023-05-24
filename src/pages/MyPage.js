@@ -27,10 +27,10 @@ const MyPage = () => {
           <hr />
           <div className="OrderInCartInfo">
             <span>주문번호</span>
-            <span>이미지</span>
+            <span>   </span>
             <span>상품정보</span>
-            <span>수량</span>
             <span>상품구매금액</span>
+            <span>결제상태</span>
             
           </div>
 
