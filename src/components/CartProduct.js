@@ -18,39 +18,28 @@ const CartProduct = ({
           {/* 상품 사진, 이름, 수량증감, 상품 가격 */}
           <img className="cart-row-img" alt="item" src={image_url} />
         </div>
-        <div className="cart-info">
-          <div>
-            <div className="cart-info-name">{product_name}</div>
-          </div>
-          <div className="cart-handle-div">
-            <div className="cart-info-price">
-              <div className="cart-info-count">
-                <button
-                  className="counter"
-                  onClick={() => handleDecreaseItem(id)}
-                >
-                  -
-                </button>
-                <span>{quantity}</span>
-                <button
-                  className="counter"
-                  onClick={() => handleIncreaseItem(id)}
-                >
-                  +
-                </button>
-              </div>
-              <span className="cart-price">{`₩${(
-                price * quantity
-              ).toLocaleString()}`}</span>
-            </div>
-
-            <div className="cart-remove-btn">
-              <button className="counter" onClick={() => handleRemoveItem(id)}>
-                ✕
-              </button>
-            </div>
-          </div>
+        <div className="cart-info-name-box">
+          <div className="cart-info-name">{product_name}</div>
         </div>
+        <span className="cart-info-count">
+          <button className="counter" onClick={() => handleDecreaseItem(id)}>
+            -
+          </button>
+          <span>{quantity}</span>
+          <button className="counter" onClick={() => handleIncreaseItem(id)}>
+            +
+          </button>
+        </span>
+
+        <span className="cart-price">{`₩${(
+          price * quantity
+        ).toLocaleString()}`}</span>
+
+        <span className="cart-remove-btn">
+          <button className="counter" onClick={() => handleRemoveItem(id)}>
+            ✕
+          </button>
+        </span>
       </div>
     </div>
   );
