@@ -244,16 +244,16 @@
 
 @media (max-width: 600px) {
   .category {
-    padding-left: 0px;
+    padding-left: 10px;
   }
 
   .dropdown {
     padding-left: 0px;
-    padding-right: px;
+    padding-right: 0px;
   }
   .dropbtn {
     width: 50px;
-    font-size: 14px;
+    font-size: 13px;
     padding-left: 0px;
     padding-right: 0px;
     margin-left: 10px;
@@ -271,10 +271,34 @@
 
     text-decoration: none;
     display: block;
-    font-size: 7px;
+    font-size: 8px;
   }
 
   .nav-container_right img {
     width: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .dropbtn {
+    width: 40px;
+    font-size: 11.5px;
+    padding-right: 0px;
+  }
+
+  .dropdown-content {
+    width: 40px;
+  }
+
+  .dropdown-content a {
+    color: black;
+
+    text-decoration: none;
+    display: block;
+    font-size: 7px;
+  }
+
+  .nav-container_right img {
+    width: 15px;
   }
 }
