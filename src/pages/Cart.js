@@ -190,7 +190,7 @@ const Cart = () => {
         </div>
 
         <div className="TotalPrice">
-          <h2>총 주문 금액 : {totalPrice.toLocaleString()} 원</h2>
+          <h2>총 주문 금액 : {totalPrice?.toLocaleString()} 원</h2>
 
           <button onClick={handleOrderItem} className="CustomButton">
             주문하기

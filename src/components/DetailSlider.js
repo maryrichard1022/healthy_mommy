@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./DetailSlider.css";
 
-const DetailSlider = ({imgs}) => {
+const DetailSlider = ({ imgs }) => {
   const [imgList, setimgList] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
@@ -39,16 +39,15 @@ const DetailSlider = ({imgs}) => {
 
   useEffect(() => {
     if (imgs) {
-      console.log(imgs)
-      setimgList(imgs)
+      console.log(imgs);
+      setimgList(imgs);
     }
-
   }, [imgs]);
 
   return (
     <container className="detailbanner">
       <Slider {...settings}>
-      <div>
+        <div>
           <img alt="banner1" src={imgs[0]} />
         </div>
         <div>

@@ -27,9 +27,9 @@ const SportsWearPageProduct = () => {
     /* if(queryString == ""){
       queryString="?category=sportswear";
     } */
-    if(!params.has('category') || !params.has('sub_category')){
-      params.set('category','sportswear');
-      setActiveFilter1('all')
+    if (!params.has("category") || !params.has("sub_category")) {
+      params.set("category", "sportswear");
+      setActiveFilter1("all");
     } else {
       setActiveFilter1(params.get("sub_category"));
     }
