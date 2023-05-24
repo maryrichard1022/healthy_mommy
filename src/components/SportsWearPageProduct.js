@@ -27,16 +27,10 @@ const SportsWearPageProduct = () => {
     /* if(queryString == ""){
       queryString="?category=sportswear";
     } */
-<<<<<<< HEAD
-    if(!params.has('category') || !params.has('sub_category')){
-      params.set('category','sportswear');
-      setActiveFilter1('all')
-      navigate("?" + params.toString());
-=======
     if (!params.has("category") || !params.has("sub_category")) {
       params.set("category", "sportswear");
       setActiveFilter1("all");
->>>>>>> 1932dcfdc25ccbdf5d55e4b9e261aad4d7ec9167
+      navigate("?" + params.toString());
     } else {
       setActiveFilter1(params.get("sub_category"));
     }

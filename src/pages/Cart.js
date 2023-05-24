@@ -23,7 +23,7 @@ const Cart = () => {
       parseInt(previousValue) +
       parseInt(currentValue.price * currentValue.quantity)
     );
-  }, 0) ;
+  }, 0);
 
   //로그인 안 되어 있으면 로그인 창으로
   useEffect(() => {
