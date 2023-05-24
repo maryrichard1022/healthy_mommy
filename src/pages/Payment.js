@@ -136,7 +136,7 @@ const Payment = () => {
           <div className="ProductForPay">
             <hr></hr>
             <p className="p-css">주문 상품 정보</p>
-            <div className="ProductInCartInfo">
+            <div className="Payment-Info">
               <span> </span>
               <span>상품명</span>
               <span>수량</span>
@@ -145,16 +145,24 @@ const Payment = () => {
             <div className="CartProductList">
               {items?.map((item, index) => (
                 <div className="cart-item">
-                  <img
-                    className="cart-row-img"
-                    alt="product-img"
-                    src={item.image_url}
-                  ></img>
-                  <p className="cart-info-name">{item.product_name}</p>
-                  <span className="cart-info-count">{item.quantity}개</span>
-                  <div className="cart-price">{`₩${(
+                  <div className="cart-row-img-box">
+                    {/* 상품 사진, 이름, 수량증감, 상품 가격 */}
+                    <img
+                      className="cart-row-img"
+                      alt="item"
+                      src={item.image_url}
+                    />
+                  </div>
+                  <div className="cart-info-name-box">
+                    <div className="cart-info-name">{item.product_name}</div>
+                  </div>
+                  <span className="cart-info-count">
+                    <span>{item.quantity}개</span>
+                  </span>
+
+                  <span className="cart-price">{`₩${(
                     item.price * item.quantity
-                  ).toLocaleString()}`}</div>
+                  ).toLocaleString()}`}</span>
                 </div>
               ))}
             </div>

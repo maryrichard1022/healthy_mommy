@@ -22,17 +22,18 @@
   height: auto;
 }
 
-.ProductInfo {
+.Payment-Info {
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   display: flex;
-  font-weight: bold;
 }
-.ProductInfo span {
-  padding-right: 10%;
-  padding-left: 10%;
+.Payment-Info span {
+  padding-right: 110px;
+  padding-left: 130px;
   white-space: nowrap;
   text-align: center;
+  font-size: 15px;
+  font-weight: bold;
 }
 .ProductForPay {
   padding-right: 50px;
@@ -187,6 +188,7 @@ input[type="text"] {
 
 .p-css {
   padding-right: 20px;
+  margin-bottom: 0px;
 }
 
 .CartProductList {
