@@ -2,6 +2,7 @@ import { useState } from "react";
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom"; 
 import API from "../config";
+import "./Product.css";
 
 function Product({products}) {
   const navigate = useNavigate();
@@ -39,12 +40,12 @@ function Product({products}) {
       .then((result) => {
         console.log(result.message);
         if (result.message === "CANCEL_ORDER") {
-          alert("주문 취소되었습니다.");
-          
+          location.reload();
+          alert("주문 취소되었습니다.");        
         }})
       .catch((error) => {
         console.error("Error deleting item from Mypage:", error);
-        alert("주문을 취소할 수 없습니다.");
+    
       });
   };
 
@@ -52,33 +53,38 @@ function Product({products}) {
     <div>
       <div className="product">
         <div className="OrderDetail" onClick={toggleDetails}>
-          <span>{products.order_number}</span>
-          <span>
-            <img alt="order" className="Orderimg" src={products.products[0].product_img}/>
+          <span className="OrderNumber">{products.order_number}</span>
+          <span >
+            <img className="OrderImg" alt="order" src={products.products[0].product_img}/>
           </span>
-          <span className="OrderName">{products.products[0].product_name + " 외 " + (products.products.length - 1) + "개"}</span>
+          <span className="OrderName">{products.products[0].product_name }  {products.products.length === 1 ? "" : "외 " + (products.products.length-1) + "개" }</span>
           <span className="OrderPrice">{sum_price.toLocaleString('ko-KR')+"원"}</span>
-          <span className="OrderCounter"> {products.order_status} {products.order_status === "결제완료" ? <button onClick={() => handleDeleteOrder(products.id)}>주문취소</button> : ""} </span>
-          
+          <span className="OrderCounter"> {products.order_status === "결제취소" ? <div className="redText">{products.order_status}</div>: products.order_status} {products.order_status === "결제완료" ? <button className="productCustomButton " onClick={() => handleDeleteOrder(products.id)}>주문취소</button> : ""} </span>
+
         </div>
 
         <div className={`product-details ${isOpen ? "show" : ""}`}>
-          <span className="OrderName">
-            <ul>
+        
+    
               {order_list.map((order, index) => (
-                <li>
+                <div className="OrderDetail">
                 <span className="OrderName">{order.product_name}</span>
+                <span >
+                  <img className="OrderImg" alt="order" src={order.product_img}/>
+              </span>
                 <span className="OrderPrice">{Number(order.product_price).toLocaleString('ko-KR')+"원"}</span>
                 <span className="OrderCounter">{order.quantity}</span>
                 <span className="OrderCounter">{Number(order.product_total_price).toLocaleString('ko-KR')+"원"}</span>
-                </li>
+             </div>
               ))}
-            </ul>
-          </span>
+            
+
         </div>
         <hr />
       </div>
+      <br/>
     </div>  
+    
   );
 }
 

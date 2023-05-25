@@ -11,9 +11,9 @@ const API = {
   //장바구니
   cart: `${BASE_URL}/carts`,
   //주문 내역 확인
-  order: `${BASE_URL}/myorder`,
+  order: `${BASE_URL}/orders`,
   //주문 할때 배송지 정보 넘길 때 사용.
-  neworder: `${BASE_URL}/orders/neworder`,
+  neworder: `${BASE_URL}/orders/neworder`
 };
 
 export default API;

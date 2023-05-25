@@ -13,7 +13,7 @@
 }
 
 .MyPageInfo {
-  text-align: left;
+  /* text-align: left; */
   padding-left: 100px;
   padding-right: 100px;
 }
@@ -27,8 +27,8 @@
 }
 
 .OrderInCartInfo span {
-  padding-right: 93px;
-  padding-left: 93px;
+  /* padding-right: 93px;
+  padding-left: 115px; */
 
   text-align: center;
 }
@@ -37,37 +37,39 @@
   padding-top: 20px;
   padding-bottom: 20px;
   display: flex;
+  /* flex-direction: column; */
   align-items: center;
 }
 
-.Orderimg {
+.OrderImg {
   width: 150px;
   height: 100px;
   padding-left: 40px;
-  padding-right: 30px;
+  flex-basis: 15%;
 }
 .OrderDetail span {
-  margin-right: 45px;
-  margin-left: 60px;
+  /* margin-right: 45px; */
+  /* margin-left: 60px; */
   text-align: center;
-  display: block;
+  cursor: pointer;
 }
 
-/* .Orderimg {
-  margin-left: 20px;
+.OrderNumber {
+  flex-basis: 20%;
 }
 
 .OrderName {
-  padding-left: 10px;
-} */
-
-.OrderCounter {
-  padding-left: 35px;
-  padding-right: 40px;
+  padding-left: 5%;
+  padding-right: 5%;
+  flex-basis: 45%;
 }
 
 .OrderPrice {
-  padding-left: 60px;
+  flex-basis: 10%;
+}
+
+.OrderCounter {
+  flex-basis: 10%;
 }
 
 .product-details {
@@ -80,3 +82,4 @@
   opacity: 1; /* 상세 내용이 표시되면 opacity를 1로 변경하여 fade-in 애니메이션 효과 적용 */
   display:inline
 }
+
