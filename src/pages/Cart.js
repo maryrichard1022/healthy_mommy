@@ -51,8 +51,9 @@ const Cart = () => {
   // 총 결제 금액이 0원이면 (장바구니가 비어있으면 주문하기 버튼 안 눌림)
   const handleOrderItem = () => {
     if (totalPrice === 0) {
-      alert("주문할 상품이 없습니다.");
-      return;
+      alert(
+        "장바구니에 담긴 상품이 없습니다. \n원하는 상품을 장바구니에 담아보세요!"
+      );
     } else {
       navigate("/Payment");
     }
@@ -190,8 +191,11 @@ const Cart = () => {
         </div>
 
         <div className="TotalPrice">
-          <h2>총 주문 금액 : {totalPrice?.toLocaleString()} 원</h2>
-
+          {totalPrice === 0 ? (
+            ""
+          ) : (
+            <h2>총 주문 금액 : {totalPrice?.toLocaleString()} 원</h2>
+          )}
           <button onClick={handleOrderItem} className="CustomButton">
             주문하기
           </button>
