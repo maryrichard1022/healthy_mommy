@@ -143,7 +143,10 @@ const MainPageProduct = () => {
       <div className="PageProductList">
         <div className="ProductListInfo">
           {productlist?.map((product) => (
-            <a href={"/Detail/?id=" + product.id}>
+            <a
+              href={"/Detail/?id=" + product.id}
+              style={{ color: "black", textDecoration: "none" }}
+            >
               <div className="BestProduct">
                 <img
                   alt="product-img"
