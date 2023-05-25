@@ -4,6 +4,8 @@ import axios from "axios";
 //import { useNavigate } from "react-router";
 
 const PayReady = (props) => {
+  //
+  const url = "http://localhost:3000/";
   //결제하기 버튼 클릭하면 실행
   useEffect(() => {
     if (props.stateButton && true) {
@@ -27,9 +29,9 @@ const PayReady = (props) => {
       total_amount: props.totalPrice,
       vat_amount: 200,
       tax_free_amount: 0,
-      approval_url: "http://localhost:3000/PaySuccess",
-      fail_url: "http://localhost:3000/*",
-      cancel_url: "http://localhost:3000/*",
+      approval_url: url + "PaySuccess",
+      fail_url: url + "*",
+      cancel_url: url + "*",
     },
   };
 

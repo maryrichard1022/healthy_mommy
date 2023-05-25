@@ -4,9 +4,8 @@ import "./FilterButton.css";
 
 // 버튼 색 고민중...
 const FilterButton = ({ text, onClick, isActive }) => {
-
   const buttonStyle = {
-    fontWeight: isActive ? 'bold' : 'normal'
+    fontWeight: isActive ? "bold" : "normal",
   };
 
   return (
