@@ -6,8 +6,12 @@ import "slick-carousel/slick/slick-theme.css";
 import "./DetailSlider.css";
 import API from "../config";
 
-const DetailSlider = ({imgs}) => {
-  const [imglist, setimglist] = useState(["asdas"]);
+const DetailSlider = ({ imgs }) => {
+  const [imglist, setimglist] = useState([
+    "../assets/sportswear.png",
+    "../assets/sportswear.png",
+    "../assets/sportswear.png",
+  ]);
   const navigate = useNavigate();
   const location = useLocation();
   const settings = {
@@ -39,41 +43,21 @@ const DetailSlider = ({imgs}) => {
   };
 
   useEffect(() => {
-    let queryString = location.search;
-
-  fetch(`${API.productDetail}${queryString}`)
-  .then((res) => res.json())
-  .then((result) => {
-    //     setTotalItems(result);
-    setimglist(result.result);
-    console.log(result);
-  });
-
-  if (imgs) {
-    console.log(imgs)
-    setimglist(imgs)
-  }
-}, [location.search] );
-
+    if (imgs) {
+      console.log(imgs);
+      setimglist(imgs);
+    }
+  }, [imgs]);
 
   return (
     <container className="detailbanner">
-      {imglist?.map((productDetail) => (
       <Slider {...settings}>
-      <div>
-          <img alt="detailbanner1" src={productDetail.image_url[0]} />
-        </div>
-        <div>
-          <img alt="detailbanner2" src={productDetail.image_url[1]} />
-        </div>
-        <div>
-          <img alt="detailbanner3" src={productDetail.image_url[2]} />
-        </div>
-        <div>
-          <img alt="detailbanner4" src={productDetail.image_url[3]} />
-        </div>
+        {imglist?.map((productDetail) => (
+          <div>
+            <img alt="detailbanner1" src={productDetail} />
+          </div>
+        ))}
       </Slider>
-      ))}
     </container>
   );
 };

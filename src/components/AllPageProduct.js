@@ -63,7 +63,6 @@ const AllPageProduct = () => {
       });
   }, [location.search]);
 
-
   const sortSubCategry2 = (category) => {
     let params = new URLSearchParams(location.search);
     /* if(!params.has('category')) {
@@ -93,7 +92,7 @@ const AllPageProduct = () => {
 
   const handleAddToCart = (product) => {
     const kakao_id = sessionStorage.getItem("kakao_id");
-    console.log(kakao_id)
+    console.log(kakao_id);
     if (!kakao_id) {
       alert("로그인이 필요합니다.");
       navigate("/Login");
@@ -135,7 +134,6 @@ const AllPageProduct = () => {
         />
 
         <div className="AllFilterButton11">
-       
           <FilterButton
             onClick={() => sortSubCategry2("price")}
             text={"가격 낮은 순"}
@@ -161,7 +159,7 @@ const AllPageProduct = () => {
       <br />
 
       <br />
-     
+
       <div className="PageProductList">
         <div className="ProductListInfo">
           {productlist?.map((product) => (
@@ -186,8 +184,12 @@ const AllPageProduct = () => {
                     {/* <p className="product-sold">sold: {product.sold}</p> */}
                   </div>
                   <div className="cart-img-box">
-                    <a href="javascript:void(0)" onClick={() => {handleAddToCart(product)}}>
-                      {/* 장바구니 아이콘 누르면 페이지 이동 */}
+                    <a
+                      href="javascript:void(0)"
+                      onClick={() => {
+                        handleAddToCart(product);
+                      }}
+                    >
                       <img
                         alt="cart"
                         src={require("../assets/cart.png")}
