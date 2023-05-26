@@ -8,14 +8,13 @@
   cursor: pointer;
   border: none;
   border-radius: 5px;
-
+  margin-left: 20px;
+  margin-right: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 40px;
   padding-right: 40px;
 
-  margin-left: 20px;
-  margin-right: 10px;
   font-size: 18px;
   font-weight: bold;
 }

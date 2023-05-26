@@ -23,7 +23,7 @@ function Detail() {
       .then((result) => {
         //     setTotalItems(result);
         setProductlist(result.result);
-        console.log(result);
+        console.log(result.result);
       });
   }, [location.search]);
   //0520
@@ -65,38 +65,28 @@ function Detail() {
       <div className="contentWrapper">
         <Nav />
 
-
-      <div class="product-detail">
-  <div class="product-images">
-    <div class="product-main-image">
-    {/* <DetailSlider imgs={productlist.image_url}/> //0520 */}
-    </div>
-
-  </div>
-  <div class="product-info">
-    <div class="product-title">
-      <h1>{productlist.name}</h1>
-    </div>
-    <div class="product-description">
-      <p>{productlist.description}</p>
-    </div>
-    <div class="product-price">
-      <h2>{Number(productlist.price).toLocaleString('ko-KR')}원</h2>
-    </div>
-    <button
-      type="button"
-      class="btn"
-    >
-      <CustomButton text={"바로 구매"}/>
-    </button>
-
+        <div class="product-detail">
+          <div class="product-images">
+            <div class="product-main-image">
+              <DetailSlider imgs={productlist.image_url} />
+            </div>
+          </div>
+          <div class="product-info">
+            <div class="product-title">
+              <h2>{productlist.name}</h2>
+            </div>
+            <div class="product-description">
+              <p>{productlist.description}</p>
+            </div>
+            <div class="product-price">
+              <h2>{Number(productlist.price).toLocaleString("ko-KR")}원</h2>
+            </div>
             <button
               type="button"
-              class="btn"
+              class="btn CustomButton"
               onClick={handleAddToCart}
-              // btn-outline-dark btn-lg btn-block
             >
-              <CustomButton text={"장바구니 담기"} />
+              장바구니 담기
             </button>
           </div>
         </div>

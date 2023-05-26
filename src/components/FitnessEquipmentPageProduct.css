@@ -1,27 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;600&display=swap");
 .FitnessEquipmentPageProduct h1 {
-    text-align: left;
-    padding-top: 50px;
-    padding-left: 150px;
-  }
+  text-align: left;
+  padding-top: 50px;
+  padding-left: 150px;
+  font-family: "IBM Plex Sans KR", sans-serif;
+}
 
-  .FitnessEquipmentBanner {
-    /* filter: brightness(50%); */
-    padding-top: 15px;
-    width: 80%;
-    max-height: 250px; /* 0507 */
-    display: block;
-    margin: 0px auto;
-    overflow: hidden; /* 0507 */
-    margin-bottom: 3%; /* 0507 */
-  }
-  
-  .FitnessEquipmentBanner img {
-    /* width: 80%; */
-    max-height: initial;
-    margin-top: -15%;
-    width: 100%;
-  }
-  /* .AllBanner {
+.FitnessEquipmentBanner {
+  /* filter: brightness(50%); */
+  padding-top: 15px;
+  width: 80%;
+  max-height: 250px; /* 0507 */
+  display: block;
+  margin: 0px auto;
+  overflow: hidden; /* 0507 */
+  margin-bottom: 3%; /* 0507 */
+}
+
+.FitnessEquipmentBanner img {
+  /* width: 80%; */
+  max-height: initial;
+  margin-top: -15%;
+  width: 100%;
+}
+/* .AllBanner {
     margin-bottom: 5%;
     text-align: center;
     overflow: hidden;
@@ -35,45 +37,46 @@
     
  } */
 
-  .FitnessEquipmentPageProduct {
-    position: relative;
-    /* AllPageProduct가 position: relative일 경우, 
+.FitnessEquipmentPageProduct {
+  position: relative;
+  /* AllPageProduct가 position: relative일 경우, 
        하위 요소들이 position: absolute로 지정될 때,
        AllPageProduct를 기준으로 위치가 결정됩니다. */
-    margin-bottom: 10%;
-  }
-  
-  .AllFilterButton14 {
-    position: absolute;
-    top: 10;
-    right: 140px;
-    /* 우측 상단에 배치할 내용의 스타일 */
-  }
+  margin-bottom: 10%;
+}
 
-  .FitnessEquipmentFilterButton {
-    padding-left: 140px;
-  }
+.AllFilterButton14 {
+  position: absolute;
+  top: 10;
+  right: 140px;
+  /* 우측 상단에 배치할 내용의 스타일 */
+}
 
+.FitnessEquipmentFilterButton {
+  padding-left: 140px;
+}
 
-  .pagination {
-    display: inline-block;
-  }
-  
-  .pagination a {
-    color: black;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-  }
-  
-  .pagination a.active {
-    background-color: #f9e9ed;
-    color: white;
-  }
-  
-  .pagination a:hover:not(.active) {background-color: #ddd;}
+.pagination {
+  display: inline-block;
+}
 
-  .paginataion-group{
-    width: 100%;
-    text-align: center;
-  }
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #f9e9ed;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.paginataion-group {
+  width: 100%;
+  text-align: center;
+}

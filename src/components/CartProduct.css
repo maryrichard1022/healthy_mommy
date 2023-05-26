@@ -6,9 +6,7 @@
 .cart-info-price {
   display: flex;
 }
-.cart-item {
-  padding-bottom: 25px;
-}
+
 .cart-item span {
   text-align: center;
 }

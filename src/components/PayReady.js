@@ -24,7 +24,7 @@ const PayReady = (props) => {
       cid: "TC0ONETIME",
       partner_order_id: "partner_order_id",
       partner_user_id: "partner_user_id",
-      item_name: "헬씨마미",
+      item_name: "Healthy Mommy(헬씨마미)",
       quantity: 1,
       total_amount: props.totalPrice,
       vat_amount: 200,

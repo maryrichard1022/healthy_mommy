@@ -1,27 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;600&display=swap");
 .SupplementsPageProduct h1 {
-    text-align: left;
-    padding-top: 50px;
-    padding-left: 150px;
-  }
+  text-align: left;
+  padding-top: 50px;
+  padding-left: 150px;
+  font-family: "IBM Plex Sans KR", sans-serif;
+}
 
-  .SupplementsBanner {
-    /* filter: brightness(50%); */
-    padding-top: 15px;
-    width: 80%;
-    max-height: 250px; /* 0507 */
-    display: block;
-    margin: 0px auto;
-    overflow: hidden; /* 0507 */
-    margin-bottom: 3%; /* 0507 */
-  }
-  
-  .SupplementsBanner img {
-    /* width: 80%; */
-    max-height: initial;
-    margin-top: -15%;
-    width: 100%;
-  }
-  /* .AllBanner {
+.SupplementsBanner {
+  /* filter: brightness(50%); */
+  padding-top: 15px;
+  width: 80%;
+  max-height: 250px; /* 0507 */
+  display: block;
+  margin: 0px auto;
+  overflow: hidden; /* 0507 */
+  margin-bottom: 3%; /* 0507 */
+}
+
+.SupplementsBanner img {
+  /* width: 80%; */
+  max-height: initial;
+  margin-top: -15%;
+  width: 100%;
+}
+/* .AllBanner {
     margin-bottom: 5%;
     text-align: center;
     overflow: hidden;
@@ -35,47 +37,47 @@
     
  } */
 
-  .SupplementsPageProduct {
-    position: relative;
-    /* AllPageProduct가 position: relative일 경우, 
+.SupplementsPageProduct {
+  position: relative;
+  /* AllPageProduct가 position: relative일 경우, 
        하위 요소들이 position: absolute로 지정될 때,
        AllPageProduct를 기준으로 위치가 결정됩니다. */
-    margin-bottom: 10%;
-  }
-  
-  .AllFilterButton12 {
-    position: absolute;
-    top: 10;
-    right: 140px;
-    /* 우측 상단에 배치할 내용의 스타일 */
-  }
+  margin-bottom: 10%;
+}
 
-  .SuppleFilterButton {
-    padding-left: 140px;
-  }
-  /* .AllFilterButton2 */
+.AllFilterButton12 {
+  position: absolute;
+  top: 10;
+  right: 140px;
+  /* 우측 상단에 배치할 내용의 스타일 */
+}
 
+.SuppleFilterButton {
+  padding-left: 140px;
+}
+/* .AllFilterButton2 */
 
+.pagination {
+  display: inline-block;
+}
 
-  .pagination {
-    display: inline-block;
-  }
-  
-  .pagination a {
-    color: black;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-  }
-  
-  .pagination a.active {
-    background-color: #f9e9ed;
-    color: white;
-  }
-  
-  .pagination a:hover:not(.active) {background-color: #ddd;}
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
 
-  .paginataion-group{
-    width: 100%;
-    text-align: center;
-  }
+.pagination a.active {
+  background-color: #f9e9ed;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.paginataion-group {
+  width: 100%;
+  text-align: center;
+}

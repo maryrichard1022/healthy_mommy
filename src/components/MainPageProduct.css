@@ -12,7 +12,7 @@
   height: auto;
   width: 85%;
   margin: 0 auto;
-  font-family: "IBM Plex Sans KR", sans-ser;
+  font-family: "IBM Plex Sans KR", sans-serif;
 }
 .MainPageProduct h2 {
   text-align: left;
@@ -125,6 +125,7 @@
   font-size: 30px;
   margin-top: 30px;
   margin-bottom: 30px;
+  font-family: "IBM Plex Sans KR", sans-serif;
 }
 /* .product-sold {
   font-size: 20px;
