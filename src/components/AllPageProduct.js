@@ -112,7 +112,7 @@ const AllPageProduct = () => {
       .then((result) => {
         console.log(result.message);
         if (result.message === "CART_QUANTITY_CHANGED") {
-          alert("장바구니에 수량 추가되었습니다.");
+          alert("장바구니에 ㄴ수량 추가되었습니다.");
         } else if (result.message === "PUT_IN_CART_SUCCESS") {
           alert("장바구니에 상품 추가되었습니다.");
         }

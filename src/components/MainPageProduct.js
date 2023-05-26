@@ -161,14 +161,18 @@ const MainPageProduct = () => {
                     </p>
                   </div>
                   <div className="cart-img-box">
-                    <img
-                      alt="cart"
-                      src={require("../assets/cart.png")}
-                      className="cart-img"
+                    <a
+                      href="javascript:void(0)"
                       onClick={() => {
                         handleAddToCart(product);
                       }}
-                    ></img>
+                    >
+                      <img
+                        alt="cart"
+                        src={require("../assets/cart.png")}
+                        className="cart-img"
+                      ></img>
+                    </a>
                   </div>
                 </div>
                 <br />

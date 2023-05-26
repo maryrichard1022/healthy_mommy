@@ -3,6 +3,7 @@ import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import API from "../config";
 import "./Product.css";
+import axios from "axios";
 
 function Product({ products }) {
   const navigate = useNavigate();
@@ -19,10 +20,31 @@ function Product({ products }) {
     setIsOpen(!isOpen);
   };
 
+  const PayCancel = () => {
+    const params = {
+      cid: "TC0ONETIME",
+      tid: products.tid,
+      cancel_amount: sum_price,
+      cancel_tax_free_amount: 0,
+    };
+    axios({
+      url: "https://kapi.kakao.com/v1/payment/cancel",
+      Host: "kapi.kakao.com",
+      method: "POST",
+      headers: {
+        Authorization: "KakaoAK de0e3076b485b703b1f1a4a2419440e6",
+        "Content-type": "application/x-www-form-urlencoded;charset=utf-8",
+      },
+      params,
+    }).then((response) => {
+      console.log(response);
+    });
+  };
+
   const handleDeleteOrder = (orderId) => {
     const kakao_id = sessionStorage.getItem("kakao_id");
     if (!kakao_id) {
-      alert("로그인이 필요합니다.");
+      alert("로그인 해주세요.");
       navigate("/Login");
       return;
     }
@@ -40,8 +62,10 @@ function Product({ products }) {
       .then((result) => {
         console.log(result.message);
         if (result.message === "CANCEL_ORDER") {
-          location.reload();
           alert("주문 취소되었습니다.");
+          PayCancel();
+          setTimeout(1000);
+          window.location.replace("/MyPage");
         }
       })
       .catch((error) => {
@@ -71,22 +95,21 @@ function Product({ products }) {
             {sum_price.toLocaleString("ko-KR") + "원"}
           </span>
           <span className="OrderCounter">
-            {" "}
             {products.order_status === "결제취소" ? (
               <div className="redText">{products.order_status}</div>
             ) : (
               products.order_status
-            )}{" "}
+            )}
             {products.order_status === "결제완료" ? (
               <button
                 className="productCustomButton "
                 onClick={() => handleDeleteOrder(products.id)}
               >
-                주문취소
+                결제취소
               </button>
             ) : (
               ""
-            )}{" "}
+            )}
           </span>
         </div>
 

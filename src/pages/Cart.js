@@ -28,7 +28,7 @@ const Cart = () => {
   //로그인 안 되어 있으면 로그인 창으로
   useEffect(() => {
     if (!kakao_id) {
-      alert("로그인 해주세요.");
+      alert("로그인이 필요합니다.");
       navigate("/Login");
       return;
     }

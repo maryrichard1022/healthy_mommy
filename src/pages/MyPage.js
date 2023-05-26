@@ -50,8 +50,11 @@ const MyPage = () => {
       .then((res) => res.json())
       .then((result) => {
         //     setTotalItems(result);
-        setProductlist(result.RESULT.orders_list);
         console.log(result.RESULT.orders_list);
+        const sortedOrders = result.RESULT.orders_list.sort(
+          (a, b) => b.id - a.id
+        );
+        setProductlist(sortedOrders);
       });
   }, []);
 
