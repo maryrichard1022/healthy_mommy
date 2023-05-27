@@ -103,7 +103,10 @@ function Product({ products }) {
             {products.order_status === "결제완료" ? (
               <button
                 className="productCustomButton "
-                onClick={(event) => {event.stopPropagation(); handleDeleteOrder(products.id)}}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  handleDeleteOrder(products.id);
+                }}
               >
                 결제취소
               </button>
@@ -115,27 +118,31 @@ function Product({ products }) {
         </div>
 
         <ui className="product-information">
-            <li>수령인  :  {products.receiver}</li>
-            <li>주소  :  {products.address}</li>
-          </ui>
+          <li>수령인 : {products.receiver}</li>
+          <li>주소 : {products.address}</li>
+        </ui>
+
         <div className={`product-details ${isOpen ? "show" : ""}`}>
-        <div className="OrderDetail OrderInCartInfo">
-                <span className="OrderName">상품정보</span>
-                 <span>
-                  <img className="OrderImg"  />
-                </span>
-                <span className="OrderPrice">상품금액</span>
-                <span className="OrderCounter">수량</span>
-                <span className="OrderCounter">총금액</span>
-                <span className="right-margin"></span>
-              </div>
+          <div className="OrderDetail OrderInCartInfo">
+            <span className="OrderName">상품정보</span>
+            <span>
+              <img className="OrderImg" />
+            </span>
+            <span className="OrderPrice">상품금액</span>
+            <span className="OrderCounter">수량</span>
+            <span className="OrderCounter">총금액</span>
+            <span className="right-margin"></span>
+          </div>
           {order_list.map((order, index) => (
             <div className="product">
-              
               <div className="OrderDetail">
                 <span className="OrderName">{order.product_name}</span>
                 <span>
-                  <img className="OrderImg" alt="order" src={order.product_img} />
+                  <img
+                    className="OrderImg"
+                    alt="order"
+                    src={order.product_img}
+                  />
                 </span>
                 <span className="OrderPrice">
                   {Number(order.product_price).toLocaleString("ko-KR") + "원"}
@@ -145,8 +152,7 @@ function Product({ products }) {
                   {Number(order.product_total_price).toLocaleString("ko-KR") +
                     "원"}
                 </span>
-                <span className="right-margin">
-                </span>
+                <span className="right-margin"></span>
               </div>
             </div>
           ))}
@@ -159,5 +165,3 @@ function Product({ products }) {
 }
 
 export default Product;
-
-

@@ -12,7 +12,7 @@
 }
 
 .Row {
- /*  display: flex;
+  /*  display: flex;
   justify-content: center; */
   text-align: center;
 }
@@ -33,7 +33,7 @@
 }
 
 .product-images {
- /*  display: flex;
+  /*  display: flex;
   flex-direction: column;
   margin-left: 20px;
   margin-right: 40px;
@@ -50,7 +50,7 @@
 }
 
 .product-info {
- /*  display: flex;
+  /*  display: flex;
   flex-direction: column; */
   flex-basis: 50%;
   margin-right: 30px;
@@ -61,6 +61,7 @@
   margin-bottom: 60px;
   font-family: "IBM Plex Sans KR", sans-serif;
   margin-left: 20px;
+  width: 500px;
 }
 
 .product-price {
