@@ -9,18 +9,28 @@ const CartProduct = ({
   handleIncreaseItem,
   handleRemoveItem,
 }) => {
-  const { id, product_name, quantity, price, image_url } = item;
+  const { id, product_id, product_name, quantity, price, image_url } = item;
 
   return (
     <div className="cart-card-container">
       <div className="cart-item">
         <div className="cart-row-img-box">
           {/* 상품 사진, 이름, 수량증감, 상품 가격 */}
-          <img className="cart-row-img" alt="item" src={image_url} />
+          <a
+            href={"/Detail/?id=" + product_id}
+            style={{ color: "black", textDecoration: "none" }}
+          >
+            <img className="cart-row-img" alt="item" src={image_url} />
+          </a>
         </div>
-        <div className="cart-info-name-box">
-          <div className="cart-info-name">{product_name}</div>
-        </div>
+        <a
+          href={"/Detail/?id=" + product_id}
+          style={{ color: "black", textDecoration: "none" }}
+        >
+          <div className="cart-info-name-box">
+            <div className="cart-info-name">{product_name}</div>
+          </div>
+        </a>
         <span className="cart-info-count">
           <button className="counter" onClick={() => handleDecreaseItem(id)}>
             -

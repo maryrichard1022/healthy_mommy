@@ -1,13 +1,13 @@
 import { useState } from "react";
 import React from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import API from "../config";
 import "./Product.css";
 import axios from "axios";
 
 function Product({ products }) {
   const navigate = useNavigate();
-  const location = useLocation();
+
   console.log(products);
   const order_list = products.products;
   let sum_price = 0;
@@ -126,7 +126,7 @@ function Product({ products }) {
           <div className="OrderDetail OrderInCartInfo">
             <span className="OrderName">상품정보</span>
             <span>
-              <img className="OrderImg" />
+              <img alt="orderimg" className="OrderImg" />
             </span>
             <span className="OrderPrice">상품금액</span>
             <span className="OrderCounter">수량</span>

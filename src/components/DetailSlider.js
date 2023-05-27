@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./DetailSlider.css";
-import API from "../config";
 
 const DetailSlider = ({ imgs }) => {
   const [imglist, setimglist] = useState([
@@ -12,8 +11,7 @@ const DetailSlider = ({ imgs }) => {
     "../assets/sportswear.png",
     "../assets/sportswear.png",
   ]);
-  const navigate = useNavigate();
-  const location = useLocation();
+
   const settings = {
     dots: true, // 개수 표시 점
     infinite: true, // 무한 캐러셀

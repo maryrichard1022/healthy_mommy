@@ -1,6 +1,6 @@
 //마이페이지(주문내역조회) 해나가 작업할 부분!!!
 import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import Product from "../components/Product";
@@ -31,7 +31,6 @@ const MyPage = () => {
 
   const [Productlist, setProductlist] = useState(products_sample);
   const navigate = useNavigate();
-  const location = useLocation();
 
   useEffect(() => {
     const kakao_id = sessionStorage.getItem("kakao_id");
@@ -56,6 +55,7 @@ const MyPage = () => {
         );
         setProductlist(sortedOrders);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

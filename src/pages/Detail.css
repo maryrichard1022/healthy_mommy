@@ -67,7 +67,7 @@
 .product-price {
   font-size: 24px;
   font-weight: bold;
-  margin-top: 60px;
+
   margin-bottom: 60px;
   font-family: "IBM Plex Sans KR", sans-serif;
   margin-left: 20px;
@@ -80,6 +80,7 @@
   margin-bottom: 60px;
   margin-right: 150px;
   margin-left: 20px;
+  width: 500px;
 }
 
 .add-to-cart {
