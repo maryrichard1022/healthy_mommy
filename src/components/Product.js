@@ -85,7 +85,7 @@ function Product({ products }) {
               src={products.products[0].product_img}
             />
           </span>
-          <span className="OrderName">
+          <span className="OrderName1">
             {products.products[0].product_name}{" "}
             {products.products.length === 1
               ? ""
@@ -123,36 +123,35 @@ function Product({ products }) {
         </ui>
 
         <div className={`product-details ${isOpen ? "show" : ""}`}>
-          <div className="OrderDetail OrderInCartInfo">
+          <div className="OrderDetail1 OrderInCartInfo1">
             <span className="OrderName">상품정보</span>
-            <span>
-              <img alt="orderimg" className="OrderImg" />
-            </span>
+            <span className="OrderImg"></span>
             <span className="OrderPrice">상품금액</span>
             <span className="OrderCounter">수량</span>
             <span className="OrderCounter">총금액</span>
-            <span className="right-margin"></span>
+            {/* <span className="right-margin"></span> */}
           </div>
           {order_list.map((order, index) => (
             <div className="product">
-              <div className="OrderDetail">
-                <span className="OrderName">{order.product_name}</span>
+              <div className="OrderDetail1">
+                <span className="OrderName1">{order.product_name}
+                </span>
                 <span>
                   <img
-                    className="OrderImg"
+                    className="OrderImg1"
                     alt="order"
                     src={order.product_img}
                   />
                 </span>
-                <span className="OrderPrice">
+                <span className="OrderPrice1">
                   {Number(order.product_price).toLocaleString("ko-KR") + "원"}
                 </span>
-                <span className="OrderCounter">{order.quantity}</span>
-                <span className="OrderCounter">
+                <span className="OrderCounter1">{order.quantity}</span>
+                <span className="OrderCounter1">
                   {Number(order.product_total_price).toLocaleString("ko-KR") +
                     "원"}
                 </span>
-                <span className="right-margin"></span>
+                {/* <span className="right-margin"></span> */}
               </div>
             </div>
           ))}

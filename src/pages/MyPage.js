@@ -74,7 +74,7 @@ const MyPage = () => {
               <span className="OrderName">상품정보</span>
               <span className="OrderPrice">상품구매금액</span>
               <span className="OrderCounter">결제상태</span>
-              <span className="right-margin"></span>
+              {/* <span className="right-margin"></span> */}
             </div>
 
             <div>
@@ -84,7 +84,6 @@ const MyPage = () => {
             </div>
           </div>
         </div>
-        {/*  <h3>   1   </h3> */}
       </div>
       <Footer />
     </div>

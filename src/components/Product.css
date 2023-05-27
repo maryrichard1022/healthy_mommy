@@ -1,30 +1,121 @@
 .redText {
-    color: red;
+  color: red;
+}
+
+.productCustomButton {
+  font-family: "IBM Plex Sans KR", sans-serif;
+  background-color: #f9e9ed;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.product-information {
+  text-align: left;
+  margin-left: 20px;
+}
+
+/* .right-margin {
+  margin-right: 5%;
+} */
+
+
+.OrderName1 {
+    flex-basis: 30%; 
+    max-width: 290px; /* 원하는 최대 너비로 조정하세요 */
+    height: auto; /* 텍스트 길이에 따라 높이가 자동으로 조정되도록 설정 */
+    overflow-wrap: break-word; /* 긴 단어를 줄바꿈하여 텍스트가 공간에 맞게 표시 */;
+    margin: 53px;
+}
+
+.OrderImg1 {
+    width: 150px;
+    padding-left: 20px;
+    /* flex-basis: 10%; */
   }
   
-  .productCustomButton {
-    font-family: "IBM Plex Sans KR", sans-serif;
-    background-color: #f9e9ed;
-    white-space: nowrap;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
+  .OrderPrice1 {
+    flex-basis: 15%;
+  }
   
-    margin-top: 10px;
+  .OrderCounter1 {
+    flex-basis: 15%;
+  }
+
+.OrderDetail1 {
+color: grey;
+
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-  
-    font-size: 15px;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+
+    /* border-bottom: 1px solid #ccc; */
+    border-top: 1px solid #ccc;
+    position: relative;
+  }
+
+  .OrderDetail1 span {
+    /* margin-right: 45px; */
+    /* margin-left: 60px; */
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .OrderName1,
+  .OrderImg1,
+  .OrderPrice1,
+  .OrderCounter1 {
+    position: relative;
+    padding-left: 10px;
+  }
+
+  .OrderImg1::before,
+  .OrderPrice1::before,
+  .OrderCounter1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 7px;
+    width: 1px;
+    height: 100%;
+    background-color: #828181;
+  }
+
+ /*  .OrderName1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -55px;
+    width: 0.5px;
+    height: 100%;
+    background-color: #000;
+  } */
+
+  .OrderInCartInfo1 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
     font-weight: bold;
+    color: grey;
   }
   
-  .product-information {
-    text-align: left;
-    margin-left: 20px;
-  }
+  .OrderInCartInfo1 span {
+    /* padding-right: 93px;
+    padding-left: 115px; */
   
-  .right-margin {
-    margin-right: 5%;
+    text-align: center;
   }
