@@ -59,8 +59,8 @@ const Cart = () => {
     }
   };
   //아이템 수량 -1
-  const handleDecreaseItem = async (id) => {
-    const selectedId = items.findIndex((item) => item.id === id);
+  const handleDecreaseItem = async (cart_id) => {
+    const selectedId = items.findIndex((item) => item.cart_id === cart_id);
     if (items[selectedId].quantity > 1 && !pending) {
       setPending(true);
       const response = await fetch(API.cart, {
@@ -70,7 +70,7 @@ const Cart = () => {
           Authorization: kakao_id,
         },
         body: JSON.stringify({
-          cart_id: items[selectedId].id,
+          cart_id: items[selectedId].cart_id,
           quantity: -1,
         }),
       });
@@ -85,11 +85,14 @@ const Cart = () => {
         // 변경사항 반영
         setItems(newQuantity);
       }
+    } else {
+      alert("최소 주문 수량은 1개입니다.");
+      return;
     }
   };
   //아이템 수량 +1
-  const handleIncreaseItem = async (id) => {
-    const selectedId = items.findIndex((item) => item.id === id);
+  const handleIncreaseItem = async (cart_id) => {
+    const selectedId = items.findIndex((item) => item.cart_id === cart_id);
     //현재 pending: false
     if (!pending) {
       setPending(true);
@@ -99,7 +102,7 @@ const Cart = () => {
           Authorization: kakao_id,
         },
         body: JSON.stringify({
-          cart_id: items[selectedId].id,
+          cart_id: items[selectedId].cart_id,
           quantity: 1,
         }),
       });
@@ -116,9 +119,9 @@ const Cart = () => {
   };
 
   //아이템 삭제
-  const handleRemoveItem = async (id) => {
+  const handleRemoveItem = async (cart_id) => {
     if (window.confirm("해당 물품을 장바구니에서 삭제하시겠습니까?")) {
-      const selectedId = items.findIndex((item) => item.id === id);
+      const selectedId = items.findIndex((item) => item.cart_id === cart_id);
       // 현재 pending : false
       if (!pending) {
         setPending(true);
@@ -128,14 +131,14 @@ const Cart = () => {
             Authorization: kakao_id,
           },
           body: JSON.stringify({
-            cart_ids: [items[selectedId].id],
+            cart_ids: [items[selectedId].cart_id],
           }),
         });
         const result = await response.json();
         setPending(false);
         if (result.message === "DELETE_SUCCESS") {
           // 해당 아이템의 id 찾아서 삭제
-          const filtered = items.filter((item) => item.id !== id);
+          const filtered = items.filter((item) => item.cart_id !== cart_id);
           setItems(filtered);
         }
       }

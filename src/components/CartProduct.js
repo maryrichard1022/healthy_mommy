@@ -9,7 +9,8 @@ const CartProduct = ({
   handleIncreaseItem,
   handleRemoveItem,
 }) => {
-  const { id, product_id, product_name, quantity, price, image_url } = item;
+  const { cart_id, product_id, product_name, quantity, price, image_url } =
+    item;
 
   return (
     <div className="cart-card-container">
@@ -32,11 +33,17 @@ const CartProduct = ({
           </div>
         </a>
         <span className="cart-info-count">
-          <button className="counter" onClick={() => handleDecreaseItem(id)}>
+          <button
+            className="counter"
+            onClick={() => handleDecreaseItem(cart_id)}
+          >
             -
           </button>
           <span>{quantity}</span>
-          <button className="counter" onClick={() => handleIncreaseItem(id)}>
+          <button
+            className="counter"
+            onClick={() => handleIncreaseItem(cart_id)}
+          >
             +
           </button>
         </span>
@@ -46,7 +53,7 @@ const CartProduct = ({
         ).toLocaleString()}`}</span>
 
         <span className="cart-remove-btn">
-          <button className="counter" onClick={() => handleRemoveItem(id)}>
+          <button className="counter" onClick={() => handleRemoveItem(cart_id)}>
             ✕
           </button>
         </span>
