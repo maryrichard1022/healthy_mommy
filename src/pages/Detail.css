@@ -12,8 +12,9 @@
 }
 
 .Row {
-  display: flex;
-  justify-content: center;
+ /*  display: flex;
+  justify-content: center; */
+  text-align: center;
 }
 
 .Row img {
@@ -25,31 +26,39 @@
   display: flex;
   align-items: center;
   margin: 50px;
+  justify-content: space-between; /* 0527 */
+  margin-bottom: 30px; /* 0527 */
   font-family: "IBM Plex Sans KR", sans-serif;
+  padding: 20px 20px;
 }
 
 .product-images {
-  display: flex;
+ /*  display: flex;
   flex-direction: column;
   margin-left: 20px;
   margin-right: 40px;
-  min-width: 40%;
+  min-width: 40%; */
+  flex-basis: 50%;
 }
 
 .product-main-image {
   width: 100%;
-  max-width: 500px;
-  margin-bottom: 20px;
+  max-width: 550px;
+  /* margin-bottom: 20px; */
+  margin-left: 30px;
+  overflow: hidden;
 }
 
 .product-info {
-  display: flex;
-  flex-direction: column;
+ /*  display: flex;
+  flex-direction: column; */
+  flex-basis: 50%;
+  margin-right: 30px;
 }
 
 .product-title {
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 60px;
   font-family: "IBM Plex Sans KR", sans-serif;
   margin-left: 20px;
 }
@@ -57,7 +66,8 @@
 .product-price {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-top: 60px;
+  margin-bottom: 60px;
   font-family: "IBM Plex Sans KR", sans-serif;
   margin-left: 20px;
 }
@@ -65,8 +75,9 @@
 .product-description {
   font-size: 16px;
   line-height: 1.5;
-  margin-bottom: 20px;
-  margin-right: 20px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  margin-right: 150px;
   margin-left: 20px;
 }
 

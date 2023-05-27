@@ -53,7 +53,7 @@ const DetailSlider = ({ imgs }) => {
     <container className="detailbanner">
       <Slider {...settings}>
         {imglist?.map((productDetail) => (
-          <div>
+          <div className="detailbanner1">
             <img alt="detailbanner1" src={productDetail} />
           </div>
         ))}
