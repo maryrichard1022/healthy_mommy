@@ -103,15 +103,15 @@ const Payment = () => {
         body: JSON.stringify({
           tid: state.tid,
           receiver: state.receiver,
-          address: state.postcodeStreet + state.postcodedetail,
-          cart_ids: items.map((item) => item.id),
+          address: state.postcodeStreet + state.postcodedetail + " ",
+          cart_ids: items.map((item) => item.cart_id),
         }),
       }).then((response) => {
         response
           .json()
           .then((result) => {
             console.log("결과 메세지: " + result.message);
-            console.log("cart_ids :" + items.map((item) => item.id));
+            console.log("cart_ids :" + items.map((item) => item.cart_id));
             if (result.message === "NEW_ORDER_CREATED") {
               console.log("주문 성공");
             } else {

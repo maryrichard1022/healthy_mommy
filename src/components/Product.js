@@ -82,11 +82,11 @@ function Product({ products }) {
             <img
               className="OrderImg"
               alt="order"
-              src={products.products[0].product_img}
+              src={products.products[0]?.product_img}
             />
           </span>
           <span className="OrderName1">
-            {products.products[0].product_name}{" "}
+            {products.products[0]?.product_name}{" "}
             {products.products.length === 1
               ? ""
               : "외 " + (products.products.length - 1) + "개"}
@@ -134,8 +134,7 @@ function Product({ products }) {
           {order_list.map((order, index) => (
             <div className="product">
               <div className="OrderDetail1">
-                <span className="OrderName1">{order.product_name}
-                </span>
+                <span className="OrderName1">{order.product_name}</span>
                 <span>
                   <img
                     className="OrderImg1"
