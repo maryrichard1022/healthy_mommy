@@ -100,12 +100,13 @@ function Product({ products }) {
             ) : (
               products.order_status
             )}
+            <br />
             {products.order_status === "결제완료" ? (
               <button
                 className="productCustomButton "
                 onClick={(event) => {
                   event.stopPropagation();
-                  handleDeleteOrder(products.id);
+                  handleDeleteOrder(products.order_id);
                 }}
               >
                 결제취소
@@ -116,11 +117,6 @@ function Product({ products }) {
           </span>
           <span className="right-margin"></span>
         </div>
-
-        <ui className="product-information">
-          <li>수령인 : {products.receiver}</li>
-          <li>주소 : {products.address}</li>
-        </ui>
 
         <div className={`product-details ${isOpen ? "show" : ""}`}>
           <div className="OrderDetail1 OrderInCartInfo1">
@@ -134,13 +130,24 @@ function Product({ products }) {
           {order_list.map((order, index) => (
             <div className="product">
               <div className="OrderDetail1">
-                <span className="OrderName1">{order.product_name}</span>
+                <span className="OrderName1">
+                <a
+                href={"/Detail/?id=" + order.product_id}
+                style={{ color: "black", textDecoration: "none" }}
+                >{order.product_name}
+                </a>
+                </span>
                 <span>
+                <a
+                href={"/Detail/?id=" + order.product_id}
+                style={{ color: "black", textDecoration: "none" }}
+                >
                   <img
                     className="OrderImg1"
                     alt="order"
                     src={order.product_img}
                   />
+                  </a>
                 </span>
                 <span className="OrderPrice1">
                   {Number(order.product_price).toLocaleString("ko-KR") + "원"}
@@ -154,6 +161,14 @@ function Product({ products }) {
               </div>
             </div>
           ))}
+
+        <ui className="product-information">
+          <hr/>
+          <p className="OrderInformation"><strong>배송지정보</strong></p>
+          <p><strong>수령인</strong> <span className="OrderReceiveAddr">{products.receiver}</span></p>
+          <p />
+          <p><strong>배송지</strong> <span className="OrderReceiveAddr">{products.address}</span></p>
+        </ui>
         </div>
         <hr />
       </div>

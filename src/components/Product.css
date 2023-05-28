@@ -23,6 +23,15 @@
 .product-information {
   text-align: left;
   margin-left: 20px;
+  color: grey;
+  /* font-weight: bold; */
+}
+.OrderInformation{
+  font-size: 20px;
+}
+.OrderReceiveAddr {
+  margin-left: 15px;
+  color: black;
 }
 
 /* .right-margin {

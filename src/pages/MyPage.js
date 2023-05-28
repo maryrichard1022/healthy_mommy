@@ -11,19 +11,20 @@ import API from "../config";
 const MyPage = () => {
   const products_sample = [
     {
-      id: 1,
+      order_id: 1,
       receiver: "명지대큰손",
+      address: "경기 용인시 처인구 명지로 116 (남동, 명지대학교용인캠퍼스)5공학관",
       order_status: "결제완료",
-      order_number: "2023052113552236750100001",
+      order_number: "2023052708275345722600001",
       products: [
         {
-          id: 1,
-          product_img:
-            "https://shopping-phinf.pstatic.net/main_3574061/35740611281.20230503095936.jpg?type=f640",
-          product_name: "이고진 더쎈 풀업밴드 20806 옐로우 탄력밴드",
-          product_price: "1050.00",
-          quantity: 22,
-          product_total_price: "23100.00",
+          order_product_id: 1,
+          product_id: 36,
+          product_img: "https://shopping-phinf.pstatic.net/main_3534345/35343453633.20221020175440.jpg?type=f640",
+          product_name: "해외나우푸드 칼슘 앤 마그네슘 250정",
+          product_price: "19550.00",
+          quantity: 1,
+          product_total_price: "19550.00"
         },
       ],
     },
@@ -51,7 +52,7 @@ const MyPage = () => {
         //     setTotalItems(result);
         console.log(result.RESULT.orders_list);
         const sortedOrders = result.RESULT.orders_list.sort(
-          (a, b) => b.id - a.id
+          (a, b) => b.order_id - a.order_id
         );
         setProductlist(sortedOrders);
       });
