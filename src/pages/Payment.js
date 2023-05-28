@@ -85,13 +85,15 @@ const Payment = () => {
       return;
     }
 
+    if (totalPrice === 0) {
+      alert("주문할 상품이 없습니다.");
+      window.location.replace("/");
+    }
     //kakaopayment 실행 -> tid 받아옴.
     setTid("");
     setStateButton(true);
   };
 
-  //tid 받아와질때까지 기다리는 코드 작성해야함
-  //const PostTid = localStorage.getItem("tid");
   useEffect(() => {
     if (tid === true && true) {
       console.log("전달할 tid : " + state.tid);
@@ -103,7 +105,7 @@ const Payment = () => {
         body: JSON.stringify({
           tid: state.tid,
           receiver: state.receiver,
-          address: state.postcodeStreet + state.postcodedetail + " ",
+          address: state.postcodeStreet + " " + state.postcodedetail,
           cart_ids: items.map((item) => item.cart_id),
         }),
       }).then((response) => {
