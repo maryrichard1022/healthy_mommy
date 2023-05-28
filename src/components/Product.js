@@ -118,6 +118,7 @@ function Product({ products }) {
           <span className="right-margin"></span>
         </div>
 
+      <div className="ForBox">
         <div className={`product-details ${isOpen ? "show" : ""}`}>
           <div className="OrderDetail1 OrderInCartInfo1">
             <span className="OrderName">상품정보</span>
@@ -130,10 +131,10 @@ function Product({ products }) {
           {order_list.map((order, index) => (
             <div className="product">
               <div className="OrderDetail1">
-                <span className="OrderName1">
+                <span className="OrderName2">
                 <a
                 href={"/Detail/?id=" + order.product_id}
-                style={{ color: "black", textDecoration: "none" }}
+                style={{ color: "grey", textDecoration: "none" }}
                 >{order.product_name}
                 </a>
                 </span>
@@ -170,9 +171,10 @@ function Product({ products }) {
           <p><strong>배송지</strong> <span className="OrderReceiveAddr">{products.address}</span></p>
         </ui>
         </div>
-        <hr />
+        {/* <hr /> */}
       </div>
       <br />
+    </div>
     </div>
   );
 }
