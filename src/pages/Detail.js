@@ -3,17 +3,15 @@ import { useNavigate, useLocation } from "react-router-dom"; //0520
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import "./Detail.css";
-import CustomButton from "../components/CustomButton";
 import DetailSlider from "../components/DetailSlider";
 import API from "../config"; //0520
 
 function Detail() {
-  //0520
+  
   const [productlist, setProductlist] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
 
-  //버튼 누를 때마다 테이블 받아옴
   useEffect(() => {
     let queryString = location.search;
     let params = new URLSearchParams(queryString);

@@ -14,9 +14,6 @@ const SupplementsPageProduct = () => {
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const urlCategory = params.get("category");
-  let subCategory = "";
-  let nextPage,
-    prevPage = 0; //0520
 
   //버튼 누를 때마다 테이블 받아옴
   useEffect(() => {
@@ -56,7 +53,6 @@ const SupplementsPageProduct = () => {
     fetch(`${API.product}${queryString}`) /*main->product*/
       .then((res) => res.json())
       .then((result) => {
-        //     setTotalItems(result);
         setProductlist(result.result);
         console.log(result);
       });
