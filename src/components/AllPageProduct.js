@@ -13,19 +13,10 @@ const AllPageProduct = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-  const params = new URLSearchParams(location.search);
+  /* const params = new URLSearchParams(location.search);
   const urlCategory = params.get("category");
-  // const categoryString = `category=${urlCategory}`;
+  const categoryString = `category=${urlCategory}`; */
 
-  //url 바뀔 떄 마다 화면 렌더링
-
-  //마운트 되자마자 all을 띄우도록 함
-  /* useEffect(() => {
-    sortBestAll();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-   }, []); */ //0514
-
-  //버튼 누를 때마다 테이블 받아옴
   useEffect(() => {
     let queryString = location.search;
     let params = new URLSearchParams(queryString);
@@ -57,7 +48,6 @@ const AllPageProduct = () => {
     fetch(`${API.product}${queryString}`)
       .then((res) => res.json())
       .then((result) => {
-        //     setTotalItems(result);
         setProductlist(result.result);
         console.log(result);
       });
@@ -170,18 +160,15 @@ const AllPageProduct = () => {
               <div className="BestProduct">
                 <img
                   alt="product-img"
-                  /* src={require("../assets/url_img.png")} */
-                  src={product.image_url} //크롤링 테이블 받아왔을 때!!
+                  src={product.image_url}
                   className="product-img"
                 ></img>
                 <div className="productinfo-cart">
                   <div className="productinfo">
-                    {/* <p> {product.id}</p> */}
                     <p className="product-name">{product.name}</p>
                     <p className="product-price">
                       {Math.floor(product.price)}원
                     </p>
-                    {/* <p className="product-sold">sold: {product.sold}</p> */}
                   </div>
                   <div className="cart-img-box">
                     <a

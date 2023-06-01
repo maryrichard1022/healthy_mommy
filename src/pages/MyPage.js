@@ -1,4 +1,4 @@
-//마이페이지(주문내역조회) 해나가 작업할 부분!!!
+//마이페이지(주문내역조회)
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
@@ -6,7 +6,6 @@ import Nav from "../components/Nav";
 import Product from "../components/Product";
 import "./MyPage.css";
 import API from "../config";
-/* import Counter from "../components/Counter"; */
 
 const MyPage = () => {
   const products_sample = [

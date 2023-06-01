@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react"; //0520
-import { useNavigate, useLocation } from "react-router-dom"; //0520
+import React, { useState, useEffect } from "react"; 
+import { useNavigate, useLocation } from "react-router-dom"; 
 import Footer from "../components/Footer";
 import Nav from "../components/Nav";
 import "./Detail.css";
 import DetailSlider from "../components/DetailSlider";
-import API from "../config"; //0520
+import API from "../config"; 
 
 function Detail() {
   
@@ -24,7 +24,6 @@ function Detail() {
         console.log(result.result);
       });
   }, [location.search]);
-  //0520
 
   const handleAddToCart = () => {
     const kakao_id = sessionStorage.getItem("kakao_id");
