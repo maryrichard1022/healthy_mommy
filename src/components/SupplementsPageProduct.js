@@ -3,7 +3,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "./SupplementsPageProduct.css";
 import FilterButton from "./FilterButton";
 import API from "../config";
-//import SupplementsFilterButton from "../components/SupplementsFilterButton";
 
 const SupplementsPageProduct = () => {
   const [productlist, setProductlist] = useState([]);
@@ -47,9 +46,7 @@ const SupplementsPageProduct = () => {
       setcurrentPage(0);
       params.set("offset", 0);
     }
-    //0520
 
-    //메인페이지에 띄우는 물품 리스트 정보 가져옴
     fetch(`${API.product}${queryString}`) /*main->product*/
       .then((res) => res.json())
       .then((result) => {
@@ -87,14 +84,14 @@ const SupplementsPageProduct = () => {
     if (!params.has("category")) {
       params.set("category", "supplements");
     }
-    //0520
+    
     if (num < 0) {
       num = 0;
     }
     if (num > 16) {
       num = 16;
     }
-    //0520
+    
     params.set("offset", num);
 
     navigate("?" + params.toString());
@@ -211,22 +208,19 @@ const SupplementsPageProduct = () => {
               style={{ color: "black", textDecoration: "none" }}
             >
               {" "}
-              {/* //0521 */}
+              
               <div className="BestProduct">
                 <img
                   alt="product-img"
-                  /* src={require("../assets/url_img.png")} */
-                  src={product.image_url} //크롤링 테이블 받아왔을 때!!
+                  src={product.image_url} 
                   className="product-img"
                 ></img>
                 <div className="productinfo-cart">
                   <div className="productinfo">
-                    {/* <p> {product.id}</p> */}
                     <p className="product-name">{product.name}</p>
                     <p className="product-price">
                       {Math.floor(product.price)}원
                     </p>
-                    {/* <p className="product-sold">sold: {product.sold}</p> */}
                   </div>
                   <div className="cart-img-box">
                     <a href="javascript:void(0)" onClick={() => {handleAddToCart(product)}}>

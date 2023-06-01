@@ -3,7 +3,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "./FitnessEquipmentPageProduct.css";
 import FilterButton from "./FilterButton";
 import API from "../config";
-//import FitnessEquipmentFilterButton from "../components/FitnessEquipmentFilterButton";
 
 const FitnessEquipmentPageProduct = () => {
   const [productlist, setProductlist] = useState([]);
@@ -50,11 +49,9 @@ const FitnessEquipmentPageProduct = () => {
       params.set("offset", 0);
     }
 
-    //메인페이지에 띄우는 물품 리스트 정보 가져옴
     fetch(`${API.product}${queryString}`)
       .then((res) => res.json())
       .then((result) => {
-        //     setTotalItems(result);
         setProductlist(result.result);
         console.log(result);
       });
@@ -212,7 +209,6 @@ const FitnessEquipmentPageProduct = () => {
               style={{ color: "black", textDecoration: "none" }}
             >
               <div className="BestProduct">
-                {/* 크롤링 테이블 받아오면 src={product.image_url}로 수정 */}
                 <img
                   alt="product-img"
                   src={product.image_url}
@@ -220,12 +216,10 @@ const FitnessEquipmentPageProduct = () => {
                 ></img>
                 <div className="productinfo-cart">
                   <div className="productinfo">
-                    {/* <p> {product.id}</p> */}
                     <p className="product-name">{product.name}</p>
                     <p className="product-price">
                       {Math.floor(product.price)}원
                     </p>
-                    {/* <p className="product-sold">sold: {product.sold}</p> */}
                   </div>
                   <div className="cart-img-box">
                     <a href="javascript:void(0)" onClick={() => {handleAddToCart(product)}}>

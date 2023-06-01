@@ -3,7 +3,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "./SportsWearPageProduct.css";
 import FilterButton from "./FilterButton";
 import API from "../config";
-//import SportsWearFilterButton from "../components/SportsWearFilterButton";
 
 const SportsWearPageProduct = () => {
   const [productlist, setProductlist] = useState([]);
@@ -17,7 +16,6 @@ const SportsWearPageProduct = () => {
   const params = new URLSearchParams(location.search);
   const urlCategory = params.get("category");
   let subCategory = "";
-  /* let nextPage,prevPage = 0; //0520  */
 
   //버튼 누를 때마다 테이블 받아옴
   useEffect(() => {
@@ -37,7 +35,6 @@ const SportsWearPageProduct = () => {
 
     setActiveFilter2(params.get("sort_method"));
 
-    //0520
     if (!params.has("offset")) {
       params.set("offset", 0);
       setcurrentPage(0);
@@ -54,9 +51,7 @@ const SportsWearPageProduct = () => {
       setcurrentPage(0);
       params.set("offset", 0);
     }
-    //0520
 
-    //메인페이지에 띄우는 물품 리스트 정보 가져옴
     fetch(`${API.product}${queryString}`)
       .then((res) => res.json())
       .then((result) => {

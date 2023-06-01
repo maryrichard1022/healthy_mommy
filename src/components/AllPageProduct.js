@@ -44,7 +44,6 @@ const AllPageProduct = () => {
       params.set("offset", 0);
     }
 
-    //메인페이지에 띄우는 물품 리스트 정보 가져옴
     fetch(`${API.product}${queryString}`)
       .then((res) => res.json())
       .then((result) => {
@@ -102,7 +101,7 @@ const AllPageProduct = () => {
       .then((result) => {
         console.log(result.message);
         if (result.message === "CART_QUANTITY_CHANGED") {
-          alert("장바구니에 ㄴ수량 추가되었습니다.");
+          alert("장바구니에 수량 추가되었습니다.");
         } else if (result.message === "PUT_IN_CART_SUCCESS") {
           alert("장바구니에 상품 추가되었습니다.");
         }

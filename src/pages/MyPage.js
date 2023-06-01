@@ -48,7 +48,6 @@ const MyPage = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        //     setTotalItems(result);
         console.log(result.RESULT.orders_list);
         const sortedOrders = result.RESULT.orders_list.sort(
           (a, b) => b.order_id - a.order_id

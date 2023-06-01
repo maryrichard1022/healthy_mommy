@@ -19,7 +19,6 @@ function Detail() {
     fetch(`${API.productDetail}/${params.get("id")}`)
       .then((res) => res.json())
       .then((result) => {
-        //     setTotalItems(result);
         setProductlist(result.result);
         console.log(result.result);
       });

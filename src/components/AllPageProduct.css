@@ -23,25 +23,12 @@
   margin-top: -15%;
   width: 100%;
 }
-/* .AllBanner {
-    margin-bottom: 5%;
-    text-align: center;
-    overflow: hidden;
-    max-height: 250px;
-}
-
- .AllBanner img {
-    max-height: initial;
-    margin-top: -15%;
-    width: 100%;
-    
- } */
 
 .AllPageProduct {
   position: relative;
   /* AllPageProduct가 position: relative일 경우, 
        하위 요소들이 position: absolute로 지정될 때,
-       AllPageProduct를 기준으로 위치가 결정됩니다. */
+       AllPageProduct를 기준으로 위치가 결정됨 */
   margin-bottom: 10%;
 }
 
