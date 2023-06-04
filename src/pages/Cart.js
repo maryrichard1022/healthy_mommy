@@ -46,6 +46,7 @@ const Cart = () => {
     console.log(response);
     const result = await response.json();
     setItems(result.cart);
+    console.log(result.cart);
   };
 
   // 총 결제 금액이 0원이면 (장바구니가 비어있으면 주문하기 버튼 안 눌림)
@@ -84,6 +85,7 @@ const Cart = () => {
         newQuantity[selectedId].quantity--;
         // 변경사항 반영
         setItems(newQuantity);
+        console.log(result.message);
       }
     } else {
       alert("최소 주문 수량은 1개입니다.");
@@ -137,9 +139,11 @@ const Cart = () => {
         const result = await response.json();
         setPending(false);
         if (result.message === "DELETE_SUCCESS") {
+          console.log(result.message);
           // 해당 아이템의 id 찾아서 삭제
           const filtered = items.filter((item) => item.cart_id !== cart_id);
           setItems(filtered);
+          console.log(filtered);
         }
       }
     } else {

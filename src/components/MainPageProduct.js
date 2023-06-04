@@ -27,7 +27,6 @@ const MainPageProduct = () => {
     fetch(`${API.main}${queryString}`)
       .then((res) => res.json())
       .then((result) => {
-        //     setTotalItems(result);
         setProductlist(result.result);
         console.log(result);
       });
@@ -66,7 +65,7 @@ const MainPageProduct = () => {
       });
   };
 
-  //필터 버튼 누르면 url 바뀌도록
+  //필터 버튼. 쿼리파라미터 이용
   const sortNewAll = () => {
     const NewAll = `?sort_method=-release_date`;
     setActiveFilter("ALL");

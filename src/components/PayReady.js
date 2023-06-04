@@ -56,7 +56,6 @@ const PayReady = (props) => {
         console.log("tid:" + tid);
         props.state.tid = tid;
         props.setTid(true);
-
         setTimeout(3000);
         window.location.replace(next_redirect_pc_url);
       })

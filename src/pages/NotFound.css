@@ -1,11 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;600&display=swap");
+.nonfound {
+  text-align: center;
+  font-family: "IBM Plex Sans KR", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
 
 .not-found-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 700px;
+  height: 500px;
   font-family: "IBM Plex Sans KR", sans-serif;
 }
 

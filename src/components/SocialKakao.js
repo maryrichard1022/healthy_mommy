@@ -7,9 +7,8 @@ const SocialKakao = () => {
   const kakaoOnSuccess = async (data) => {
     console.log(data);
 
-    //사용자 아이디
+    //사용자 아이디, 닉네임
     const kakao_id = data.profile.id;
-    //사용자 닉네임
     const nickname = data.profile.properties.nickname;
 
     //백에 kakao_id, nickname 전달

@@ -64,7 +64,7 @@ function Product({ products }) {
         if (result.message === "CANCEL_ORDER") {
           alert("주문 취소되었습니다.");
           PayCancel();
-          setTimeout(1000);
+          setTimeout(2000);
           window.location.replace("/MyPage");
         }
       })
@@ -118,63 +118,72 @@ function Product({ products }) {
           <span className="right-margin"></span>
         </div>
 
-      <div className="ForBox">
-        <div className={`product-details ${isOpen ? "show" : ""}`}>
-          <div className="OrderDetail1 OrderInCartInfo1">
-            <span className="OrderName">상품정보</span>
-            <span className="OrderImg"></span>
-            <span className="OrderPrice">상품금액</span>
-            <span className="OrderCounter">수량</span>
-            <span className="OrderCounter">총금액</span>
-            {/* <span className="right-margin"></span> */}
-          </div>
-          {order_list.map((order, index) => (
-            <div className="product">
-              <div className="OrderDetail1">
-                <span className="OrderName2">
-                <a
-                href={"/Detail/?id=" + order.product_id}
-                style={{ color: "grey", textDecoration: "none" }}
-                >{order.product_name}
-                </a>
-                </span>
-                <span>
-                <a
-                href={"/Detail/?id=" + order.product_id}
-                style={{ color: "black", textDecoration: "none" }}
-                >
-                  <img
-                    className="OrderImg1"
-                    alt="order"
-                    src={order.product_img}
-                  />
-                  </a>
-                </span>
-                <span className="OrderPrice1">
-                  {Number(order.product_price).toLocaleString("ko-KR") + "원"}
-                </span>
-                <span className="OrderCounter1">{order.quantity}</span>
-                <span className="OrderCounter1">
-                  {Number(order.product_total_price).toLocaleString("ko-KR") +
-                    "원"}
-                </span>
-                {/* <span className="right-margin"></span> */}
-              </div>
+        <div className="ForBox">
+          <div className={`product-details ${isOpen ? "show" : ""}`}>
+            <div className="OrderDetail1 OrderInCartInfo1">
+              <span className="OrderName">상품정보</span>
+              <span className="OrderImg"></span>
+              <span className="OrderPrice">상품금액</span>
+              <span className="OrderCounter">수량</span>
+              <span className="OrderCounter">총금액</span>
+              {/* <span className="right-margin"></span> */}
             </div>
-          ))}
+            {order_list.map((order, index) => (
+              <div className="product">
+                <div className="OrderDetail1">
+                  <span className="OrderName2">
+                    <a
+                      href={"/Detail/?id=" + order.product_id}
+                      style={{ color: "grey", textDecoration: "none" }}
+                    >
+                      {order.product_name}
+                    </a>
+                  </span>
+                  <span>
+                    <a
+                      href={"/Detail/?id=" + order.product_id}
+                      style={{ color: "black", textDecoration: "none" }}
+                    >
+                      <img
+                        className="OrderImg1"
+                        alt="order"
+                        src={order.product_img}
+                      />
+                    </a>
+                  </span>
+                  <span className="OrderPrice1">
+                    {Number(order.product_price).toLocaleString("ko-KR") + "원"}
+                  </span>
+                  <span className="OrderCounter1">{order.quantity}</span>
+                  <span className="OrderCounter1">
+                    {Number(order.product_total_price).toLocaleString("ko-KR") +
+                      "원"}
+                  </span>
+                  {/* <span className="right-margin"></span> */}
+                </div>
+              </div>
+            ))}
 
-        <ui className="product-information">
-          <hr/>
-          <p className="OrderInformation"><strong>배송지정보</strong></p>
-          <p><strong>수령인</strong> <span className="OrderReceiveAddr">{products.receiver}</span></p>
-          <p />
-          <p><strong>배송지</strong> <span className="OrderReceiveAddr">{products.address}</span></p>
-        </ui>
+            <ui className="product-information">
+              <hr />
+              <p className="OrderInformation">
+                <strong>배송지정보</strong>
+              </p>
+              <p>
+                <strong>수령인</strong>{" "}
+                <span className="OrderReceiveAddr">{products.receiver}</span>
+              </p>
+              <p />
+              <p>
+                <strong>배송지</strong>{" "}
+                <span className="OrderReceiveAddr">{products.address}</span>
+              </p>
+            </ui>
+          </div>
+          {/* <hr /> */}
         </div>
-        {/* <hr /> */}
+        <br />
       </div>
-      <br />
-    </div>
     </div>
   );
 }

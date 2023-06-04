@@ -112,12 +112,12 @@ const Payment = () => {
         response
           .json()
           .then((result) => {
-            console.log("결과 메세지: " + result.message);
             console.log("cart_ids :" + items.map((item) => item.cart_id));
+            console.log("결과 메세지: " + result.message);
             if (result.message === "NEW_ORDER_CREATED") {
-              console.log("주문 성공");
+              console.log("새 주문 생성");
             } else {
-              console.log("tid is empty");
+              console.log("tid is empty or 주문 실패");
             }
           })
           .catch((error) => {
