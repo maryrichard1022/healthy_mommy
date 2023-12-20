@@ -62,4 +62,4 @@
 - 카카오 맵 API 이용하여 매장 위치 표현
 
 ## 프로젝트최종 결과
-- 유튜브 : 
+- 유튜브 : [Healthy Mommy 최종 결과](https://youtu.be/bcZc6nXbB6Q)
